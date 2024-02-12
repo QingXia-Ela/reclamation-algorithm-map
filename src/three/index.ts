@@ -25,8 +25,8 @@ class MapCore {
       x: 10,
       y: 10,
       type: "encounter",
-      name: "test",
-      weather: "sunny",
+      name: "丰饶灌木林",
+      weather: "normal",
       resources: [],
       border: "square",
       size: "small"
@@ -47,10 +47,24 @@ class MapCore {
       renderer,
       // cube
     }
-    this._addOrbitControls()
+    // @ts-ignore: process is exist
+    if (process.env.NODE_ENV === "production") this._addOrbitControls()
+    else this._devOrbitControls()
     this._startAnimate()
 
     document.body.appendChild(renderer.domElement);
+  }
+
+  private _devOrbitControls() {
+    const { camera, renderer } = this.threeObject
+    const controls = new OrbitControls(camera, renderer.domElement)
+
+    // 修改按键功能，保持用户操作习惯
+    controls.mouseButtons.LEFT = THREE.MOUSE.PAN
+    // right button will add context menu, so disable here
+    controls.mouseButtons.RIGHT = THREE.MOUSE.ROTATE
+
+    this.threeObject.controls = controls
   }
 
   // now only support 2d
@@ -60,7 +74,7 @@ class MapCore {
     controls.enableDamping = true
 
     controls.maxDistance = 60
-    controls.minDistance = 22
+    controls.minDistance = 10
 
     controls.mouseButtons.LEFT = THREE.MOUSE.PAN
     // right button will add context menu, so disable here

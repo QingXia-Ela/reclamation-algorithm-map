@@ -1,6 +1,6 @@
 export type NodeType = "resource" | "hunt" | "encounter"
 
-export type NodeWeather = "sunny" | "rainy"
+export type NodeWeather = "normal"
 
 export type NodeResource = "water" | "wood" | "meat"
 

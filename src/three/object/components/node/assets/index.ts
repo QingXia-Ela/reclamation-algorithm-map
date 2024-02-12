@@ -2,4 +2,4 @@ import NODE_ENCOUNTER from '@/assets/three/components/node/node_type/node_encoun
 
 export {
   NODE_ENCOUNTER
-}  
+}

@@ -1,6 +1,7 @@
 import { NodeProps } from "@/three/types/node"
 import * as THREE from 'three'
 import NodeCore from "./components/core"
+import NodeTitle from "./components/title"
 
 class Node extends THREE.Group {
   x: number
@@ -20,8 +21,14 @@ class Node extends THREE.Group {
       type: options.type
     })
 
+    const title = new NodeTitle({
+      title: options.name,
+      subTitle: "Bar"
+    })
+
     this.add(
-      core
+      core,
+      title
     )
   }
 }

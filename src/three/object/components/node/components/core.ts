@@ -1,3 +1,8 @@
+/**
+ * 节点核心图标几何体实现
+ * 
+ * @author QingXia-Ela
+ */
 import * as THREE from 'three'
 import { NodeType } from '@/three/types/node'
 import * as NODE_ASSETS from '../assets'
@@ -34,6 +39,8 @@ class NodeCore extends THREE.Group {
     )
 
     Obj.scale.set(0.9, 0.9, 1)
+
+    Obj.position.z += 0.001
 
     return Obj
   }

@@ -11,8 +11,6 @@ const obj = import.meta.glob<any>("../../../../../assets/three/components/node/r
   eager: true
 })
 
-// todo!: add rest
-// 此处手动设置资源关键字以提供 ts 智能补全
 type ResourcesKeys = "SANDBOX_1_BEEF" |
   "SANDBOX_1_CONDIMENT" |
   "SANDBOX_1_CRAB" |

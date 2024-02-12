@@ -24,7 +24,7 @@ class MapCore {
     const TestNode = new Node({
       x: 10,
       y: 10,
-      type: "resource",
+      type: "encounter",
       name: "test",
       weather: "sunny",
       resources: [],

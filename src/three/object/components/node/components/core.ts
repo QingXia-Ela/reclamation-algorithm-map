@@ -1,15 +1,44 @@
 import * as THREE from 'three'
-import border_square_small from '@/assets/three/components/node/border_square_small.png?inline'
+import { NodeType } from '@/three/types/node'
+import * as NODE_ASSETS from '../assets'
 
 class NodeCore extends THREE.Group {
   textureLoader = new THREE.TextureLoader()
-  constructor() {
+  constructor({
+    type
+  }: {
+    type: NodeType
+  }) {
     super()
 
-    this._init()
+    this._init({
+      type
+    })
   }
 
-  private async _getRoundBorder() {
+  private async _getNodeTextureMapByType(type: NodeType) {
+    // @ts-ignore: type will keep same by resource name
+    const url = NODE_ASSETS[`NODE_${type.toUpperCase()}`]
+    const texture = await this.textureLoader.loadAsync(url)
+    return texture
+  }
+
+  private _getNodeIconMesh(texture: THREE.Texture) {
+    const Obj = new THREE.Mesh(
+      new THREE.PlaneGeometry(2, 2),
+      new THREE.MeshBasicMaterial({
+        map: texture,
+        transparent: true,
+        color: 0x000000
+      })
+    )
+
+    Obj.scale.set(0.9, 0.9, 1)
+
+    return Obj
+  }
+
+  private async _getRoundBorder(type: NodeType) {
     const WhiteMaterial = new THREE.MeshBasicMaterial({
       color: 0xefefef
     })
@@ -25,6 +54,7 @@ class NodeCore extends THREE.Group {
     const RoundBorder = new THREE.Group()
 
     RoundBorder.add(
+      this._getNodeIconMesh(await this._getNodeTextureMapByType(type)),
       new THREE.Mesh(
         new THREE.CircleGeometry(1.6, 32),
         WhiteMaterial
@@ -42,7 +72,11 @@ class NodeCore extends THREE.Group {
     return RoundBorder
   }
 
-  private async _init() {
+  private async _init({
+    type
+  }: {
+    type: NodeType
+  }) {
     // const border = await this.textureLoader.loadAsync(border_square_small)
     // const icon = null
 
@@ -53,7 +87,7 @@ class NodeCore extends THREE.Group {
     //   material
     // )
 
-    this.add(await this._getRoundBorder())
+    this.add(await this._getRoundBorder(type))
   }
 }
 

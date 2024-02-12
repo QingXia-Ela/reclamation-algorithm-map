@@ -8,6 +8,16 @@ interface NodeResourceProps {
 
 const SQRT_3 = Math.sqrt(3)
 
+function getResourceColorByType(type: NodeResourceType) {
+  switch (type) {
+    case "water":
+      return 0x2a94a7
+      break;
+  }
+
+  return 0xcccccc
+}
+
 /**
  * Create a diamond shape
  * 
@@ -100,7 +110,7 @@ class NodeResource extends THREE.Group {
     return texture
   }
 
-  private _getResourceIconMesh(texture: THREE.Texture) {
+  private _getResourceIconMesh(texture: THREE.Texture, color = 0xcccccc) {
     const group = new THREE.Group()
 
     const width = 1.4
@@ -111,7 +121,7 @@ class NodeResource extends THREE.Group {
       new THREE.MeshBasicMaterial({
         map: texture,
         transparent: true,
-        color: 0xcccccc
+        color
       })
     )
 
@@ -127,7 +137,8 @@ class NodeResource extends THREE.Group {
 
     for (const i of resources) {
       group.add(this._getResourceIconMesh(
-        await this._getResourceTexture(i)
+        await this._getResourceTexture(i),
+        getResourceColorByType(i)
       ))
     }
 

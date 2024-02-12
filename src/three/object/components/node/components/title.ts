@@ -14,6 +14,10 @@ interface NodeTitleProps {
 
 const textureLoader = new THREE.TextureLoader()
 
+function getWeatherIconColorByWeatherType(weather: NodeWeather) {
+  return 0xffffff
+}
+
 class NodeTitle extends THREE.Group {
   constructor(options: NodeTitleProps) {
     super()
@@ -43,7 +47,7 @@ class NodeTitle extends THREE.Group {
     return texture
   }
 
-  private _getWeatherIconMesh(texture: THREE.Texture) {
+  private _getWeatherIconMesh(texture: THREE.Texture, color = 0xffffff) {
     const width = 1.2
     const height = width * texture.image.height / texture.image.width
     const Obj = new THREE.Mesh(
@@ -53,7 +57,7 @@ class NodeTitle extends THREE.Group {
         map: texture,
         transparent: true,
         opacity: 0.5,
-        color: 0xffffff,
+        color,
       })
     )
 
@@ -63,7 +67,7 @@ class NodeTitle extends THREE.Group {
   private async _getWeahterMesh(weather: NodeWeather) {
     const texture = await this._getWeatherTexture(weather)
 
-    const icon = this._getWeatherIconMesh(texture)
+    const icon = this._getWeatherIconMesh(texture, getWeatherIconColorByWeatherType(weather))
     icon.position.z += 0.1
 
     const bg = new THREE.Mesh(

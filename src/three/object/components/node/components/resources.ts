@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import type { NodeResource as NodeResourceType } from '@/three/types/node'
-import * as RESOURCE_ASSETS from '../assets/resource'
+import RESOURCE_ASSETS from '../assets/resource'
 
 interface NodeResourceProps {
   resources: NodeResourceType[]
@@ -105,7 +105,7 @@ class NodeResource extends THREE.Group {
 
   private async _getResourceTexture(type: NodeResourceType) {
     // @ts-ignore: weather will keep same by resource name
-    const url = RESOURCE_ASSETS[`RESOURCE_${type.toUpperCase()}`]
+    const url = RESOURCE_ASSETS[type]
     const texture = await textureLoader.loadAsync(url)
     return texture
   }

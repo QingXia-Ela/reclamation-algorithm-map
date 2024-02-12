@@ -8,5 +8,8 @@ export default defineConfig({
     alias: {
       '@': '/src'
     }
+  },
+  build: {
+    target: ["chrome103"]
   }
 })

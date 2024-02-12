@@ -1,7 +1,7 @@
 import { NodeWeather } from "@/three/types/node"
 import * as THREE from 'three'
 import createBoxWithRoundedEdges from "@/three/utils/createBoxWithRoundedEdges"
-import * as WEATHER_ASSETS from "../assets/weather"
+import WEATHER_ASSETS from "../assets/weather"
 import { TextGeometry } from "three/examples/jsm/Addons.js"
 import { SourceHanSansCN_Regular } from "@/three/fonts"
 
@@ -43,7 +43,7 @@ class NodeTitle extends THREE.Group {
 
   private async _getWeatherTexture(weather: NodeWeather) {
     // @ts-ignore: weather will keep same by resource name
-    const url = WEATHER_ASSETS[`WEATHER_${weather.toUpperCase()}`]
+    const url = WEATHER_ASSETS[weather]
     const texture = await textureLoader.loadAsync(url)
     return texture
   }

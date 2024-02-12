@@ -5,7 +5,7 @@
  */
 import * as THREE from 'three'
 import { NodeType } from '@/three/types/node'
-import * as NODE_ASSETS from '../assets/node'
+import NODE_ASSETS from '../assets/node'
 const textureLoader = new THREE.TextureLoader()
 
 class NodeCore extends THREE.Group {

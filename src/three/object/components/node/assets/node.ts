@@ -11,9 +11,24 @@ const obj = import.meta.glob<any>("../../../../../assets/three/components/node/n
 
 // todo!: add rest
 // 此处手动设置资源关键字以提供 ts 智能补全
-type ResourcesKeys = "NODE_ENCOUNTER" |
-  "NODE_COLLECT"
+type ResourcesKeys = "NODE_BATTLE" |
+  "NODE_CAVE" |
+  "NODE_COLLECT" |
+  "NODE_ENCOUNTER" |
+  "NODE_EXPEDITION" |
+  "NODE_GATE" |
+  "NODE_HUNT" |
+  "NODE_MARKET" |
+  "NODE_MINE" |
+  "NODE_NEST" |
+  "NODE_OUTPOST" |
+  "NODE_SHOP" |
+  "NODE_UPGRADE_BATTLE" |
+  "NODE_UPGRADE_SCOUT"
 
 const NODE_ASSETS: Record<ResourcesKeys, string> = parseBatchImportToAssets(obj)
+
+// log type
+// console.log(Object.keys(NODE_ASSETS).map((k) => `"${k}"`).join(" | \n"));
 
 export default NODE_ASSETS

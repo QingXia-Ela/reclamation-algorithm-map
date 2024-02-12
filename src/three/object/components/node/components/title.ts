@@ -12,8 +12,9 @@ interface NodeTitleProps {
   weather?: NodeWeather
 }
 
+const textureLoader = new THREE.TextureLoader()
+
 class NodeTitle extends THREE.Group {
-  textureLoader = new THREE.TextureLoader()
   constructor(options: NodeTitleProps) {
     super()
 
@@ -38,7 +39,7 @@ class NodeTitle extends THREE.Group {
   private async _getWeatherTexture(weather: NodeWeather) {
     // @ts-ignore: weather will keep same by resource name
     const url = WEATHER_ASSETS[`WEATHER_${weather.toUpperCase()}`]
-    const texture = await this.textureLoader.loadAsync(url)
+    const texture = await textureLoader.loadAsync(url)
     return texture
   }
 

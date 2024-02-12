@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import Line from './object/components/line';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import Node from './object/components/node';
 import Background from './object/background';
@@ -27,7 +26,9 @@ class MapCore {
       type: "encounter",
       name: "丰饶灌木林",
       weather: "normal",
-      resources: [],
+      resources: [
+        "water"
+      ],
       border: "square",
       size: "small"
     })

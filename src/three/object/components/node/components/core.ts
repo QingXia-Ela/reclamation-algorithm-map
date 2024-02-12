@@ -6,9 +6,9 @@
 import * as THREE from 'three'
 import { NodeType } from '@/three/types/node'
 import * as NODE_ASSETS from '../assets'
+const textureLoader = new THREE.TextureLoader()
 
 class NodeCore extends THREE.Group {
-  textureLoader = new THREE.TextureLoader()
   constructor({
     type
   }: {
@@ -24,7 +24,7 @@ class NodeCore extends THREE.Group {
   private async _getNodeTextureMapByType(type: NodeType) {
     // @ts-ignore: type will keep same by resource name
     const url = NODE_ASSETS[`NODE_${type.toUpperCase()}`]
-    const texture = await this.textureLoader.loadAsync(url)
+    const texture = await textureLoader.loadAsync(url)
     return texture
   }
 

@@ -1,7 +1,15 @@
-import { NodeProps } from "@/three/types/node"
+import { NodeProps, NodeType } from "@/three/types/node"
 import * as THREE from 'three'
 import NodeCore from "./components/core"
 import NodeTitle from "./components/title"
+import NodeResource from "./components/resources"
+
+function getSubTitleFromType(type: NodeType) {
+  return {
+    subTitle: "null",
+    subTitleColor: 0xaaaaaa
+  }
+}
 
 class Node extends THREE.Group {
   x: number
@@ -21,14 +29,25 @@ class Node extends THREE.Group {
       type: options.type
     })
 
+    const { subTitle, subTitleColor } = getSubTitleFromType(options.type)
+
     const title = new NodeTitle({
       title: options.name,
-      subTitle: "Bar"
+      subTitle, subTitleColor
     })
+
+    const resources = new NodeResource({
+      resources: [
+        "water"
+      ]
+    })
+    resources.position.x += 3
+    resources.position.y -= 1
 
     this.add(
       core,
-      title
+      title,
+      resources
     )
   }
 }

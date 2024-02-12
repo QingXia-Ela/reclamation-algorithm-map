@@ -1,8 +1,11 @@
+// todo!: add rest type
 export type NodeType = "resource" | "hunt" | "encounter"
 
+// todo!: add rest type
 export type NodeWeather = "normal"
 
-export type NodeResource = "water" | "wood" | "meat"
+// todo!: add rest type
+export type NodeResource = "water" | "wood" | "venison"
 
 export interface NodeProps {
   x: number

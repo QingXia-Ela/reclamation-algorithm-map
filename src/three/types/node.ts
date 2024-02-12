@@ -1,5 +1,5 @@
 // todo!: add rest type
-export type NodeType = "resource" | "hunt" | "encounter"
+export type NodeType = "hunt" | "encounter"
 
 // todo!: add rest type
 export type NodeWeather = "normal"

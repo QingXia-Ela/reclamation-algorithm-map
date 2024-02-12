@@ -5,9 +5,25 @@ import NodeTitle from "./components/title"
 import NodeResource from "./components/resources"
 
 function getSubTitleFromType(type: NodeType) {
+  const defaultColor = 0xaaaaaa
+  let subTitle = "null"
+
+  switch (type) {
+    case "hunt":
+      subTitle = "捕猎区"
+      break;
+
+    case "encounter":
+      subTitle = "奇遇"
+      break;
+
+    default:
+      break;
+  }
+
   return {
-    subTitle: "null",
-    subTitleColor: 0xaaaaaa
+    subTitle,
+    subTitleColor: defaultColor
   }
 }
 

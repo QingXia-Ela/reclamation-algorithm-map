@@ -14,6 +14,7 @@ interface NodeTitleProps {
 
 const textureLoader = new THREE.TextureLoader()
 
+// todo!: add rest
 function getWeatherIconColorByWeatherType(weather: NodeWeather) {
   return 0xffffff
 }

@@ -8,11 +8,11 @@ interface NodeResourceProps {
 
 const SQRT_3 = Math.sqrt(3)
 
+// todo!: add rest?
 function getResourceColorByType(type: NodeResourceType) {
   switch (type) {
     case "water":
       return 0x2a94a7
-      break;
   }
 
   return 0xcccccc

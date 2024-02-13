@@ -2,12 +2,50 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import Node from './object/components/node';
 import Background from './object/background';
-import Line from './object/components/line';
+import findNode from './utils/findNode';
 
 class MapCore {
   threeObject: Record<string, any> = {}
+  private TestNode = new Node({
+    x: 10,
+    y: 10,
+    type: "hunt",
+    name: "聚羽之地",
+    weather: "thunder",
+    resources: [
+      "wood",
+    ],
+    border: "square",
+    size: "small"
+  })
   constructor() {
     this._init()
+  }
+
+  private _addClickEvent() {
+    const { camera } = this.threeObject
+    const model = this.TestNode
+
+    var raycaster = new THREE.Raycaster();
+
+    function onDocumentMouseDown(event: MouseEvent) {
+      event.preventDefault();
+
+      var mouseVector = new THREE.Vector2((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
+      raycaster.setFromCamera(mouseVector, camera);
+
+      var intersects = raycaster.intersectObjects([model], true); // model 表示要监听点击事件的模型
+
+      if (intersects.length > 0) {
+        const node = findNode(intersects)
+
+        if (node) {
+
+        }
+      }
+    }
+
+    document.addEventListener('mousedown', onDocumentMouseDown, false);
   }
 
   private _init() {
@@ -18,31 +56,7 @@ class MapCore {
     const background = new Background()
     scene.add(background)
 
-    const axesHelper = new THREE.AxesHelper(10);
-    scene.add(axesHelper);
-
-    const TestNode = new Node({
-      x: 10,
-      y: 10,
-      type: "hunt",
-      name: "聚羽之地",
-      weather: "thunder",
-      resources: [
-        "wood",
-      ],
-      border: "square",
-      size: "small"
-    })
-    scene.add(TestNode)
-
-    const TestLine = new Line({
-      x1: 10,
-      y1: 10,
-      x2: 20,
-      y2: 20
-    })
-
-    scene.add(TestLine)
+    scene.add(this.TestNode)
 
     // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     // const cube = new THREE.Mesh(geometry, material);
@@ -59,8 +73,13 @@ class MapCore {
     }
     // @ts-ignore: process is exist
     if (process.env.NODE_ENV === "production") this._addOrbitControls()
-    else this._devOrbitControls()
+    else {
+      const axesHelper = new THREE.AxesHelper(10);
+      scene.add(axesHelper);
+      this._devOrbitControls()
+    }
     this._startAnimate()
+    this._addClickEvent()
 
     document.body.appendChild(renderer.domElement);
   }

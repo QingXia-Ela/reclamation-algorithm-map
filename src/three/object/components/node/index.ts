@@ -94,20 +94,18 @@ function changeModelByMoveXY(
 class Node extends THREE.Group {
   x: number
   y: number
+  z = 1
   constructor(options: NodeProps) {
     super()
     const { x, y } = options
     this.x = x
     this.y = y
 
-    this.position.setX(x)
-    this.position.setY(y)
-
+    this.position.set(x, y, this.z)
     this._init(options)
   }
 
   private _init(options: NodeProps) {
-    this.position.setZ(2)
     const core = new NodeCore(options)
 
     const { subTitle, subTitleColor } = getSubTitleFromType(options.type)

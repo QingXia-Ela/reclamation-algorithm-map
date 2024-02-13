@@ -30,7 +30,11 @@ async function getNodeTextureMapByType(type: NodeType) {
   return texture
 }
 
-async function getRoundBorder(type: NodeType) {
+async function getRoundBorder(type: NodeType, size: NodeProps['size']) {
+  const RoundBorder = new THREE.Group()
+
+  if (size === "small") RoundBorder.scale.set(0.65, 0.65, 1)
+
   const WhiteMaterial = new THREE.MeshBasicMaterial({
     color: 0xefefef
   })
@@ -43,7 +47,6 @@ async function getRoundBorder(type: NodeType) {
 
   const OuterRound = new THREE.TorusGeometry(2, 0.14, 2, 100)
 
-  const RoundBorder = new THREE.Group()
 
   const icon = getNodeIconMesh(await getNodeTextureMapByType(type))
 
@@ -68,8 +71,10 @@ async function getRoundBorder(type: NodeType) {
   return RoundBorder
 }
 
-async function getSquareBorder(type: NodeType) {
+async function getSquareBorder(type: NodeType, size: NodeProps['size']) {
   const group = new THREE.Group()
+
+  if (size === "large") group.scale.set(1.4, 1.4, 1)
 
   const InnerSquare = new THREE.Mesh(
     new THREE.PlaneGeometry(2.1, 2.1),
@@ -102,8 +107,10 @@ async function getSquareBorder(type: NodeType) {
   return group
 }
 
-async function getHexagonBorder(type: NodeType) {
+async function getHexagonBorder(type: NodeType, size: NodeProps['size']) {
   const group = new THREE.Group()
+
+  if (size === "small") group.scale.set(0.65, 0.65, 1)
 
   const InnerSquare = new THREE.Mesh(
     new THREE.CircleGeometry(2, 6),
@@ -148,7 +155,8 @@ function getBorderFunc(border: NodeProps['border']) {
 
 interface NodeCoreProps {
   type: NodeType,
-  border: NodeProps['border']
+  border: NodeProps['border'],
+  size: NodeProps['size']
 }
 
 class NodeCore extends THREE.Group {
@@ -160,7 +168,8 @@ class NodeCore extends THREE.Group {
 
   private async _init({
     type,
-    border
+    border,
+    size
   }: NodeCoreProps) {
     // const border = await this.textureLoader.loadAsync(border_square_small)
     // const icon = null
@@ -172,7 +181,7 @@ class NodeCore extends THREE.Group {
     //   material
     // )
 
-    this.add(await getBorderFunc(border)(type))
+    this.add(await getBorderFunc(border)(type, size))
   }
 }
 

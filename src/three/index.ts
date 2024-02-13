@@ -29,8 +29,8 @@ class MapCore {
       resources: [
         "wood",
       ],
-      border: "hexagon",
-      size: "small"
+      border: "square",
+      size: "large"
     })
     scene.add(TestNode)
 
@@ -46,7 +46,6 @@ class MapCore {
       scene,
       camera,
       renderer,
-      // cube
     }
     // @ts-ignore: process is exist
     if (process.env.NODE_ENV === "production") this._addOrbitControls()

@@ -79,12 +79,12 @@ class NodeTitle extends THREE.Group {
     const texture = await this._getWeatherTexture(weather)
 
     const icon = this._getWeatherIconMesh(texture, getWeatherIconColorByWeatherType(weather))
-    icon.position.z += 0.1
+    icon.position.z += 0.17
 
     const bg = new THREE.Mesh(
-      createBoxWithRoundedEdges(1.4, 1.4, 0.2, 0.1),
+      createBoxWithRoundedEdges(1.4, 1.4, 0.3, 0.1),
       new THREE.MeshBasicMaterial({
-        color: 0x666666,
+        color: 0x333333,
       })
     )
 

@@ -4,14 +4,22 @@ import Node from '../object/components/node';
 import Background from '../object/background';
 import findNode from '../utils/findNode';
 import { NodeProps } from '../types/node';
+import Line from '../object/components/line';
 
-type CoreEvent = "nodeclick" | "lineclick"
+type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove'
+
+function getMouseVector(event: MouseEvent) {
+  const mouseVector = new THREE.Vector2((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
+  return mouseVector
+}
 
 class MapCore {
   threeObject: Record<string, any> = {}
-  eventMap: Record<CoreEvent, Set<(node: Node) => void>> = {
-    nodeclick: new Set(),
-    lineclick: new Set(),
+  eventMap = {
+    nodeclick: new Set<(node: Node) => void>(),
+    lineclick: new Set<(line: Line) => void>(),
+    contextmenu: new Set<(event: MouseEvent, intersects: THREE.Intersection<THREE.Object3D<THREE.Object3DEventMap>>[]) => void>(),
+    mousemove: new Set(),
   }
   nodeMap: Record<string, Node> = {}
   private TestNode = new Node({
@@ -75,25 +83,33 @@ class MapCore {
      * **注意**
      * - `nodeclick`, `lineclick` 事件会在原生 `mouseup` 事件触发后触发
      */
-  addEventListener(type: CoreEvent, callback: (node: Node) => void): MapCore {
+  addEventListener(type: CoreEvent, callback: (...args: any[]) => void): MapCore {
     this.eventMap[type].add(callback)
     return this
   }
 
   removeEventListener(type: CoreEvent): MapCore;
-  removeEventListener(type: CoreEvent, callback: (node: Node) => void): MapCore;
+  removeEventListener(type: CoreEvent, callback: (...args: any[]) => void): MapCore;
   /**
    * 移除事件监听器
    * 
    * @param type 事件类型
    * @param callback 回调函数
    */
-  removeEventListener(type: CoreEvent, callback?: (node: Node) => void) {
+  removeEventListener(type: CoreEvent, callback?: (...args: any[]) => void) {
     if (callback) this.eventMap[type].delete(callback)
     else this.eventMap[type].clear()
     return this
   }
 
+  /**
+   * Run on init.
+   */
+  private _addMouseMoveEvent() { }
+
+  /**
+   * Run on init.
+   */
   private _addClickEvent() {
     const { camera } = this.threeObject
     const model = this.TestNode
@@ -116,7 +132,7 @@ class MapCore {
 
       event.preventDefault();
 
-      var mouseVector = new THREE.Vector2((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
+      var mouseVector = getMouseVector(event);
       raycaster.setFromCamera(mouseVector, camera);
 
       var intersects = raycaster.intersectObjects([model], true); // model 表示要监听点击事件的模型
@@ -134,8 +150,19 @@ class MapCore {
       }
     }
 
+    const onContextMenu = (event: MouseEvent) => {
+      var mouseVector = getMouseVector(event);
+      // raycaster 为共享，可能在未来会出现问题？
+      raycaster.setFromCamera(mouseVector, camera);
+      // 仅监听背景
+      this.eventMap.contextmenu.forEach((callback) => {
+        callback(event, raycaster.intersectObjects([this.threeObject.background], true))
+      })
+    }
+
     document.addEventListener('mousedown', onDocumentMouseDown, false);
     document.addEventListener('mouseup', onDocumentMouseUp, false);
+    document.addEventListener('contextmenu', onContextMenu, false);
   }
 
   private _init() {
@@ -157,6 +184,7 @@ class MapCore {
       scene,
       camera,
       renderer,
+      background
     }
     // @ts-ignore: process is exist
     if (process.env.NODE_ENV === "production") this._addOrbitControls()

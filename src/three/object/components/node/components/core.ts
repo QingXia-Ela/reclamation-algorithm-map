@@ -102,12 +102,46 @@ async function getSquareBorder(type: NodeType) {
   return group
 }
 
+async function getHexagonBorder(type: NodeType) {
+  const group = new THREE.Group()
+
+  const InnerSquare = new THREE.Mesh(
+    new THREE.CircleGeometry(2, 6),
+    new THREE.MeshBasicMaterial({
+      color: 0xffffff
+    })
+  )
+
+  InnerSquare.rotateZ(Math.PI / 6)
+
+  const OuterBorder = new THREE.Mesh(
+    new THREE.TorusGeometry(2.3, 0.08, 2, 6),
+    new THREE.MeshBasicMaterial({
+      transparent: true,
+      opacity: 0.5,
+      color: 0xefefef
+    })
+  )
+
+  OuterBorder.rotateZ(Math.PI / 6)
+
+  const icon = getNodeIconMesh(await getNodeTextureMapByType(type))
+
+  group.add(
+    icon,
+    InnerSquare,
+    OuterBorder
+  )
+
+  return group
+}
+
 function getBorderFunc(border: NodeProps['border']) {
   switch (border) {
     case "round":
       return getRoundBorder
     case "hexagon":
-      break;
+      return getHexagonBorder
   }
   return getSquareBorder
 }

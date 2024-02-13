@@ -43,6 +43,8 @@ function getResourceMoveByBorderType(border: NodeProps['border']) {
       break;
 
     case "hexagon":
+      moveByX = 3
+      moveByY = -1
       break;
 
     default:
@@ -69,7 +71,9 @@ function getTitleMoveByBorderType(border: NodeProps['border']) {
       moveByY = 0.6
       break;
 
-    default:
+    case "hexagon":
+      moveByX = 5.5
+      moveByY = 0.8
       break;
   }
 

@@ -29,7 +29,7 @@ class MapCore {
       resources: [
         "wood",
       ],
-      border: "square",
+      border: "hexagon",
       size: "small"
     })
     scene.add(TestNode)

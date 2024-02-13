@@ -142,9 +142,6 @@ class NodeTitle extends THREE.Group {
       this._getBackgroundMesh(),
       titleMesh
     )
-
-    this.position.setX(5.5)
-    this.position.setY(0.8)
   }
 }
 

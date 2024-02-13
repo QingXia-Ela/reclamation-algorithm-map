@@ -4,86 +4,130 @@
  * @author QingXia-Ela
  */
 import * as THREE from 'three'
-import { NodeType } from '@/three/types/node'
+import { NodeProps, NodeType } from '@/three/types/node'
 import NODE_ASSETS from '../assets/node'
 const textureLoader = new THREE.TextureLoader()
 
-class NodeCore extends THREE.Group {
-  constructor({
-    type
-  }: {
-    type: NodeType
-  }) {
-    super()
-
-    this._init({
-      type
+function getNodeIconMesh(texture: THREE.Texture) {
+  const Obj = new THREE.Mesh(
+    new THREE.PlaneGeometry(2, 2),
+    new THREE.MeshBasicMaterial({
+      map: texture,
+      transparent: true,
+      color: 0x000000
     })
-  }
+  )
 
-  private async _getNodeTextureMapByType(type: NodeType) {
-    // @ts-ignore: type will keep same by resource name
-    const url = NODE_ASSETS[`NODE_${type.toUpperCase()}`]
-    const texture = await textureLoader.loadAsync(url)
-    return texture
-  }
+  Obj.position.z += 0.001
 
-  private _getNodeIconMesh(texture: THREE.Texture) {
-    const Obj = new THREE.Mesh(
-      new THREE.PlaneGeometry(2, 2),
-      new THREE.MeshBasicMaterial({
-        map: texture,
-        transparent: true,
-        color: 0x000000
-      })
+  return Obj
+}
+
+async function getNodeTextureMapByType(type: NodeType) {
+  // @ts-ignore: type will keep same by resource name
+  const url = NODE_ASSETS[`NODE_${type.toUpperCase()}`]
+  const texture = await textureLoader.loadAsync(url)
+  return texture
+}
+
+async function getRoundBorder(type: NodeType) {
+  const WhiteMaterial = new THREE.MeshBasicMaterial({
+    color: 0xefefef
+  })
+
+  const WhiteMaterialHalfAlpha = new THREE.MeshBasicMaterial({
+    color: 0xefefef,
+    transparent: true,
+    opacity: 0.3
+  })
+
+  const OuterRound = new THREE.TorusGeometry(2, 0.14, 2, 100)
+
+  const RoundBorder = new THREE.Group()
+
+  const icon = getNodeIconMesh(await getNodeTextureMapByType(type))
+
+  icon.scale.set(0.9, 0.9, 1)
+
+  RoundBorder.add(
+    getNodeIconMesh(await getNodeTextureMapByType(type)),
+    new THREE.Mesh(
+      new THREE.CircleGeometry(1.6, 32),
+      WhiteMaterial
+    ),
+    new THREE.Mesh(
+      new THREE.CircleGeometry(1.75, 32),
+      WhiteMaterialHalfAlpha
+    ),
+    new THREE.Mesh(
+      OuterRound,
+      WhiteMaterialHalfAlpha
     )
+  )
 
-    Obj.scale.set(0.9, 0.9, 1)
+  return RoundBorder
+}
 
-    Obj.position.z += 0.001
+async function getSquareBorder(type: NodeType) {
+  const group = new THREE.Group()
 
-    return Obj
-  }
+  const InnerSquare = new THREE.Mesh(
+    new THREE.PlaneGeometry(2.1, 2.1),
+    new THREE.MeshBasicMaterial({
+      color: 0xffffff
+    })
+  )
 
-  private async _getRoundBorder(type: NodeType) {
-    const WhiteMaterial = new THREE.MeshBasicMaterial({
+  const OuterBorder = new THREE.Mesh(
+    new THREE.TorusGeometry(1.7, 0.08, 2, 4),
+    new THREE.MeshBasicMaterial({
+      transparent: true,
+      opacity: 0.5,
       color: 0xefefef
     })
+  )
 
-    const WhiteMaterialHalfAlpha = new THREE.MeshBasicMaterial({
-      color: 0xefefef,
-      transparent: true,
-      opacity: 0.3
-    })
+  OuterBorder.rotateZ(Math.PI / 4)
 
-    const OuterRound = new THREE.TorusGeometry(2, 0.14, 2, 100)
+  const icon = getNodeIconMesh(await getNodeTextureMapByType(type))
 
-    const RoundBorder = new THREE.Group()
+  icon.scale.set(0.9, 0.9, 1)
 
-    RoundBorder.add(
-      this._getNodeIconMesh(await this._getNodeTextureMapByType(type)),
-      new THREE.Mesh(
-        new THREE.CircleGeometry(1.6, 32),
-        WhiteMaterial
-      ),
-      new THREE.Mesh(
-        new THREE.CircleGeometry(1.75, 32),
-        WhiteMaterialHalfAlpha
-      ),
-      new THREE.Mesh(
-        OuterRound,
-        WhiteMaterialHalfAlpha
-      )
-    )
+  group.add(
+    icon,
+    InnerSquare,
+    OuterBorder
+  )
 
-    return RoundBorder
+  return group
+}
+
+function getBorderFunc(border: NodeProps['border']) {
+  switch (border) {
+    case "round":
+      return getRoundBorder
+    case "hexagon":
+      break;
+  }
+  return getSquareBorder
+}
+
+interface NodeCoreProps {
+  type: NodeType,
+  border: NodeProps['border']
+}
+
+class NodeCore extends THREE.Group {
+  constructor(options: NodeCoreProps) {
+    super()
+
+    this._init(options)
   }
 
   private async _init({
-    type
-  }: {
-    type: NodeType
-  }) {
+    type,
+    border
+  }: NodeCoreProps) {
     // const border = await this.textureLoader.loadAsync(border_square_small)
     // const icon = null
 
@@ -94,7 +138,7 @@ class NodeCore extends THREE.Group {
     //   material
     // )
 
-    this.add(await this._getRoundBorder(type))
+    this.add(await getBorderFunc(border)(type))
   }
 }
 

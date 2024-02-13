@@ -27,6 +27,72 @@ function getSubTitleFromType(type: NodeType) {
   }
 }
 
+function getResourceMoveByBorderType(border: NodeProps['border']) {
+  let moveByX = 0
+  let moveByY = 0
+
+  switch (border) {
+    case "round":
+      moveByX = 3
+      moveByY = -1
+      break;
+
+    case "square":
+      moveByX = 2.2
+      moveByY = -1.2
+      break;
+
+    case "hexagon":
+      break;
+
+    default:
+      break;
+  }
+
+  return {
+    moveByX,
+    moveByY
+  }
+}
+
+function getTitleMoveByBorderType(border: NodeProps['border']) {
+  let moveByX = 0
+  let moveByY = 0
+
+  switch (border) {
+    case "round":
+      moveByX = 5.5
+      moveByY = 0.8
+      break;
+    case "square":
+      moveByX = 4.7
+      moveByY = 0.6
+      break;
+
+    default:
+      break;
+  }
+
+  return {
+    moveByX,
+    moveByY
+  }
+}
+
+function changeModelByMoveXY(
+  model: THREE.Group,
+  {
+    moveByX,
+    moveByY
+  }: {
+    moveByX: number,
+    moveByY: number
+  }
+) {
+  model.position.x += moveByX
+  model.position.y += moveByY
+}
+
 class Node extends THREE.Group {
   x: number
   y: number
@@ -41,9 +107,7 @@ class Node extends THREE.Group {
 
   private _init(options: NodeProps) {
     this.position.setZ(2)
-    const core = new NodeCore({
-      type: options.type
-    })
+    const core = new NodeCore(options)
 
     const { subTitle, subTitleColor } = getSubTitleFromType(options.type)
 
@@ -53,12 +117,13 @@ class Node extends THREE.Group {
       subTitle, subTitleColor
     })
 
+    changeModelByMoveXY(title, getTitleMoveByBorderType(options.border))
+
     const resources = new NodeResource({
       resources: options.resources
     })
 
-    resources.position.x += 3
-    resources.position.y -= 1
+    changeModelByMoveXY(resources, getResourceMoveByBorderType(options.border))
 
     this.add(
       core,

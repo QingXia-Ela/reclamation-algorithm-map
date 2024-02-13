@@ -96,9 +96,7 @@ class NodeResource extends THREE.Group {
   }
 
   private _getIconBackgroundMesh() {
-    // group 包裹，使得其可以控制位置
-    const groupWrapper = new THREE.Group()
-    return groupWrapper.add(createBackgroundMesh())
+    return createBackgroundMesh()
   }
 
   private async _getResourceTexture(type: NodeResourceType) {

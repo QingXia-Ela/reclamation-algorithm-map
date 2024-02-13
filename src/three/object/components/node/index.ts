@@ -96,6 +96,7 @@ class Node extends THREE.Group {
   x: number
   y: number
   z = 1
+  selected = false
   components: Record<string, THREE.Group> = {}
   options: NodeProps
   constructor(options: NodeProps) {
@@ -131,6 +132,35 @@ class Node extends THREE.Group {
       this.components.title.visible = false
       this.components.resources.visible = false
     }
+  }
+
+  /**
+   * 播放点击动画
+   */
+  playClickAnimation() {
+
+  }
+
+  /**
+   * 设置当前节点是否选中
+   * 
+   * @param selected 是否选中
+   * @param color 高亮颜色
+   */
+  setPointSelected(selected: boolean, color = 0xe53d12) {
+    this.selected = selected
+    const finalColor = selected && color ? color : 0xefefef;
+    (this.components.core as NodeCore).changeBorderStyle(finalColor, selected ? 1 : 0.5);
+  }
+
+  /**
+   * 设置当前节点类型背景颜色
+   * 
+   * @param color 类型图标背景颜色
+   * @param iconColor 图标颜色
+   * @deprecated - 没完成，你用你嘛呢
+   */
+  setPointBackgroundColor(color = 0xefefef, iconColor = 0x000000) {
   }
 
   /**

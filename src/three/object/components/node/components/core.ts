@@ -47,7 +47,6 @@ async function getRoundBorder(type: NodeType, size: NodeProps['size']) {
 
   const OuterRound = new THREE.TorusGeometry(2, 0.14, 2, 100)
 
-
   const icon = getNodeIconMesh(await getNodeTextureMapByType(type))
 
   icon.scale.set(0.9, 0.9, 1)
@@ -57,10 +56,6 @@ async function getRoundBorder(type: NodeType, size: NodeProps['size']) {
     new THREE.Mesh(
       new THREE.CircleGeometry(1.6, 32),
       WhiteMaterial
-    ),
-    new THREE.Mesh(
-      new THREE.CircleGeometry(1.75, 32),
-      WhiteMaterialHalfAlpha
     ),
     new THREE.Mesh(
       OuterRound,
@@ -160,10 +155,29 @@ interface NodeCoreProps {
 }
 
 class NodeCore extends THREE.Group {
+  icon: THREE.Group | null
   constructor(options: NodeCoreProps) {
     super()
+    this.icon = null
 
     this._init(options)
+  }
+
+  /**
+   * 修改边框样式
+   * 
+   * @param color 要修改的颜色
+   * @param opacity 要修改的透明度
+   */
+  changeBorderStyle(color = 0xefefef, opacity = 0.5) {
+    // todo!: 优化补丁代码
+    if (this.icon) {
+      // @ts-ignore: 直接修改材质颜色
+      // 所有外边框材质均位于第 3 个位置
+      const material = this.icon.children[2].material as THREE.MeshBasicMaterial
+      material.color.set(color)
+      material.opacity = opacity
+    }
   }
 
   private async _init({
@@ -171,17 +185,11 @@ class NodeCore extends THREE.Group {
     border,
     size
   }: NodeCoreProps) {
-    // const border = await this.textureLoader.loadAsync(border_square_small)
-    // const icon = null
+    const icon = await getBorderFunc(border)(type, size)
 
-    // const material = new THREE.MeshBasicMaterial({ map: border })
+    this.icon = icon
 
-    // const PlaneBottom = new THREE.Mesh(
-    //   new THREE.PlaneGeometry(1, 1),
-    //   material
-    // )
-
-    this.add(await getBorderFunc(border)(type, size))
+    this.add(icon)
   }
 }
 

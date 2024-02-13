@@ -3,9 +3,15 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import Node from './object/components/node';
 import Background from './object/background';
 import findNode from './utils/findNode';
+import throttle from 'lodash/throttle'
+
+type CoreEvent = "nodeclick"
 
 class MapCore {
   threeObject: Record<string, any> = {}
+  eventMap: Record<CoreEvent, Set<(node: Node) => void>> = {
+    nodeclick: new Set(),
+  }
   private TestNode = new Node({
     x: 10,
     y: 10,
@@ -22,13 +28,39 @@ class MapCore {
     this._init()
   }
 
+  addEventListener(type: CoreEvent, callback: (node: Node) => void): MapCore {
+    this.eventMap[type].add(callback)
+    return this
+  }
+
+  removeEventListener(type: CoreEvent): MapCore;
+  removeEventListener(type: CoreEvent, callback: (node: Node) => void): MapCore;
+  removeEventListener(type: CoreEvent, callback?: (node: Node) => void) {
+    if (callback) this.eventMap[type].delete(callback)
+    else this.eventMap[type].clear()
+    return this
+  }
+
   private _addClickEvent() {
     const { camera } = this.threeObject
     const model = this.TestNode
 
     var raycaster = new THREE.Raycaster();
 
+    let startX = 0
+    let startY = 0
+
     function onDocumentMouseDown(event: MouseEvent) {
+      startX = event.clientX
+      startY = event.clientY
+    }
+
+    function onDocumentMouseUp(event: MouseEvent) {
+      // 判断是否是真实点击，而不是点击后移动了鼠标
+      if (Math.abs(startX - event.clientX) > 10 || Math.abs(startY - event.clientY) > 10) {
+        return
+      }
+
       event.preventDefault();
 
       var mouseVector = new THREE.Vector2((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
@@ -40,13 +72,15 @@ class MapCore {
         const node = findNode(intersects)
 
         if (node) {
+          node.setPointSelected(!node.selected)
         }
       } else {
 
       }
     }
 
-    document.addEventListener('click', onDocumentMouseDown, false);
+    document.addEventListener('mousedown', onDocumentMouseDown, false);
+    document.addEventListener('mouseup', onDocumentMouseUp, false);
   }
 
   private _init() {

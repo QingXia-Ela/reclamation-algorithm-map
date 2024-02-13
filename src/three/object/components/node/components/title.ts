@@ -16,6 +16,16 @@ const textureLoader = new THREE.TextureLoader()
 
 // todo!: add rest
 function getWeatherIconColorByWeatherType(weather: NodeWeather) {
+  switch (weather) {
+    case "thunder_storm":
+    case "thunder":
+    case "acid_rain":
+      return 0x2a7980
+
+    case "sandstorm":
+    case "big_sandstorm":
+      return 0x7c7656
+  }
   return 0xffffff
 }
 
@@ -57,7 +67,7 @@ class NodeTitle extends THREE.Group {
       new THREE.MeshBasicMaterial({
         map: texture,
         transparent: true,
-        opacity: 0.5,
+        opacity: 0.7,
         color,
       })
     )

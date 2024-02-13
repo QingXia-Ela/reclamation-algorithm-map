@@ -49,14 +49,14 @@ class Node extends THREE.Group {
 
     const title = new NodeTitle({
       title: options.name,
+      weather: options.weather,
       subTitle, subTitleColor
     })
 
     const resources = new NodeResource({
-      resources: [
-        "water"
-      ]
+      resources: options.resources
     })
+
     resources.position.x += 3
     resources.position.y -= 1
 

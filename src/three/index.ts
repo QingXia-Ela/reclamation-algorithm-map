@@ -23,11 +23,11 @@ class MapCore {
     const TestNode = new Node({
       x: 10,
       y: 10,
-      type: "encounter",
-      name: "丰饶灌木林",
-      weather: "normal",
+      type: "hunt",
+      name: "聚羽之地",
+      weather: "thunder",
       resources: [
-        "water"
+        "wood",
       ],
       border: "square",
       size: "small"

@@ -85,8 +85,6 @@ function createBackgroundMesh() {
   return group
 }
 
-// 全局共用几何体背景，节省内存
-const GlobalIconBackgroundMesh = createBackgroundMesh()
 const textureLoader = new THREE.TextureLoader()
 
 class NodeResource extends THREE.Group {
@@ -100,7 +98,7 @@ class NodeResource extends THREE.Group {
   private _getIconBackgroundMesh() {
     // group 包裹，使得其可以控制位置
     const groupWrapper = new THREE.Group()
-    return groupWrapper.add(GlobalIconBackgroundMesh)
+    return groupWrapper.add(createBackgroundMesh())
   }
 
   private async _getResourceTexture(type: NodeResourceType) {
@@ -110,10 +108,12 @@ class NodeResource extends THREE.Group {
     return texture
   }
 
-  private _getResourceIconMesh(texture: THREE.Texture, color = 0xcccccc) {
+  private async _getResourceIconMesh(type: NodeResourceType, pos = 0, color = 0xcccccc) {
+    const texture = await this._getResourceTexture(type)
+
     const group = new THREE.Group()
 
-    const width = 1.4
+    const width = 1.5
     const height = width * texture.image.height / texture.image.width
 
     const icon = new THREE.Mesh(
@@ -121,13 +121,15 @@ class NodeResource extends THREE.Group {
       new THREE.MeshBasicMaterial({
         map: texture,
         transparent: true,
-        color
+        color,
       })
     )
-
+    // todo!: 增加根据类型的位置微调函数
     icon.position.z += 0.001
 
     group.add(icon, this._getIconBackgroundMesh())
+
+    group.position.x += pos * 2.5 * SQRT_3
 
     return group
   }
@@ -135,10 +137,9 @@ class NodeResource extends THREE.Group {
   private async _getResourceIconGroup(resources: NodeResourceProps['resources']) {
     const group = new THREE.Group()
 
-    for (const i of resources) {
-      group.add(this._getResourceIconMesh(
-        await this._getResourceTexture(i),
-        getResourceColorByType(i)
+    for (const [i, index] of resources.map((i, index) => [i, index]) as [NodeResourceType, number][]) {
+      group.add(await this._getResourceIconMesh(
+        i, index, getResourceColorByType(i)
       ))
     }
 

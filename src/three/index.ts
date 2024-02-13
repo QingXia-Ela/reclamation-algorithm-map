@@ -40,8 +40,9 @@ class MapCore {
         const node = findNode(intersects)
 
         if (node) {
-
         }
+      } else {
+
       }
     }
 

@@ -95,6 +95,7 @@ class Node extends THREE.Group {
   x: number
   y: number
   z = 1
+  components: Record<string, THREE.Group> = {}
   constructor(options: NodeProps) {
     super()
     const { x, y } = options
@@ -103,6 +104,30 @@ class Node extends THREE.Group {
 
     this.position.set(x, y, this.z)
     this._init(options)
+  }
+
+  /**
+   * 展示当前节点标题/资源信息
+   * 
+   * @param animate 是否开启动画
+   */
+  showInfo(animate?: boolean) {
+    if (!animate) {
+      this.components.title.visible = true
+      this.components.resources.visible = true
+    }
+  }
+
+  /**
+   * 隐藏当前节点标题/资源信息
+   * 
+   * @param animate 是否开启动画
+   */
+  hideInfo(animate?: boolean) {
+    if (!animate) {
+      this.components.title.visible = false
+      this.components.resources.visible = false
+    }
   }
 
   private _init(options: NodeProps) {
@@ -123,6 +148,12 @@ class Node extends THREE.Group {
     })
 
     changeModelByMoveXY(resources, getTitleMoveBySize(options.size))
+
+    this.components = {
+      core,
+      title,
+      resources
+    }
 
     this.add(
       core,

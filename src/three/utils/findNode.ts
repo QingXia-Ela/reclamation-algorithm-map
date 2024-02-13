@@ -10,7 +10,7 @@ export default function findNode(intersects: THREE.Intersection<THREE.Object3D<T
     }
 
     if (cur) {
-      return cur
+      return cur as Node
     }
   }
 

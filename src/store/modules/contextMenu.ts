@@ -46,6 +46,8 @@ new Promise<void>((resolve) => resolve()).then(() => {
   const store = useContextMenu()
 
   core.addEventListener('contextmenu', (event, intersects) => {
+    event.preventDefault()
+
     if (intersects.length) {
       const { point } = intersects[0]
 

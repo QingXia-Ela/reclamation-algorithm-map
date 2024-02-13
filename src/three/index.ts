@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import Node from './object/components/node';
 import Background from './object/background';
+import Line from './object/components/line';
 
 class MapCore {
   threeObject: Record<string, any> = {}
@@ -30,9 +31,18 @@ class MapCore {
         "wood",
       ],
       border: "square",
-      size: "large"
+      size: "small"
     })
     scene.add(TestNode)
+
+    const TestLine = new Line({
+      x1: 10,
+      y1: 10,
+      x2: 20,
+      y2: 20
+    })
+
+    scene.add(TestLine)
 
     // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     // const cube = new THREE.Mesh(geometry, material);

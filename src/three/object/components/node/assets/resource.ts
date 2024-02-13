@@ -76,5 +76,4 @@ const RESOURCE_ASSETS: Record<NodeResource, string> = {
 // log type
 // console.log(Object.keys(RESOURCE_ASSETS).map((k) => `"${k}"`).join(" | \n"));
 
-// todo!: add rest
 export default RESOURCE_ASSETS

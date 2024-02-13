@@ -100,6 +100,9 @@ class Node extends THREE.Group {
     this.x = x
     this.y = y
 
+    this.position.setX(x)
+    this.position.setY(y)
+
     this._init(options)
   }
 

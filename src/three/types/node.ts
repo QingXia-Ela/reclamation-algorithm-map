@@ -1,4 +1,3 @@
-// todo!: add rest type
 export type NodeType = "hunt" |
   "cave" |
   "encounter" |
@@ -15,7 +14,6 @@ export type NodeType = "hunt" |
   "upgrade_scout"
 
 
-// todo!: add rest type
 export type NodeWeather = "normal" |
   "thunder" |
   "thunder_storm" |

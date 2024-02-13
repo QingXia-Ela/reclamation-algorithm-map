@@ -8,7 +8,7 @@ interface NodeResourceProps {
 
 const SQRT_3 = Math.sqrt(3)
 
-// todo!: add rest?
+// todo!: add rest
 function getResourceColorByType(type: NodeResourceType) {
   switch (type) {
     case "water":
@@ -122,7 +122,7 @@ class NodeResource extends THREE.Group {
         color,
       })
     )
-    // todo!: 增加根据类型的位置微调函数
+    // todo!: 增加根据类型的位置微调函数，部分资源材质在展示时位置不精准，需要函数处理
     icon.position.z += 0.001
 
     group.add(icon, this._getIconBackgroundMesh())

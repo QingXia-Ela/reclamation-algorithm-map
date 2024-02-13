@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import NodeCore from "./components/core"
 import NodeTitle from "./components/title"
 import NodeResource from "./components/resources"
+import merge from 'lodash/merge'
 
 function getSubTitleFromType(type: NodeType) {
   const defaultColor = 0xaaaaaa
@@ -27,7 +28,7 @@ function getSubTitleFromType(type: NodeType) {
   }
 }
 
-function getResouceMoveBySize(size: NodeProps['size']) {
+function getTitleMoveBySize(size: NodeProps['size']) {
   let moveByX = 0
   let moveByY = 0
 
@@ -52,7 +53,7 @@ function getResouceMoveBySize(size: NodeProps['size']) {
   }
 }
 
-function getTitleMoveBySize(size: NodeProps['size']) {
+function getResouceMoveBySize(size: NodeProps['size']) {
   let moveByX = 0
   let moveByY = 0
 
@@ -96,11 +97,13 @@ class Node extends THREE.Group {
   y: number
   z = 1
   components: Record<string, THREE.Group> = {}
+  options: NodeProps
   constructor(options: NodeProps) {
     super()
     const { x, y } = options
     this.x = x
     this.y = y
+    this.options = options
 
     this.position.set(x, y, this.z)
     this._init(options)
@@ -130,24 +133,55 @@ class Node extends THREE.Group {
     }
   }
 
+  /**
+   * 更新节点信息
+   * 
+   * @param newOptions 新的节点配置
+   */
+  updateNode(newOptions: Partial<NodeProps>) {
+    merge(this.options, newOptions)
+
+    Object.values(this.components).forEach(component =>
+      this.remove(component)
+    )
+
+    this._init(this.options)
+  }
+
+  private _getCore(options: NodeProps) {
+    return new NodeCore(options)
+  }
+
+  private _getNodeTitle({ name: title, weather, type, size }: NodeProps) {
+    const { subTitle, subTitleColor } = getSubTitleFromType(type)
+    const titleObj = new NodeTitle({
+      title,
+      weather,
+      subTitle,
+      subTitleColor
+    })
+
+    changeModelByMoveXY(titleObj, getTitleMoveBySize(size))
+
+    return titleObj
+  }
+
+  private _getResources({ resources, size }: NodeProps) {
+    const resourceObj = new NodeResource({
+      resources
+    })
+
+    changeModelByMoveXY(resourceObj, getResouceMoveBySize(size))
+
+    return resourceObj
+  }
+
   private _init(options: NodeProps) {
-    const core = new NodeCore(options)
+    const core = this._getCore(options)
 
-    const { subTitle, subTitleColor } = getSubTitleFromType(options.type)
+    const title = this._getNodeTitle(options)
 
-    const title = new NodeTitle({
-      title: options.name,
-      weather: options.weather,
-      subTitle, subTitleColor
-    })
-
-    changeModelByMoveXY(title, getResouceMoveBySize(options.size))
-
-    const resources = new NodeResource({
-      resources: options.resources
-    })
-
-    changeModelByMoveXY(resources, getTitleMoveBySize(options.size))
+    const resources = this._getResources(options)
 
     this.components = {
       core,

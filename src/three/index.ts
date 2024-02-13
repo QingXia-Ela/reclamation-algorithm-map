@@ -46,7 +46,7 @@ class MapCore {
       }
     }
 
-    document.addEventListener('mousedown', onDocumentMouseDown, false);
+    document.addEventListener('click', onDocumentMouseDown, false);
   }
 
   private _init() {
@@ -58,9 +58,6 @@ class MapCore {
     scene.add(background)
 
     scene.add(this.TestNode)
-
-    // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    // const cube = new THREE.Mesh(geometry, material);
 
     camera.position.set(0, 0, 20);
 

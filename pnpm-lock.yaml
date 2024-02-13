@@ -11,6 +11,9 @@ dependencies:
   element-plus:
     specifier: ^2.5.5
     version: 2.5.5(vue@3.4.18)
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   nanostores:
     specifier: ^0.9.5
     version: 0.9.5
@@ -22,6 +25,9 @@ dependencies:
     version: 3.4.18(typescript@5.3.3)
 
 devDependencies:
+  '@types/lodash':
+    specifier: ^4.14.202
+    version: 4.14.202
   '@types/three':
     specifier: ^0.161.2
     version: 0.161.2
@@ -446,7 +452,6 @@ packages:
 
   /@types/lodash@4.14.202:
     resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==, tarball: https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.202.tgz}
-    dev: false
 
   /@types/stats.js@0.17.3:
     resolution: {integrity: sha512-pXNfAD3KHOdif9EQXZ9deK82HVNaXP5ZIF5RP2QG6OQFNTaY2YIetfrE9t528vEreGQvEPRDDc8muaoYeK0SxQ==, tarball: https://registry.npmmirror.com/@types/stats.js/-/stats.js-0.17.3.tgz}

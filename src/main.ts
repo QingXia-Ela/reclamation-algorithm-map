@@ -1,9 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import MapCore from './three'
-
-const core = new MapCore();
+import core from './three'
 
 if (import.meta.hot) {
   import.meta.hot.accept("./three", (module) => {

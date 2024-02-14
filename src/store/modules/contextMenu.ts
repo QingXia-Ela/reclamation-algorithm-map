@@ -39,6 +39,9 @@ export const useContextMenu = defineStore('contextMenu', {
     },
     hide() {
       this.visible = false
+    },
+    setVisible(visible: boolean) {
+      this.visible = visible
     }
   }
 })

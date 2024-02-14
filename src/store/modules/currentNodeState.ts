@@ -13,7 +13,7 @@ interface NodeStateStore {
 
 export const useCurrentNodeState = defineStore<'currentNodeState', NodeStateStore>('currentNodeState', {
   state: () => ({
-    showSidebar: false,
+    showSidebar: true,
     node: null,
     nodeOptions: null
   }),
@@ -23,6 +23,9 @@ export const useCurrentNodeState = defineStore<'currentNodeState', NodeStateStor
     },
     hide() {
       this.showSidebar = false
+    },
+    setVisible(visible: boolean) {
+      this.showSidebar = visible
     },
     /**
      * 设置当前节点

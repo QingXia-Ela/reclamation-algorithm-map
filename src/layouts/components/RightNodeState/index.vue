@@ -5,3 +5,10 @@
 
   节点类型声明: `src/three/types/node.ts` => `NodeProps`
  -->
+<script setup>
+import RightNodeInfo from '@/components/RightNodeInfo/index.vue'
+</script>
+
+ <template>
+  <RightNodeInfo />
+ </template>

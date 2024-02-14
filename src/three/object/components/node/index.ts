@@ -5,6 +5,7 @@ import NodeTitle from "./components/title"
 import NodeResource from "./components/resources"
 import merge from 'lodash/merge'
 
+// todo!: add rest type
 function getSubTitleFromType(type: NodeType) {
   const defaultColor = 0xaaaaaa
   let subTitle = "null"
@@ -12,6 +13,14 @@ function getSubTitleFromType(type: NodeType) {
   switch (type) {
     case "hunt":
       subTitle = "捕猎区"
+      break;
+
+    case "collect":
+      subTitle = "资源区"
+      break;
+
+    case "battle":
+      subTitle = "冲突区"
       break;
 
     case "encounter":

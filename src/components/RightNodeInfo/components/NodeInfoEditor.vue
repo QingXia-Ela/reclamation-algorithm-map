@@ -17,10 +17,14 @@
 
 <script setup>
 import { useCurrentNodeState } from '@/store/modules/currentNodeState';
-import { ref, watch } from 'vue';
+import { nextTick, onMounted, ref, watch } from 'vue';
 import { ElForm, ElFormItem, ElDrawer, ElButton, ElMessage, ElDialog, ElInput } from 'element-plus'
 import { DEFAULT_NODE_CONFIG } from '@/constants/three'
 import { el } from 'element-plus/es/locale/index.mjs';
+import core from '@/three';
+import getJSONDataFromCore from '@/utils/three/getJSONDataFromCore';
+
+const LOCAL_STORAGE_KEY = 'reclamation-algorithm-map-node-data'
 
 /** @typedef {import('@/three/types/node').NodeProps} NodeProps */
 
@@ -56,6 +60,7 @@ function showSidebar() {
 function hideSidebar() {
   active.value = false
   currentNodeState.hide()
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(getJSONDataFromCore(core)))
 }
 
 const dialogVisible = ref(false)
@@ -86,6 +91,16 @@ function deleteNode() {
 
   dialogVisible.value = false
 }
+
+onMounted(() => {
+  const data = localStorage.getItem(LOCAL_STORAGE_KEY)
+  if (data && !core.loadData(JSON.parse(data))) {
+    ElMessage({
+      message: '已成功加载上次编辑的地图数据',
+      type: 'success',
+    })
+  }
+})
 
 /**
  * 保存当前节点数据

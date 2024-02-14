@@ -19,12 +19,20 @@ function createNode() {
   })
   currentNodeState.show()
 }
+
+function loadData() {
+
+}
+
+function saveData() {
+
+}
 </script>
 
 <template>
-  <el-button type="primary" @click="createNode">在当前位置新建节点</el-button>
-  <el-button type="primary" @click="createNode">从 JSON 加载地图数据</el-button>
-  <el-button type="primary" @click="createNode">保存地图数据为 JSON</el-button>
+  <el-button type="primary" @click="createNode">在鼠标单击位置新建节点</el-button>
+  <el-button type="primary" @click="loadData">从 JSON 加载地图数据</el-button>
+  <el-button type="primary" @click="saveData">保存地图数据为 JSON</el-button>
 </template>
 
 <style lang="scss" scoped></style>

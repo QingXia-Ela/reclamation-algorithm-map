@@ -45,4 +45,6 @@ export interface NodeProps {
   size: "small" | "large"
   /** 节点边框类型 */
   border: "square" | "hexagon" | "round"
+  /** 节点备注 */
+  note?: string
 }

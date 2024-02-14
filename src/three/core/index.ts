@@ -5,6 +5,7 @@ import Background from '../object/background';
 import findNode from '../utils/findNode';
 import { NodeProps } from '../types/node';
 import Line from '../object/components/line';
+import { SaveData } from '../types/data';
 
 type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove'
 
@@ -13,6 +14,7 @@ function getMouseVector(event: MouseEvent) {
   return mouseVector
 }
 
+// todo!: 增加一个随鼠标点击移动的高亮小坐标
 class MapCore {
   threeObject: Record<string, any> = {}
   eventMap = {
@@ -26,10 +28,12 @@ class MapCore {
     x: 10,
     y: 10,
     type: "hunt",
-    name: "聚羽之地",
-    weather: "thunder",
+    name: "测试，删不掉的",
+    weather: "hot",
     resources: [
       "wood",
+      "venison",
+      "water"
     ],
     border: "square",
     size: "small"
@@ -73,6 +77,30 @@ class MapCore {
     this.threeObject.scene.remove(node)
     delete this.nodeMap[uuid]
     return true
+  }
+
+  /**
+   * Removes all nodes from the scene and the node map.
+   * 
+   * **Note**: This method is really dangerous, unless you know what you are doing.
+   */
+  removeAllPoint() {
+    Object.values(this.nodeMap).forEach(node => {
+      this.threeObject.scene.remove(node)
+    })
+    this.nodeMap = {}
+  }
+
+  /**
+   * 从序列化数据加载整张地图
+   * 
+   * @param data 地图数据
+   */
+  loadData(data: SaveData) {
+    this.removeAllPoint()
+    data.nodes.forEach(node => {
+      this.addPoint(node)
+    })
   }
 
   /**

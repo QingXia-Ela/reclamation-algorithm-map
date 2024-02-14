@@ -26,8 +26,8 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
 
       - name: Build
-      - run: pnpm build
-      - run: cd dist
+        run: pnpm build
+        run: cd dist
 
       - name: Deploy to GitHub Pages
         id: deployment

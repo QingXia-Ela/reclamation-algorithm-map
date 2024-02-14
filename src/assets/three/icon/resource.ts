@@ -5,9 +5,9 @@
  */
 
 import { NodeResource } from '@/three/types/node'
-import parseBatchImportToAssets from '../utils/parseBatchImportToAssets'
+import parseBatchImportToAssets from '@/utils/parseBatchImportToAssets'
 
-const obj = import.meta.glob<any>("../../../../../assets/three/components/node/resources_icon/*.png", {
+const obj = import.meta.glob<any>("../components/node/resources_icon/*.png", {
   eager: true
 })
 

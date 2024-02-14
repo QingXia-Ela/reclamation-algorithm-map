@@ -1,7 +1,7 @@
 import { NodeWeather } from "@/three/types/node"
 import * as THREE from 'three'
 import createBoxWithRoundedEdges from "@/three/utils/createBoxWithRoundedEdges"
-import WEATHER_ASSETS from "../assets/weather"
+import WEATHER_ASSETS from "../../../../../assets/three/icon/weather"
 import { TextGeometry } from "three/examples/jsm/Addons.js"
 import { SourceHanSansCN_Regular } from "@/three/fonts"
 

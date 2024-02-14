@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import type { NodeResource as NodeResourceType } from '@/three/types/node'
-import RESOURCE_ASSETS from '../assets/resource'
+import RESOURCE_ASSETS from '../../../../../assets/three/icon/resource'
 
 interface NodeResourceProps {
   resources: NodeResourceType[]

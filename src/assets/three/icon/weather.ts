@@ -5,9 +5,9 @@
  */
 
 import { NodeWeather } from '@/three/types/node'
-import parseBatchImportToAssets from '../utils/parseBatchImportToAssets'
+import parseBatchImportToAssets from '@/utils/parseBatchImportToAssets'
 
-const obj = import.meta.glob<any>("../../../../../assets/three/components/node/weather_icon/*.png", {
+const obj = import.meta.glob<any>("../components/node/weather_icon/*.png", {
   eager: true
 })
 

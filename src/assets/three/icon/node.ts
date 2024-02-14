@@ -3,9 +3,9 @@
  * 
  * 对应文件夹 `src/assets/three/components/node/node_type/*`
  */
-import parseBatchImportToAssets from '../utils/parseBatchImportToAssets'
+import parseBatchImportToAssets from '@/utils/parseBatchImportToAssets'
 
-const obj = import.meta.glob<any>("../../../../../assets/three/components/node/node_type/*.png", {
+const obj = import.meta.glob<any>("../components/node/node_type/*.png", {
   eager: true
 })
 

@@ -19,17 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '18'
-
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Install dependencies
-        run: pnpm install
+          node-version: 18
+      - run: npm i pnpm -g 
+      - run: pnpm install --no-frozen-lockfile
 
       - name: Build
         run: pnpm build

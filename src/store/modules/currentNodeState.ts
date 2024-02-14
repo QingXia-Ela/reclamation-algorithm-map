@@ -11,12 +11,12 @@ interface NodeStateStore {
   nodeOptions: NodeProps | null
 }
 
-export const useCurrentNodeState = defineStore<'currentNodeState', NodeStateStore>('currentNodeState', {
+export const useCurrentNodeState = defineStore('currentNodeState', {
   state: () => ({
     showSidebar: true,
     node: null,
     nodeOptions: null
-  }),
+  }) as NodeStateStore,
   actions: {
     show() {
       this.showSidebar = true
@@ -47,6 +47,8 @@ export const useCurrentNodeState = defineStore<'currentNodeState', NodeStateStor
     },
     /**
      * 更新当前节点
+     * 
+     * 会与默认节点配置与原节点配置进行合并
      * 
      * @param nodeOptions 节点配置
      */

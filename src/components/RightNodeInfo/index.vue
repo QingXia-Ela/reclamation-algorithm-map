@@ -5,30 +5,17 @@
 import Mask from '@/components/Mask.vue'
 import NodeInfoEditor from './components/NodeInfoEditor.vue'
 import { useCurrentNodeState } from '@/store/modules/currentNodeState';
-import { computed, onMounted, ref, watch } from 'vue';
-const currentNodeState = useCurrentNodeState()
-
-const maskRef = ref()
-
-const active = computed(() => currentNodeState.showSidebar)
-// const active = ref(false)
-
-const hide = ref(!currentNodeState.showSidebar)
-
-watch(active, () => {
-  setTimeout(() => {
-    hide.value = !active.value
-  }, 300);
-})
+import { computed, onMounted, ref, watch, nextTick } from 'vue';
+import { ElDrawer } from 'element-plus';
 </script>
 
 <template>
-  <template v-if="!hide || active">
-    <Mask ref="maskRef" @click="currentNodeState.hide()" :active="active" />
+  <NodeInfoEditor />
+  <!-- <template v-if="!hide || active">
+    <Mask ref="maskRef" @click="currentNodeState.hide()" :active="active" :opacity="0" />
     <div class="info_wrapper" :style="{ transform: active ? 'translateX(0)' : 'translateX(100%)' }">
-      <NodeInfoEditor />
     </div>
-  </template>
+  </template> -->
 </template>
 
 <style lang="scss" scoped>
@@ -41,6 +28,7 @@ watch(active, () => {
   min-width: 400px;
   max-width: 700px;
   height: 100%;
+  padding: 20px;
   background: #fff;
   transition: transform 0.3s;
 }

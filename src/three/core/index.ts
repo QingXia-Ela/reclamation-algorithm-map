@@ -46,6 +46,7 @@ class MapCore {
    */
   addPoint(options: NodeProps) {
     const node = new Node(options)
+    this.nodeMap[node.uuid] = node
     this.threeObject.scene.add(node)
     return node
   }

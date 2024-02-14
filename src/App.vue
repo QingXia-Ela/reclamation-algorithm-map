@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import ContextMenu from './components/ContextMenu/index.vue'
-import Layout from './layouts/index.vue'
+import DevLayout from './layouts/DevLayout/index.vue'
 </script>
 
 <template>
-  <ContextMenu />
-  <Layout />
+  <DevLayout />
 </template>
 
 <style scoped></style>

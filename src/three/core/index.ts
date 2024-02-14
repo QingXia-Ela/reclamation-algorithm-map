@@ -6,6 +6,7 @@ import findNode from '../utils/findNode';
 import { NodeProps } from '../types/node';
 import Line from '../object/components/line';
 import { SaveData } from '../types/data';
+import validateMapData from '../utils/validateMapData';
 
 type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove'
 
@@ -95,8 +96,13 @@ class MapCore {
    * 从序列化数据加载整张地图
    * 
    * @param data 地图数据
+   * @returns 错误信息，如果为空表示加载成功
    */
   loadData(data: SaveData) {
+    const res = validateMapData(data)
+    if (res) {
+      return res
+    }
     this.removeAllPoint()
     data.nodes.forEach(node => {
       this.addPoint(node)

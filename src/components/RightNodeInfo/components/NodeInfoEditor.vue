@@ -20,9 +20,10 @@ import { useCurrentNodeState } from '@/store/modules/currentNodeState';
 import { nextTick, onMounted, ref, watch } from 'vue';
 import { ElForm, ElFormItem, ElDrawer, ElButton, ElMessage, ElDialog, ElInput } from 'element-plus'
 import { DEFAULT_NODE_CONFIG } from '@/constants/three'
-import { el } from 'element-plus/es/locale/index.mjs';
 import core from '@/three';
 import getJSONDataFromCore from '@/utils/three/getJSONDataFromCore';
+import SizeSelector from './components/SizeSelector.vue';
+import BorderSelector from './components/BorderSelector.vue';
 
 const LOCAL_STORAGE_KEY = 'reclamation-algorithm-map-node-data'
 
@@ -138,9 +139,17 @@ function saveData(options) {
         <el-form-item label="节点UUID">
           {{ currentNodeState.node?.uuid }}
         </el-form-item>
+        <el-form-item label="节点X坐标">
+          {{ currentNodeState.node?.x }}
+        </el-form-item>
+        <el-form-item label="节点Y坐标">
+          {{ currentNodeState.node?.y }}
+        </el-form-item>
         <el-form-item label="节点名字">
           <el-input v-model="infoData.name" />
         </el-form-item>
+        <size-selector v-model="infoData.size" />
+        <border-selector v-model="infoData.border" />
       </el-form>
     </template>
     <template #footer>

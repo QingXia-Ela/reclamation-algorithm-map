@@ -26,16 +26,9 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
 
       - name: Build
-        run: pnpm build
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
+      - run: pnpm build
       - run: cd dist
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3

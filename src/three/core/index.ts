@@ -206,7 +206,8 @@ class MapCore {
     // 修改按键功能，保持用户操作习惯
     controls.mouseButtons.LEFT = THREE.MOUSE.PAN
     // right button will add context menu, so disable here
-    controls.mouseButtons.RIGHT = THREE.MOUSE.ROTATE
+    // controls.mouseButtons.RIGHT = THREE.MOUSE.ROTATE
+    controls.mouseButtons.RIGHT = undefined
 
     this.threeObject.controls = controls
   }

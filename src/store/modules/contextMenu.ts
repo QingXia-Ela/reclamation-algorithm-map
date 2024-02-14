@@ -4,6 +4,7 @@ import { defineStore } from 'pinia'
 export const useContextMenu = defineStore('contextMenu', {
   state: () => ({
     visible: false,
+    disabled: false,
     domPos: {
       x: 0,
       y: 0
@@ -33,6 +34,7 @@ export const useContextMenu = defineStore('contextMenu', {
       }
     },
     show() {
+      if (this.disabled) return
       this.visible = true
     },
     hide() {

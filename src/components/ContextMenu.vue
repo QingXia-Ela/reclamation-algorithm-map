@@ -1,14 +1,15 @@
 <template>
   <transition v-show="ctxStore.visible">
-    <el-card class="box-card" :style="{ top: domPos.y + 'px', left: domPos.x + 'px' }">
-      <!-- todo!: 增加按钮：在当前位置新建一个节点 -->
+    <!-- todo!: 优化样式，让他变得更像右键菜单 -->
+    <el-card @click="ctxStore.hide()" class="box-card" :style="{ top: domPos.y + 'px', left: domPos.x + 'px' }">
+      <el-button type="primary">在当前位置新建节点</el-button>
     </el-card>
   </transition>
   <div class="mask" @click="ctxStore.hide()" :style="{ display: ctxStore.visible ? 'flex' : 'none' }"></div>
 </template>
 
 <script lang="ts" setup>
-import { ElCard } from 'element-plus'
+import { ElCard, ElButton } from 'element-plus'
 import { useContextMenu } from '@/store/modules/contextMenu'
 import { computed } from 'vue';
 

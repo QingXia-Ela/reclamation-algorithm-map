@@ -104,7 +104,7 @@ function changeModelByMoveXY(
 class Node extends THREE.Group {
   x: number
   y: number
-  z = 1
+  z = 0.3
   selected = false
   components: Record<string, THREE.Group> = {}
   options: NodeProps

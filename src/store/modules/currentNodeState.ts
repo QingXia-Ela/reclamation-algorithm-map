@@ -33,7 +33,9 @@ export const useCurrentNodeState = defineStore('currentNodeState', {
      * @param node 当前选中的节点
      */
     setNode(node: Node) {
+      if (!node) return
       this.node = node
+      this.nodeOptions = node.options
     },
     /**
      * 新增一个节点
@@ -61,10 +63,38 @@ export const useCurrentNodeState = defineStore('currentNodeState', {
     deleteNode(uuid: string) {
       core.removePoint(uuid)
     },
+    /**
+     * 从地图删除当前 store 内的节点
+     * 
+     * 该操作会同时置空 store 内的数据
+     * 
+     * **注意**: 该操作不会隐藏侧边栏，需要手动关闭
+     * 
+     * @returns 删除成功标志
+     */
     deleteCurrentNode() {
       if (!this.node) return
-      core.removePoint(this.node.uuid)
-      this.node = null
+      const res = core.removePoint(this.node.uuid)
+      if (res) {
+        this.node = null
+        this.nodeOptions = null
+      }
+      return res
     }
   }
 })
+
+/**
+ * 未来更新功能如下：
+ * 
+ * 点击某个节点时首先展示简略信息，简略信息框包括编辑、移动和删除按钮
+ */
+setTimeout(() => {
+  const store = useCurrentNodeState()
+  // 当某个节点被点击时弹出编辑菜单
+  // 注意：这只是临时方法，并不会长期使用
+  core.addEventListener('nodeclick', (node: Node) => {
+    store.setNode(node)
+    store.show()
+  })
+});

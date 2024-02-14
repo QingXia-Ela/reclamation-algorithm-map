@@ -47,7 +47,7 @@ export const useContextMenu = defineStore('contextMenu', {
 })
 
 // 延迟执行，控制 pinia 在 app 创建后才执行
-new Promise<void>((resolve) => resolve()).then(() => {
+setTimeout(() => {
   const store = useContextMenu()
 
   core.addEventListener('contextmenu', (event, intersects) => {
@@ -61,4 +61,4 @@ new Promise<void>((resolve) => resolve()).then(() => {
       store.show()
     }
   })
-})
+});

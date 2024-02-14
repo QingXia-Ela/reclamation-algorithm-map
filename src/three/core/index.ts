@@ -112,7 +112,8 @@ class MapCore {
    */
   private _addClickEvent() {
     const { camera } = this.threeObject
-    const model = this.TestNode
+    // 每次获取时进行更新
+    const model = () => Object.values(this.nodeMap)
 
     var raycaster = new THREE.Raycaster();
 
@@ -135,7 +136,7 @@ class MapCore {
       var mouseVector = getMouseVector(event);
       raycaster.setFromCamera(mouseVector, camera);
 
-      var intersects = raycaster.intersectObjects([model], true); // model 表示要监听点击事件的模型
+      var intersects = raycaster.intersectObjects([this.TestNode, ...model()], true); // model 表示要监听点击事件的模型
 
       if (intersects.length > 0) {
         const node = findNode(intersects)

@@ -16,60 +16,79 @@
  -->
 
 <script setup>
-import { useCurrentNodeState } from '@/store/modules/currentNodeState';
-import { nextTick, onMounted, ref, watch } from 'vue';
-import { ElForm, ElFormItem, ElDrawer, ElButton, ElMessage, ElDialog, ElInput } from 'element-plus'
-import { DEFAULT_NODE_CONFIG } from '@/constants/three'
-import core from '@/three';
-import getJSONDataFromCore from '@/utils/three/getJSONDataFromCore';
-import SizeSelector from './components/SizeSelector.vue';
-import BorderSelector from './components/BorderSelector.vue';
+import { useCurrentNodeState } from "@/store/modules/currentNodeState";
+import { nextTick, onMounted, ref, watch } from "vue";
+import {
+  ElForm,
+  ElFormItem,
+  ElDrawer,
+  ElButton,
+  ElMessage,
+  ElDialog,
+  ElInput,
+} from "element-plus";
+import { DEFAULT_NODE_CONFIG } from "@/constants/three";
+import core from "@/three";
+import getJSONDataFromCore from "@/utils/three/getJSONDataFromCore";
+import SizeSelector from "./components/SizeSelector.vue";
+import BorderSelector from "./components/BorderSelector.vue";
+import ResourcesSelector from "./components/ResourcesSelector.vue";
+import TypeSelector from "./components/TypeSelector.vue";
+import WeatherSelector from "./components/WeatherSelector.vue";
 
-const LOCAL_STORAGE_KEY = 'reclamation-algorithm-map-node-data'
+const LOCAL_STORAGE_KEY = "reclamation-algorithm-map-node-data";
 
 /** @typedef {import('@/three/types/node').NodeProps} NodeProps */
 
-const currentNodeState = useCurrentNodeState()
+const currentNodeState = useCurrentNodeState();
 
-const active = ref(currentNodeState.showSidebar)
+const active = ref(currentNodeState.showSidebar);
 
 /**
  * @type {import('vue').Ref<NodeProps>}
  */
 const infoData = ref({
   // todo!: optimize this
-  ...DEFAULT_NODE_CONFIG
-})
+  ...DEFAULT_NODE_CONFIG,
+});
 
 //  观察当前节点的数据，并同步到表单
-watch(() => currentNodeState.node?.options, (val) => {
-  if (val) {
-    infoData.value = val
+watch(
+  () => currentNodeState.node?.options,
+  (val) => {
+    if (val) {
+      infoData.value = val;
+    }
   }
-})
+);
 
-watch(() => currentNodeState.showSidebar, (val) => {
-  active.value = val
-})
-
+watch(
+  () => currentNodeState.showSidebar,
+  (val) => {
+    active.value = val;
+  }
+);
 
 function showSidebar() {
-  active.value = true
-  currentNodeState.show()
+  active.value = true;
+  currentNodeState.show();
 }
 
 function hideSidebar() {
-  active.value = false
-  currentNodeState.hide()
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(getJSONDataFromCore(core)))
+  active.value = false;
+  currentNodeState.hide();
+  localStorage.setItem(
+    LOCAL_STORAGE_KEY,
+    JSON.stringify(getJSONDataFromCore(core))
+  );
 }
 
-const dialogVisible = ref(false)
+const dialogVisible = ref(false);
 /**
  * 显示删除确认
  */
 function showDeleteDialog() {
-  dialogVisible.value = true
+  dialogVisible.value = true;
 }
 
 /**
@@ -78,43 +97,42 @@ function showDeleteDialog() {
 function deleteNode() {
   if (currentNodeState.deleteCurrentNode()) {
     ElMessage({
-      message: '删除成功',
-      type: 'success',
-    })
-    hideSidebar()
-  }
-  else {
+      message: "删除成功",
+      type: "success",
+    });
+    hideSidebar();
+  } else {
     ElMessage({
-      message: '删除失败',
-      type: 'error',
-    })
+      message: "删除失败",
+      type: "error",
+    });
   }
 
-  dialogVisible.value = false
+  dialogVisible.value = false;
 }
 
 onMounted(() => {
-  const data = localStorage.getItem(LOCAL_STORAGE_KEY)
+  const data = localStorage.getItem(LOCAL_STORAGE_KEY);
   if (data && !core.loadData(JSON.parse(data))) {
     ElMessage({
-      message: '已成功加载上次编辑的地图数据',
-      type: 'success',
-    })
+      message: "已成功加载上次编辑的地图数据",
+      type: "success",
+    });
   }
-})
+});
 
 /**
  * 保存当前节点数据
- * 
+ *
  * @param {NodeProps} options 新节点配置
  */
 function saveData(options) {
   ElMessage({
-    message: '保存成功',
-    type: 'success',
-  })
-  currentNodeState.updateCurrentNode(options)
-  hideSidebar()
+    message: "保存成功",
+    type: "success",
+  });
+  currentNodeState.updateCurrentNode(options);
+  hideSidebar();
 }
 </script>
 
@@ -124,9 +142,7 @@ function saveData(options) {
     <template #footer>
       <div class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
-        <el-button type="danger" @click="deleteNode">
-          确认
-        </el-button>
+        <el-button type="danger" @click="deleteNode"> 确认 </el-button>
       </div>
     </template>
   </el-dialog>
@@ -150,6 +166,9 @@ function saveData(options) {
         </el-form-item>
         <size-selector v-model="infoData.size" />
         <border-selector v-model="infoData.border" />
+        <type-selector v-model="infoData.type" />
+        <weather-selector v-model="infoData.weather" />
+        <resources-selector v-model="infoData.resources" />
       </el-form>
     </template>
     <template #footer>

@@ -70,7 +70,13 @@ const data: Record<ResourcesKeys, string> = parseBatchImportToAssets(obj)
 const RESOURCE_ASSETS: Record<NodeResource, string> = {
   wood: data.SANDBOX_1_WOOD,
   water: data.SANDBOX_1_WATER,
+  stone: data.SANDBOX_1_STONE,
+  iron: data.SANDBOX_1_IRON,
+  diamond: data.SANDBOX_1_DIAMOND,
   venison: data.SANDBOX_1_VENISON,
+  poultry: data.SANDBOX_1_POULTRY,
+  crab: data.SANDBOX_1_CRAB,
+  beef: data.SANDBOX_1_BEEF
 }
 
 // log type

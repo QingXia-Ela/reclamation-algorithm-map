@@ -26,7 +26,7 @@ export type NodeWeather = "normal" |
   "drought"
 
 // todo!: add rest type
-export type NodeResource = "water" | "wood" | "venison"
+export type NodeResource = "water" | "wood" | "stone" | "iron" | "diamond" | "venison" | "poultry" | "crab" | "beef"
 
 export interface NodeProps {
   /** x 坐标 */

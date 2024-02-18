@@ -10,15 +10,39 @@ const value = defineModel();
 const ResourcesData = [
   {
     value: "water",
-    label: "水",
+    label: "清水",
   },
   {
     value: "wood",
     label: "木材",
   },
   {
+    value: "stone",
+    label: "石材",
+  },
+  {
+    value: "iron",
+    label: "铁矿石",
+  },
+  {
+    value: "diamond",
+    label: "澄亮石",
+  },
+  {
     value: "vension",
-    label: "鹿肉",
+    label: "圆圆肉片",
+  },
+  {
+    value: "poultry",
+    label: "羽兽翅肉",
+  },
+  {
+    value: "crab",
+    label: "蟹钳"
+  },
+  {
+    value: "beef",
+    label: "带腿骨肉"
   },
 ];
 </script>

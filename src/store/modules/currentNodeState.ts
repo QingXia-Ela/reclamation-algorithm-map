@@ -34,6 +34,7 @@ export const useCurrentNodeState = defineStore('currentNodeState', {
      */
     setNode(node: Node) {
       if (!node) return
+      if (this.showSidebar) return
       this.node = node
       this.nodeOptions = node.options
     },

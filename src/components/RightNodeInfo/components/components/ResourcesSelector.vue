@@ -29,7 +29,7 @@ const ResourcesData = [
     label: "澄亮石",
   },
   {
-    value: "vension",
+    value: "venison",
     label: "圆圆肉片",
   },
   {

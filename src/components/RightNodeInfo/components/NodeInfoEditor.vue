@@ -152,8 +152,11 @@ function saveData(options) {
     </template>
     <template #default>
       <el-form :model="infoData" @before-close="saveData(infoData)">
-        <el-form-item label="节点UUID">
+        <el-form-item label="节点模型UUID">
           {{ currentNodeState.node?.uuid }}
+        </el-form-item>
+        <el-form-item label="节点ID">
+          {{ currentNodeState.node?.nodeId }}
         </el-form-item>
         <el-form-item label="节点X坐标">
           {{ currentNodeState.node?.x }}

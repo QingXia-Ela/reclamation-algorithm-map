@@ -29,6 +29,10 @@ export type NodeWeather = "normal" |
 export type NodeResource = "water" | "wood" | "stone" | "iron" | "diamond" | "venison" | "poultry" | "crab" | "beef"
 
 export interface NodeProps {
+  /**
+   * 节点 id，用于建图
+   */
+  nodeId: number
   /** x 坐标 */
   x: number
   /** y 坐标 */

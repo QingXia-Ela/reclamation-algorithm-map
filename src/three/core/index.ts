@@ -15,6 +15,7 @@ function getMouseVector(event: MouseEvent) {
   return mouseVector
 }
 
+
 // todo!: 增加一个随鼠标点击移动的高亮小坐标
 class MapCore {
   threeObject: Record<string, any> = {}
@@ -24,8 +25,9 @@ class MapCore {
     contextmenu: new Set<(event: MouseEvent, intersects: THREE.Intersection<THREE.Object3D<THREE.Object3DEventMap>>[]) => void>(),
     mousemove: new Set(),
   }
-  nodeMap: Record<string, Node> = {}
+  nodeMap: Record<number, Node> = {}
   private TestNode = new Node({
+    nodeId: -1,
     x: 10,
     y: 10,
     type: "hunt",
@@ -51,7 +53,7 @@ class MapCore {
    */
   addPoint(options: NodeProps) {
     const node = new Node(options)
-    this.nodeMap[node.uuid] = node
+    this.nodeMap[node.nodeId] = node
     this.threeObject.scene.add(node)
     return node
   }
@@ -63,7 +65,21 @@ class MapCore {
    * @return The point corresponding to the UUID.
    */
   getPointByUUID(uuid: string): Node | null {
-    return this.nodeMap[uuid] || null
+    let res = null
+    Object.values(this.nodeMap).forEach(node => {
+      if (node.uuid === uuid) res = node
+    })
+    return res
+  }
+
+  /**
+   * Retrieves a point using its node ID.
+   *
+   * @param {number} nodeId - The ID of the point to retrieve.
+   * @return The point corresponding to the node ID.
+   */
+  getPointByNodeId(nodeId: number) {
+    return this.nodeMap[nodeId] || null
   }
 
   /**
@@ -73,11 +89,25 @@ class MapCore {
  * @return Returns true if the node was successfully removed, false if the node does not exist.
  */
   removePoint(uuid: string) {
-    const node = this.nodeMap[uuid]
-    if (!node) return false
+    let node: Node | null = null
+    Object.values(this.nodeMap).forEach(_node => {
+      if (_node.uuid === uuid) node = _node
+    })
+    if (node === null) return false
+    // don't know why ts said node is never type
     this.threeObject.scene.remove(node)
-    delete this.nodeMap[uuid]
+    delete this.nodeMap[(node as Node).nodeId]
     return true
+  }
+
+  /**
+   * Removes a node with the given node ID from the scene and the node map.
+   *
+   * @param {number} nodeId - The ID of the node to be removed.
+   * @return Returns true if the node was successfully removed, false if the node does not exist.
+   */
+  removePointByNodeId(nodeId: number) {
+    this.removePoint(this.nodeMap[nodeId].uuid)
   }
 
   /**
@@ -145,6 +175,7 @@ class MapCore {
   /**
    * Run on init.
    */
+  // todo!: 改造为纯函数并从类独立出去
   private _addClickEvent() {
     const { camera } = this.threeObject
     // 每次获取时进行更新
@@ -171,7 +202,7 @@ class MapCore {
       var mouseVector = getMouseVector(event);
       raycaster.setFromCamera(mouseVector, camera);
 
-      var intersects = raycaster.intersectObjects([this.TestNode, ...model()], true); // model 表示要监听点击事件的模型
+      var intersects = raycaster.intersectObjects(model(), true); // model 表示要监听点击事件的模型
 
       if (intersects.length > 0) {
         const node = findNode(intersects)

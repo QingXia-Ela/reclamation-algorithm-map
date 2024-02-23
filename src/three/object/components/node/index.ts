@@ -142,6 +142,7 @@ function changeModelByMoveXY(
 }
 
 class Node extends THREE.Group {
+  nodeId: number;
   x: number;
   y: number;
   z = 0.3;
@@ -150,9 +151,10 @@ class Node extends THREE.Group {
   options: NodeProps;
   constructor(options: NodeProps) {
     super();
-    const { x, y } = options;
+    const { x, y, nodeId } = options;
     this.x = x;
     this.y = y;
+    this.nodeId = nodeId;
     this.options = options;
 
     this.position.set(x, y, this.z);
@@ -186,7 +188,7 @@ class Node extends THREE.Group {
   /**
    * 播放点击动画
    */
-  playClickAnimation() {}
+  playClickAnimation() { }
 
   /**
    * 设置当前节点是否选中
@@ -210,7 +212,7 @@ class Node extends THREE.Group {
    * @param iconColor 图标颜色
    * @deprecated - 没完成，你用你嘛呢
    */
-  setPointBackgroundColor(color = 0xefefef, iconColor = 0x000000) {}
+  setPointBackgroundColor(color = 0xefefef, iconColor = 0x000000) { }
 
   /**
    * 更新节点信息

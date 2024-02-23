@@ -1,5 +1,5 @@
 import { z } from 'zod'
-// import { SaveData } from '../types/data'
+// import { SaveMapData } from '../types/data'
 
 export default function validateMapData(data: any) {
   const schema = z.object({

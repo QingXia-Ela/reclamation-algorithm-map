@@ -1,5 +1,5 @@
 import MapCore from "@/three/core";
-import { SaveData } from "@/three/types/data";
+import { SaveMapData } from "@/three/types/data";
 
 /**
  * 获取地图数据
@@ -8,7 +8,7 @@ import { SaveData } from "@/three/types/data";
  * 
  * @param core 地图核心
  */
-export default function getJSONDataFromCore(core: MapCore): SaveData {
+export default function getJSONDataFromCore(core: MapCore): SaveMapData {
   const nodes = Object.values(core.nodeMap).map(node => node.options)
   return {
     nodes

@@ -1,0 +1,1 @@
+export const SAVE_MAP = `vite-plugin-save-map_save-map`

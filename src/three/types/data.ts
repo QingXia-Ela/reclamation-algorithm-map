@@ -3,8 +3,8 @@ import { NodeProps } from "./node";
 /**
  * 地图数据
  * 
- * @interface SaveData
+ * @interface SaveMapData
  */
-export interface SaveData {
+export interface SaveMapData {
   nodes: NodeProps[]
 }

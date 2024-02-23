@@ -5,7 +5,7 @@ import Background from '../object/background';
 import findNode from '../utils/findNode';
 import { NodeProps } from '../types/node';
 import Line from '../object/components/line';
-import { SaveData } from '../types/data';
+import { SaveMapData } from '../types/data';
 import validateMapData from '../utils/validateMapData';
 
 type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove'
@@ -98,7 +98,7 @@ class MapCore {
    * @param data 地图数据
    * @returns 错误信息，如果为空表示加载成功
    */
-  loadData(data: SaveData) {
+  loadData(data: SaveMapData) {
     const res = validateMapData(data)
     if (res) {
       return res

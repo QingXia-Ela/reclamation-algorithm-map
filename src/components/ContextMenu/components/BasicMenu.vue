@@ -15,6 +15,7 @@ import { seralizeCurrentTime } from '@/utils/time'
 import core from '@/three';
 import { useGlobalState } from '@/store/dev/globalState';
 import LigatureModeButton from './components/LigatureModeButton.vue'
+import saveData from '@/utils/three/saveData';
 
 const ctxStore = useContextMenu()
 const currentNodeState = useCurrentNodeState()
@@ -54,17 +55,12 @@ async function loadData() {
 
 }
 
-function saveData() {
-  const data = getJSONDataFromCore(core)
-  const str = JSON.stringify(data, null, 2)
-  saveTextFile(str, `生息演算地图数据 ${seralizeCurrentTime()}.json`)
-}
 </script>
 
 <template>
   <el-button type="primary" @click="createNode">在鼠标单击位置新建节点</el-button>
   <el-button type="primary" @click="loadData">从 JSON 加载地图数据</el-button>
-  <el-button type="primary" @click="saveData">保存地图数据为 JSON</el-button>
+  <el-button type="primary" @click="saveData(core)">保存地图数据为 JSON</el-button>
   <LigatureModeButton />
 </template>
 

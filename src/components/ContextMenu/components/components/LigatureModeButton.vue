@@ -5,6 +5,7 @@ import { useGlobalState } from '@/store/dev/globalState';
 import { nextTick } from 'vue';
 import core from '@/three';
 import Node from '@/three/object/components/node';
+import { saveDataToLocal } from '@/utils/three/localStoreMapData';
 
 const state = useGlobalState()
 let active = false
@@ -116,9 +117,10 @@ function startLigatureMode() {
       document.removeEventListener('keydown', listenKeydown)
       document.removeEventListener('mouseup', onMouseUp)
       cleanOperate()
+      saveDataToLocal(core)
       ElMessage({
         type: "success",
-        message: "连线模式已退出"
+        message: "连线模式已退出，数据已保存到本地存储"
       })
     }
   }

@@ -62,7 +62,8 @@ class DataStrcutHandle {
     data.nodes.forEach(node => {
       if (node.nodeId > maxId) maxId = node.nodeId
     })
-    this.adjancyList = data.adjancyList
+    // todo!: 这条语句可能导致加载数据前的内存泄露，需要进行分析
+    this.edges = {}
     this._setNodesFromData(data.nodes)
     this._setEdgesFromAdjacencyList(data.adjancyList)
 
@@ -200,6 +201,8 @@ class DataStrcutHandle {
    * @throws Error 
    */
   addEdge(nid1: number, nid2: number) {
+    console.log(nid1, nid2);
+
     if (nid1 === nid2) {
       throw new Error(`Node ${nid1} can not be connected to itself.`)
     }
@@ -230,7 +233,7 @@ class DataStrcutHandle {
 
     // add to `adjancyList`
     if (!this.adjancyList[nid1]) this.adjancyList[nid1] = []
-    this.adjancyList[nid1].push(nid2)
+    if (!this.adjancyList[nid1].includes(nid2)) this.adjancyList[nid1].push(nid2)
 
     return line
   }

@@ -10,5 +10,5 @@ export function seralizeCurrentTime() {
  * @param time Current time
  */
 export function seralizeTime(time: Date) {
-  return `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
+  return `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()} ${time.getHours()}-${time.getMinutes()}-${time.getSeconds()}`
 }

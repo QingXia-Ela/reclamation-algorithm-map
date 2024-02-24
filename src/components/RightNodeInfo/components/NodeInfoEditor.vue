@@ -35,8 +35,7 @@ import BorderSelector from "./components/BorderSelector.vue";
 import ResourcesSelector from "./components/ResourcesSelector.vue";
 import TypeSelector from "./components/TypeSelector.vue";
 import WeatherSelector from "./components/WeatherSelector.vue";
-
-const LOCAL_STORAGE_KEY = "reclamation-algorithm-map-node-data";
+import { saveDataToLocal, getDataFromLocal } from "@/utils/three/localStoreMapData";
 
 /** @typedef {import('@/three/types/node').NodeProps} NodeProps */
 
@@ -77,10 +76,7 @@ function showSidebar() {
 function hideSidebar() {
   active.value = false;
   currentNodeState.hide();
-  localStorage.setItem(
-    LOCAL_STORAGE_KEY,
-    JSON.stringify(getJSONDataFromCore(core))
-  );
+  saveDataToLocal(core)
 }
 
 const dialogVisible = ref(false);
@@ -112,8 +108,8 @@ function deleteNode() {
 }
 
 onMounted(() => {
-  const data = localStorage.getItem(LOCAL_STORAGE_KEY);
-  if (data && !core.loadData(JSON.parse(data))) {
+  const data = getDataFromLocal();
+  if (data && !core.loadData(data)) {
     ElMessage({
       message: "已成功加载上次编辑的地图数据",
       type: "success",

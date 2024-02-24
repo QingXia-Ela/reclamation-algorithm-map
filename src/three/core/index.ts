@@ -120,7 +120,7 @@ class MapCore {
           this.threeObject.scene.remove(obj)
         })
       })
-
+      // 新场景，添加新的节点与边
       Object.values(this.DataHandle.nodeMap).forEach(node => {
         this.threeObject.scene.add(node)
       })
@@ -128,6 +128,7 @@ class MapCore {
         this.threeObject.scene.add(edge)
       })
     } catch (e) {
+      console.error(e);
       return e
     }
   }

@@ -308,6 +308,7 @@ class DataStrcutHandle {
       }
       // 反查
       if (dest.includes(nodeId)) {
+        nodes.push(n)
         dest.splice(dest.indexOf(nodeId), 1)
         this.adjancyList[n] = dest
       }

@@ -298,17 +298,18 @@ class DataStrcutHandle {
     const nodes: number[] = [...(this.adjancyList[nodeId] || [])]
     const edges = []
 
+    // 处理 `adjancyList`
     for (const key in this.adjancyList) {
       const n = Number(key), dest = this.adjancyList[n]
       // 排除自己
-      if (n == nodeId) continue
+      if (n == nodeId) {
+        delete this.adjancyList[n]
+        continue
+      }
       // 反查
-      for (const d of dest) {
-        // 在其他节点出发时找到了自己
-        if (d == nodeId) {
-          nodes.push(n)
-          break
-        }
+      if (dest.includes(nodeId)) {
+        dest.splice(dest.indexOf(nodeId), 1)
+        this.adjancyList[n] = dest
       }
     }
 

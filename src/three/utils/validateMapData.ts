@@ -5,7 +5,7 @@ export default function validateMapData(data: any) {
   const schema = z.object({
     nodes: z.array(
       z.object({
-        id: z.number(),
+        nodeId: z.number(),
         x: z.number(),
         y: z.number(),
         name: z.string(),

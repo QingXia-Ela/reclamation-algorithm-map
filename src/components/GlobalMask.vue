@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useMask } from '@/store/modules/mask';
+import { useMask } from '@/store/dev/mask';
 import { computed } from 'vue';
 
 const mask = useMask()

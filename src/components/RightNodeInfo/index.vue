@@ -4,7 +4,7 @@
 <script setup>
 import Mask from '@/components/Mask.vue'
 import NodeInfoEditor from './components/NodeInfoEditor.vue'
-import { useCurrentNodeState } from '@/store/modules/currentNodeState';
+import { useCurrentNodeState } from '@/store/dev/currentNodeState';
 import { computed, onMounted, ref, watch, nextTick } from 'vue';
 import { ElDrawer } from 'element-plus';
 </script>

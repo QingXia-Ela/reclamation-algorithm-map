@@ -180,6 +180,7 @@ class MapCore {
   /**
    * Run on init.
    */
+  // todo!
   private _addMouseMoveEvent() { }
 
   /**

@@ -16,7 +16,7 @@
  -->
 
 <script setup>
-import { useCurrentNodeState } from "@/store/modules/currentNodeState";
+import { useCurrentNodeState } from "@/store/dev/currentNodeState";
 import { nextTick, onMounted, ref, watch } from "vue";
 import {
   ElForm,

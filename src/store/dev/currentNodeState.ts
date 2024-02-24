@@ -4,6 +4,7 @@ import { NodeProps } from '@/three/types/node'
 import { defineStore } from 'pinia'
 import { DEFAULT_NODE_CONFIG } from '@/constants/three'
 import merge from 'lodash/merge'
+import { useGlobalState } from './globalState'
 
 interface NodeStateStore {
   node: Node | null
@@ -92,9 +93,11 @@ export const useCurrentNodeState = defineStore('currentNodeState', {
  */
 setTimeout(() => {
   const store = useCurrentNodeState()
+  const state = useGlobalState()
   // 当某个节点被点击时弹出编辑菜单
   // 注意：这只是临时方法，并不会长期使用
   core.addEventListener('nodeclick', (node: Node) => {
+    if (state.MouseOccupy) return
     store.setNode(node)
     store.show()
   })

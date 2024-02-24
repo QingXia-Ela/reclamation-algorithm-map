@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 import { ElCard } from 'element-plus'
-import { useContextMenu } from '@/store/modules/contextMenu'
+import { useContextMenu } from '@/store/dev/contextMenu'
 import { computed } from 'vue';
 import BasicMenu from './components/BasicMenu.vue'
 

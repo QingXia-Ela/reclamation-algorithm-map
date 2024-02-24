@@ -8,6 +8,9 @@ import Node from '@/three/object/components/node';
 const state = useGlobalState()
 let active = false
 
+const edgeStack = []
+const nodeStack: Node[] = []
+
 function* showProcessMessage(msgs: string[] = []) {
   let handler = null
   for (const msg of msgs) {
@@ -16,12 +19,20 @@ function* showProcessMessage(msgs: string[] = []) {
       type: 'info',
       title: '提示',
       message: msg,
+      showClose: false,
       duration: 0
     })
     yield
   }
 }
 
+function cleanOperate() {
+  nodeStack.forEach(node => {
+    node.setPointSelected(false)
+  })
+
+  nodeStack.splice(0, nodeStack.length)
+}
 
 function startLigatureMode() {
   if (active) {
@@ -46,12 +57,39 @@ function startLigatureMode() {
 
   let firstClick = true
   const onNodeClick = (node: Node) => {
-    console.log(node);
+
+    // 当前点击点用其他颜色凸显
+    node.setPointSelected(true, 0x1488f4)
+    nodeStack.push(node)
+
+    // 其余点设为标准激活颜色
+    nodeStack
+      .filter(n => n.nodeId !== node.nodeId)
+      .forEach(n => {
+        n.setPointSelected(true)
+      })
+
     if (firstClick) {
       firstClick = false
       nextTick(() => {
         process.next()
       })
+    }
+    else {
+      const [nid1, nid2] = nodeStack.slice(-2).map(node => node.nodeId)
+
+      try {
+        edgeStack.push({ nid1, nid2 })
+        core.addEdgeByNodeIds(nid1, nid2)
+      } catch (e: any) {
+        // 不是有边就是连接到自身，直接弹出首个元素来确保是从上个合法点开始连线，不需要重置选中状态
+        nodeStack.pop()
+
+        ElMessage({
+          type: "error",
+          message: e
+        })
+      }
     }
   }
 
@@ -61,6 +99,7 @@ function startLigatureMode() {
       state.setMouseOccupy(false)
       core.removeEventListener('nodeclick', onNodeClick)
       document.removeEventListener('keydown', listenKeydown)
+      cleanOperate()
       ElMessage({
         type: "success",
         message: "连线模式已退出"

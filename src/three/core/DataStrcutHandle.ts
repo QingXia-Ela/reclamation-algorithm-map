@@ -197,21 +197,23 @@ class DataStrcutHandle {
    * 
    * @param nid1 First node id
    * @param nid2 Second node id
+   * @throws Error 
    */
   addEdge(nid1: number, nid2: number) {
+    if (nid1 === nid2) {
+      throw new Error(`Node ${nid1} can not be connected to itself.`)
+    }
     const [id1, id2] = getPossibleEdgeIdFromNumbers(nid1, nid2)
 
     if (this.edges[id1] || this.edges[id2]) {
-      console.warn(`Edge ${id1} or ${id2} already exists.`)
-      return
+      throw new Error(`Edge ${id1} or ${id2} already exists.`)
     }
 
     const node1 = this.nodeMap[nid1]
     const node2 = this.nodeMap[nid2]
 
     if (!node1 || !node2) {
-      console.warn(`Node ${nid1} or ${nid2} not found.`)
-      return
+      throw new Error(`Node ${nid1} or ${nid2} not found.`)
     }
 
     const line = new Line({

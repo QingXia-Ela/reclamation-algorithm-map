@@ -203,6 +203,8 @@ class MapCore {
     }
 
     const onDocumentMouseUp = (event: MouseEvent) => {
+      // 屏蔽右键点击
+      if (event.button === 2) return
       // 判断是否是真实点击，而不是点击后移动了鼠标
       if (Math.abs(startX - event.clientX) > 10 || Math.abs(startY - event.clientY) > 10) {
         return
@@ -219,6 +221,7 @@ class MapCore {
         const node = findNode(intersects)
 
         if (node) {
+          // nodeclick 实现
           this.eventMap.nodeclick.forEach((callback) => {
             callback(node)
           })

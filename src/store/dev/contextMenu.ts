@@ -1,5 +1,6 @@
 import core from '@/three'
 import { defineStore } from 'pinia'
+import { useGlobalState } from './globalState'
 
 export const useContextMenu = defineStore('contextMenu', {
   state: () => ({
@@ -49,8 +50,10 @@ export const useContextMenu = defineStore('contextMenu', {
 // 延迟执行，控制 pinia 在 app 创建后才执行
 setTimeout(() => {
   const store = useContextMenu()
+  const state = useGlobalState()
 
   core.addEventListener('contextmenu', (event, intersects) => {
+    if (state.MouseOccupy) return
     event.preventDefault()
 
     if (intersects.length) {

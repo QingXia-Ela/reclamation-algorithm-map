@@ -13,6 +13,7 @@ class Background extends THREE.Group {
     const PlaneBackground = new THREE.Mesh(
       new THREE.PlaneGeometry(200, 200),
       new THREE.MeshBasicMaterial({
+        transparent: true,
         map: texture
       })
     )

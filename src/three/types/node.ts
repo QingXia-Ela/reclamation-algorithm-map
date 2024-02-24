@@ -52,3 +52,5 @@ export interface NodeProps {
   /** 节点备注 */
   note?: string
 }
+
+export type NodePropsWithoutId = Omit<NodeProps, 'nodeId'>

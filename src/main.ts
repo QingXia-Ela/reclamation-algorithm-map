@@ -12,7 +12,8 @@ if (import.meta.hot) {
 }
 
 // 保证地图能够渲染，不会因为引入后没有使用而被清除
-core;
+// @ts-ignore
+window.MapCore = core;
 
 const app = createApp(App)
 

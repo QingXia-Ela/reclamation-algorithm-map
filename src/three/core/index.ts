@@ -7,6 +7,7 @@ import { NodeProps } from '../types/node';
 import Line from '../object/components/line';
 import { SaveMapData } from '../types/data';
 import validateMapData from '../utils/validateMapData';
+import DataStructHandle from '../core/DataStrcutHandle';
 
 type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove'
 
@@ -14,7 +15,6 @@ function getMouseVector(event: MouseEvent) {
   const mouseVector = new THREE.Vector2((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
   return mouseVector
 }
-
 
 // todo!: 增加一个随鼠标点击移动的高亮小坐标
 class MapCore {
@@ -25,22 +25,7 @@ class MapCore {
     contextmenu: new Set<(event: MouseEvent, intersects: THREE.Intersection<THREE.Object3D<THREE.Object3DEventMap>>[]) => void>(),
     mousemove: new Set(),
   }
-  nodeMap: Record<number, Node> = {}
-  private TestNode = new Node({
-    nodeId: -1,
-    x: 10,
-    y: 10,
-    type: "hunt",
-    name: "测试，删不掉的",
-    weather: "hot",
-    resources: [
-      "wood",
-      "venison",
-      "water"
-    ],
-    border: "square",
-    size: "small"
-  })
+  DataHandle = new DataStructHandle()
   constructor() {
     this._init()
   }
@@ -52,8 +37,7 @@ class MapCore {
    * @return The point that was added to the scene.
    */
   addPoint(options: NodeProps) {
-    const node = new Node(options)
-    this.nodeMap[node.nodeId] = node
+    const node = this.DataHandle.addNode(options)
     this.threeObject.scene.add(node)
     return node
   }
@@ -65,11 +49,7 @@ class MapCore {
    * @return The point corresponding to the UUID.
    */
   getPointByUUID(uuid: string): Node | null {
-    let res = null
-    Object.values(this.nodeMap).forEach(node => {
-      if (node.uuid === uuid) res = node
-    })
-    return res
+    return this.DataHandle.getNodeByUUID(uuid)
   }
 
   /**
@@ -79,7 +59,7 @@ class MapCore {
    * @return The point corresponding to the node ID.
    */
   getPointByNodeId(nodeId: number) {
-    return this.nodeMap[nodeId] || null
+    return this.DataHandle.getNodeByID(nodeId)
   }
 
   /**
@@ -89,15 +69,15 @@ class MapCore {
  * @return Returns true if the node was successfully removed, false if the node does not exist.
  */
   removePoint(uuid: string) {
-    let node: Node | null = null
-    Object.values(this.nodeMap).forEach(_node => {
-      if (_node.uuid === uuid) node = _node
-    })
-    if (node === null) return false
-    // don't know why ts said node is never type
-    this.threeObject.scene.remove(node)
-    delete this.nodeMap[(node as Node).nodeId]
-    return true
+    const res = this.DataHandle.removeNodeByUUID(uuid)
+    if (res) {
+      const { node, edges } = res
+      this.threeObject.scene.remove(node)
+      edges.forEach(edge => {
+        this.threeObject.scene.remove(edge)
+      })
+    }
+    return !!res
   }
 
   /**
@@ -107,19 +87,23 @@ class MapCore {
    * @return Returns true if the node was successfully removed, false if the node does not exist.
    */
   removePointByNodeId(nodeId: number) {
-    this.removePoint(this.nodeMap[nodeId].uuid)
+    const node = this.DataHandle.removeNodeById(nodeId)
+    this.threeObject.scene.remove(node)
+    return !!node
   }
 
   /**
-   * Removes all nodes from the scene and the node map.
+   * Removes all nodes and relative edges from the scene and the node map.
    * 
    * **Note**: This method is really dangerous, unless you know what you are doing.
    */
   removeAllPoint() {
-    Object.values(this.nodeMap).forEach(node => {
-      this.threeObject.scene.remove(node)
+    const data = this.DataHandle.removeAllObjs()
+    Object.values(data).forEach(data => {
+      Object.values(data).forEach((obj: Node | Line) => {
+        this.threeObject.scene.remove(obj)
+      })
     })
-    this.nodeMap = {}
   }
 
   /**
@@ -129,14 +113,40 @@ class MapCore {
    * @returns 错误信息，如果为空表示加载成功
    */
   loadData(data: SaveMapData) {
-    const res = validateMapData(data)
-    if (res) {
-      return res
+    try {
+      const res = this.DataHandle.loadData(data)
+      Object.values(res).forEach(data => {
+        Object.values(data).forEach((obj: Node | Line) => {
+          this.threeObject.scene.remove(obj)
+        })
+      })
+
+      Object.values(this.DataHandle.nodeMap).forEach(node => {
+        this.threeObject.scene.add(node)
+      })
+      Object.values(this.DataHandle.edges).forEach(edge => {
+        this.threeObject.scene.add(edge)
+      })
+    } catch (e) {
+      return e
     }
-    this.removeAllPoint()
-    data.nodes.forEach(node => {
-      this.addPoint(node)
-    })
+  }
+
+  addEdgeByNodeIds(sourceId: number, targetId: number) {
+    const line = this.DataHandle.addEdge(sourceId, targetId)
+    this.threeObject.scene.add(line)
+  }
+
+  removeEdgeByUUID(uuid: string) {
+    const line = this.DataHandle.removeEdgeByUUID(uuid)
+    this.threeObject.scene.remove(line)
+    return !!line
+  }
+
+  removeEdgeByNodeIds(sourceId: number, targetId: number) {
+    const line = this.DataHandle.removeEdgeByNodeId(sourceId, targetId)
+    this.threeObject.scene.remove(line)
+    return !!line
   }
 
   /**
@@ -179,7 +189,7 @@ class MapCore {
   private _addClickEvent() {
     const { camera } = this.threeObject
     // 每次获取时进行更新
-    const model = () => Object.values(this.nodeMap)
+    const model = () => Object.values(this.DataHandle.nodeMap)
 
     var raycaster = new THREE.Raycaster();
 
@@ -234,13 +244,11 @@ class MapCore {
 
   private _init() {
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xffffff);
+    scene.background = new THREE.Color(0x000000);
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     const background = new Background()
     scene.add(background)
-
-    scene.add(this.TestNode)
 
     camera.position.set(0, 0, 20);
 

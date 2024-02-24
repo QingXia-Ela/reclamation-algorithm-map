@@ -13,7 +13,8 @@ export default function validateMapData(data: any) {
         weather: z.string(),
         resources: z.array(z.string())
       })
-    )
+    ),
+    adjancyList: z.record(z.array(z.number()))
   })
   const result = schema.safeParse(data)
   if (!result.success) {

@@ -13,7 +13,7 @@ interface NodeStateStore {
 
 export const useCurrentNodeState = defineStore('currentNodeState', {
   state: () => ({
-    showSidebar: true,
+    showSidebar: false,
     node: null,
     nodeOptions: null
   }) as NodeStateStore,

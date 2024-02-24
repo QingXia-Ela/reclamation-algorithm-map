@@ -1,0 +1,1447 @@
+{
+  "nodes": [
+    {
+      "x": -29.87967341878648,
+      "y": 6.648953654500472,
+      "name": "聚羽之地",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "poultry",
+        "wood"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 1
+    },
+    {
+      "x": -35.8132232822768,
+      "y": -3.1803356433629952,
+      "name": "林中寻宝",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "wood",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 2
+    },
+    {
+      "x": -61.07213474337377,
+      "y": -11.800116994854793,
+      "name": "原始奔腾",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "venison"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 3
+    },
+    {
+      "x": -81.83328103247015,
+      "y": -5.793903830120602,
+      "name": "参差林木",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "wood"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 4
+    },
+    {
+      "x": -59.64302386636633,
+      "y": -23.273149306415828,
+      "name": "射程以内",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "wood",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 5
+    },
+    {
+      "x": -74.2828854611658,
+      "y": -32.2856954408856,
+      "name": "遭遇战",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 6
+    },
+    {
+      "x": -69.85953295624486,
+      "y": -17.895784922693036,
+      "name": "饮水为饵",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "crab",
+        "water",
+        "venison"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 7
+    },
+    {
+      "x": -86.3536491968838,
+      "y": -17.778805374887096,
+      "name": "战士的视野",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 8
+    },
+    {
+      "x": -92.2318714741326,
+      "y": -11.432664906414372,
+      "name": "不速之客",
+      "type": "nest",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 9
+    },
+    {
+      "x": -64.44797421524694,
+      "y": -2.397077816118559,
+      "name": "参差林木",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "wood"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 10
+    },
+    {
+      "x": -60.10631400447857,
+      "y": 8.135176356176322,
+      "name": "熔铁之心",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 11
+    },
+    {
+      "x": -77.27269859082014,
+      "y": 4.493068071513485,
+      "name": "炎岩关",
+      "type": "gate",
+      "weather": "normal",
+      "resources": [
+        "iron",
+        "diamond"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 12
+    },
+    {
+      "x": -44.43694357950385,
+      "y": 7.453147807711682,
+      "name": "直奔深渊",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "venison",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 13
+    },
+    {
+      "x": -28.829717339045878,
+      "y": 18.8244119173183,
+      "name": "丰饶灌木林",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "wood",
+        "poultry"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 14
+    },
+    {
+      "x": -17.60691927249526,
+      "y": 0.673359335398235,
+      "name": "广袤迎敌之处",
+      "type": "outpost",
+      "weather": "normal",
+      "resources": [],
+      "size": "large",
+      "border": "round",
+      "id": 15
+    },
+    {
+      "x": -4.869218042763478,
+      "y": -13.106706244572022,
+      "name": "丢失的订单",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 16
+    },
+    {
+      "x": 10.06984045923921,
+      "y": -10.159429689852614,
+      "name": "风啸峡谷",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 17
+    },
+    {
+      "x": 7.118183997298632,
+      "y": 1.363452122260144,
+      "name": "峥嵘迎敌之处",
+      "type": "outpost",
+      "weather": "normal",
+      "resources": [],
+      "size": "large",
+      "border": "round",
+      "id": 18
+    },
+    {
+      "x": -10.98412590177405,
+      "y": 21.475421742116048,
+      "name": "荒弃迎敌之处",
+      "type": "outpost",
+      "weather": "normal",
+      "resources": [],
+      "size": "large",
+      "border": "round",
+      "id": 19
+    },
+    {
+      "x": -15.165475518277294,
+      "y": -20.693043237125572,
+      "name": "风啸峡谷",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 20
+    },
+    {
+      "x": -19.605950613968062,
+      "y": -14.605631423614534,
+      "name": "森林之主",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "wood"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 21
+    },
+    {
+      "x": -30.05045064429696,
+      "y": -9.880243824362877,
+      "name": "原始奔腾",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "venison"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 22
+    },
+    {
+      "x": -16.583093812715234,
+      "y": -29.664335134233152,
+      "name": "直奔深渊",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "venison",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 23
+    },
+    {
+      "x": -0.7113455006765426,
+      "y": -25.41843295707476,
+      "name": "参差林木",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "wood"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 24
+    },
+    {
+      "x": 0.01831010117353138,
+      "y": -34.27853669382515,
+      "name": "不速之客",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "crab"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 25
+    },
+    {
+      "x": 15.167350215774404,
+      "y": -23.813191269213597,
+      "name": "翠梦遗址",
+      "type": "cave",
+      "weather": "normal",
+      "resources": [],
+      "size": "large",
+      "border": "square",
+      "id": 26
+    },
+    {
+      "x": -59.431242335087894,
+      "y": -42.276949153389054,
+      "name": "砾沙平原",
+      "type": "expedition",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 27
+    },
+    {
+      "x": -79.73651621770783,
+      "y": -41.026110978789355,
+      "name": "伐木征税",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "wood"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 28
+    },
+    {
+      "x": -91.6333779266272,
+      "y": -50.268415268889974,
+      "name": "乌胡米什",
+      "type": "mine",
+      "weather": "normal",
+      "resources": [
+        "wood",
+        "water"
+      ],
+      "size": "large",
+      "border": "hexagon",
+      "id": 29
+    },
+    {
+      "x": -75.19875413257647,
+      "y": -48.70486755063993,
+      "name": "千仞关",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "stone"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 30
+    },
+    {
+      "x": -46.151509957277334,
+      "y": -35.807335726179346,
+      "name": "射程以内",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [
+        "wood"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 31
+    },
+    {
+      "x": -31.03523978199082,
+      "y": -29.097299583897854,
+      "name": "饮水为饵",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "venison",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 32
+    },
+    {
+      "x": -39.26830421341816,
+      "y": -21.802719180923056,
+      "name": "征税的选择",
+      "type": "nest",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 33
+    },
+    {
+      "x": -49.03706978231419,
+      "y": -29.097299583897854,
+      "name": "崎岖窄路",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 34
+    },
+    {
+      "x": -46.07657821473039,
+      "y": -14.747024580090764,
+      "name": "砾沙平原",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 35
+    },
+    {
+      "x": -46.203698658134975,
+      "y": -44.93016301455358,
+      "name": "崎岖窄路",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 36
+    },
+    {
+      "x": -70.74032064488937,
+      "y": -59.20260131294383,
+      "name": "崎岖乱石岗",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "venison",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 37
+    },
+    {
+      "x": -58.654325941587075,
+      "y": -51.76506434568897,
+      "name": "岩壳蟹群",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 38
+    },
+    {
+      "x": -60.876014211622625,
+      "y": -70.74171943318947,
+      "name": "方形竞技场",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "beef",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 39
+    },
+    {
+      "x": -77.36437547431787,
+      "y": -67.67920556125432,
+      "name": "战争本能",
+      "type": "nest",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 40
+    },
+    {
+      "x": -70.79500757303457,
+      "y": -77.14019016247498,
+      "name": "砾沙平原",
+      "type": "expedition",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 41
+    },
+    {
+      "x": -55.68751315082048,
+      "y": -79.46442007358502,
+      "name": "射程之内",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "wood",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 42
+    },
+    {
+      "x": -45.32241907672897,
+      "y": -72.21643617493767,
+      "name": "聚羽之地",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "poultry",
+        "wood"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 43
+    },
+    {
+      "x": -38.58882919680059,
+      "y": -89.21173888531104,
+      "name": "深岩裂谷",
+      "type": "cave",
+      "weather": "normal",
+      "resources": [],
+      "size": "large",
+      "border": "square",
+      "id": 44
+    },
+    {
+      "x": -22.50861687110714,
+      "y": -78.71199498185692,
+      "name": "试验场",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "stone"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 45
+    },
+    {
+      "x": -15.018624526584558,
+      "y": -83.82169435293467,
+      "name": "崎岖乱石岗",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "stone",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 46
+    },
+    {
+      "x": -24.161698286456986,
+      "y": -65.51697272485632,
+      "name": "夺路而逃",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "beef"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 47
+    },
+    {
+      "x": -40.823073725940475,
+      "y": -59.13282028217479,
+      "name": "守卫自然",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "stone",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 48
+    },
+    {
+      "x": -30.976246662415058,
+      "y": -40.87433123320805,
+      "name": "驯化",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "beef",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 49
+    },
+    {
+      "x": -16.78405866802193,
+      "y": -56.10302733955137,
+      "name": "崎岖窄路",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 50
+    },
+    {
+      "x": -3.0303933363769744,
+      "y": -54.82732504792065,
+      "name": "无形界限",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "beef"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 51
+    },
+    {
+      "x": -5.023678167050203,
+      "y": -48.76773916267382,
+      "name": "被限制的怒火",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 52
+    },
+    {
+      "x": -16.576758992199284,
+      "y": -37.342231182387664,
+      "name": "试验场",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 53
+    },
+    {
+      "x": 12.246139659335029,
+      "y": -51.79753301775045,
+      "name": "夺路而逃",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "beef"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 54
+    },
+    {
+      "x": -9.48066499500261,
+      "y": -72.20876968384425,
+      "name": "风啸峡谷",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 55
+    },
+    {
+      "x": 7.223061886038614,
+      "y": -69.97629067349004,
+      "name": "不尽烈火",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 56
+    },
+    {
+      "x": 23.96665446369341,
+      "y": -73.92299463822292,
+      "name": "风啸峡谷",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 57
+    },
+    {
+      "x": 7.390495865247964,
+      "y": -79.41648836152099,
+      "name": "遗智还家",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "stone"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 58
+    },
+    {
+      "x": 26.75725322663584,
+      "y": -54.63597353648004,
+      "name": "苦难河床",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 59
+    },
+    {
+      "x": 25.800476507912684,
+      "y": -46.184445854425604,
+      "name": "布卢塔巴图",
+      "type": "mine",
+      "weather": "normal",
+      "resources": [
+        "wood",
+        "water"
+      ],
+      "size": "large",
+      "border": "hexagon",
+      "id": 60
+    },
+    {
+      "x": -16.10633452596596,
+      "y": -59.866355852017485,
+      "name": "砾沙平原",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 61
+    },
+    {
+      "x": 27.22006708141525,
+      "y": -62.9014696832146,
+      "name": "大地病征",
+      "type": "cave",
+      "weather": "normal",
+      "resources": [],
+      "size": "large",
+      "border": "square",
+      "id": 62
+    },
+    {
+      "x": 16.821534262277932,
+      "y": -38.90064179223964,
+      "name": "崎岖乱石岗",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "stone",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 63
+    },
+    {
+      "x": 32.654328307147004,
+      "y": -39.26431580999785,
+      "name": "乱石岗",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 64
+    },
+    {
+      "x": 49.07809040127649,
+      "y": -47.59633745006474,
+      "name": "不速之客",
+      "type": "nest",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 65
+    },
+    {
+      "x": 49.013148683171764,
+      "y": -36.32894935892711,
+      "name": "源石虫入侵",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "venison"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 66
+    },
+    {
+      "x": 41.88254882803883,
+      "y": -29.023006072166478,
+      "name": "那穆图巴辛",
+      "type": "mine",
+      "weather": "normal",
+      "resources": [
+        "stone"
+      ],
+      "size": "large",
+      "border": "hexagon",
+      "id": 67
+    },
+    {
+      "x": 24.374261230682276,
+      "y": -28.88013250865887,
+      "name": "翠影关",
+      "type": "gate",
+      "weather": "normal",
+      "resources": [
+        "crab",
+        "iron",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 68
+    },
+    {
+      "x": 32.6878564509825,
+      "y": -21.774850834263233,
+      "name": "大迁徙",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "beef",
+        "venison",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 69
+    },
+    {
+      "x": 43.43105498513739,
+      "y": -15.409809906637062,
+      "name": "风啸峡谷",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 70
+    },
+    {
+      "x": 50.43493810556432,
+      "y": -20.53817620820488,
+      "name": "熔铁之心",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 71
+    },
+    {
+      "x": 42.22955202305564,
+      "y": -8.716558543880712,
+      "name": "浅草荒原",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "beef",
+        "poultry"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 72
+    },
+    {
+      "x": 48.629753882865266,
+      "y": -1.3551537778161642,
+      "name": "矿脉守卫",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 73
+    },
+    {
+      "x": 39.25216978856958,
+      "y": 4.095566976993119,
+      "name": "迷失沼潭",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "poultry",
+        "crab",
+        "beef",
+        "venison"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 74
+    },
+    {
+      "x": 37.868977565566915,
+      "y": 13.455568369406668,
+      "name": "取舍",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "stone",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 75
+    },
+    {
+      "x": 54.572799233530894,
+      "y": 14.985286238198958,
+      "name": "部落之争",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron",
+        "stone"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 76
+    },
+    {
+      "x": 60.14073978951886,
+      "y": 7.014339758047729,
+      "name": "聚羽之地",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "poultry",
+        "wood"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 77
+    },
+    {
+      "x": 63.04192986869147,
+      "y": -2.029168976067842,
+      "name": "佣兵的所属",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 78
+    },
+    {
+      "x": 61.65873406842432,
+      "y": -13.669096037996702,
+      "name": "乱石岗",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 79
+    },
+    {
+      "x": 59.48825722789982,
+      "y": -27.33127265312754,
+      "name": "崎岖弯路",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 80
+    },
+    {
+      "x": 62.94238456344068,
+      "y": -37.79391398567178,
+      "name": "熔铁之心",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 81
+    },
+    {
+      "x": 69.88629126381522,
+      "y": -21.6754155309159,
+      "name": "丰饶灌木林",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "wood",
+        "poultry"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 82
+    },
+    {
+      "x": 75.76522662324643,
+      "y": -15.594999819188928,
+      "name": "无形界限",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "beef"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 83
+    },
+    {
+      "x": 82.4213029940718,
+      "y": -23.186524761049345,
+      "name": "十字路口",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 84
+    },
+    {
+      "x": 77.34829343576736,
+      "y": -33.5124378336272,
+      "name": "丢失的订单",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 85
+    },
+    {
+      "x": 65.98830229562945,
+      "y": -43.89233691549728,
+      "name": "别塔卜-阿帕卡里",
+      "type": "mine",
+      "weather": "normal",
+      "resources": [
+        "iron",
+        "stone"
+      ],
+      "size": "large",
+      "border": "hexagon",
+      "id": 86
+    },
+    {
+      "x": 63.05163554361718,
+      "y": -55.91044957343,
+      "name": "风啸峡谷",
+      "type": "expedition",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 87
+    },
+    {
+      "x": 76.68020894540352,
+      "y": -8.418842268713775,
+      "name": "失落的“长生军”",
+      "type": "cave",
+      "weather": "normal",
+      "resources": [],
+      "size": "large",
+      "border": "square",
+      "id": 88
+    },
+    {
+      "x": 50.45896722569894,
+      "y": 23.574297555794494,
+      "name": "寻觅道路",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 89
+    },
+    {
+      "x": 48.5286282317838,
+      "y": 36.75095938382354,
+      "name": "风啸峡谷",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 90
+    },
+    {
+      "x": 65.85971528584746,
+      "y": 20.133258479685075,
+      "name": "岛中蟹穴",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 91
+    },
+    {
+      "x": 64.55883465951362,
+      "y": 34.6108009340482,
+      "name": "射程之内",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "wood",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 92
+    },
+    {
+      "x": 47.55506800560984,
+      "y": 53.17562869371628,
+      "name": "清泉之下",
+      "type": "cave",
+      "weather": "normal",
+      "resources": [
+        "iron",
+        "water"
+      ],
+      "size": "large",
+      "border": "square",
+      "id": 93
+    },
+    {
+      "x": -72.08752490871856,
+      "y": 13.671268536920982,
+      "name": "征税的选择",
+      "type": "nest",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 94
+    },
+    {
+      "x": -58.09782931460078,
+      "y": 20.95262331502742,
+      "name": "火圈狂舞",
+      "type": "cave",
+      "weather": "normal",
+      "resources": [],
+      "size": "large",
+      "border": "square",
+      "id": 95
+    },
+    {
+      "x": -75.11630764092692,
+      "y": 22.954074612856083,
+      "name": "囚笼",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 96
+    },
+    {
+      "x": -83.60508143980489,
+      "y": 31.270945347267176,
+      "name": "崎岖窄路",
+      "type": "encounter",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 97
+    },
+    {
+      "x": -88.82359007629577,
+      "y": 24.55851070895756,
+      "name": "寻觅澄亮",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "diamond"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 98
+    },
+    {
+      "x": -64.49920090795086,
+      "y": 35.1756180664679,
+      "name": "熔铁之心",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 99
+    },
+    {
+      "x": -55.155001237297505,
+      "y": 29.744277510542762,
+      "name": "取舍",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "stone",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 100
+    },
+    {
+      "x": -48.9746498325122,
+      "y": 35.392545681803334,
+      "name": "部落之争",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron",
+        "stone"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 101
+    },
+    {
+      "x": -57.029570898856605,
+      "y": 41.43373710609601,
+      "name": "献祭之所",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "beef",
+        "venison",
+        "poultry"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 102
+    },
+    {
+      "x": -80.55583396784587,
+      "y": 43.48021244735919,
+      "name": "聚羽之地",
+      "type": "hunt",
+      "weather": "normal",
+      "resources": [
+        "poultry",
+        "wood"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 103
+    },
+    {
+      "x": -75.80801309655827,
+      "y": 49.545961809166414,
+      "name": "惊叫洞穴",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "diamond"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 104
+    },
+    {
+      "x": -59.333897597048285,
+      "y": 48.06431477610483,
+      "name": "见证所",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 105
+    },
+    {
+      "x": -85.82754917899297,
+      "y": 56.741363805971126,
+      "name": "失落的巨翼兽",
+      "type": "cave",
+      "weather": "normal",
+      "resources": [],
+      "size": "large",
+      "border": "square",
+      "id": 106
+    },
+    {
+      "x": -82.83583727578,
+      "y": 64.57380707766781,
+      "name": "固守险境",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron",
+        "wood",
+        "crab",
+        "water"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 107
+    },
+    {
+      "x": -68.4037346749788,
+      "y": 67.59162983949318,
+      "name": "佣兵的所属",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 108
+    },
+    {
+      "x": -59.467190082618096,
+      "y": 60.29762771114872,
+      "name": "砾沙平原",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "id": 109
+    },
+    {
+      "x": -55.1241964489475,
+      "y": 55.258641507979604,
+      "name": "晶生玲珑",
+      "type": "cave",
+      "weather": "normal",
+      "resources": [],
+      "size": "large",
+      "border": "square",
+      "id": 110
+    },
+    {
+      "x": -71.31019862568401,
+      "y": 74.26202194588662,
+      "name": "部落之争",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "iron",
+        "stone"
+      ],
+      "size": "small",
+      "border": "square",
+      "id": 111
+    },
+    {
+      "x": -58.16428893395568,
+      "y": 86.14400760212543,
+      "name": "宿命终结",
+      "type": "cave",
+      "weather": "normal",
+      "resources": [],
+      "size": "large",
+      "border": "square",
+      "id": 112
+    },
+    {
+      "x": -3.682684588740841,
+      "y": -3.3622859978849426,
+      "name": "前进营地",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [
+        "water"
+      ],
+      "size": "small",
+      "border": "round",
+      "id": 113
+    }
+  ],
+  "adjancyList": {}
+}

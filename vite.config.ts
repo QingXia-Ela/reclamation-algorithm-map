@@ -10,6 +10,10 @@ export default defineConfig({
       '@': '/src'
     }
   },
+  define: {
+    // @ts-ignore: process is exist
+    'process.env.USE_DEVELOPER_LAYOUT': process.env.NODE_ENV === 'development'
+  },
   build: {
     target: ["chrome103"]
   }

@@ -107,16 +107,6 @@ function deleteNode() {
   dialogVisible.value = false;
 }
 
-onMounted(() => {
-  const data = getDataFromLocal();
-  if (data && !core.loadData(data)) {
-    ElMessage({
-      message: "已成功加载上次编辑的地图数据",
-      type: "success",
-    });
-  }
-});
-
 /**
  * 保存当前节点数据
  *

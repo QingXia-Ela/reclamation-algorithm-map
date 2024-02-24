@@ -201,8 +201,6 @@ class DataStrcutHandle {
    * @throws Error 
    */
   addEdge(nid1: number, nid2: number) {
-    console.log(nid1, nid2);
-
     if (nid1 === nid2) {
       throw new Error(`Node ${nid1} can not be connected to itself.`)
     }
@@ -297,8 +295,23 @@ class DataStrcutHandle {
    * @param nodeId  Node unique id - `nodeId`
    */
   removeRelativeEdgeByNodeId(nodeId: number) {
-    const nodes = this.adjancyList[nodeId]
+    const nodes: number[] = [...(this.adjancyList[nodeId] || [])]
     const edges = []
+
+    for (const key in this.adjancyList) {
+      const n = Number(key), dest = this.adjancyList[n]
+      // 排除自己
+      if (n == nodeId) continue
+      // 反查
+      for (const d of dest) {
+        // 在其他节点出发时找到了自己
+        if (d == nodeId) {
+          nodes.push(n)
+          break
+        }
+      }
+    }
+
     for (const dest of nodes) {
       for (const id of getPossibleEdgeIdFromNumbers(nodeId, dest)) {
         if (this.edges[id]) {

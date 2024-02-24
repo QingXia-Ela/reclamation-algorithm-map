@@ -120,7 +120,7 @@ function startLigatureMode() {
       saveDataToLocal(core)
       ElMessage({
         type: "success",
-        message: "连线模式已退出，数据已保存到本地存储"
+        message: "连线模式已退出"
       })
     }
   }

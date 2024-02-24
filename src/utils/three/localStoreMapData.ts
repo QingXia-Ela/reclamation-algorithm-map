@@ -1,5 +1,7 @@
 import MapCore from "@/three/core";
 import getJSONDataFromCore from "./getJSONDataFromCore";
+import { clientSaveMap } from "@/plugins/vite/vite-plugin-save-map/client";
+import { ElMessage } from "element-plus";
 
 const LOCAL_STORAGE_KEY = "reclamation-algorithm-map-node-data";
 
@@ -9,7 +11,12 @@ const LOCAL_STORAGE_KEY = "reclamation-algorithm-map-node-data";
  * @param core 地图核心实例
  */
 export function saveDataToLocal(core: MapCore) {
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(getJSONDataFromCore(core)))
+  const str = JSON.stringify(getJSONDataFromCore(core), null, 2)
+  if (process.env.NODE_ENV === "development") {
+    ElMessage.success(`Vite 开发环境，数据已保存到项目本地`)
+    clientSaveMap(str)
+  }
+  localStorage.setItem(LOCAL_STORAGE_KEY, str)
 }
 
 /**

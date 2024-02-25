@@ -8,7 +8,7 @@ import Line from '../object/components/line';
 import { SaveMapData } from '../types/data';
 import DataStructHandle from '../core/DataStrcutHandle';
 import { BSCShader } from '@/three/effect/BSCShader'
-import { EffectComposer, RenderPass, ShaderPass } from 'three/examples/jsm/Addons.js';
+import { EffectComposer, FXAAShader, RenderPass, ShaderPass } from 'three/examples/jsm/Addons.js';
 
 type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove'
 
@@ -186,6 +186,11 @@ class MapCore {
   private _addMouseMoveEvent() { }
 
   /**
+   * @deprecated - todo!
+   */
+  private _onWindowResise() { }
+
+  /**
    * Run on init.
    */
   // todo!: 改造为纯函数并从类独立出去
@@ -267,8 +272,15 @@ class MapCore {
     composer.addPass(new RenderPass(scene, camera));
 
     const effect = new ShaderPass(BSCShader);
+    const FXAAPass = new ShaderPass(FXAAShader);
+    // `.getPixelRatio()`获取`renderer.setPixelRatio()`设置的值
+    const pixelRatio = renderer.getPixelRatio();//获取设备像素比 
+    // width、height是canva画布的宽高度
+    FXAAPass.uniforms.resolution.value.x = 1 / (window.innerWidth * pixelRatio);
+    FXAAPass.uniforms.resolution.value.y = 1 / (window.innerHeight * pixelRatio);
 
     composer.addPass(effect);
+    composer.addPass(FXAAPass);
 
     this.threeObject = {
       scene,

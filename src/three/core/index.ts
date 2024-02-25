@@ -6,8 +6,9 @@ import findNode from '../utils/findNode';
 import { NodeProps } from '../types/node';
 import Line from '../object/components/line';
 import { SaveMapData } from '../types/data';
-import validateMapData from '../utils/validateMapData';
 import DataStructHandle from '../core/DataStrcutHandle';
+import { BSCShader } from '@/three/effect/BSCShader'
+import { EffectComposer, RenderPass, ShaderPass } from 'three/examples/jsm/Addons.js';
 
 type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove'
 
@@ -262,11 +263,19 @@ class MapCore {
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
 
+    const composer = new EffectComposer(renderer);
+    composer.addPass(new RenderPass(scene, camera));
+
+    const effect = new ShaderPass(BSCShader);
+
+    composer.addPass(effect);
+
     this.threeObject = {
       scene,
       camera,
       renderer,
-      background
+      background,
+      composer
     }
     // @ts-ignore: process is exist
     if (process.env.NODE_ENV === "production") this._addOrbitControls()
@@ -310,10 +319,10 @@ class MapCore {
   }
 
   private _startAnimate() {
-    const { renderer, scene, camera, controls } = this.threeObject
+    const { controls, composer } = this.threeObject
     const animate = () => {
       controls?.update();
-      renderer.render(scene, camera);
+      composer.render();
       requestAnimationFrame(animate);
     }
     animate()

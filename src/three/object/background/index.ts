@@ -1,4 +1,4 @@
-import background_png from '@/assets/three/background_dev.png'
+import background_png from '@/assets/three/background.png'
 import * as THREE from 'three'
 
 class Background extends THREE.Group {

@@ -18,11 +18,20 @@ import { onMounted } from 'vue';
 import { ElNotification } from 'element-plus';
 
 onMounted(() => {
-  ElNotification({
-    title: "提示",
-    message: "当前为开发者模式，在地图上使用右键打开开发者选单",
-    type: "success",
-  })
+  process.env.NODE_ENV === "production" ? (
+    ElNotification({
+      title: "提示",
+      message: "当前为生产环境部署页面，背景加载速度较慢，请耐心等待，在地图上使用右键打开开发者选单",
+      type: "warning",
+      duration: 10000
+    })
+  ) : (
+    ElNotification({
+      title: "提示",
+      message: "当前为开发者模式，在地图上使用右键打开开发者选单",
+      type: "success",
+    })
+  )
 })
 </script>
 

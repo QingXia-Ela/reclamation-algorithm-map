@@ -8,6 +8,9 @@ dependencies:
   '@nanostores/vue':
     specifier: ^0.10.0
     version: 0.10.0(nanostores@0.9.5)(vue@3.4.18)
+  '@tweenjs/tween.js':
+    specifier: ^23.1.1
+    version: 23.1.1
   element-plus:
     specifier: ^2.5.5
     version: 2.5.5(vue@3.4.18)
@@ -453,6 +456,10 @@ packages:
 
   /@sxzz/popperjs-es@2.11.7:
     resolution: {integrity: sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==, tarball: https://registry.npmmirror.com/@sxzz/popperjs-es/-/popperjs-es-2.11.7.tgz}
+    dev: false
+
+  /@tweenjs/tween.js@23.1.1:
+    resolution: {integrity: sha512-ZpboH7pCPPeyBWKf8c7TJswtCEQObFo3bOBYalm99NzZarATALYCo5OhbCa/n4RQyJyHfhkdx+hNrdL5ByFYDw==, tarball: https://registry.npmmirror.com/@tweenjs/tween.js/-/tween.js-23.1.1.tgz}
     dev: false
 
   /@types/estree@1.0.5:

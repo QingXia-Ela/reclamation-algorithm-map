@@ -9,6 +9,7 @@ import { SaveMapData } from '../types/data';
 import DataStructHandle from '../core/DataStrcutHandle';
 import { BSCShader } from '@/three/effect/BSCShader'
 import { EffectComposer, FXAAShader, RenderPass, ShaderPass } from 'three/examples/jsm/Addons.js';
+import * as TWEEN from '@tweenjs/tween.js'
 
 type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove'
 
@@ -180,6 +181,41 @@ class MapCore {
   }
 
   /**
+   * 设置相机位置
+   */
+  setCameraPosition(pos: { x: number, y: number, z?: number }, animate = true, duration = 300) {
+    const { x, y, z = 20 } = this.threeObject.camera.position
+    const controls = (this.threeObject.controls as OrbitControls)
+    if (animate) {
+      new TWEEN.Tween({ x, y, z })
+        .easing(TWEEN.Easing.Quadratic.Out)
+        .to(pos, duration)
+        .onStart(() => {
+          controls.enabled = false
+        })
+        .onUpdate(({ x, y, z }) => {
+          this.threeObject.camera.position.set(x, y, z);
+          controls.target.set(x, y, 0);
+        })
+        .onComplete(() => {
+          controls.enabled = true
+        })
+        .start()
+
+      function animateFrame(time: any) {
+        var id = requestAnimationFrame(animateFrame)
+        var result = TWEEN.update(time)
+        if (!result) cancelAnimationFrame(id)
+      }
+
+      animateFrame(performance.now())
+    }
+    else {
+      (this.threeObject.camera as THREE.PerspectiveCamera).position.set(pos.x, pos.y, pos.z || 20)
+    }
+  }
+
+  /**
    * Run on init.
    */
   // todo!
@@ -253,6 +289,7 @@ class MapCore {
     document.addEventListener('contextmenu', onContextMenu, false);
   }
 
+  // todo!: composer 作为开关可以实时调整
   private _init() {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000);
@@ -312,7 +349,7 @@ class MapCore {
     // controls.mouseButtons.RIGHT = THREE.MOUSE.ROTATE
     controls.mouseButtons.RIGHT = undefined
 
-    this.threeObject.controls = controls
+    this.threeObject.controls = controls;
   }
 
   // now only support 2d
@@ -320,9 +357,16 @@ class MapCore {
     const { camera, renderer } = this.threeObject
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.enableDamping = true
+    controls.enableRotate = false
 
     controls.maxDistance = 60
     controls.minDistance = 10
+
+    // mobile control
+    controls.touches = {
+      ONE: THREE.TOUCH.PAN,
+      TWO: THREE.TOUCH.DOLLY_PAN
+    }
 
     controls.mouseButtons.LEFT = THREE.MOUSE.PAN
     // right button will add context menu, so disable here
@@ -331,10 +375,10 @@ class MapCore {
   }
 
   private _startAnimate() {
-    const { controls, composer } = this.threeObject
+    const { controls, composer, renderer, scene, camera } = this.threeObject
     const animate = () => {
       controls?.update();
-      composer.render();
+      renderer.render(scene, camera);
       requestAnimationFrame(animate);
     }
     animate()

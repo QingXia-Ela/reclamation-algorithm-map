@@ -13,6 +13,7 @@ import RightNodeState from './components/RightNodeState/index.vue'
 // import LeftToolbar from './components/LeftToolbar/index.vue'
 import ContextMenu from '@/components/ContextMenu/index.vue'
 import GlobalMask from '@/components/GlobalMask.vue';
+import UserLevelInfoSidebar from '@/components/UserLevelInfoSidebar/index.vue'
 
 import { onMounted } from 'vue';
 import { ElNotification } from 'element-plus';
@@ -41,5 +42,6 @@ onMounted(() => {
   <!-- <LeftToolbar /> -->
   <GlobalMask />
   <ContextMenu />
+  <UserLevelInfoSidebar />
   <slot />
 </template>

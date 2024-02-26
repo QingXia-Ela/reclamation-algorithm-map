@@ -361,7 +361,8 @@ class MapCore {
     controls.enableRotate = false
 
     controls.maxDistance = 60
-    controls.minDistance = 10
+    controls.minDistance = 20
+    controls.maxTargetRadius = 100
 
     // mobile control
     controls.touches = {

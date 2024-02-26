@@ -2,11 +2,13 @@
   组件内遮罩组件，更方便自定义操作
  -->
 <template>
-  <div class="mask" :style="style" ref="mask"></div>
+  <div class="mask" :style="style" ref="mask" @click="$emit('click')"></div>
 </template>
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue';
+
+defineEmits(['click'])
 
 const props = defineProps({
   active: {

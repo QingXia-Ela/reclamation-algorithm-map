@@ -19,7 +19,7 @@ const options = [
   })),
 ]
 
-function onPresetChange(value) {
+function onPresetChange({ value }) {
   note.value = NodeDescriptions[value]
 }
 

@@ -5,7 +5,7 @@
  */
 import * as THREE from 'three'
 import { NodeProps, NodeType } from '@/three/types/node'
-import NODE_ASSETS from '../../../../../assets/three/icon/node'
+import NODE_ASSETS from '@/assets/three/icon/node'
 const textureLoader = new THREE.TextureLoader()
 
 function getNodeIconMesh(texture: THREE.Texture) {

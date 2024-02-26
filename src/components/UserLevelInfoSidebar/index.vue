@@ -6,6 +6,7 @@ import { nextTick, onMounted, ref, watch } from 'vue';
 import Mask from '../Mask.vue';
 import { useCurrentNode } from '@/store/users/currentNode';
 import LevelTitle from './components/LevelTitle.vue';
+import Description from './components/Description.vue';
 
 const animateShow = ref(false)
 const hide = ref(true)
@@ -38,11 +39,14 @@ function cleanNode() {
 
 <template>
   <div class="sidebar_wrapper" :style="{
-    display: hide ? 'none' : 'block',
+    display: hide ? 'none' : 'flex',
     opacity: animateShow ? 1 : 0,
     pointerEvents: animateShow ? 'auto' : 'none'
   }">
-    <LevelTitle />
+    <div class="sidebar_limiter">
+      <LevelTitle />
+      <Description />
+    </div>
   </div>
   <Mask :active="animateShow" :opacity="0" @click="cleanNode" />
 </template>
@@ -51,13 +55,25 @@ function cleanNode() {
 .sidebar_wrapper {
   z-index: 100;
   position: fixed;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 40%;
   height: 100%;
+  padding: 10vh 0;
   // 透明渐变到黑色，从左往右
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.9) 100%);
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.9) 100%);
   transition: opacity 0.3s ease-in-out;
   pointer-events: none;
+}
+
+.sidebar_limiter {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 80%;
+  height: 100%;
+  gap: 2rem;
 }
 </style>

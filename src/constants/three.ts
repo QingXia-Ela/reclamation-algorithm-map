@@ -1,6 +1,6 @@
-import { NodeProps } from "@/three/types/node";
+import { NodePropsWithoutId } from "@/three/types/node";
 
-export const DEFAULT_NODE_CONFIG: NodeProps = {
+export const DEFAULT_NODE_CONFIG: NodePropsWithoutId = {
   x: 0,
   y: 0,
   name: "Node",
@@ -8,5 +8,6 @@ export const DEFAULT_NODE_CONFIG: NodeProps = {
   weather: "normal",
   resources: [],
   size: "small",
-  border: "square"
+  border: "square",
+  note: ""
 }

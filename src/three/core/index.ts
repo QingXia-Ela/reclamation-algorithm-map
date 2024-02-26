@@ -183,6 +183,7 @@ class MapCore {
   /**
    * 设置相机位置
    */
+  // todo!: 重构这坨
   setCameraPosition(pos: { x: number, y: number, z?: number }, animate = true, duration = 300) {
     const { x, y, z = 20 } = this.threeObject.camera.position
     const controls = (this.threeObject.controls as OrbitControls)

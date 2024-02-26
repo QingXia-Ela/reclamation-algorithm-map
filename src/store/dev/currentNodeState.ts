@@ -98,6 +98,11 @@ setTimeout(() => {
   // 注意：这只是临时方法，并不会长期使用
   core.addEventListener('nodeclick', (node: Node) => {
     if (state.MouseOccupy) return
+    if (store.showSidebar) return
+    core.setCameraPosition({
+      x: node.x + 10,
+      y: node.y
+    }, true, 800)
     store.setNode(node)
     store.show()
   })

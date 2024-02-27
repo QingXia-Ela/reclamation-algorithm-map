@@ -7,6 +7,7 @@ import Mask from '../Mask.vue';
 import { useCurrentNode } from '@/store/users/currentNode';
 import LevelTitle from './components/LevelTitle.vue';
 import Description from './components/Description.vue';
+import Operate from './components/Operate/index.vue';
 
 const animateShow = ref(false)
 const hide = ref(true)
@@ -46,6 +47,7 @@ function cleanNode() {
     <div class="sidebar_limiter">
       <LevelTitle />
       <Description />
+      <Operate />
     </div>
   </div>
   <Mask :active="animateShow" :opacity="0" @click="cleanNode" />

@@ -16,8 +16,8 @@ const description = computed(() => nodeStore.node?.options.note)
 <style lang="scss" scoped>
 .description {
   width: 80%;
-  height: 5rem;
-  margin: 0 auto;
+  height: 7rem;
+  margin: 0 3.6rem;
   color: #fff;
 }
 </style>

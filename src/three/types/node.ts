@@ -51,6 +51,10 @@ export interface NodeProps {
   border: "square" | "hexagon" | "round"
   /** 节点备注 */
   note?: string
+  /**
+   * 地图资源 id
+   */
+  mapAssetsId?: string
 }
 
 export type NodePropsWithoutId = Omit<NodeProps, 'nodeId'>

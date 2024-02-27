@@ -2,7 +2,7 @@
   用户界面的关卡信息侧边栏
  -->
 <script setup>
-import { nextTick, onMounted, ref, watch } from 'vue';
+import { nextTick, onBeforeUpdate, onMounted, onUpdated, ref, watch } from 'vue';
 import Mask from '../Mask.vue';
 import { useCurrentNode } from '@/store/users/currentNode';
 import LevelTitle from './components/LevelTitle.vue';
@@ -21,7 +21,14 @@ watch(
 
     if (newValue) {
       hide.value = false
-      nextTick(() => {
+      // 使用 requestAnimeFrame 是因为 vue 的 nextTick 是微任务
+      // 在 nextTick 之后进行变量修改的操作会被作为一个新的微任务进行执行
+      // 这种任务会被当做一个事件循环内部的一个微任务进行执行
+      // 这导致 vue 会将 `hide` 和 `animateShow` 两个变量的修改算作一次更新
+      // 但是 UI 更新的宏任务执行时机是在所有微任务完成后，也就意味着 UI 更新时发现了两个变量都已修改
+      // 进而在渲染新 DOM 时直接展示的是动画播放完成状态，从而导致 css 动画无效
+      // setTimeout 等宏任务均可替代 requestAnimationFrame
+      requestAnimationFrame(() => {
         animateShow.value = true
       })
     } else {

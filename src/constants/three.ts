@@ -9,5 +9,6 @@ export const DEFAULT_NODE_CONFIG: NodePropsWithoutId = {
   resources: [],
   size: "small",
   border: "square",
-  note: ""
+  note: "",
+  mapAssetsId: "",
 }

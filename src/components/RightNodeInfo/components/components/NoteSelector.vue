@@ -20,7 +20,7 @@ const options = [
 ]
 
 function onPresetChange({ value }) {
-  note.value = NodeDescriptions[value]
+  if (NodeDescriptions[value]) note.value = NodeDescriptions[value]
 }
 
 function onInputChange() {
@@ -42,10 +42,6 @@ function createFilter(queryString) {
 
 <template>
   <el-form-item label="节点描述">
-    <!-- todo!: 改为 el-autocomplete -->
-    <!-- <el-select v-model="select" placeholder="选择预设..." style="margin-bottom: .4rem;" @change="onPresetChange">
-      <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
-    </el-select> -->
     <el-autocomplete v-model="select" :fetch-suggestions="querySearch" placeholder="选择预设..." style="margin-bottom: .4rem;"
       @select="onPresetChange" class="input-with-select">
     </el-autocomplete>

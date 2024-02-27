@@ -35,9 +35,10 @@ import BorderSelector from "./components/BorderSelector.vue";
 import ResourcesSelector from "./components/ResourcesSelector.vue";
 import TypeSelector from "./components/TypeSelector.vue";
 import WeatherSelector from "./components/WeatherSelector.vue";
+import NoteSelector from "./components/NoteSelector.vue";
+import MapSelector from "./components/MapSelector.vue";
 import { saveDataToLocal, getDataFromLocal } from "@/utils/three/localStoreMapData";
 import { useCurrentNode } from "@/store/users/currentNode";
-import NoteSelector from "./components/NoteSelector.vue";
 
 /** @typedef {import('@/three/types/node').NodeProps} NodeProps */
 
@@ -153,6 +154,7 @@ function saveData(options) {
         <el-form-item label="节点Y坐标">
           {{ currentNodeState.node?.y }}
         </el-form-item>
+        <!-- todo!: 根据名字自动设置节点备注 -->
         <el-form-item label="节点名字">
           <el-input v-model="infoData.name" />
         </el-form-item>
@@ -161,6 +163,7 @@ function saveData(options) {
         <type-selector v-model="infoData.type" />
         <weather-selector v-model="infoData.weather" />
         <resources-selector v-model="infoData.resources" />
+        <map-selector v-model="infoData.name" />
         <note-selector v-model="infoData.note" />
         <el-form-item label="展示用户布局组件信息">
           <el-button type="primary" @click="userNodeState.setNode(currentNodeState.node), hideSidebar()">点击展示</el-button>

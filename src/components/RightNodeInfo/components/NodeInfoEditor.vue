@@ -154,7 +154,7 @@ function saveData(options) {
         <el-form-item label="节点Y坐标">
           {{ currentNodeState.node?.y }}
         </el-form-item>
-        <!-- todo!: 根据名字自动设置节点备注 -->
+        <!-- todo!: 名字实现自动补全 -->
         <el-form-item label="节点名字">
           <el-input v-model="infoData.name" />
         </el-form-item>

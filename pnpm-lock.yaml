@@ -26,6 +26,12 @@ dependencies:
   three:
     specifier: ^0.161.0
     version: 0.161.0
+  v-viewer:
+    specifier: ^3.0.13
+    version: 3.0.13(viewerjs@1.11.6)(vue@3.4.18)
+  viewerjs:
+    specifier: ^1.11.6
+    version: 1.11.6
   vue:
     specifier: ^3.4.15
     version: 3.4.18(typescript@5.3.3)
@@ -1023,6 +1029,21 @@ packages:
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==, tarball: https://registry.npmmirror.com/undici-types/-/undici-types-5.26.5.tgz}
     dev: true
+
+  /v-viewer@3.0.13(viewerjs@1.11.6)(vue@3.4.18):
+    resolution: {integrity: sha512-T8pgGzlF0ZCHVpD/32OKsD8MlpI6tqYP3n1XLcSjvGQMc0ABn8nJ4AumxvzAKVQrLRWtDTG6qRGAyCPCmi7ceA==, tarball: https://registry.npmmirror.com/v-viewer/-/v-viewer-3.0.13.tgz}
+    peerDependencies:
+      viewerjs: ^1.11.0
+      vue: ^3.0.0
+    dependencies:
+      lodash-es: 4.17.21
+      viewerjs: 1.11.6
+      vue: 3.4.18(typescript@5.3.3)
+    dev: false
+
+  /viewerjs@1.11.6:
+    resolution: {integrity: sha512-TlhdSp2oEOLFXvEp4psKaeTjR5zBjTRcM/sHUN8PkV1UWuY8HKC8n7GaVdW5Xqnwdr/F1OmzLik1QwDjI4w/nw==, tarball: https://registry.npmmirror.com/viewerjs/-/viewerjs-1.11.6.tgz}
+    dev: false
 
   /vite@5.1.1(@types/node@20.11.20)(sass@1.70.0):
     resolution: {integrity: sha512-wclpAgY3F1tR7t9LL5CcHC41YPkQIpKUGeIuT8MdNwNZr6OqOTLs7JX5vIHAtzqLWXts0T+GDrh9pN2arneKqg==, tarball: https://registry.npmmirror.com/vite/-/vite-5.1.1.tgz}

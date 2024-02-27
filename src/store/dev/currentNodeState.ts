@@ -5,6 +5,7 @@ import { defineStore } from 'pinia'
 import { DEFAULT_NODE_CONFIG } from '@/constants/three'
 import merge from 'lodash/merge'
 import { useGlobalState } from './globalState'
+import { useCurrentNode } from '../users/currentNode'
 
 interface NodeStateStore {
   node: Node | null
@@ -45,7 +46,7 @@ export const useCurrentNodeState = defineStore('currentNodeState', {
      * @param options 节点配置
      */
     addNode(options: Partial<NodeProps> = {}) {
-      const finalOptions = merge({}, DEFAULT_NODE_CONFIG, options)
+      const finalOptions = merge({}, DEFAULT_NODE_CONFIG, options) as NodeProps
       this.nodeOptions = finalOptions
       this.node = core.addPoint(finalOptions)
     },
@@ -94,11 +95,11 @@ export const useCurrentNodeState = defineStore('currentNodeState', {
 setTimeout(() => {
   const store = useCurrentNodeState()
   const state = useGlobalState()
+  const currentNode = useCurrentNode()
   // 当某个节点被点击时弹出编辑菜单
   // 注意：这只是临时方法，并不会长期使用
   core.addEventListener('nodeclick', (node: Node) => {
-    if (state.MouseOccupy) return
-    if (store.showSidebar) return
+    if (state.MouseOccupy || store.showSidebar || currentNode.node) return
     core.setCameraPosition({
       x: node.x + 10,
       y: node.y

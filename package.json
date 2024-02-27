@@ -16,6 +16,8 @@
     "nanostores": "^0.9.5",
     "pinia": "^2.1.7",
     "three": "^0.161.0",
+    "v-viewer": "^3.0.13",
+    "viewerjs": "^1.11.6",
     "vue": "^3.4.15"
   },
   "devDependencies": {

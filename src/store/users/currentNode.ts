@@ -24,9 +24,11 @@ setTimeout(() => {
   if (process.env.NODE_ENV === "production") {
     const store = useCurrentNode()
     core.addEventListener('nodeclick', (node: Node) => {
-      console.log('user', node);
-
       if (store.node) return
+      core.setCameraPosition({
+        x: node.x + 10,
+        y: node.y
+      }, true)
       store.setNode(node)
     })
   }

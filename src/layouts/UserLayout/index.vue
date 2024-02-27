@@ -1,3 +1,7 @@
+<script setup>
+import UserLevelInfoSidebar from '@/components/UserLevelInfoSidebar/index.vue'
+</script>
+
 <template>
-  <h1>UserLayout</h1>
+  <UserLevelInfoSidebar />
 </template>

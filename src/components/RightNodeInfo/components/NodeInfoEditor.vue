@@ -164,7 +164,7 @@ function saveData(options) {
         <weather-selector v-model="infoData.weather" />
         <resources-selector v-model="infoData.resources" />
         <map-selector v-model="infoData.name" />
-        <note-selector v-model="infoData.note" />
+        <note-selector v-model="infoData.note" :name="infoData.name" />
         <el-form-item label="展示用户布局组件信息">
           <el-button type="primary" @click="userNodeState.setNode(currentNodeState.node), hideSidebar()">点击展示</el-button>
         </el-form-item>

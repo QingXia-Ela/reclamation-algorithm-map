@@ -1,13 +1,16 @@
 <script setup>
 import { ElInput, ElSelect, ElOption, ElFormItem, ElAutocomplete } from "element-plus"
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { NodeDescriptionData } from "@/constants/node";
-
 
 const NodeDescriptions = {
   "自定义": ``,
   ...NodeDescriptionData
 }
+
+const props = defineProps({
+  name: String
+})
 
 const note = defineModel()
 const select = ref("自定义")
@@ -38,13 +41,17 @@ function createFilter(queryString) {
   };
 }
 
+// 监听 name 变化自动调整 note
+watch(() => props.name, () => {
+  if (NodeDescriptions[props.name]) note.value = NodeDescriptions[props.name]
+})
 </script>
 
 <template>
   <el-form-item label="节点描述">
-    <el-autocomplete v-model="select" :fetch-suggestions="querySearch" placeholder="选择预设..." style="margin-bottom: .4rem;"
+    <!-- <el-autocomplete v-model="select" :fetch-suggestions="querySearch" placeholder="选择预设..." style="margin-bottom: .4rem;"
       @select="onPresetChange" class="input-with-select">
-    </el-autocomplete>
+    </el-autocomplete> -->
     <el-input v-model="note" placeholder="输入节点描述" class="input-with-select" type="textarea" />
   </el-form-item>
 </template>

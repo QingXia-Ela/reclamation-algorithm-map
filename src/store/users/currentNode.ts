@@ -21,12 +21,13 @@ export const useCurrentNode = defineStore("currentNode", {
 
 setTimeout(() => {
   // 仅用户布局启用
-  // const store = useCurrentNode()
+  if (process.env.NODE_ENV === "production") {
+    const store = useCurrentNode()
+    core.addEventListener('nodeclick', (node: Node) => {
+      console.log('user', node);
 
-  // core.addEventListener('nodeclick', (node: Node) => {
-  //   console.log('user', node);
-
-  //   if (store.node) return
-  //   store.setNode(node)
-  // })
+      if (store.node) return
+      store.setNode(node)
+    })
+  }
 });

@@ -39,6 +39,9 @@ import NoteSelector from "./components/NoteSelector.vue";
 import MapSelector from "./components/MapSelector.vue";
 import { saveDataToLocal, getDataFromLocal } from "@/utils/three/localStoreMapData";
 import { useCurrentNode } from "@/store/users/currentNode";
+import MainResourceSelector from "./components/MainResourceSelector.vue";
+import RegularResourceSelector from "./components/RegularResourceSelector.vue";
+import merge from "lodash/merge";
 
 /** @typedef {import('@/three/types/node').NodeProps} NodeProps */
 
@@ -60,7 +63,7 @@ watch(
   () => currentNodeState.node?.options,
   (val) => {
     if (val) {
-      infoData.value = val;
+      infoData.value = merge({}, DEFAULT_NODE_CONFIG, val);
     }
   }
 );
@@ -117,12 +120,12 @@ function deleteNode() {
  * @param {NodeProps} options 新节点配置
  */
 function saveData(options) {
+  currentNodeState.updateCurrentNode(options);
+  hideSidebar();
   ElMessage({
     message: "保存成功",
     type: "success",
   });
-  currentNodeState.updateCurrentNode(options);
-  hideSidebar();
 }
 </script>
 
@@ -160,10 +163,12 @@ function saveData(options) {
         </el-form-item>
         <size-selector v-model="infoData.size" />
         <border-selector v-model="infoData.border" />
+        <map-selector v-model="infoData.name" />
         <type-selector v-model="infoData.type" />
         <weather-selector v-model="infoData.weather" />
-        <resources-selector v-model="infoData.resources" />
-        <map-selector v-model="infoData.name" />
+        <!-- <resources-selector v-model="infoData.resources" /> -->
+        <main-resource-selector v-model="infoData.mainResources" />
+        <regular-resource-selector v-model="infoData.regularResources" />
         <note-selector v-model="infoData.note" :name="infoData.name" />
         <el-form-item label="展示用户布局组件信息">
           <el-button type="primary" @click="userNodeState.setNode(currentNodeState.node), hideSidebar()">点击展示</el-button>

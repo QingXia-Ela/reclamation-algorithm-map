@@ -29,6 +29,10 @@ export type NodeWeather = "normal" |
 
 export type NodeResource = "water" | "wood" | "stone" | "iron" | "diamond" | "venison" | "poultry" | "crab" | "beef"
 
+type ResourceType = Array<[
+  IconType, number
+]>
+
 export interface NodeProps {
   /**
    * 节点 id，用于建图
@@ -53,9 +57,9 @@ export interface NodeProps {
    */
   resources?: NodeResource[]
   /** 主要资源 */
-  mainResources?: Partial<Record<IconType, number>>
+  mainResources?: ResourceType
   /** 常规资源 */
-  regularResources?: Partial<Record<IconType, number>>
+  regularResources?: ResourceType
   /** 边框尺寸 */
   size: "small" | "large"
   /** 节点边框类型 */

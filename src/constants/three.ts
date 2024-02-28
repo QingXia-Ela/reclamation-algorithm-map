@@ -10,6 +10,6 @@ export const DEFAULT_NODE_CONFIG: NodePropsWithoutId = {
   size: "small",
   border: "square",
   note: "",
-  mainResources: {},
-  regularResources: {},
+  mainResources: [],
+  regularResources: [],
 }

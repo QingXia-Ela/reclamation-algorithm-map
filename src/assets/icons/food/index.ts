@@ -67,12 +67,16 @@ const IconFoodFormData: Array<{
     },
     {
       value: "poultry",
-      label: "鸡肉",
+      label: "羽兽翅肉",
     },
     {
       value: "venison",
       label: "圆圆肉片",
     },
+    {
+      value: "sugar",
+      label: "魔甘草(糖)"
+    }
   ];
 
 export {

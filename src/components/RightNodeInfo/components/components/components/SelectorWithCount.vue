@@ -11,7 +11,10 @@
 import { ElSelect, ElOption, ElRow, ElCol, ElButton, ElInputNumber, ElInput } from 'element-plus'
 import { computed } from 'vue';
 /**
- * @typedef {Array<[string, number]>} CountList
+ * @typedef {Array<{
+ *  type: string,
+ *  count: number
+ * }>} CountList
  */
 
 /**
@@ -37,12 +40,12 @@ const TranslateData = computed(() => {
  */
 const data = defineModel()
 
-function onSelected(value) {
-  data.value.push([value, 1])
+function onSelected(type) {
+  data.value.push({ type, count: 1 })
 }
 
 function deleteResouce(index) {
-  data.value = data.value.filter((item, i) => i !== index)
+  data.value = data.value.filter((_, i) => i !== index)
 }
 </script>
 
@@ -55,9 +58,9 @@ function deleteResouce(index) {
     <el-button type="primary">选择预设</el-button>
   </div>
   {{ data?.length ? null : "暂无已选择的资源" }}
-  <div v-for="(item, index) in data" :key="item[0]" class="row_style">
-    <el-input v-model="TranslateData[item[0]]" disabled style="--el-disabled-text-color: #333" />
-    <el-input-number v-model="item[1]" style="width: 12rem;" :min="1" :max="1145" />
+  <div v-for="(item, index) in data" :key="item.type" class="row_style">
+    <el-input v-model="TranslateData[item.type]" disabled style="--el-disabled-text-color: #333" />
+    <el-input-number v-model="item.count" style="width: 12rem;" :min="1" :max="1145" />
     <el-button type="danger" @click="deleteResouce(index)">删除</el-button>
   </div>
 </template>

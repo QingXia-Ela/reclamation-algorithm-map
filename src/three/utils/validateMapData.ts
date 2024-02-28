@@ -14,10 +14,14 @@ export default function validateMapData(data: any) {
         weather: z.string(),
         resources: z.optional(z.array(z.string())),
         note: z.optional(z.string()),
-        // todo!: 调整 zod 校正为 Array<[string, number]>
-        // 当前为 Array<Array<string>>
-        mainResources: z.optional(z.array(z.array(z.any()))),
-        regularResources: z.optional(z.array(z.array(z.any()))),
+        mainResources: z.array(z.object({
+          type: z.string(),
+          count: z.number()
+        })),
+        regularResources: z.array(z.object({
+          type: z.string(),
+          count: z.number()
+        })),
       })
     ),
     adjancyList: z.record(z.array(z.number()))

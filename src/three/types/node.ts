@@ -29,9 +29,10 @@ export type NodeWeather = "normal" |
 
 export type NodeResource = "water" | "wood" | "stone" | "iron" | "diamond" | "venison" | "poultry" | "crab" | "beef"
 
-type ResourceType = Array<[
-  IconType, number
-]>
+type ResourceType = Array<{
+  type: NodeResource,
+  count: number
+}>
 
 export interface NodeProps {
   /**

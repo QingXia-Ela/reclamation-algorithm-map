@@ -1,15 +1,20 @@
 import * as THREE from 'three'
-import type { NodeResource as NodeResourceType } from '@/three/types/node'
+import type { NodeProps } from '@/three/types/node'
 import RESOURCE_ASSETS from '../../../../../assets/three/icon/resource'
+import { IconType } from '@/assets/icons'
 
 interface NodeResourceProps {
-  resources: NodeResourceType[]
+  resources: IconType[]
 }
 
 const SQRT_3 = Math.sqrt(3)
 
+function parseMainResourceToFlatArray(resource: NodeProps['mainResources'] = []) {
+  return resource.map(({ type }) => type)
+}
+
 // todo!: add rest
-function getResourceColorByType(type: NodeResourceType) {
+function getResourceColorByType(type: IconType) {
   switch (type) {
     case "water":
       return 0x2a94a7
@@ -89,7 +94,7 @@ const textureLoader = new THREE.TextureLoader()
 
 class NodeResource extends THREE.Group {
 
-  constructor(options: NodeResourceProps) {
+  constructor(options: NodeProps) {
     super()
 
     this._init(options)
@@ -99,14 +104,14 @@ class NodeResource extends THREE.Group {
     return createBackgroundMesh()
   }
 
-  private async _getResourceTexture(type: NodeResourceType) {
+  private async _getResourceTexture(type: IconType) {
     // @ts-ignore: weather will keep same by resource name
     const url = RESOURCE_ASSETS[type]
     const texture = await textureLoader.loadAsync(url)
     return texture
   }
 
-  private async _getResourceIconMesh(type: NodeResourceType, pos = 0, color = 0xcccccc) {
+  private async _getResourceIconMesh(type: IconType, pos = 0, color = 0xcccccc) {
     const texture = await this._getResourceTexture(type)
 
     const group = new THREE.Group()
@@ -135,7 +140,7 @@ class NodeResource extends THREE.Group {
   private async _getResourceIconGroup(resources: NodeResourceProps['resources']) {
     const group = new THREE.Group()
 
-    for (const [i, index] of resources.map((i, index) => [i, index]) as [NodeResourceType, number][]) {
+    for (const [i, index] of resources.map((i, index) => [i, index]) as [IconType, number][]) {
       group.add(await this._getResourceIconMesh(
         i, index, getResourceColorByType(i)
       ))
@@ -144,8 +149,10 @@ class NodeResource extends THREE.Group {
     return group
   }
 
-  private async _init(options: NodeResourceProps) {
-    const g = await this._getResourceIconGroup(options.resources)
+  private async _init(options: NodeProps) {
+    const g = await this._getResourceIconGroup(
+      parseMainResourceToFlatArray(options.mainResources)
+    )
     g.scale.set(0.4, 0.4, 1)
     this.add(g)
   }

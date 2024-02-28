@@ -57,10 +57,10 @@ export const useCurrentNodeState = defineStore('currentNodeState', {
      * 
      * @param nodeOptions 节点配置
      */
-    updateCurrentNode(nodeOptions: Partial<NodeProps> = {}) {
+    updateCurrentNode(nodeOptions: NodeProps) {
       if (!this.node) return
-      const finalOptions = merge({}, this.node.options, nodeOptions)
-      this.nodeOptions = finalOptions
+      // 不使用 merge 合并是因为数组并不会用新值替换旧值
+      this.nodeOptions = nodeOptions
       this.node.updateNode(nodeOptions)
     },
     deleteNode(uuid: string) {

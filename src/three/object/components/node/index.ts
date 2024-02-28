@@ -3,7 +3,6 @@ import * as THREE from "three";
 import NodeCore from "./components/core";
 import NodeTitle from "./components/title";
 import NodeResource from "./components/resources";
-import merge from "lodash/merge";
 
 // todo!: add rest type
 function getSubTitleFromType(type: NodeType) {
@@ -219,8 +218,9 @@ class Node extends THREE.Group {
    *
    * @param newOptions 新的节点配置
    */
-  updateNode(newOptions: Partial<NodeProps>) {
-    merge(this.options, newOptions);
+  updateNode(newOptions: NodeProps) {
+    // 不使用 merge 合并是因为数组并不会用新值替换旧值
+    this.options = newOptions
 
     Object.values(this.components).forEach((component) =>
       this.remove(component)
@@ -247,12 +247,10 @@ class Node extends THREE.Group {
     return titleObj;
   }
 
-  private _getResources({ resources, size }: NodeProps) {
-    const resourceObj = new NodeResource({
-      resources,
-    });
+  private _getResources(options: NodeProps) {
+    const resourceObj = new NodeResource(options);
 
-    changeModelByMoveXY(resourceObj, getResouceMoveBySize(size));
+    changeModelByMoveXY(resourceObj, getResouceMoveBySize(options.size));
 
     return resourceObj;
   }

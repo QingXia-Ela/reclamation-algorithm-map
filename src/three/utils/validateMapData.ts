@@ -1,4 +1,5 @@
 import { z } from 'zod'
+// import { NodeProps } from '../types/node'
 // import { SaveMapData } from '../types/data'
 
 export default function validateMapData(data: any) {
@@ -11,9 +12,16 @@ export default function validateMapData(data: any) {
         name: z.string(),
         type: z.string(),
         weather: z.string(),
-        resources: z.array(z.string()),
+        resources: z.optional(z.array(z.string())),
         note: z.optional(z.string()),
-        mapAssetsId: z.optional(z.string())
+        mainResources: z.optional(z.record(
+          z.string(),
+          z.number()
+        )),
+        regularResources: z.optional(z.record(
+          z.string(),
+          z.number()
+        ))
       })
     ),
     adjancyList: z.record(z.array(z.number()))

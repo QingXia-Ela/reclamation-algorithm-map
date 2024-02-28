@@ -1,3 +1,5 @@
+import { IconType } from "@/assets/icons"
+
 export type NodeType = "hunt" |
   "cave" |
   "encounter" |
@@ -27,8 +29,6 @@ export type NodeWeather = "normal" |
 
 export type NodeResource = "water" | "wood" | "stone" | "iron" | "diamond" | "venison" | "poultry" | "crab" | "beef"
 
-export type RegularResource = ""
-
 export interface NodeProps {
   /**
    * 节点 id，用于建图
@@ -44,11 +44,18 @@ export interface NodeProps {
   type: NodeType
   /** 节点天气 */
   weather: NodeWeather
-  /** 节点包含的资源，不建议超过3个 */
-  resources: NodeResource[]
+  /** 
+   * 节点包含的资源，不建议超过3个
+   * 
+   * @deprecated 
+   * - 需要逐步迁移至 `mainResources` 和 `regularResources` 字段
+   * - 表单项将会隐藏，优先级会比 `mainResources` 字段低
+   */
+  resources?: NodeResource[]
   /** 主要资源 */
-  mainResources: Record<NodeResource, number>
-  regularResources: Record<string, number>
+  mainResources?: Partial<Record<IconType, number>>
+  /** 常规资源 */
+  regularResources?: Partial<Record<IconType, number>>
   /** 边框尺寸 */
   size: "small" | "large"
   /** 节点边框类型 */

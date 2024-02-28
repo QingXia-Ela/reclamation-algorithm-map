@@ -1,8 +1,10 @@
 export * from './food'
 export * from './resource'
 
-import { IconFoodData, IconFoodFormData } from './food'
-import { IconResourceData, IconResourceFormData } from './resource'
+import { IconFoodData, IconFoodFormData, IconFoodType } from './food'
+import { IconResourceData, IconResourceFormData, IconResourceType } from './resource'
+
+export type IconType = IconFoodType | IconResourceType
 
 const IconData = {
   ...IconFoodData,
@@ -15,10 +17,6 @@ const IconFormData = [
 ]
 
 export {
-  IconFoodData,
-  IconResourceData,
-  IconFoodFormData,
-  IconResourceFormData,
   // collect
   IconData,
   IconFormData

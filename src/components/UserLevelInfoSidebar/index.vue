@@ -73,7 +73,7 @@ function cleanNode() {
   height: 100%;
   padding: 10vh 0;
   // 透明渐变到黑色，从左往右
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.9) 100%);
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.9) 100%);
   transition: opacity 0.3s ease-in-out;
   pointer-events: none;
 }

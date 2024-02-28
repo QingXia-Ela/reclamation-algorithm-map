@@ -12,17 +12,15 @@
       ],
       "size": "small",
       "border": "square",
-      "id": 1,
-      "nodeId": 1,
       "note": "有树木的地方就有羽兽，所以把两样都带回家也是一种不错的选择。",
       "mainResources": [
         {
           "type": "poultry",
-          "count": 1
+          "count": 7
         },
         {
           "type": "wood",
-          "count": 1
+          "count": 18
         }
       ],
       "regularResources": [
@@ -50,7 +48,9 @@
           "type": "gold",
           "count": 1
         }
-      ]
+      ],
+      "id": 1,
+      "nodeId": 1
     },
     {
       "x": -35.3132232822768,

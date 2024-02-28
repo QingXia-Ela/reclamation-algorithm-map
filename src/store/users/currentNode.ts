@@ -27,7 +27,8 @@ setTimeout(() => {
       if (store.node) return
       core.setCameraPosition({
         x: node.x + 10,
-        y: node.y
+        y: node.y,
+        z: 25
       }, true)
       store.setNode(node)
     })

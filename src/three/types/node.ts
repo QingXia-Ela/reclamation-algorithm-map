@@ -25,8 +25,9 @@ export type NodeWeather = "normal" |
   "acid_rain" |
   "drought"
 
-// todo!: add rest type
 export type NodeResource = "water" | "wood" | "stone" | "iron" | "diamond" | "venison" | "poultry" | "crab" | "beef"
+
+export type RegularResource = ""
 
 export interface NodeProps {
   /**
@@ -45,6 +46,9 @@ export interface NodeProps {
   weather: NodeWeather
   /** 节点包含的资源，不建议超过3个 */
   resources: NodeResource[]
+  /** 主要资源 */
+  mainResources: Record<NodeResource, number>
+  regularResources: Record<string, number>
   /** 边框尺寸 */
   size: "small" | "large"
   /** 节点边框类型 */

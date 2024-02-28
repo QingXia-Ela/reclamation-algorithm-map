@@ -15,11 +15,12 @@ async function fetchData() {
 
 if (process.env.NODE_ENV == "production" && data) {
   try {
+    core.loadData(data as SaveMapData)
+  } catch (e) {
     ElMessage({
       message: "本地地图数据加载失败，将载入远程服务器数据",
       type: "info",
     })
-  } catch (e) {
     fetchData().then(() => {
       saveDataToLocal(core)
       ElMessage({

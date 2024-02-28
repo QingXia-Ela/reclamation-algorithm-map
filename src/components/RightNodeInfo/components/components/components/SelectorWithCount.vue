@@ -8,7 +8,7 @@
  -->
 
 <script setup>
-import { ElSelect, ElOption, ElRow, ElCol, ElButton, ElInputNumber, ElInput } from 'element-plus'
+import { ElSelect, ElOption, ElRow, ElCol, ElButton, ElInputNumber, ElInput, ElMessage } from 'element-plus'
 import { computed } from 'vue';
 /**
  * @typedef {Array<{
@@ -47,6 +47,16 @@ function onSelected(type) {
 function deleteResouce(index) {
   data.value = data.value.filter((_, i) => i !== index)
 }
+
+function choosePreset() {
+  // todo!: 完成预设选择功能
+  // 使用一个大对话框进行选择
+
+  ElMessage({
+    message: '功能暂未开放',
+    type: 'warning'
+  })
+}
 </script>
 
 <template>
@@ -54,7 +64,6 @@ function deleteResouce(index) {
     <el-select placeholder="选择资源..." @change="onSelected">
       <el-option v-for="item in props.FormData" :key="item.value" :label="item.label" :value="item.value" />
     </el-select>
-    <!-- todo!: 完成预设选择功能 -->
     <el-button type="primary">选择预设</el-button>
   </div>
   {{ data?.length ? null : "暂无已选择的资源" }}

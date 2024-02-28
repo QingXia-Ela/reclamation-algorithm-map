@@ -14,7 +14,43 @@
       "border": "square",
       "id": 1,
       "nodeId": 1,
-      "note": "有树木的地方就有羽兽，所 以把两样都带回家也是一种不错的选择。"
+      "note": "有树木的地方就有羽兽，所以把两样都带回家也是一种不错的选择。",
+      "mainResources": [
+        {
+          "type": "poultry",
+          "count": 1
+        },
+        {
+          "type": "wood",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -35.3132232822768,
@@ -31,7 +67,47 @@
       "border": "square",
       "id": 2,
       "nodeId": 2,
-      "note": "丛林掩隐之中，似乎有隐秘的道路通往更深处——那是传说中的“宝藏”？是不是摆得太随便了一些？"
+      "note": "丛林掩隐之中，似乎有隐秘的道路通往更深处——那是传说中的“宝藏”？是不是摆得太随便了一些？",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -61.07213474337377,
@@ -46,7 +122,39 @@
       "border": "square",
       "id": 3,
       "nodeId": 3,
-      "note": "本地的生物们轰隆隆地冲过来，又轰隆隆地冲过去，这就是它们的生活。"
+      "note": "本地的生物们轰隆隆地冲过来，又轰隆隆地冲过去，这就是它们的生活。",
+      "mainResources": [
+        {
+          "type": "venison",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -81.83328103247015,
@@ -61,7 +169,39 @@
       "border": "square",
       "id": 4,
       "nodeId": 4,
-      "note": "当地人巡逻守卫着他们宝贵的木材资源。多盖一座可遮蔽风雨的小屋，少几个受寒染病的族人。"
+      "note": "当地人巡逻守卫着他们宝贵的木材资源。多盖一座可遮蔽风雨的小屋，少几个受寒染病的族人。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -59.64302386636633,
@@ -78,7 +218,47 @@
       "border": "square",
       "id": 5,
       "nodeId": 5,
-      "note": "听说有些吝啬的领主宁愿用弩炮射毁树木，也不愿让部落民砍伐，为此，他们甚至放出了一些野 兽。"
+      "note": "听说有些吝啬的领主宁愿用弩炮射毁树木，也不愿让部落民砍伐，为此，他们甚至放出了一些野 兽。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -74.2828854611658,
@@ -91,7 +271,34 @@
       "border": "square",
       "id": 6,
       "nodeId": 6,
-      "note": "王酋军在这里驻扎了许久，他们的所作所为将会被人们记住。"
+      "note": "王酋军在这里驻扎了许久，他们的所作所为将会被人们记住。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -69.85953295624486,
@@ -108,7 +315,47 @@
       "border": "square",
       "id": 7,
       "nodeId": 7,
-      "note": "水源在非雨林地貌的萨尔贡是一种稀缺资源，来这里休息饮水的有时不只是你们心仪的猎物，贸然试探有可能会......哎呀！"
+      "note": "水源在非雨林地貌的萨尔贡是一种稀缺资源，来这里休息饮水的有时不只是你们心仪的猎物，贸然试探有可能会......哎呀！",
+      "mainResources": [
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        },
+        {
+          "type": "venison",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -86.3536491968838,
@@ -121,7 +368,34 @@
       "border": "square",
       "id": 8,
       "nodeId": 8,
-      "note": "萨尔贡的战士们都很清楚，每个人都拥有着同样的一双眼，用 它看到什么、看到多少，才是战场上获胜的关键。"
+      "note": "萨尔贡的战士们都很清楚，每个人都拥有着同样的一双眼，用 它看到什么、看到多少，才是战场上获胜的关键。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -92.2318714741326,
@@ -134,7 +408,34 @@
       "border": "square",
       "id": 9,
       "nodeId": 9,
-      "note": "在萨尔贡总能遇到意料之外的来客，大多数时候，他们往往不是那么友善，甚至比王酋的手下们更不友善一些。"
+      "note": "在萨尔贡总能遇到意料之外的来客，大多数时候，他们往往不是那么友善，甚至比王酋的手下们更不友善一些。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -64.44797421524694,
@@ -149,7 +450,39 @@
       "border": "square",
       "id": 10,
       "nodeId": 10,
-      "note": "当地人巡逻守卫着他们宝贵的木材资源。多盖一座可遮蔽风雨的小屋，少几个受寒染病的族人。"
+      "note": "当地人巡逻守卫着他们宝贵的木材资源。多盖一座可遮蔽风雨的小屋，少几个受寒染病的族人。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -60.10631400447857,
@@ -164,7 +497,39 @@
       "border": "square",
       "id": 11,
       "nodeId": 11,
-      "note": "被不明势力占据的铁矿脉蜿蜒在熔岩之间，巨大的热量让所有人都汗流浃背。王酋们追逐资源的传统，让这里 人满为患，也让冲突一触即发。"
+      "note": "被不明势力占据的铁矿脉蜿蜒在熔岩之间，巨大的热量让所有人都汗流浃背。王酋们追逐资源的传统，让这里 人满为患，也让冲突一触即发。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -77.27269859082014,
@@ -180,7 +545,43 @@
       "border": "square",
       "id": 12,
       "nodeId": 12,
-      "note": "<@lv.description><机关石门></>击破后会解锁新的可探索区域。被击破前， 每次进入关卡会完全恢复原状。\\n再向前走似乎是一个完全不同的地方，大地向上隆起，熔岩四处溅射，混乱与灼热是这一切的尽头。"
+      "note": "<@lv.description><机关石门></>击破后会解锁新的可探索区域。被击破前， 每次进入关卡会完全恢复原状。\\n再向前走似乎是一个完全不同的地方，大地向上隆起，熔岩四处溅射，混乱与灼热是这一切的尽头。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "diamond",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -44.43694357950385,
@@ -196,7 +597,43 @@
       "border": "square",
       "id": 13,
       "nodeId": 13,
-      "note": "这种感染生物的自杀行为让你们不禁对源石的恐惧更上一层，但比起生 病，显然是饥饿带来的问题更加急迫。"
+      "note": "这种感染生物的自杀行为让你们不禁对源石的恐惧更上一层，但比起生 病，显然是饥饿带来的问题更加急迫。",
+      "mainResources": [
+        {
+          "type": "venison",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -28.829717339045878,
@@ -212,7 +649,43 @@
       "border": "square",
       "id": 14,
       "nodeId": 14,
-      "note": "几处树荫下的土地滋养着各种意想不到的小生物，微风吹过，羽兽的身影和树叶混作一团。在这里的阴凉处坐上哪怕一小会儿，也会感到心旷神怡。"
+      "note": "几处树荫下的土地滋养着各种意想不到的小生物，微风吹过，羽兽的身影和树叶混作一团。在这里的阴凉处坐上哪怕一小会儿，也会感到心旷神怡。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        },
+        {
+          "type": "poultry",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -17.60691927249526,
@@ -225,7 +698,9 @@
       "border": "round",
       "id": 15,
       "nodeId": 15,
-      "note": "拉布-阿拉契什图雨林的风在这里失去了方向，稀疏的石块是平坦旷野上少数的守望者。"
+      "note": "拉布-阿拉契什图雨林的风在这里失去了方向，稀疏的石块是平坦旷野上少数的守望者。",
+      "mainResources": [],
+      "regularResources": []
     },
     {
       "x": -4.869218042763478,
@@ -238,7 +713,34 @@
       "border": "square",
       "id": 16,
       "nodeId": 16,
-      "note": "丢失了黑市订单中的大批施术单元可不是件小事，不想被买家发现事情真相，这群莱塔 尼亚人决定先下手为强。"
+      "note": "丢失了黑市订单中的大批施术单元可不是件小事，不想被买家发现事情真相，这群莱塔 尼亚人决定先下手为强。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 10.06984045923921,
@@ -251,7 +753,34 @@
       "border": "square",
       "id": 17,
       "nodeId": 17,
-      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。"
+      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 7.118183997298632,
@@ -264,7 +793,9 @@
       "border": "round",
       "id": 18,
       "nodeId": 18,
-      "note": "埃克卢穆伊绿洲的来水在这里浸润析出 ，细微涓流是峻岭深谷中唯一的弹奏者。"
+      "note": "埃克卢穆伊绿洲的来水在这里浸润析出 ，细微涓流是峻岭深谷中唯一的弹奏者。",
+      "mainResources": [],
+      "regularResources": []
     },
     {
       "x": -10.98412590177405,
@@ -277,7 +808,9 @@
       "border": "round",
       "id": 19,
       "nodeId": 19,
-      "note": "纳卢塔巴提河通航时期的建筑群在这里被时光损毁，略带咸味的风沙是一切的见证者。"
+      "note": "纳卢塔巴提河通航时期的建筑群在这里被时光损毁，略带咸味的风沙是一切的见证者。",
+      "mainResources": [],
+      "regularResources": []
     },
     {
       "x": -15.165475518277294,
@@ -290,7 +823,34 @@
       "border": "square",
       "id": 20,
       "nodeId": 20,
-      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。"
+      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -19.605950613968062,
@@ -303,6 +863,39 @@
       ],
       "size": "small",
       "border": "square",
+      "note": "",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ],
       "id": 21,
       "nodeId": 21
     },
@@ -320,7 +913,43 @@
       "border": "square",
       "id": 23,
       "nodeId": 23,
-      "note": "这种感染生物的自杀行为让你们不禁对源石的恐惧更上一层，但比起生 病，显然是饥饿带来的问题更加急迫。"
+      "note": "这种感染生物的自杀行为让你们不禁对源石的恐惧更上一层，但比起生 病，显然是饥饿带来的问题更加急迫。",
+      "mainResources": [
+        {
+          "type": "venison",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -0.7113455006765426,
@@ -335,7 +964,39 @@
       "border": "square",
       "id": 24,
       "nodeId": 24,
-      "note": "当地人巡逻守卫着他们宝贵的木材资源。多盖一座可遮蔽风雨的小屋，少几个受寒染病的族人。"
+      "note": "当地人巡逻守卫着他们宝贵的木材资源。多盖一座可遮蔽风雨的小屋，少几个受寒染病的族人。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 0.01831010117353138,
@@ -350,7 +1011,39 @@
       "border": "square",
       "id": 25,
       "nodeId": 25,
-      "note": "在萨尔贡总能遇到意料之外的来客，大多数时候，他们往往不是那么友善，甚至比王酋的手下们更不友善一些。"
+      "note": "在萨尔贡总能遇到意料之外的来客，大多数时候，他们往往不是那么友善，甚至比王酋的手下们更不友善一些。",
+      "mainResources": [
+        {
+          "type": "crab",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 15.167350215774404,
@@ -363,7 +1056,34 @@
       "border": "square",
       "id": 26,
       "nodeId": 26,
-      "note": "<@lv.description>每日刷新敌人，领袖敌人未被击倒则次日恢复全部生命值（非陌域中时）</>\\n古老的神庙矗立在水面的尽头。他们在等着我们，在等着我们向他们展示心中的迷茫并向他们寻求庇护。"
+      "note": "<@lv.description>每日刷新敌人，领袖敌人未被击倒则次日恢复全部生命值（非陌域中时）</>\\n古老的神庙矗立在水面的尽头。他们在等着我们，在等着我们向他们展示心中的迷茫并向他们寻求庇护。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -59.431242335087894,
@@ -376,7 +1096,34 @@
       "border": "square",
       "id": 27,
       "nodeId": 27,
-      "note": "你们曾见过有位萨卡兹的佣兵在此处撒下几粒种子。不是 每粒种子都会开出花，但这片平原已经比之前的荒芜好了许多。"
+      "note": "你们曾见过有位萨卡兹的佣兵在此处撒下几粒种子。不是 每粒种子都会开出花，但这片平原已经比之前的荒芜好了许多。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -79.73651621770783,
@@ -391,7 +1138,39 @@
       "border": "square",
       "id": 28,
       "nodeId": 28,
-      "note": "明明砍伐可用的树木是一件很正常的事，但是王酋大人定下了很不正常的税额 ，于是大家都想尽办法偷偷摸摸起来。"
+      "note": "明明砍伐可用的树木是一件很正常的事，但是王酋大人定下了很不正常的税额 ，于是大家都想尽办法偷偷摸摸起来。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -91.6333779266272,
@@ -407,7 +1186,43 @@
       "border": "hexagon",
       "id": 29,
       "nodeId": 29,
-      "note": "<@lv.description><号令点></>击破后可以在此处定期派出干员收集大量木材\\n“像一群峭壁”是人们对这里的最佳概括，它曾经是雨林地区颇为繁荣的林业小镇，而如今这里还有时刻取人性命的不明势力和沉默的树林。"
+      "note": "<@lv.description><号令点></>击破后可以在此处定期派出干员收集大量木材\\n“像一群峭壁”是人们对这里的最佳概括，它曾经是雨林地区颇为繁荣的林业小镇，而如今这里还有时刻取人性命的不明势力和沉默的树林。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -75.19875413257647,
@@ -422,7 +1237,39 @@
       "border": "square",
       "id": 30,
       "nodeId": 30,
-      "note": "<@lv.description><机关石门></>击破 后会解锁新的可探索区域。被击破前，每次进入关卡会完全恢复原状。\\n再向前走似乎是另外一个地域的入口，风沙逐渐狂暴，巨石填满道路，干渴和绝路是这一切的尽头。"
+      "note": "<@lv.description><机关石门></>击破 后会解锁新的可探索区域。被击破前，每次进入关卡会完全恢复原状。\\n再向前走似乎是另外一个地域的入口，风沙逐渐狂暴，巨石填满道路，干渴和绝路是这一切的尽头。",
+      "mainResources": [
+        {
+          "type": "stone",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -46.151509957277334,
@@ -437,7 +1284,39 @@
       "border": "square",
       "id": 31,
       "nodeId": 31,
-      "note": "听说有些吝啬的领主宁愿用弩炮射毁树木，也不愿让部落民砍伐，为此，他们甚至放出了一些野 兽。"
+      "note": "听说有些吝啬的领主宁愿用弩炮射毁树木，也不愿让部落民砍伐，为此，他们甚至放出了一些野 兽。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -31.03523978199082,
@@ -454,7 +1333,47 @@
       "border": "square",
       "id": 32,
       "nodeId": 32,
-      "note": "水源在非雨林地貌的萨尔贡是一种稀缺资源，来这里休息饮水的有时不只是你们心仪的猎物，贸然试探有可能会......哎呀！"
+      "note": "水源在非雨林地貌的萨尔贡是一种稀缺资源，来这里休息饮水的有时不只是你们心仪的猎物，贸然试探有可能会......哎呀！",
+      "mainResources": [
+        {
+          "type": "venison",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -39.26830421341816,
@@ -467,7 +1386,34 @@
       "border": "square",
       "id": 33,
       "nodeId": 33,
-      "note": "当部落民为王酋的征税而感 到万分苦恼时，一部分部落民则会选择成为王酋大人的征税部队。当然，怎么选择都是为了生活。"
+      "note": "当部落民为王酋的征税而感 到万分苦恼时，一部分部落民则会选择成为王酋大人的征税部队。当然，怎么选择都是为了生活。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -49.03706978231419,
@@ -480,7 +1426,34 @@
       "border": "square",
       "id": 34,
       "nodeId": 34,
-      "note": "老猎人讲述了第一个吃下岩壳蟹的人的故事。熬过天灾与劫掠，是毒虫 还是涩果他都不再考虑，鲜血淋漓地咬开硬壳后，他尝到了生的甜美。"
+      "note": "老猎人讲述了第一个吃下岩壳蟹的人的故事。熬过天灾与劫掠，是毒虫 还是涩果他都不再考虑，鲜血淋漓地咬开硬壳后，他尝到了生的甜美。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -46.07657821473039,
@@ -493,7 +1466,34 @@
       "border": "square",
       "id": 35,
       "nodeId": 35,
-      "note": "你们曾见过有位萨卡兹的佣兵在此处撒下几粒种子。不是 每粒种子都会开出花，但这片平原已经比之前的荒芜好了许多。"
+      "note": "你们曾见过有位萨卡兹的佣兵在此处撒下几粒种子。不是 每粒种子都会开出花，但这片平原已经比之前的荒芜好了许多。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -46.203698658134975,
@@ -506,7 +1506,34 @@
       "border": "square",
       "id": 36,
       "nodeId": 36,
-      "note": "老猎人讲述了第一个吃下岩壳蟹的人的故事。熬过天灾与劫掠，是毒虫 还是涩果他都不再考虑，鲜血淋漓地咬开硬壳后，他尝到了生的甜美。"
+      "note": "老猎人讲述了第一个吃下岩壳蟹的人的故事。熬过天灾与劫掠，是毒虫 还是涩果他都不再考虑，鲜血淋漓地咬开硬壳后，他尝到了生的甜美。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -70.74032064488937,
@@ -522,7 +1549,43 @@
       "border": "square",
       "id": 37,
       "nodeId": 37,
-      "note": "曲折的小径通往不同的区域，每一处都是矿工们最熟悉的工作环境。乏味、沉闷、充满汗水的生活还有监工们的监视， 这些都是王酋的“恩赐”。"
+      "note": "曲折的小径通往不同的区域，每一处都是矿工们最熟悉的工作环境。乏味、沉闷、充满汗水的生活还有监工们的监视， 这些都是王酋的“恩赐”。",
+      "mainResources": [
+        {
+          "type": "venison",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -58.654325941587075,
@@ -538,7 +1601,43 @@
       "border": "square",
       "id": 38,
       "nodeId": 38,
-      "note": "被岩壳蟹夹一下很 痛，但是这种痛完全比不过品尝到它鲜美滋味时的快乐！"
+      "note": "被岩壳蟹夹一下很 痛，但是这种痛完全比不过品尝到它鲜美滋味时的快乐！",
+      "mainResources": [
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -60.876014211622625,
@@ -555,7 +1654,47 @@
       "border": "square",
       "id": 39,
       "nodeId": 39,
-      "note": "看似空旷的场地里塞满了各路萨卡 兹，凡是踏入此地的人都会经历一场拳拳到肉的格斗比赛，只有胜利者才能活着站到最后。"
+      "note": "看似空旷的场地里塞满了各路萨卡 兹，凡是踏入此地的人都会经历一场拳拳到肉的格斗比赛，只有胜利者才能活着站到最后。",
+      "mainResources": [
+        {
+          "type": "beef",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -77.36437547431787,
@@ -568,7 +1707,34 @@
       "border": "square",
       "id": 40,
       "nodeId": 40,
-      "note": "火山喷发，大地沸腾，栖居的生物不懂何为战争，只是顺从本能。"
+      "note": "火山喷发，大地沸腾，栖居的生物不懂何为战争，只是顺从本能。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -70.79500757303457,
@@ -581,7 +1747,34 @@
       "border": "square",
       "id": 41,
       "nodeId": 41,
-      "note": "你们曾见过有位萨卡兹的佣兵在此处撒下几粒种子。不是 每粒种子都会开出花，但这片平原已经比之前的荒芜好了许多。"
+      "note": "你们曾见过有位萨卡兹的佣兵在此处撒下几粒种子。不是 每粒种子都会开出花，但这片平原已经比之前的荒芜好了许多。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -55.68751315082048,
@@ -598,7 +1791,47 @@
       "border": "square",
       "id": 42,
       "nodeId": 42,
-      "note": "听说有些吝啬的领主宁愿用弩炮射毁树木，也不愿让部落民砍伐，为此，他们甚至放出了一些野 兽。"
+      "note": "听说有些吝啬的领主宁愿用弩炮射毁树木，也不愿让部落民砍伐，为此，他们甚至放出了一些野 兽。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -45.32241907672897,
@@ -614,7 +1847,43 @@
       "border": "square",
       "id": 43,
       "nodeId": 43,
-      "note": "有树木的地方就有羽兽，所 以把两样都带回家也是一种不错的选择。"
+      "note": "有树木的地方就有羽兽，所以把两样都带回家也是一种不错的选择。",
+      "mainResources": [
+        {
+          "type": "poultry",
+          "count": 1
+        },
+        {
+          "type": "wood",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -38.58882919680059,
@@ -627,7 +1896,34 @@
       "border": "square",
       "id": 44,
       "nodeId": 44,
-      "note": "薄雾笼罩，幽邃阴暗，统治这片土地的领主只遵从内心。"
+      "note": "薄雾笼罩，幽邃阴暗，统治这片土地的领主只遵从内心。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -22.50861687110714,
@@ -642,7 +1938,39 @@
       "border": "square",
       "id": 45,
       "nodeId": 45,
-      "note": "从丛林中蹿出的， 可以是猎物，可以是敌人，也可以是不明身份的机械设备。"
+      "note": "从丛林中蹿出的， 可以是猎物，可以是敌人，也可以是不明身份的机械设备。",
+      "mainResources": [
+        {
+          "type": "stone",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -15.018624526584558,
@@ -658,7 +1986,43 @@
       "border": "square",
       "id": 46,
       "nodeId": 46,
-      "note": "曲折的小径通往不同的区域，每一处都是矿工们最熟悉的工作环境。乏味、沉闷、充满汗水的生活还有监工们的监视， 这些都是王酋的“恩赐”。"
+      "note": "曲折的小径通往不同的区域，每一处都是矿工们最熟悉的工作环境。乏味、沉闷、充满汗水的生活还有监工们的监视， 这些都是王酋的“恩赐”。",
+      "mainResources": [
+        {
+          "type": "stone",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -24.161698286456986,
@@ -673,7 +2037,39 @@
       "border": "square",
       "id": 47,
       "nodeId": 47,
-      "note": "我们的狩猎对象是苔生兽，但生活在这里的荒地鼷兽并不知道这些，它们夺路而逃。"
+      "note": "我们的狩猎对象是苔生兽，但生活在这里的荒地鼷兽并不知道这些，它们夺路而逃。",
+      "mainResources": [
+        {
+          "type": "beef",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -40.823073725940475,
@@ -690,7 +2086,47 @@
       "border": "square",
       "id": 48,
       "nodeId": 48,
-      "note": "在许多萨尔贡居民眼中，保护原本的自然环境比什么都重要，因此，他们抗拒接受原有生活经验改变的 手段也十分激进。"
+      "note": "在许多萨尔贡居民眼中，保护原本的自然环境比什么都重要，因此，他们抗拒接受原有生活经验改变的 手段也十分激进。",
+      "mainResources": [
+        {
+          "type": "stone",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -30.976246662415058,
@@ -707,7 +2143,47 @@
       "border": "square",
       "id": 49,
       "nodeId": 49,
-      "note": "一些从移动城市来的人试图用无人机驯化苔生兽按规定路线行进并驮运货物，想法很美好，可现实显然......"
+      "note": "一些从移动城市来的人试图用无人机驯化苔生兽按规定路线行进并驮运货物，想法很美好，可现实显然......",
+      "mainResources": [
+        {
+          "type": "beef",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -16.78405866802193,
@@ -720,7 +2196,34 @@
       "border": "square",
       "id": 50,
       "nodeId": 50,
-      "note": "老猎人讲述了第一个吃下岩壳蟹的人的故事。熬过天灾与劫掠，是毒虫 还是涩果他都不再考虑，鲜血淋漓地咬开硬壳后，他尝到了生的甜美。"
+      "note": "老猎人讲述了第一个吃下岩壳蟹的人的故事。熬过天灾与劫掠，是毒虫 还是涩果他都不再考虑，鲜血淋漓地咬开硬壳后，他尝到了生的甜美。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -3.0303933363769744,
@@ -735,7 +2238,39 @@
       "border": "square",
       "id": 51,
       "nodeId": 51,
-      "note": "苔生兽悠闲地咀嚼着它们身上的苔藓，在一方小小的地方悠哉游哉。奇怪，外面有那么大块的地方，它们怎么不去四处走走？"
+      "note": "苔生兽悠闲地咀嚼着它们身上的苔藓，在一方小小的地方悠哉游哉。奇怪，外面有那么大块的地方，它们怎么不去四处走走？",
+      "mainResources": [
+        {
+          "type": "beef",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -5.023678167050203,
@@ -748,7 +2283,34 @@
       "border": "square",
       "id": 52,
       "nodeId": 52,
-      "note": "当王酋的征税终于压垮了一个贫穷的部落时，一些部落民 选择将武器对准同样处在压迫下，但尚有余力的你们。他们的愤怒被限制，止步于此。"
+      "note": "当王酋的征税终于压垮了一个贫穷的部落时，一些部落民 选择将武器对准同样处在压迫下，但尚有余力的你们。他们的愤怒被限制，止步于此。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -16.576758992199284,
@@ -761,7 +2323,34 @@
       "border": "square",
       "id": 53,
       "nodeId": 53,
-      "note": "从丛林中蹿出的， 可以是猎物，可以是敌人，也可以是不明身份的机械设备。"
+      "note": "从丛林中蹿出的， 可以是猎物，可以是敌人，也可以是不明身份的机械设备。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 12.246139659335029,
@@ -776,7 +2365,39 @@
       "border": "square",
       "id": 54,
       "nodeId": 54,
-      "note": "我们的狩猎对象是苔生兽，但生活在这里的荒地鼷兽并不知道这些，它们夺路而逃。"
+      "note": "我们的狩猎对象是苔生兽，但生活在这里的荒地鼷兽并不知道这些，它们夺路而逃。",
+      "mainResources": [
+        {
+          "type": "beef",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -9.48066499500261,
@@ -789,7 +2410,34 @@
       "border": "square",
       "id": 55,
       "nodeId": 55,
-      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。"
+      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 7.223061886038614,
@@ -802,7 +2450,34 @@
       "border": "square",
       "id": 56,
       "nodeId": 56,
-      "note": "火焰灼烧身体，意志重铸灵魂。"
+      "note": "火焰灼烧身体，意志重铸灵魂。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 23.96665446369341,
@@ -815,7 +2490,34 @@
       "border": "square",
       "id": 57,
       "nodeId": 57,
-      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。"
+      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 7.390495865247964,
@@ -830,7 +2532,39 @@
       "border": "square",
       "id": 58,
       "nodeId": 58,
-      "note": "被源石感染的畸变生物没有彻底地失去理智，它们仍旧站在之前的巢穴前， 机械地重复着想要回家的动作。"
+      "note": "被源石感染的畸变生物没有彻底地失去理智，它们仍旧站在之前的巢穴前， 机械地重复着想要回家的动作。",
+      "mainResources": [
+        {
+          "type": "stone",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 26.75725322663584,
@@ -843,7 +2577,34 @@
       "border": "square",
       "id": 59,
       "nodeId": 59,
-      "note": "森严的守卫不过是临时的枷锁，干涸的河床只是遥远的历史，唯有真实的反抗，才能为人们带来切实的自由。"
+      "note": "森严的守卫不过是临时的枷锁，干涸的河床只是遥远的历史，唯有真实的反抗，才能为人们带来切实的自由。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 25.800476507912684,
@@ -859,7 +2620,43 @@
       "border": "hexagon",
       "id": 60,
       "nodeId": 60,
-      "note": "<@lv.description><号令点></>击破后可以在此处定期派出干员收集大量石材\\n“ 甜水故道”是这座废弃小镇鼎盛时期的称呼，而如今，与它一起不复存在的还有曾绕城而过的纳卢塔巴提河。甜水在何方？如今唯有漫漫黄沙和小片林地。"
+      "note": "<@lv.description><号令点></>击破后可以在此处定期派出干员收集大量石材\\n“ 甜水故道”是这座废弃小镇鼎盛时期的称呼，而如今，与它一起不复存在的还有曾绕城而过的纳卢塔巴提河。甜水在何方？如今唯有漫漫黄沙和小片林地。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -16.10633452596596,
@@ -872,7 +2669,34 @@
       "border": "square",
       "id": 61,
       "nodeId": 61,
-      "note": "你们曾见过有位萨卡兹的佣兵在此处撒下几粒种子。不是 每粒种子都会开出花，但这片平原已经比之前的荒芜好了许多。"
+      "note": "你们曾见过有位萨卡兹的佣兵在此处撒下几粒种子。不是 每粒种子都会开出花，但这片平原已经比之前的荒芜好了许多。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 27.22006708141525,
@@ -885,7 +2709,34 @@
       "border": "square",
       "id": 62,
       "nodeId": 62,
-      "note": "大地生出症结，地面长出巨石与飞沙，或立成山，或凝成像。不要惧怕，那或许是它们有话想要对你们诉说。"
+      "note": "大地生出症结，地面长出巨石与飞沙，或立成山，或凝成像。不要惧怕，那或许是它们有话想要对你们诉说。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 16.821534262277932,
@@ -901,7 +2752,43 @@
       "border": "square",
       "id": 63,
       "nodeId": 63,
-      "note": "曲折的小径通往不同的区域，每一处都是矿工们最熟悉的工作环境。乏味、沉闷、充满汗水的生活还有监工们的监视， 这些都是王酋的“恩赐”。"
+      "note": "曲折的小径通往不同的区域，每一处都是矿工们最熟悉的工作环境。乏味、沉闷、充满汗水的生活还有监工们的监视， 这些都是王酋的“恩赐”。",
+      "mainResources": [
+        {
+          "type": "stone",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 32.654328307147004,
@@ -918,7 +2805,47 @@
       "border": "square",
       "id": 64,
       "nodeId": 64,
-      "note": "石头、杂草还有敌人，他们共同“占据”了这个山头，成 为这个贫瘠之地仅剩的“风景”。"
+      "note": "石头、杂草还有敌人，他们共同“占据”了这个山头，成 为这个贫瘠之地仅剩的“风景”。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 49.07809040127649,
@@ -931,7 +2858,34 @@
       "border": "square",
       "id": 65,
       "nodeId": 65,
-      "note": "在萨尔贡总能遇到意料之外的来客，大多数时候，他们往往不是那么友善，甚至比王酋的手下们更不友善一些。"
+      "note": "在萨尔贡总能遇到意料之外的来客，大多数时候，他们往往不是那么友善，甚至比王酋的手下们更不友善一些。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 49.013148683171764,
@@ -946,7 +2900,39 @@
       "border": "square",
       "id": 66,
       "nodeId": 66,
-      "note": "原本角跳兽的栖息地被源石虫占领，现在要在这里打猎变得更加困难了——毕竟需要在连续的爆炸中命中猎物。"
+      "note": "原本角跳兽的栖息地被源石虫占领，现在要在这里打猎变得更加困难了——毕竟需要在连续的爆炸中命中猎物。",
+      "mainResources": [
+        {
+          "type": "venison",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 41.88254882803883,
@@ -961,7 +2947,39 @@
       "border": "hexagon",
       "id": 67,
       "nodeId": 67,
-      "note": "<@lv.description><号令点></>击破后可以在此处定期派出干员收集大量木材与少量石材\\n“沙子的玩笑”是旅人给这里起的称呼，传言当年这里还有矿工的时候，站在最高的建筑上可以看到在天边若隐若现的异域风景。"
+      "note": "<@lv.description><号令点></>击破后可以在此处定期派出干员收集大量木材与少量石材\\n“沙子的玩笑”是旅人给这里起的称呼，传言当年这里还有矿工的时候，站在最高的建筑上可以看到在天边若隐若现的异域风景。",
+      "mainResources": [
+        {
+          "type": "stone",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 24.374261230682276,
@@ -978,7 +2996,47 @@
       "border": "square",
       "id": 68,
       "nodeId": 68,
-      "note": "<@lv.description><机关石门></>击破后会解锁新的可探索区域。被击破前，每次进入关卡会完全恢复原状。\\n再向前走似乎是一个完全不同的地方，湖水阻挡步伐，池沼扭曲视线，迷幻与寂静是这一切的尽头。"
+      "note": "<@lv.description><机关石门></>击破后会解锁新的可探索区域。被击破前，每次进入关卡会完全恢复原状。\\n再向前走似乎是一个完全不同的地方，湖水阻挡步伐，池沼扭曲视线，迷幻与寂静是这一切的尽头。",
+      "mainResources": [
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 32.6878564509825,
@@ -996,7 +3054,51 @@
       "border": "square",
       "id": 69,
       "nodeId": 69,
-      "note": "随着气候和环境的变化，野兽成群跨过河流， 前往食物更丰富的对岸。食物储备充足的部落此时更愿意选择为外来的摄影师担任向导，比捕猎更轻松。"
+      "note": "随着气候和环境的变化，野兽成群跨过河流， 前往食物更丰富的对岸。食物储备充足的部落此时更愿意选择为外来的摄影师担任向导，比捕猎更轻松。",
+      "mainResources": [
+        {
+          "type": "beef",
+          "count": 1
+        },
+        {
+          "type": "venison",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 43.43105498513739,
@@ -1009,7 +3111,34 @@
       "border": "square",
       "id": 70,
       "nodeId": 70,
-      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。"
+      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 50.43493810556432,
@@ -1024,7 +3153,39 @@
       "border": "square",
       "id": 71,
       "nodeId": 71,
-      "note": "被不明势力占据的铁矿脉蜿蜒在熔岩之间，巨大的热量让所有人都汗流浃背。王酋们追逐资源的传统，让这里 人满为患，也让冲突一触即发。"
+      "note": "被不明势力占据的铁矿脉蜿蜒在熔岩之间，巨大的热量让所有人都汗流浃背。王酋们追逐资源的传统，让这里 人满为患，也让冲突一触即发。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 42.22955202305564,
@@ -1040,7 +3201,43 @@
       "border": "square",
       "id": 72,
       "nodeId": 72,
-      "note": "在萨尔贡的荒季和盛季，普通人的生活就像荒原上的草地的长势一样大相径庭，唯一不变的是 四处寻觅的王酋军队，他们架起武器，平等地威胁着所有人。"
+      "note": "在萨尔贡的荒季和盛季，普通人的生活就像荒原上的草地的长势一样大相径庭，唯一不变的是 四处寻觅的王酋军队，他们架起武器，平等地威胁着所有人。",
+      "mainResources": [
+        {
+          "type": "beef",
+          "count": 1
+        },
+        {
+          "type": "poultry",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 48.629753882865266,
@@ -1055,7 +3252,39 @@
       "border": "square",
       "id": 73,
       "nodeId": 73,
-      "note": "畸变的 源石生物安静地守在岩体的一旁，它失去记忆，没有知觉，只想守护眼前的矿脉。"
+      "note": "畸变的 源石生物安静地守在岩体的一旁，它失去记忆，没有知觉，只想守护眼前的矿脉。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 39.25216978856958,
@@ -1073,7 +3302,51 @@
       "border": "square",
       "id": 74,
       "nodeId": 74,
-      "note": "王酋下属的军队也未必熟悉自己的领地，更何况是一些连 当地人都很少前往的地方。好消息是，在这种动物繁多的沼滩，至少不会有人因挨饿而丢掉性命。"
+      "note": "王酋下属的军队也未必熟悉自己的领地，更何况是一些连 当地人都很少前往的地方。好消息是，在这种动物繁多的沼滩，至少不会有人因挨饿而丢掉性命。",
+      "mainResources": [
+        {
+          "type": "poultry",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "beef",
+          "count": 1
+        },
+        {
+          "type": "venison",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 37.868977565566915,
@@ -1090,7 +3363,47 @@
       "border": "square",
       "id": 75,
       "nodeId": 75,
-      "note": "部落中的老人常常会用一句萨尔贡的老话告诫子孙：能运走巨石的人固然值得尊敬，但从沙粒开始搭起房屋的，也是部落 中的英雄。"
+      "note": "部落中的老人常常会用一句萨尔贡的老话告诫子孙：能运走巨石的人固然值得尊敬，但从沙粒开始搭起房屋的，也是部落 中的英雄。",
+      "mainResources": [
+        {
+          "type": "stone",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 54.572799233530894,
@@ -1106,7 +3419,43 @@
       "border": "square",
       "id": 76,
       "nodeId": 76,
-      "note": "矿产的争夺破坏了几个部落之间原本友善的关系，当他们开始破坏我们搭建的监控塔时，愤怒弥漫在我们的同 伴之间。"
+      "note": "矿产的争夺破坏了几个部落之间原本友善的关系，当他们开始破坏我们搭建的监控塔时，愤怒弥漫在我们的同 伴之间。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "stone",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 60.14073978951886,
@@ -1122,7 +3471,43 @@
       "border": "square",
       "id": 77,
       "nodeId": 77,
-      "note": "有树木的地方就有羽兽，所 以把两样都带回家也是一种不错的选择。"
+      "note": "有树木的地方就有羽兽，所以把两样都带回家也是一种不错的选择。",
+      "mainResources": [
+        {
+          "type": "poultry",
+          "count": 1
+        },
+        {
+          "type": "wood",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 63.04192986869147,
@@ -1135,7 +3520,34 @@
       "border": "square",
       "id": 78,
       "nodeId": 78,
-      "note": "萨卡兹佣兵在沁礁黑市中不算少见，哥伦比亚的通讯器，维多利亚制式的武器，他 们可以属于任何势力，唯独不属于他们自己。"
+      "note": "萨卡兹佣兵在沁礁黑市中不算少见，哥伦比亚的通讯器，维多利亚制式的武器，他 们可以属于任何势力，唯独不属于他们自己。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 61.65873406842432,
@@ -1152,7 +3564,47 @@
       "border": "square",
       "id": 79,
       "nodeId": 79,
-      "note": "石头、杂草还有敌人，他们共同“占据”了这个山头，成 为这个贫瘠之地仅剩的“风景”。"
+      "note": "石头、杂草还有敌人，他们共同“占据”了这个山头，成 为这个贫瘠之地仅剩的“风景”。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 59.48825722789982,
@@ -1165,7 +3617,34 @@
       "border": "square",
       "id": 80,
       "nodeId": 80,
-      "note": "老猎人讲述了第一个吃下岩壳蟹的人的故事。熬过天灾与劫掠，是毒虫 还是涩果他都不再考虑，鲜血淋漓地咬开硬壳后，他尝到了生的甜美。"
+      "note": "老猎人讲述了第一个吃下岩壳蟹的人的故事。熬过天灾与劫掠，是毒虫 还是涩果他都不再考虑，鲜血淋漓地咬开硬壳后，他尝到了生的甜美。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 62.94238456344068,
@@ -1180,7 +3659,39 @@
       "border": "square",
       "id": 81,
       "nodeId": 81,
-      "note": "被不明势力占据的铁矿脉蜿蜒在熔岩之间，巨大的热量让所有人都汗流浃背。王酋们追逐资源的传统，让这里 人满为患，也让冲突一触即发。"
+      "note": "被不明势力占据的铁矿脉蜿蜒在熔岩之间，巨大的热量让所有人都汗流浃背。王酋们追逐资源的传统，让这里 人满为患，也让冲突一触即发。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 69.88629126381522,
@@ -1196,7 +3707,43 @@
       "border": "square",
       "id": 82,
       "nodeId": 82,
-      "note": "几处树荫下的土地滋养着各种意想不到的小生物，微风吹过，羽兽的身影和树叶混作一团。在这里的阴凉处坐上哪怕一小会儿，也会感到心旷神怡。"
+      "note": "几处树荫下的土地滋养着各种意想不到的小生物，微风吹过，羽兽的身影和树叶混作一团。在这里的阴凉处坐上哪怕一小会儿，也会感到心旷神怡。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        },
+        {
+          "type": "poultry",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 75.76522662324643,
@@ -1211,7 +3758,39 @@
       "border": "square",
       "id": 83,
       "nodeId": 83,
-      "note": "苔生兽悠闲地咀嚼着它们身上的苔藓，在一方小小的地方悠哉游哉。奇怪，外面有那么大块的地方，它们怎么不去四处走走？"
+      "note": "苔生兽悠闲地咀嚼着它们身上的苔藓，在一方小小的地方悠哉游哉。奇怪，外面有那么大块的地方，它们怎么不去四处走走？",
+      "mainResources": [
+        {
+          "type": "beef",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 82.4213029940718,
@@ -1226,7 +3805,39 @@
       "border": "square",
       "id": 84,
       "nodeId": 84,
-      "note": "原本以为这处位于荒山野岭的矿脉附近会更加安静，但走近才发现热闹得像都市商业区的十字路口。"
+      "note": "原本以为这处位于荒山野岭的矿脉附近会更加安静，但走近才发现热闹得像都市商业区的十字路口。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 77.34829343576736,
@@ -1239,7 +3850,34 @@
       "border": "square",
       "id": 85,
       "nodeId": 85,
-      "note": "丢失了黑市订单中的大批施术单元可不是件小事，不想被买家发现事情真相，这群莱塔 尼亚人决定先下手为强。"
+      "note": "丢失了黑市订单中的大批施术单元可不是件小事，不想被买家发现事情真相，这群莱塔 尼亚人决定先下手为强。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 65.98830229562945,
@@ -1255,7 +3893,43 @@
       "border": "hexagon",
       "id": 86,
       "nodeId": 86,
-      "note": "<@lv.description><号令点></>击破后可以在此处定期派出干员收集铁矿石\\n“贤人的门房”是这里的旧称，相传一位贤人在这里居住，但在萨尔贡，有这样说法的地方实在太多，人们只会记得这里曾是一座矿业小镇。"
+      "note": "<@lv.description><号令点></>击破后可以在此处定期派出干员收集铁矿石\\n“贤人的门房”是这里的旧称，相传一位贤人在这里居住，但在萨尔贡，有这样说法的地方实在太多，人们只会记得这里曾是一座矿业小镇。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "stone",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 63.05163554361718,
@@ -1268,7 +3942,34 @@
       "border": "square",
       "id": 87,
       "nodeId": 87,
-      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。"
+      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 76.68020894540352,
@@ -1281,7 +3982,34 @@
       "border": "square",
       "id": 88,
       "nodeId": 88,
-      "note": "战士手捧黄沙，孑然独行，没有人能给予他答案，他也以沉默回应众人。\n"
+      "note": "战士手捧黄沙，孑然独行，没有人能给予他答案，他也以沉默回应众人。\n",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 50.45896722569894,
@@ -1294,7 +4022,34 @@
       "border": "square",
       "id": 89,
       "nodeId": 89,
-      "note": "这里人来人往，安定得就像什么事都没有发生一样。"
+      "note": "这里人来人往，安定得就像什么事都没有发生一样。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 48.5286282317838,
@@ -1307,7 +4062,34 @@
       "border": "square",
       "id": 90,
       "nodeId": 90,
-      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。"
+      "note": "一片土地可以成为战场，也可以成为安居乐业的乐土，这取决于生活在上面的人们做何决定。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 65.85971528584746,
@@ -1323,7 +4105,43 @@
       "border": "square",
       "id": 91,
       "nodeId": 91,
-      "note": "在这人迹罕至的岛屿上，磐蟹们根据水面的涨落而不断转移，若仔细观察 ，它们总能从固定的方位出现，又在固定的方位消失，这到底是怎么回事呢？"
+      "note": "在这人迹罕至的岛屿上，磐蟹们根据水面的涨落而不断转移，若仔细观察 ，它们总能从固定的方位出现，又在固定的方位消失，这到底是怎么回事呢？",
+      "mainResources": [
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 64.55883465951362,
@@ -1339,7 +4157,47 @@
       "size": "small",
       "border": "square",
       "id": 92,
-      "nodeId": 92
+      "nodeId": 92,
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": 47.55506800560984,
@@ -1355,7 +4213,43 @@
       "border": "square",
       "id": 93,
       "nodeId": 93,
-      "note": "<@lv.description>每日刷新敌人，领袖敌人未被击倒则次日恢复全部生命值（非陌域中时）</>\\n冰凉的瀑布下，埋藏着一段不为人知的秘密。它温和、轻柔，又带着一丝惆怅，飘荡在某些人的心头，只要提起，气氛就 变得忧伤。"
+      "note": "<@lv.description>每日刷新敌人，领袖敌人未被击倒则次日恢复全部生命值（非陌域中时）</>\\n冰凉的瀑布下，埋藏着一段不为人知的秘密。它温和、轻柔，又带着一丝惆怅，飘荡在某些人的心头，只要提起，气氛就 变得忧伤。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -72.08752490871856,
@@ -1368,7 +4262,34 @@
       "border": "square",
       "id": 94,
       "nodeId": 94,
-      "note": "当部落民为王酋的征税而感 到万分苦恼时，一部分部落民则会选择成为王酋大人的征税部队。当然，怎么选择都是为了生活。"
+      "note": "当部落民为王酋的征税而感 到万分苦恼时，一部分部落民则会选择成为王酋大人的征税部队。当然，怎么选择都是为了生活。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -58.09782931460078,
@@ -1381,7 +4302,34 @@
       "border": "square",
       "id": 95,
       "nodeId": 95,
-      "note": "<@lv.description>每日刷新敌人，领袖敌人未被击倒则次日恢复全部生命值（非陌域中时）</>\\n曾经是观众的时候，会惊叹于杂耍艺人的表演水平。现在是 对手，该因为杂耍艺人的战斗水平而头痛了。"
+      "note": "<@lv.description>每日刷新敌人，领袖敌人未被击倒则次日恢复全部生命值（非陌域中时）</>\\n曾经是观众的时候，会惊叹于杂耍艺人的表演水平。现在是 对手，该因为杂耍艺人的战斗水平而头痛了。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -75.11630764092692,
@@ -1394,7 +4342,34 @@
       "border": "square",
       "id": 96,
       "nodeId": 96,
-      "note": "杂耍艺人们精心布置的囚笼，但是否为囚笼，还要看 钥匙在谁的手中。"
+      "note": "杂耍艺人们精心布置的囚笼，但是否为囚笼，还要看 钥匙在谁的手中。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -83.60508143980489,
@@ -1407,7 +4382,34 @@
       "border": "square",
       "id": 97,
       "nodeId": 97,
-      "note": "老猎人讲述了第一个吃下岩壳蟹的人的故事。熬过天灾与劫掠，是毒虫 还是涩果他都不再考虑，鲜血淋漓地咬开硬壳后，他尝到了生的甜美。"
+      "note": "老猎人讲述了第一个吃下岩壳蟹的人的故事。熬过天灾与劫掠，是毒虫 还是涩果他都不再考虑，鲜血淋漓地咬开硬壳后，他尝到了生的甜美。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -88.82359007629577,
@@ -1422,7 +4424,39 @@
       "border": "square",
       "id": 98,
       "nodeId": 98,
-      "note": "矿工们正在前往矿洞深处寻觅澄亮石，这种矿物在市面上高昂的价格让大家更愿意冒风险深入没有勘探 完全的地层中。"
+      "note": "矿工们正在前往矿洞深处寻觅澄亮石，这种矿物在市面上高昂的价格让大家更愿意冒风险深入没有勘探 完全的地层中。",
+      "mainResources": [
+        {
+          "type": "diamond",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -64.49920090795086,
@@ -1437,7 +4471,39 @@
       "border": "square",
       "id": 99,
       "nodeId": 99,
-      "note": "被不明势力占据的铁矿脉蜿蜒在熔岩之间，巨大的热量让所有人都汗流浃背。王酋们追逐资源的传统，让这里 人满为患，也让冲突一触即发。"
+      "note": "被不明势力占据的铁矿脉蜿蜒在熔岩之间，巨大的热量让所有人都汗流浃背。王酋们追逐资源的传统，让这里 人满为患，也让冲突一触即发。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -55.155001237297505,
@@ -1454,7 +4520,47 @@
       "border": "square",
       "id": 100,
       "nodeId": 100,
-      "note": "部落中的老人常常会用一句萨尔贡的老话告诫子孙：能运走巨石的人固然值得尊敬，但从沙粒开始搭起房屋的，也是部落 中的英雄。"
+      "note": "部落中的老人常常会用一句萨尔贡的老话告诫子孙：能运走巨石的人固然值得尊敬，但从沙粒开始搭起房屋的，也是部落 中的英雄。",
+      "mainResources": [
+        {
+          "type": "stone",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -48.9746498325122,
@@ -1470,7 +4576,43 @@
       "border": "square",
       "id": 101,
       "nodeId": 101,
-      "note": "矿产的争夺破坏了几个部落之间原本友善的关系，当他们开始破坏我们搭建的监控塔时，愤怒弥漫在我们的同 伴之间。"
+      "note": "矿产的争夺破坏了几个部落之间原本友善的关系，当他们开始破坏我们搭建的监控塔时，愤怒弥漫在我们的同 伴之间。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "stone",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -57.029570898856605,
@@ -1487,7 +4629,47 @@
       "border": "square",
       "id": 102,
       "nodeId": 102,
-      "note": "部落民们正在进行一场古老的仪式。 在这诡异的仪式过程中，有黑影闪过，一场好戏即将上演。"
+      "note": "部落民们正在进行一场古老的仪式。 在这诡异的仪式过程中，有黑影闪过，一场好戏即将上演。",
+      "mainResources": [
+        {
+          "type": "beef",
+          "count": 1
+        },
+        {
+          "type": "venison",
+          "count": 1
+        },
+        {
+          "type": "poultry",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -80.55583396784587,
@@ -1503,7 +4685,43 @@
       "border": "square",
       "id": 103,
       "nodeId": 103,
-      "note": "有树木的地方就有羽兽，所 以把两样都带回家也是一种不错的选择。"
+      "note": "有树木的地方就有羽兽，所以把两样都带回家也是一种不错的选择。",
+      "mainResources": [
+        {
+          "type": "poultry",
+          "count": 1
+        },
+        {
+          "type": "wood",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -59.333897597048285,
@@ -1520,7 +4738,47 @@
       "border": "square",
       "id": 105,
       "nodeId": 105,
-      "note": "过去与未来之影，在此析出一滴泪水，向如今的大地宣告他曾经来过。"
+      "note": "过去与未来之影，在此析出一滴泪水，向如今的大地宣告他曾经来过。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -85.82754917899297,
@@ -1533,7 +4791,34 @@
       "border": "square",
       "id": 106,
       "nodeId": 106,
-      "note": "想要命令自然，就需要先服从于自然。异兽徘徊在它的领地，等待着下一个对它感到好奇的人。\n"
+      "note": "想要命令自然，就需要先服从于自然。异兽徘徊在它的领地，等待着下一个对它感到好奇的人。\n",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -82.83583727578,
@@ -1551,7 +4836,51 @@
       "border": "square",
       "id": 107,
       "nodeId": 107,
-      "note": "在野外生存最重要的还是经验，见识丰富的采集老手只需要看一眼地形，就知 道自己该做什么准备了。"
+      "note": "在野外生存最重要的还是经验，见识丰富的采集老手只需要看一眼地形，就知 道自己该做什么准备了。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "wood",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -68.4037346749788,
@@ -1564,7 +4893,34 @@
       "border": "square",
       "id": 108,
       "nodeId": 108,
-      "note": "萨卡兹佣兵在沁礁黑市中不算少见，哥伦比亚的通讯器，维多利亚制式的武器，他 们可以属于任何势力，唯独不属于他们自己。"
+      "note": "萨卡兹佣兵在沁礁黑市中不算少见，哥伦比亚的通讯器，维多利亚制式的武器，他 们可以属于任何势力，唯独不属于他们自己。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -59.467190082618096,
@@ -1577,7 +4933,34 @@
       "border": "square",
       "id": 109,
       "nodeId": 109,
-      "note": "你们曾见过有位萨卡兹的佣兵在此处撒下几粒种子。不是 每粒种子都会开出花，但这片平原已经比之前的荒芜好了许多。"
+      "note": "你们曾见过有位萨卡兹的佣兵在此处撒下几粒种子。不是 每粒种子都会开出花，但这片平原已经比之前的荒芜好了许多。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -55.1241964489475,
@@ -1590,7 +4973,34 @@
       "border": "square",
       "id": 110,
       "nodeId": 110,
-      "note": "<@lv.description>每日刷新敌人，领袖敌人未被击倒则次日恢复全部生命值（非陌域中时）</>\\n晶洞的环境造就了一切，包括蕴蓄待出的生灵，也会让外来者察觉到认知之外的危险。"
+      "note": "<@lv.description>每日刷新敌人，领袖敌人未被击倒则次日恢复全部生命值（非陌域中时）</>\\n晶洞的环境造就了一切，包括蕴蓄待出的生灵，也会让外来者察觉到认知之外的危险。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -71.31019862568401,
@@ -1606,7 +5016,43 @@
       "border": "square",
       "id": 111,
       "nodeId": 111,
-      "note": "矿产的争夺破坏了几个部落之间原本友善的关系，当他们开始破坏我们搭建的监控塔时，愤怒弥漫在我们的同 伴之间。"
+      "note": "矿产的争夺破坏了几个部落之间原本友善的关系，当他们开始破坏我们搭建的监控塔时，愤怒弥漫在我们的同 伴之间。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "stone",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -58.16428893395568,
@@ -1619,7 +5065,34 @@
       "border": "square",
       "id": 112,
       "nodeId": 112,
-      "note": "<@lv.description>每日刷新敌人，领袖敌人未被击倒则次日恢复全部生命值（非陌域中时）</>\\n终结这片大地赋予的宿命，是我们来到这里的唯一目的。"
+      "note": "<@lv.description>每日刷新敌人，领袖敌人未被击倒则次日恢复全部生命值（非陌域中时）</>\\n终结这片大地赋予的宿命，是我们来到这里的唯一目的。",
+      "mainResources": [],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -3.682684588740841,
@@ -1632,7 +5105,9 @@
       "border": "round",
       "id": 113,
       "nodeId": 113,
-      "note": "把车上的物资完全展开就能建成一个营地，有的时候这能发挥出超乎想象的战斗力。"
+      "note": "把车上的物资完全展开就能建成一个营地，有的时候这能发挥出超乎想象的战斗力。",
+      "mainResources": [],
+      "regularResources": []
     },
     {
       "x": -30.126139603621866,
@@ -1646,7 +5121,39 @@
       "size": "small",
       "border": "square",
       "nodeId": 114,
-      "note": "本地的生物们轰隆隆地冲过来，又轰隆隆地冲过去，这就是它们的生活。"
+      "note": "本地的生物们轰隆隆地冲过来，又轰隆隆地冲过去，这就是它们的生活。",
+      "mainResources": [
+        {
+          "type": "venison",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     },
     {
       "x": -75.76022954029162,
@@ -1660,7 +5167,39 @@
       "size": "small",
       "border": "square",
       "nodeId": 115,
-      "note": "探索未知的洞穴，就像拆开来路不明的包裹——永远不知道里面究竟是惊喜，还是惊吓。"
+      "note": "探索未知的洞穴，就像拆开来路不明的包裹——永远不知道里面究竟是惊喜，还是惊吓。",
+      "mainResources": [
+        {
+          "type": "diamond",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
     }
   ],
   "adjancyList": {

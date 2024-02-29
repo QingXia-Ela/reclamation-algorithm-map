@@ -30,7 +30,7 @@ function getPossibleEdgeIdFromNodes(node1: Node, node2: Node) {
   ]
 }
 
-// todo!: 调整数据结构，将邻接表改为数组来表示边
+// todo!: 调整数据结构，将邻接表改为边数组来表示边
 class DataStrcutHandle {
   nodeMap: Record<string, Node> = {}
   adjancyList: Record<string, number[]> = {}

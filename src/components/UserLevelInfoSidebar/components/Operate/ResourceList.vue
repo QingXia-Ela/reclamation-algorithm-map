@@ -26,7 +26,7 @@ function getStyleByType(type) {
 </script>
 
 <template>
-  <div class="resource_list">
+  <div class="resource_list" v-show="props.ResourceList?.length">
     <div class="title">{{ props.title }}</div>
     <div class="item_container">
       <div class="item" v-for="(item, index) in props.ResourceList" :key="index">

@@ -9,8 +9,6 @@ const props = defineProps({
   ResourceList: Array
 })
 
-console.log(IconData);
-
 /**
  * 
  * @param {import('@/assets/icons').IconType} type 

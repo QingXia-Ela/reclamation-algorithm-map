@@ -29,12 +29,27 @@ export type NodeWeather = "normal" |
 
 export type NodeResource = "water" | "wood" | "stone" | "iron" | "diamond" | "venison" | "poultry" | "crab" | "beef"
 
+/**
+ * `base` - 基地节点，全局只有一个
+ * 
+ * `camp` - 前进营地
+ * 
+ * `backroom` - 后室
+ * 
+ * `normal` - 普通节点
+ */
+export type NodePreset = "base" | "camp" | "backroom" | "normal"
+
 type ResourceType = Array<{
   type: NodeResource,
   count: number
 }>
 
-export interface NodeProps {
+export interface NormalNodeProps {
+  /**
+   * 特殊节点预设，该项为 `normal` 时则使用默认节点
+   */
+  preset: NodePreset
   /**
    * 节点 id，用于建图
    */
@@ -68,5 +83,15 @@ export interface NodeProps {
   /** 节点备注 */
   note?: string
 }
+
+export interface BaseNodeProps {
+  nodeId: number
+  preset: "base",
+  name?: string
+  x: number
+  y: number
+}
+
+export type NodeProps = NormalNodeProps | BaseNodeProps
 
 export type NodePropsWithoutId = Omit<NodeProps, 'nodeId'>

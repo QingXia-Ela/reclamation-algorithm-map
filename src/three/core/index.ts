@@ -18,6 +18,15 @@ function getMouseVector(event: MouseEvent) {
   return mouseVector
 }
 
+const InnerNode: NodeProps[] = [
+  {
+    nodeId: -1,
+    preset: "base",
+    x: -5,
+    y: 8.5
+  }
+]
+
 // todo!: 增加一个随鼠标点击移动的高亮小坐标
 class MapCore {
   threeObject: Record<string, any> = {}
@@ -308,6 +317,11 @@ class MapCore {
 
     const composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
+
+    // 添加内置节点
+    InnerNode.forEach((node) => {
+      this.DataHandle.addNode(node)
+    })
 
     const effect = new ShaderPass(BSCShader);
     const FXAAPass = new ShaderPass(FXAAShader);

@@ -1,6 +1,7 @@
-import { NodePropsWithoutId } from "@/three/types/node";
+import { NormalNodeProps } from "@/three/types/node";
 
-export const DEFAULT_NODE_CONFIG: NodePropsWithoutId = {
+export const DEFAULT_NODE_CONFIG: Omit<NormalNodeProps, 'nodeId'> = {
+  preset: "",
   x: 0,
   y: 0,
   name: "Node",
@@ -10,5 +11,6 @@ export const DEFAULT_NODE_CONFIG: NodePropsWithoutId = {
   size: "small",
   border: "square",
   note: "",
-  mapAssetsId: "",
+  mainResources: [],
+  regularResources: [],
 }

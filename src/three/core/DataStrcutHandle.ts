@@ -1,10 +1,11 @@
 /**
  * 用于处理地图点与边数据结构
  */
+import BaseNode from '../object/base';
 import Line from '../object/components/line';
 import Node from '../object/components/node';
 import { SaveMapData } from '../types/data';
-import { NodeProps, NodePropsWithoutId } from '../types/node';
+import { NodePreset, NodeProps, NodePropsWithoutId, NormalNodeProps } from '../types/node';
 import validateMapData from '../utils/validateMapData';
 
 function getNodeIdFromEdgeKey(edgeKey: string) {
@@ -30,7 +31,14 @@ function getPossibleEdgeIdFromNodes(node1: Node, node2: Node) {
   ]
 }
 
-// todo!: 调整数据结构，将邻接表改为数组来表示边
+function getSpeicalNode(preset: NodePreset) {
+  switch (preset) {
+    default:
+      return new BaseNode()
+  }
+}
+
+// todo!: 调整数据结构，将邻接表改为边数组来表示边
 class DataStrcutHandle {
   nodeMap: Record<string, Node> = {}
   adjancyList: Record<string, number[]> = {}
@@ -111,10 +119,16 @@ class DataStrcutHandle {
    * @returns Node
    */
   addNode(options: NodeProps) {
-    const node = options.nodeId ? new Node(options) : new Node({
-      ...options,
-      nodeId: this.getUniqueNodeId()
-    })
+    let node: Node
+    if (options.preset !== "normal") {
+      node = getSpeicalNode(options.preset)
+    }
+    else {
+      node = options.nodeId ? new Node(options as NormalNodeProps) : new Node({
+        ...options as NormalNodeProps,
+        nodeId: this.getUniqueNodeId()
+      })
+    }
     this.nodeMap[node.nodeId] = node
     return node
   }

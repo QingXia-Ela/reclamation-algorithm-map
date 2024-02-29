@@ -15,6 +15,7 @@ import { component as Viewer } from "v-viewer";
 import { computed, onUpdated, ref } from 'vue';
 import { useCurrentNode } from '@/store/users/currentNode';
 import { LevelMapData } from '@/assets/images/level';
+import ResourceList from './ResourceList.vue';
 
 let $viewer = null
 
@@ -46,7 +47,8 @@ function showMapImage() {
       </template>
     </viewer>
     <OperateButton @click="showMapImage" :disabled="!url">查看关卡地图</OperateButton>
-    <OperateButton>查看节点资源</OperateButton>
+    <ResourceList title="主要产出资源" :ResourceList="currentNode.node?.options.mainResources" />
+    <ResourceList title="常规产出资源" :ResourceList="currentNode.node?.options.regularResources" />
   </div>
 </template>
 

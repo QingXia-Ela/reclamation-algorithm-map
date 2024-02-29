@@ -9,7 +9,8 @@ import { SaveMapData } from "@/three/types/data";
  * @param core 地图核心
  */
 export default function getJSONDataFromCore(core: MapCore): SaveMapData {
-  const nodes = Object.values(core.DataHandle.nodeMap).map(node => node.options)
+  const nodes = Object.values(core.DataHandle.nodeMap)
+    .map(node => node.options)
   return {
     nodes,
     adjancyList: core.DataHandle.adjancyList

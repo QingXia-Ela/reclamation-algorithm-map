@@ -1,9 +1,8 @@
-import { NodeProps, NodeType } from "@/three/types/node";
+import { NormalNodeProps, NodeType } from "@/three/types/node";
 import * as THREE from "three";
 import NodeCore from "./components/core";
 import NodeTitle from "./components/title";
 import NodeResource from "./components/resources";
-import merge from "lodash/merge";
 
 // todo!: add rest type
 function getSubTitleFromType(type: NodeType) {
@@ -77,7 +76,7 @@ function getSubTitleFromType(type: NodeType) {
   };
 }
 
-function getTitleMoveBySize(size: NodeProps["size"]) {
+function getTitleMoveBySize(size: NormalNodeProps["size"]) {
   let moveByX = 0;
   let moveByY = 0;
 
@@ -102,7 +101,7 @@ function getTitleMoveBySize(size: NodeProps["size"]) {
   };
 }
 
-function getResouceMoveBySize(size: NodeProps["size"]) {
+function getResouceMoveBySize(size: NormalNodeProps["size"]) {
   let moveByX = 0;
   let moveByY = 0;
 
@@ -148,8 +147,9 @@ class Node extends THREE.Group {
   z = 0.3;
   selected = false;
   components: Record<string, THREE.Group> = {};
-  options: NodeProps;
-  constructor(options: NodeProps) {
+  options: NormalNodeProps;
+
+  constructor(options: NormalNodeProps) {
     super();
     const { x, y, nodeId } = options;
     this.x = x;
@@ -219,8 +219,9 @@ class Node extends THREE.Group {
    *
    * @param newOptions 新的节点配置
    */
-  updateNode(newOptions: Partial<NodeProps>) {
-    merge(this.options, newOptions);
+  updateNode(newOptions: NormalNodeProps) {
+    // 不使用 merge 合并是因为数组并不会用新值替换旧值
+    this.options = newOptions
 
     Object.values(this.components).forEach((component) =>
       this.remove(component)
@@ -229,11 +230,22 @@ class Node extends THREE.Group {
     this._init(this.options);
   }
 
-  private _getCore(options: NodeProps) {
+  /**
+   * 移除 Node 类自身下的所有 3D 对象
+   * 
+   * **Note**: 请谨慎使用
+   */
+  removeAllObjects() {
+    Object.values(this.components).forEach((component) =>
+      this.remove(component)
+    );
+  }
+
+  private _getCore(options: NormalNodeProps) {
     return new NodeCore(options);
   }
 
-  private _getNodeTitle({ name: title, weather, type, size }: NodeProps) {
+  private _getNodeTitle({ name: title, weather, type, size }: NormalNodeProps) {
     const { subTitle, subTitleColor } = getSubTitleFromType(type);
     const titleObj = new NodeTitle({
       title,
@@ -247,17 +259,15 @@ class Node extends THREE.Group {
     return titleObj;
   }
 
-  private _getResources({ resources, size }: NodeProps) {
-    const resourceObj = new NodeResource({
-      resources,
-    });
+  private _getResources(options: NormalNodeProps) {
+    const resourceObj = new NodeResource(options);
 
-    changeModelByMoveXY(resourceObj, getResouceMoveBySize(size));
+    changeModelByMoveXY(resourceObj, getResouceMoveBySize(options.size));
 
     return resourceObj;
   }
 
-  private _init(options: NodeProps) {
+  private _init(options: NormalNodeProps) {
     const core = this._getCore(options);
 
     const title = this._getNodeTitle(options);

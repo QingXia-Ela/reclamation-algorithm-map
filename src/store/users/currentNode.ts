@@ -21,12 +21,15 @@ export const useCurrentNode = defineStore("currentNode", {
 
 setTimeout(() => {
   // 仅用户布局启用
-  // const store = useCurrentNode()
-
-  // core.addEventListener('nodeclick', (node: Node) => {
-  //   console.log('user', node);
-
-  //   if (store.node) return
-  //   store.setNode(node)
-  // })
+  if (process.env.NODE_ENV === "production") {
+    const store = useCurrentNode()
+    core.addEventListener('nodeclick', (node: Node) => {
+      if (store.node) return
+      core.setCameraPosition({
+        x: node.x + 10,
+        y: node.y,
+      }, true)
+      store.setNode(node)
+    })
+  }
 });

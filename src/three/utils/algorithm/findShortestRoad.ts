@@ -1,17 +1,74 @@
-import MapCore from "@/three/core";
-import Line from "@/three/object/components/line";
+import type MapCore from "@/three/core";
+import type Line from "@/three/object/components/line";
+import Node from "@/three/object/components/node";
 
 type NodeId = string;
 type AdjacencyList = Record<NodeId, number[]>;
 
-function getShortestPathNodeIdArray(graph: AdjacencyList, start: NodeId, end: NodeId): NodeId[] {
+export function getShortestPathNodeIdArrayWithDirected(graph: AdjacencyList, start: NodeId, end: NodeId): NodeId[] {
+  const distances: Record<NodeId, number> = {};
+  const previous: Record<NodeId, NodeId | null> = {};
+  const nodes: Set<NodeId> = new Set(Object.keys(graph));
+
+  // Initialize distances and previous
+  for (const node of nodes) {
+    distances[node] = node === start ? 0 : Infinity;
+    previous[node] = null;
+  }
+
+  while (nodes.size > 0) {
+    // Find the node with the smallest distance
+    let closestNode: NodeId | null = null;
+    for (const node of nodes) {
+      if (closestNode === null || distances[node] < distances[closestNode]) {
+        closestNode = node;
+      }
+    }
+
+    if (closestNode === end) {
+      break; // We've reached the destination
+    }
+
+    if (closestNode) {
+      nodes.delete(closestNode);
+
+      // Explore neighbours
+      const neighbours = graph[closestNode] || [];
+      for (const neighbour of neighbours) {
+        const alt = distances[closestNode] + 1; // Assuming each edge has a weight of 1
+        if (alt < distances[neighbour]) {
+          distances[neighbour] = alt;
+          previous[neighbour] = closestNode;
+        }
+      }
+    }
+  }
+
+  // Reconstruct the shortest path
+  const path: NodeId[] = [];
+  let currentNode: NodeId | null = end;
+  while (currentNode && previous[currentNode] !== undefined) {
+    path.unshift(currentNode);
+    currentNode = previous[currentNode];
+  }
+
+  // If start node is not on path, that means there was no path found
+  if (path[0] !== start) {
+    throw new Error('No path found from start to end node');
+  }
+
+  return path;
+}
+
+// todo!: fix this
+export function getShortestPathNodeIdArray(graph: AdjacencyList, start: NodeId, end: NodeId): NodeId[] {
   const distances: Record<NodeId, number> = {};
   const previous: Record<NodeId, NodeId | null> = {};
   const nodes: NodeId[] = [];
 
   // Initialize distances, previous, and nodes array
   for (const node in graph) {
-    distances[node] = node === start ? 0 : Infinity;
+    distances[node] = node == start ? 0 : Infinity;
     previous[node] = null;
     nodes.push(node);
   }
@@ -22,7 +79,7 @@ function getShortestPathNodeIdArray(graph: AdjacencyList, start: NodeId, end: No
 
     // Choose the node with the smallest distance
     const closestNode = nodes.shift()!;
-    if (closestNode === end) {
+    if (closestNode == end) {
       break; // We've reached the destination
     }
 
@@ -60,8 +117,9 @@ function dijkstra(adjancyList: AdjacencyList, nodeMap: Record<string, Node>, sou
     if (index === 0) {
       return null
     }
-    return sourceEdges[`${ids[index - 1]}-${id}`]
+    return sourceEdges[`${ids[index - 1]}-${id}`] || sourceEdges[`${id}-${ids[index - 1]}`]
   }).filter(Boolean) as Line[]
+  console.log(ids, nodes, edges);
 
   return { nodes, edges }
 }

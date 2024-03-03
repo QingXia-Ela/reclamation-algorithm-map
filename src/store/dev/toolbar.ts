@@ -1,14 +1,18 @@
 import { defineStore } from 'pinia'
 
+interface ToolbarState {
+  show: boolean
+}
+
 export const useToolbar = defineStore('toolbar', {
   state: () => ({
     show: false
-  }),
+  }) as ToolbarState,
   actions: {
-    show() {
+    showToolbar() {
       this.show = true
     },
-    hide() {
+    hideToolbar() {
       this.show = false
     }
   }

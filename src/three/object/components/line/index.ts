@@ -38,6 +38,8 @@ class Line extends THREE.Group {
 
   z = .01
 
+  threeObject: Record<string, any> = {}
+
   constructor({
     x1,
     y1,
@@ -61,18 +63,35 @@ class Line extends THREE.Group {
 
   private _init() {
     const material = new THREE.MeshBasicMaterial({
-      color: 0xeeeeee,
+      color: 0xffffff,
       transparent: true,
-      opacity: 0.7
+      opacity: 0.6
     });
 
     const geometry = new THREE.PlaneGeometry(this.width, calculateDistance(this.x1, this.y1, this.x2, this.y2));
     const line = new THREE.Mesh(geometry, material);
 
+    this.threeObject = {
+      material,
+      geometry,
+      line
+    }
+
     const { x, y } = getLineMiddlePoint(this.x1, this.y1, this.x2, this.y2)
     this.position.set(x, y, this.z)
     this.rotateZ(getLineRotateAngle(this.x1, this.y1, this.x2, this.y2))
     this.add(line);
+  }
+
+  setLineStyle(style: THREE.MeshBasicMaterialParameters) {
+    const material = new THREE.MeshBasicMaterial(style)
+    this.threeObject.material = material
+    this.threeObject.line.material = material
+  }
+
+  setLineColor(color: number) {
+    // line 引用相同的 material，修改一个即可
+    this.threeObject.material.color.set(color)
   }
 
   setPosition(x1: number, y1: number, x2: number, y2: number) {

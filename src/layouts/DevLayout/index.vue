@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import TopLeftMousePos from './components/TopLeftMousePos/index.vue'
 import RightNodeState from './components/RightNodeState/index.vue'
-// import LeftToolbar from './components/LeftToolbar/index.vue'
+import LeftToolbar from './components/LeftToolbar/index.vue'
 import ContextMenu from '@/components/ContextMenu/index.vue'
 import GlobalMask from '@/components/GlobalMask.vue';
 import UserLevelInfoSidebar from '@/components/UserLevelInfoSidebar/index.vue'
@@ -39,7 +39,7 @@ onMounted(() => {
 <template>
   <TopLeftMousePos />
   <RightNodeState />
-  <!-- <LeftToolbar /> -->
+  <LeftToolbar />
   <GlobalMask />
   <ContextMenu />
   <UserLevelInfoSidebar />

@@ -6,7 +6,8 @@ import { ElFormItem } from "element-plus";
 
 const data = defineModel()
 
-const key = ["water", "wood", "stone", "iron", "diamond", "venison", "poultry", "crab", "beef"]
+// 节点资源过滤
+const key = ["water", "wood", "stone", "iron", "diamond", "venison", "poultry", "crab", "beef", "gold"]
 
 const formData = IconFormData.filter((v) => key.includes(v.value))
 </script>

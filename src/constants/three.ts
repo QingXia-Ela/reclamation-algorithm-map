@@ -1,7 +1,7 @@
 import { NormalNodeProps } from "@/three/types/node";
 
 export const DEFAULT_NODE_CONFIG: Omit<NormalNodeProps, 'nodeId'> = {
-  preset: "",
+  preset: "normal",
   x: 0,
   y: 0,
   name: "Node",

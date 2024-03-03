@@ -4,7 +4,7 @@
  * @author QingXia-Ela
  */
 import * as THREE from 'three'
-import { NodeProps, NodeType } from '@/three/types/node'
+import { NormalNodeProps, NodeType } from '@/three/types/node'
 import NODE_ASSETS from '@/assets/three/icon/node'
 const textureLoader = new THREE.TextureLoader()
 
@@ -30,7 +30,7 @@ async function getNodeTextureMapByType(type: NodeType) {
   return texture
 }
 
-async function getRoundBorder(type: NodeType, size: NodeProps['size']) {
+async function getRoundBorder(type: NodeType, size: NormalNodeProps['size']) {
   const RoundBorder = new THREE.Group()
 
   if (size === "small") RoundBorder.scale.set(0.65, 0.65, 1)
@@ -66,7 +66,7 @@ async function getRoundBorder(type: NodeType, size: NodeProps['size']) {
   return RoundBorder
 }
 
-async function getSquareBorder(type: NodeType, size: NodeProps['size']) {
+async function getSquareBorder(type: NodeType, size: NormalNodeProps['size']) {
   const group = new THREE.Group()
 
   if (size === "large") group.scale.set(1.4, 1.4, 1)
@@ -102,7 +102,7 @@ async function getSquareBorder(type: NodeType, size: NodeProps['size']) {
   return group
 }
 
-async function getHexagonBorder(type: NodeType, size: NodeProps['size']) {
+async function getHexagonBorder(type: NodeType, size: NormalNodeProps['size']) {
   const group = new THREE.Group()
 
   if (size === "small") group.scale.set(0.65, 0.65, 1)
@@ -138,7 +138,7 @@ async function getHexagonBorder(type: NodeType, size: NodeProps['size']) {
   return group
 }
 
-function getBorderFunc(border: NodeProps['border']) {
+function getBorderFunc(border: NormalNodeProps['border']) {
   switch (border) {
     case "round":
       return getRoundBorder
@@ -150,8 +150,8 @@ function getBorderFunc(border: NodeProps['border']) {
 
 interface NodeCoreProps {
   type: NodeType,
-  border: NodeProps['border'],
-  size: NodeProps['size']
+  border: NormalNodeProps['border'],
+  size: NormalNodeProps['size']
 }
 
 class NodeCore extends THREE.Group {

@@ -12,6 +12,6 @@ const devSaveData = debounce(function (core: MapCore) {
     clientSaveMap(str)
     return
   }
-}, 6000)
+}, 4000)
 
 export default devSaveData

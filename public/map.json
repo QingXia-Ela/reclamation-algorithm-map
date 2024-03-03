@@ -960,19 +960,19 @@
       "preset": "normal"
     },
     {
+      "preset": "normal",
       "x": 0.01831010117353138,
       "y": -34.27853669382515,
       "name": "不速之客",
-      "type": "collect",
+      "type": "nest",
       "weather": "normal",
+      "resources": [],
       "size": "small",
       "border": "square",
-      "id": 25,
-      "nodeId": 25,
       "note": "在萨尔贡总能遇到意料之外的来客，大多数时候，他们往往不是那么友善，甚至比王酋的手下们更不友善一些。",
       "mainResources": [
         {
-          "type": "crab",
+          "type": "gold",
           "count": 1
         }
       ],
@@ -1002,7 +1002,8 @@
           "count": 1
         }
       ],
-      "preset": "normal"
+      "id": 25,
+      "nodeId": 25
     },
     {
       "x": 15.167350215774404,

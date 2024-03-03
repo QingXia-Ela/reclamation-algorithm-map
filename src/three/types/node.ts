@@ -13,7 +13,8 @@ export type NodeType = "hunt" |
   "outpost" |
   "shop" |
   "upgrade_battle" |
-  "upgrade_scout"
+  "upgrade_scout" |
+  "base"
 
 
 export type NodeWeather = "normal" |
@@ -49,7 +50,7 @@ export interface NormalNodeProps {
   /**
    * 特殊节点预设，该项为 `normal` 时则使用默认节点
    */
-  preset: NodePreset
+  preset: "normal"
   /**
    * 节点 id，用于建图
    */

@@ -2,6 +2,39 @@ import * as THREE from "three";
 import { NodePreset, NodeType, NormalNodeProps } from "@/three/types/node";
 import Node from "../components/node";
 import { NodeDescriptionData } from "@/constants";
+import NODE_ASSETS from "@/assets/three/icon/node";
+
+const base_texture = await new THREE.TextureLoader().loadAsync(NODE_ASSETS.NODE_BASE)
+
+function getOuterRound() {
+  const OuterRound = new THREE.TorusGeometry(5.5, 0.14, 2, 100)
+
+  const Material = new THREE.MeshBasicMaterial({
+    color: 0xffffff,
+    transparent: true,
+    opacity: 0.8
+  })
+  return new THREE.Mesh(OuterRound, Material)
+}
+
+function getInnerCore() {
+  const group = new THREE.Group()
+  const geometry = new THREE.CircleGeometry(4.5, 32);
+  const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+  const circle = new THREE.Mesh(geometry, material);
+
+  const base_geometry = new THREE.PlaneGeometry(5, 5);
+  const base_material = new THREE.MeshBasicMaterial({
+    map: base_texture,
+    color: 0x000000,
+    transparent: true,
+  })
+  const base = new THREE.Mesh(base_geometry, base_material)
+
+  group.add(circle, base)
+
+  return group
+}
 
 class BaseNode extends Node {
   constructor() {
@@ -34,10 +67,7 @@ class BaseNode extends Node {
   }
 
   private _baseNode_init() {
-    const geometry = new THREE.CircleGeometry(5.5, 32);
-    const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-    const circle = new THREE.Mesh(geometry, material);
-    this.add(circle);
+    this.add(getInnerCore(), getOuterRound())
     this.removeAllObjects()
   }
 }

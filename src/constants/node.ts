@@ -14,7 +14,8 @@ export const NodeTypeArray: Array<NodeType> = [
   "outpost",
   "shop",
   "upgrade_battle",
-  "upgrade_scout"
+  "upgrade_scout",
+  "base"
 ]
 
 export const NodeTypeData: Array<{ value: NodeType, label: string }> = [
@@ -74,6 +75,10 @@ export const NodeTypeData: Array<{ value: NodeType, label: string }> = [
     value: "upgrade_scout",
     label: "岗哨",
   },
+  {
+    value: "base",
+    label: "驻扎地",
+  }
 ];
 
 export const NodeWeatherArray: Array<NodeWeather> = [

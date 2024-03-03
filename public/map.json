@@ -5006,17 +5006,18 @@
     },
     {
       "preset": "base",
-      "nodeId": -1,
-      "name": "驻扎地",
       "x": -5,
       "y": 8.5,
-      "type": "gate",
+      "name": "驻扎地",
+      "type": "base",
       "weather": "normal",
+      "resources": [],
       "size": "small",
       "border": "round",
       "note": "最初的落脚点。或许不够豪华，但能够安心休息。只要守住这里，不管失败几次都能东山再起，重新再来。",
       "mainResources": [],
-      "regularResources": []
+      "regularResources": [],
+      "nodeId": -1
     }
   ],
   "adjancyList": {

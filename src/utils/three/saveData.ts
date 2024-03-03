@@ -4,9 +4,9 @@ import { seralizeCurrentTime } from "../time"
 import saveTextFile from "../file/saveTextFile"
 import devSaveData from "./devSaveData"
 
-export default function saveData(core: MapCore) {
+export default function saveData(core: MapCore, devImmidiate = false) {
   if (process.env.NODE_ENV === "development") {
-    return devSaveData(core)
+    return devSaveData(core, devImmidiate)
   }
   const data = getJSONDataFromCore(core)
   const str = JSON.stringify(data, null, 2)

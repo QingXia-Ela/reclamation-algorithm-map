@@ -60,7 +60,7 @@ async function loadData() {
 <template>
   <el-button type="primary" @click="createNode">在鼠标单击位置新建节点</el-button>
   <el-button type="primary" @click="loadData">从 JSON 加载地图数据</el-button>
-  <el-button type="primary" @click="saveData(core)">保存地图数据为 JSON</el-button>
+  <el-button type="primary" @click="saveData(core, true)">保存地图数据为 JSON</el-button>
   <LigatureModeButton />
 </template>
 

@@ -4,7 +4,7 @@ import getJSONDataFromCore from "./getJSONDataFromCore"
 import MapCore from "@/three/core"
 import debounce from "lodash/debounce"
 
-const devSaveData = debounce(function (core: MapCore) {
+function saveDataCore(core: MapCore) {
   const data = getJSONDataFromCore(core)
   const str = JSON.stringify(data, null, 2)
   if (process.env.NODE_ENV === "development") {
@@ -12,6 +12,19 @@ const devSaveData = debounce(function (core: MapCore) {
     clientSaveMap(str)
     return
   }
+}
+
+
+const saveDataDebounce = debounce(function (core: MapCore) {
+  saveDataCore(core)
 }, 4000)
+
+function devSaveData(core: MapCore, immidiate = false) {
+  if (immidiate) {
+    saveDataCore(core)
+    return
+  }
+  saveDataDebounce(core)
+}
 
 export default devSaveData

@@ -17,7 +17,7 @@
 
 <script setup>
 import { useCurrentNodeState } from "@/store/dev/currentNodeState";
-import { nextTick, onMounted, ref, watch } from "vue";
+import { computed, nextTick, onMounted, ref, watch } from "vue";
 import {
   ElForm,
   ElFormItem,
@@ -47,8 +47,8 @@ import merge from "lodash/merge";
 
 const currentNodeState = useCurrentNodeState();
 const userNodeState = useCurrentNode();
-
 const active = ref(currentNodeState.showSidebar);
+const currentNode = computed(() => currentNodeState.getCurrentNode());
 
 /**
  * @type {import('vue').Ref<NodeProps>}
@@ -60,7 +60,7 @@ const infoData = ref({
 
 //  观察当前节点的数据，并同步到表单
 watch(
-  () => currentNodeState.node?.options,
+  () => currentNode.value?.options,
   (val) => {
     if (val) {
       infoData.value = merge({}, DEFAULT_NODE_CONFIG, val);
@@ -131,7 +131,7 @@ function saveData(options) {
 
 <template>
   <el-dialog title="删除确认" width="500" v-model="dialogVisible">
-    <span>是否确认删除当前节点: {{ currentNodeState.node?.options.name }}</span>
+    <span>是否确认删除当前节点: {{ currentNode?.options.name }}</span>
     <template #footer>
       <div class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
@@ -146,16 +146,16 @@ function saveData(options) {
     <template #default>
       <el-form :model="infoData" @before-close="saveData(infoData)">
         <el-form-item label="节点模型UUID">
-          {{ currentNodeState.node?.uuid }}
+          {{ currentNode?.uuid }}
         </el-form-item>
         <el-form-item label="节点ID">
-          {{ currentNodeState.node?.nodeId }}
+          {{ currentNode?.nodeId }}
         </el-form-item>
         <el-form-item label="节点X坐标">
-          {{ currentNodeState.node?.x }}
+          {{ currentNode?.x }}
         </el-form-item>
         <el-form-item label="节点Y坐标">
-          {{ currentNodeState.node?.y }}
+          {{ currentNode?.y }}
         </el-form-item>
         <!-- todo!: 名字实现自动补全 -->
         <el-form-item label="节点名字">
@@ -171,7 +171,7 @@ function saveData(options) {
         <regular-resource-selector v-model="infoData.regularResources" />
         <note-selector v-model="infoData.note" :name="infoData.name" />
         <el-form-item label="展示用户布局组件信息">
-          <el-button type="primary" @click="userNodeState.setNode(currentNodeState.node), hideSidebar()">点击展示</el-button>
+          <el-button type="primary" @click="userNodeState.setNode(currentNode), hideSidebar()">点击展示</el-button>
         </el-form-item>
       </el-form>
     </template>

@@ -1,7 +1,7 @@
 import * as THREE from "three"
 import Node from "../node"
 
-interface LineProps {
+export interface LineProps {
   node1: Node
   node2: Node
   x1: number
@@ -80,6 +80,17 @@ class Line extends THREE.Group {
     this.y1 = y1
     this.x2 = x2
     this.y2 = y2
+  }
+
+  getProps() {
+    return {
+      x1: this.x1,
+      y1: this.y1,
+      x2: this.x2,
+      y2: this.y2,
+      node1: this.node1,
+      node2: this.node2
+    }
   }
 }
 

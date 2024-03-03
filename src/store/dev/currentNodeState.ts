@@ -13,6 +13,7 @@ interface NodeStateStore {
   nodeOptions: NodeProps | null
 }
 
+// todo!: 将 node 迁移至 store 外部以保证开发工具性能
 export const useCurrentNodeState = defineStore('currentNodeState', {
   state: () => ({
     showSidebar: false,
@@ -50,6 +51,9 @@ export const useCurrentNodeState = defineStore('currentNodeState', {
       this.nodeOptions = finalOptions
       this.node = core.addPoint(finalOptions)
     },
+    getCurrentNode() {
+      return this.node
+    },
     /**
      * 更新当前节点
      * 
@@ -83,7 +87,8 @@ export const useCurrentNodeState = defineStore('currentNodeState', {
         this.nodeOptions = null
       }
       return res
-    }
+    },
+
   }
 })
 

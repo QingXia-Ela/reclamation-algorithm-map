@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import Line from '../object/components/line'
 
-export default function findLine(intersects: THREE.Intersection<THREE.Object3D<THREE.Object3DEventMap>>[]) {
+export default function findLine(intersects: THREE.Intersection<THREE.Object3D<THREE.Object3DEventMap>>[]): Line | null {
   for (const i of intersects) {
     let cur: THREE.Object3D<THREE.Object3DEventMap> | null = i.object
 
@@ -10,7 +10,7 @@ export default function findLine(intersects: THREE.Intersection<THREE.Object3D<T
     }
 
     if (cur) {
-      return cur
+      return cur as Line
     }
   }
 

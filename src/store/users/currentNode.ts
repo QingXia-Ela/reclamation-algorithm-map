@@ -6,6 +6,7 @@ interface UserCurrentNodeState {
   node: Node | null;
 }
 
+// todo!: 将 node 迁移至 store 外部以保证开发工具性能
 export const useCurrentNode = defineStore("currentNode", {
   state: () => {
     return {
@@ -16,6 +17,9 @@ export const useCurrentNode = defineStore("currentNode", {
     setNode(node: Node | null) {
       this.node = node;
     },
+    getNode() {
+      return this.node
+    }
   },
 })
 

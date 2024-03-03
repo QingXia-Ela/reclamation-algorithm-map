@@ -10,6 +10,7 @@ import DataStructHandle from '../core/DataStrcutHandle';
 import { BSCShader } from '@/three/effect/BSCShader'
 import { EffectComposer, FXAAShader, RenderPass, ShaderPass } from 'three/examples/jsm/Addons.js';
 import * as TWEEN from '@tweenjs/tween.js'
+import findLine from '../utils/findLine';
 
 type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove'
 
@@ -277,6 +278,17 @@ class MapCore {
           // nodeclick 实现
           this.eventMap.nodeclick.forEach((callback) => {
             callback(node)
+          })
+
+          return
+        }
+
+        const line = findLine(intersects)
+
+        if (line) {
+          // lineclick 实现
+          this.eventMap.lineclick.forEach((callback) => {
+            callback(line)
           })
         }
       } else {

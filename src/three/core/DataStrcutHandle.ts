@@ -38,7 +38,6 @@ function getSpeicalNode(preset: NodePreset) {
   }
 }
 
-// todo!: 调整数据结构，将邻接表改为边数组来表示边
 class DataStrcutHandle {
   nodeMap: Record<string, Node> = {}
   adjancyList: Record<string, number[]> = {}
@@ -107,7 +106,14 @@ class DataStrcutHandle {
           console.warn(`Node ${dest} not found.`)
           continue
         }
-        this.addEdge(k, dest)
+
+        try {
+          // 边重复时抛出错误，但是该图为无向图，所以每条边都必定经历边重复
+          // 点不存在已经在上面进行警告和拦截
+          this.addEdge(k, dest)
+        } catch (e) {
+
+        }
       }
     }
   }
@@ -241,16 +247,26 @@ class DataStrcutHandle {
       node2
     })
 
-    // use id1 as key
+    // 无向图，双向边
     this.edges[id1] = line
+    this.edges[id2] = line
 
     // add to `adjancyList`
+    // todo!: optimize this
     if (!this.adjancyList[nid1]) this.adjancyList[nid1] = []
+    if (!this.adjancyList[nid2]) this.adjancyList[nid2] = []
     if (!this.adjancyList[nid1].includes(nid2)) this.adjancyList[nid1].push(nid2)
+    if (!this.adjancyList[nid2].includes(nid1)) this.adjancyList[nid2].push(nid1)
 
     return line
   }
 
+  /**
+   * 通过两个端点移除边
+   * 
+   * @param nid1 nodeId1
+   * @param nid2 nodeId2
+   */
   private _removeAdjancyListEdge(nid1: number, nid2: number) {
     if (this.adjancyList[nid1]) {
       const index = this.adjancyList[nid1].indexOf(nid2)
@@ -288,19 +304,11 @@ class DataStrcutHandle {
   removeEdgeByNodeId(nid1: number, nid2: number) {
     const [id1, id2] = getPossibleEdgeIdFromNumbers(nid1, nid2)
     this._removeAdjancyListEdge(nid1, nid2)
-    if (this.edges[id1]) {
-      const n = this.edges[id1]
-      delete this.edges[id1]
-      return n
-    }
-    else if (this.edges[id2]) {
-      const n = this.edges[id2]
-      delete this.edges[id2]
-      return n
-    }
-    else {
-      return null
-    }
+    // 边 Map 指向同一条边，其中一个有值即可
+    const n = this.edges[id1] || this.edges[id2] || null
+    delete this.edges[id1]
+    delete this.edges[id2]
+    return n
   }
 
 

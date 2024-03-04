@@ -2,9 +2,11 @@ import type MapCore from "@/three/core";
 import type Line from "@/three/object/components/line";
 import Node from "@/three/object/components/node";
 
+// todo!: 移除该类型，将 key 统一为 number
 type NodeId = string;
 type AdjacencyList = Record<NodeId, number[]>;
 
+// 有向图特供
 export function getShortestPathNodeIdArrayWithDirected(graph: AdjacencyList, start: NodeId, end: NodeId): NodeId[] {
   const distances: Record<NodeId, number> = {};
   const previous: Record<NodeId, NodeId | null> = {};
@@ -60,7 +62,7 @@ export function getShortestPathNodeIdArrayWithDirected(graph: AdjacencyList, sta
   return path;
 }
 
-// todo!: fix this
+// 无向图特供
 export function getShortestPathNodeIdArray(graph: AdjacencyList, start: NodeId, end: NodeId): NodeId[] {
   const distances: Record<NodeId, number> = {};
   const previous: Record<NodeId, NodeId | null> = {};
@@ -119,7 +121,6 @@ function dijkstra(adjancyList: AdjacencyList, nodeMap: Record<string, Node>, sou
     }
     return sourceEdges[`${ids[index - 1]}-${id}`] || sourceEdges[`${id}-${ids[index - 1]}`]
   }).filter(Boolean) as Line[]
-  console.log(ids, nodes, edges);
 
   return { nodes, edges }
 }

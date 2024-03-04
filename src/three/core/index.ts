@@ -406,6 +406,7 @@ class MapCore {
     const { controls, composer, renderer, scene, camera } = this.threeObject
     const animate = () => {
       controls?.update();
+      // composer.render();
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     }

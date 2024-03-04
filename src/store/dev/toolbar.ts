@@ -14,6 +14,9 @@ export const useToolbar = defineStore('toolbar', {
     },
     hideToolbar() {
       this.show = false
+    },
+    toggleToolbar(show: boolean) {
+      this.show = show
     }
   }
 })

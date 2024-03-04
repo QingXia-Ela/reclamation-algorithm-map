@@ -44,7 +44,7 @@ class BaseNode extends Node {
       name: "驻扎地",
       x: -5,
       y: 8.5,
-      type: "gate",
+      type: "base",
       weather: "normal",
       size: "small",
       border: "round",

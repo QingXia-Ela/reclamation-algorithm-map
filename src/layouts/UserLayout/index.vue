@@ -1,5 +1,6 @@
 <script setup>
 import UserLevelInfoSidebar from '@/components/UserLevelInfoSidebar/index.vue'
+import UserToolbar from '@/components/UserToolbar/index.vue'
 import { ElNotification } from 'element-plus';
 import { onMounted } from 'vue';
 
@@ -16,5 +17,6 @@ onMounted(() => {
 </script>
 
 <template>
+  <UserToolbar />
   <UserLevelInfoSidebar />
 </template>

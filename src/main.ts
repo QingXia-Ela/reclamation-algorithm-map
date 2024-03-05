@@ -4,6 +4,7 @@ import App from './App.vue'
 import core from './three'
 import pinia from './store'
 import 'element-plus/dist/index.css'
+import 'virtual:svg-icons-register'
 
 // 涉及到 three 核心直接刷新页面
 if (import.meta.hot) {

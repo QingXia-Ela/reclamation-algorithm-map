@@ -1,6 +1,6 @@
 # Reclamation Algorithm Map
 
-明日方舟 - 生息演算 3D 地图
+明日方舟 - 生息演算在线工具
 
 ## 在线链接
 

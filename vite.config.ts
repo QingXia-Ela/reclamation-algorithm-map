@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vitePluginSaveMap from './src/plugins/vite/vite-plugin-save-map'
+import vitePluginIconsReg from './src/plugins/vite/vite-plugin-icons-reg'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vitePluginSaveMap()],
+  plugins: [vue(), vitePluginSaveMap(), vitePluginIconsReg()],
   base: '/reclamation-algorithm-map/',
   resolve: {
     alias: {

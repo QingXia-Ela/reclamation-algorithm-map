@@ -1,6 +1,6 @@
 <script setup>
 import { ElPopover } from 'element-plus';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 defineEmits(['click'])
 
@@ -17,13 +17,28 @@ const className = computed(() => ({
   operate_button: true,
   disabled: props.disabled
 }))
+
+const showPopover = ref(false)
+
+let timerId = null
+
+function onMouseEnter() {
+  timerId = setTimeout(() => {
+    showPopover.value = true
+  }, 300)
+}
+
+function onMouseLeave() {
+  clearTimeout(timerId)
+  showPopover.value = false
+}
 </script>
 
 <template>
-  <el-popover placement="top" trigger="hover" :disabled="!props.popover" :content="props.popover"
-    popper-style="text-align: center" :width="props.popoverWidth">
+  <el-popover placement="top" :disabled="!props.popover" effect="dark" :content="props.popover"
+    popper-style="text-align: center" :visible="showPopover" :width="props.popoverWidth">
     <template #reference>
-      <div :class="className" @click="$emit('click')">
+      <div :class="className" @click="$emit('click')" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
         <slot />
       </div>
     </template>

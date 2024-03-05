@@ -6,7 +6,11 @@ defineEmits(['click'])
 
 const props = defineProps({
   disabled: Boolean,
-  popover: String
+  popover: String,
+  popoverWidth: {
+    type: Number,
+    default: 300
+  }
 })
 
 const className = computed(() => ({
@@ -16,7 +20,8 @@ const className = computed(() => ({
 </script>
 
 <template>
-  <el-popover placement="top" trigger="hover" effect="dark" :disabled="!props.popover" :content="props.popover">
+  <el-popover placement="top" trigger="hover" :disabled="!props.popover" :content="props.popover"
+    popper-style="text-align: center" :width="props.popoverWidth">
     <template #reference>
       <div :class="className" @click="$emit('click')">
         <slot />
@@ -30,10 +35,9 @@ const className = computed(() => ({
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  width: 3rem;
   height: 3rem;
-  transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
 
   &.disabled {
@@ -43,17 +47,24 @@ const className = computed(() => ({
   }
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  &:active {
+    opacity: 0.6;
+    background-color: rgba(255, 255, 255, 0.3);
   }
 
   &:first-child {
     border-radius: 50vh 0 0 50vh;
+    padding-left: 1rem;
     padding-right: .6rem;
   }
 
   &:last-child {
     border-radius: 0 50vh 50vh 0;
     padding-left: .6rem;
+    padding-right: 1rem;
   }
 }
 </style>

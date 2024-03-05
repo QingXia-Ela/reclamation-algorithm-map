@@ -20,7 +20,14 @@ const symbolId = computed(() => `#${props.prefix}-${props.name}`)
 </script>
 
 <template>
-  <svg aria-hidden="true">
+  <svg aria-hidden="true" class="svg">
     <use :xlink:href="symbolId" :fill="color" />
   </svg>
 </template>
+
+<style lang="scss" scoped>
+.svg {
+  width: 100%;
+  height: 100%;
+}
+</style>

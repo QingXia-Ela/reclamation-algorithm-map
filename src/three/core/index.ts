@@ -306,9 +306,11 @@ class MapCore {
       })
     }
 
-    document.addEventListener('mousedown', onDocumentMouseDown, false);
-    document.addEventListener('mouseup', onDocumentMouseUp, false);
-    document.addEventListener('contextmenu', onContextMenu, false);
+    const canvas = this.threeObject.renderer.domElement
+
+    canvas.addEventListener('mousedown', onDocumentMouseDown, false);
+    canvas.addEventListener('mouseup', onDocumentMouseUp, false);
+    canvas.addEventListener('contextmenu', onContextMenu, false);
   }
 
   // todo!: composer 作为开关可以实时调整

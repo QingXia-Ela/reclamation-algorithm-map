@@ -1,4 +1,4 @@
-import background_png from '@/assets/three/background.png'
+import background_img from '@/assets/three/background.avif'
 import * as THREE from 'three'
 
 class Background extends THREE.Group {
@@ -8,7 +8,7 @@ class Background extends THREE.Group {
   }
 
   private async _init() {
-    const texture = await new THREE.TextureLoader().loadAsync(background_png)
+    const texture = await new THREE.TextureLoader().loadAsync(background_img)
 
     const PlaneBackground = new THREE.Mesh(
       new THREE.PlaneGeometry(200, 200),

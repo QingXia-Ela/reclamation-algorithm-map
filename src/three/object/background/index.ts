@@ -35,8 +35,15 @@ async function getMainBackground() {
 }
 
 async function getDungeonBackground(type: MapType) {
+  let size = 80
+  switch (type) {
+    case 'dungeon_theif_cap':
+      size = 140
+      break;
+  }
+
   return new THREE.Mesh(
-    new THREE.PlaneGeometry(80, 80),
+    new THREE.PlaneGeometry(size, size),
     new THREE.MeshBasicMaterial({
       transparent: true,
       map: await getMapTextureFromType(type)

@@ -3,7 +3,7 @@ import { NodePreset, BaseNodeProps, NodeType, NormalNodeProps } from "@/three/ty
 import Node from "../components/node";
 import { NodeDescriptionData } from "@/constants";
 import NODE_ASSETS from "@/assets/three/icon/node";
-import { merge } from "lodash";
+import merge from "lodash/merge";
 
 const base_texture = await new THREE.TextureLoader().loadAsync(NODE_ASSETS.NODE_BASE)
 

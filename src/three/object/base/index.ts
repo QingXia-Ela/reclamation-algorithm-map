@@ -1,8 +1,9 @@
 import * as THREE from "three";
-import { NodePreset, NodeType, NormalNodeProps } from "@/three/types/node";
+import { NodePreset, BaseNodeProps, NodeType, NormalNodeProps } from "@/three/types/node";
 import Node from "../components/node";
 import { NodeDescriptionData } from "@/constants";
 import NODE_ASSETS from "@/assets/three/icon/node";
+import { merge } from "lodash";
 
 const base_texture = await new THREE.TextureLoader().loadAsync(NODE_ASSETS.NODE_BASE)
 
@@ -37,21 +38,23 @@ function getInnerCore() {
 }
 
 class BaseNode extends Node {
-  constructor() {
-    super({
-      preset: "normal",
-      nodeId: -1,
-      name: "驻扎地",
-      x: -5,
-      y: 8.5,
-      type: "base",
-      weather: "normal",
-      size: "small",
-      border: "round",
-      note: NodeDescriptionData["驻扎地"],
-      mainResources: [],
-      regularResources: []
-    })
+  constructor(options: BaseNodeProps) {
+    super(
+      merge({
+        preset: "normal",
+        nodeId: -1,
+        name: "驻扎地",
+        x: -5,
+        y: 8.5,
+        type: "base",
+        weather: "normal",
+        size: "small",
+        border: "round",
+        note: NodeDescriptionData["驻扎地"],
+        mainResources: [],
+        regularResources: []
+      }, options) as NormalNodeProps
+    )
 
     // @ts-ignore: 强制覆盖 preset，因为 Node 要求的 preset 已经被设定了
     this.options.preset = "base"

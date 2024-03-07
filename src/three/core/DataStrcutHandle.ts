@@ -31,10 +31,10 @@ function getPossibleEdgeIdFromNodes(node1: Node, node2: Node) {
   ]
 }
 
-function getSpeicalNode(preset: NodePreset) {
-  switch (preset) {
+function getSpeicalNode(options: NodeProps) {
+  switch (options.preset) {
     default:
-      return new BaseNode()
+      return new BaseNode(options as any)
   }
 }
 
@@ -128,7 +128,7 @@ class DataStrcutHandle {
   addNode(options: NodeProps) {
     let node: Node
     if (options.preset !== "normal") {
-      node = getSpeicalNode(options.preset)
+      node = getSpeicalNode(options)
     }
     else {
       node = options.nodeId ? new Node(options as NormalNodeProps) : new Node({

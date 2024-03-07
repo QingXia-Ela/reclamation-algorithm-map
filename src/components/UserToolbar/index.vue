@@ -8,6 +8,7 @@ import Knowledge from './components/Knowledge.vue';
 import Notification from './components/Notification.vue';
 import MapSwitch from './components/MapSwitch.vue'
 import { ref, computed } from 'vue';
+import ResetCamera from './components/ResetCamera.vue';
 
 const showUserToolbar = ref(false)
 
@@ -35,6 +36,7 @@ const className = computed(() => ({
     <CheckFoodFormula />
     <QueryShortestRoad />
     <FindNode />
+    <ResetCamera />
     <MapSwitch />
     <Knowledge />
     <Notification />

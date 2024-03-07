@@ -1,0 +1,14 @@
+@use "element-plus/theme-chalk/src/button.scss" as *;
+
+.el-button--primary {
+  --el-button-text-color: var(--el-color-black);
+  --el-button-hover-text-color: var(--site-color);
+}
+
+.el-button:hover {
+  --el-button-hover-bg-color: transparent;
+}
+
+.el-button:focus {
+  --el-button-hover-bg-color: transparent;
+}

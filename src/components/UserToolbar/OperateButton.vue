@@ -35,8 +35,8 @@ function onMouseLeave() {
 </script>
 
 <template>
-  <el-popover placement="top" :disabled="!props.popover" effect="dark" :content="props.popover"
-    popper-style="text-align: center" :visible="showPopover" :width="props.popoverWidth">
+  <el-popover placement="top" :disabled="!props.popover" :content="props.popover" popper-style="text-align: center"
+    :visible="showPopover" :width="props.popoverWidth">
     <template #reference>
       <div :class="className" @click="$emit('click')" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
         <slot />

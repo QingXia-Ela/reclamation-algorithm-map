@@ -140,11 +140,13 @@ function saveData(options) {
     </template>
   </el-dialog>
   <el-drawer v-model="active" :before-close="hideSidebar">
+
     <template #header>
       <h2>新建/编辑节点数据</h2>
     </template>
+
     <template #default>
-      <el-form :model="infoData" @before-close="saveData(infoData)">
+      <el-form :model="infoData" @before-close="saveData(infoData)" style="color: var(--el-color-white);">
         <el-form-item label="节点模型UUID">
           {{ currentNode?.uuid }}
         </el-form-item>
@@ -175,6 +177,7 @@ function saveData(options) {
         </el-form-item>
       </el-form>
     </template>
+
     <template #footer>
       <el-button @click="hideSidebar">取消</el-button>
       <el-button type="danger" @click="showDeleteDialog">删除节点</el-button>

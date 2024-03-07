@@ -3,8 +3,10 @@ import './style.css'
 import App from './App.vue'
 import core from './three'
 import pinia from './store'
-import 'element-plus/dist/index.css'
-import 'element-plus/theme-chalk/dark/css-vars.css'
+// import 'element-plus/dist/index.css'
+// theme
+import './styles/element/theme.scss'
+// import 'element-plus/theme-chalk/dark/css-vars.css'
 import 'virtual:svg-icons-register'
 
 // 涉及到 three 核心直接刷新页面

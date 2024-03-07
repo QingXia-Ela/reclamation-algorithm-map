@@ -6,6 +6,7 @@ import QueryShortestRoad from './components/QueryShortestRoad.vue';
 import FindNode from './components/FindNode.vue';
 import Knowledge from './components/Knowledge.vue';
 import Notification from './components/Notification.vue';
+import MapSwitch from './components/MapSwitch.vue'
 import { ref, computed } from 'vue';
 
 const showUserToolbar = ref(false)
@@ -34,6 +35,7 @@ const className = computed(() => ({
     <CheckFoodFormula />
     <QueryShortestRoad />
     <FindNode />
+    <MapSwitch />
     <Knowledge />
     <Notification />
   </div>

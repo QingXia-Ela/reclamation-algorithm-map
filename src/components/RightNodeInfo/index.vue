@@ -1,6 +1,7 @@
 <!-- 
   该组件用于展示某一个节点的详细信息
  -->
+
 <script setup>
 import Mask from '@/components/Mask.vue'
 import NodeInfoEditor from './components/NodeInfoEditor.vue'
@@ -30,6 +31,7 @@ import { ElDrawer } from 'element-plus';
   height: 100%;
   padding: 20px;
   background: #fff;
+  color: var(--el-color-black);
   transition: transform 0.3s;
 }
 </style>

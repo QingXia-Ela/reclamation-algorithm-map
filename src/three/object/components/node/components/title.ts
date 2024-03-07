@@ -22,6 +22,10 @@ function getWeatherIconColorByWeatherType(weather: NodeWeather) {
     case "acid_rain":
       return 0x2a7980
 
+    case "heat":
+    case "heat_wave":
+      return 0xff0000
+
     case "sandstorm":
     case "big_sandstorm":
       return 0x7c7656

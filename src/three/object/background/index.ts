@@ -44,6 +44,10 @@ async function getDungeonBackground(type: MapType) {
     case 'dungeon_miner_convoy':
       size = 120
       break
+
+    case 'dungeon_boss_hunt':
+      size = 160
+      break
   }
 
   return new THREE.Mesh(

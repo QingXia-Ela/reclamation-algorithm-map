@@ -821,14 +821,16 @@
       "preset": "normal"
     },
     {
+      "preset": "normal",
       "x": -19.605950613968062,
       "y": -14.605631423614534,
-      "name": "森林之主",
+      "name": "树林之主",
       "type": "collect",
       "weather": "normal",
+      "resources": [],
       "size": "small",
       "border": "square",
-      "note": "",
+      "note": "野生的虫兽不会自称树林的主人，生息枯荣都属于自然，但手戴珠宝的人类并不会这样认为。",
       "mainResources": [
         {
           "type": "wood",
@@ -862,8 +864,7 @@
         }
       ],
       "id": 21,
-      "nodeId": 21,
-      "preset": "normal"
+      "nodeId": 21
     },
     {
       "x": -16.583093812715234,
@@ -3989,15 +3990,16 @@
       "preset": "normal"
     },
     {
+      "preset": "normal",
       "x": 64.55883465951362,
       "y": 34.6108009340482,
-      "name": "射程之内",
+      "name": "射程以内",
       "type": "collect",
       "weather": "normal",
+      "resources": [],
       "size": "small",
       "border": "square",
-      "id": 92,
-      "nodeId": 92,
+      "note": "听说有些吝啬的领主宁愿用弩炮射毁树木，也不愿让部落民砍伐，为此，他们甚至放出了一些野 兽。",
       "mainResources": [
         {
           "type": "wood",
@@ -4038,7 +4040,8 @@
           "count": 1
         }
       ],
-      "preset": "normal"
+      "id": 92,
+      "nodeId": 92
     },
     {
       "x": 47.55506800560984,

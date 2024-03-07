@@ -10,6 +10,7 @@ const select = ref<NodeType>()
 
 let cancel: (() => void) | null = null
 
+// todo!: 升级高亮函数，使得每次的高亮处理是独立的
 function hlNode() {
   if (select.value) {
     const { reset } = highlightPointByType(core, select.value)

@@ -3,6 +3,7 @@ import OperateButton from './OperateButton.vue';
 import SvgIcon from '@/components/SvgIcon.vue';
 import CheckFoodFormula from './components/CheckFoodFormula.vue';
 import QueryShortestRoad from './components/QueryShortestRoad.vue';
+import FindNode from './components/FindNode.vue';
 import { ref, computed } from 'vue';
 
 const showUserToolbar = ref(false)
@@ -29,6 +30,7 @@ const className = computed(() => ({
 <template>
   <div :class="className" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
     <QueryShortestRoad />
+    <FindNode />
     <CheckFoodFormula />
   </div>
 </template>

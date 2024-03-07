@@ -92,6 +92,7 @@ class DataStrcutHandle {
   private _setEdgesFromAdjacencyList(
     adjancyList: Record<number, number[]>
   ) {
+    this.adjancyList = {}
     for (const key in adjancyList) {
       const k = Number(key)
       const v = adjancyList[k]

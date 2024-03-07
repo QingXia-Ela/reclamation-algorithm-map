@@ -6,7 +6,7 @@ const core = new MapCore()
 
 // const data = getDataFromLocal()
 
-fetch("map.json").then(res => res.json()).then(map => {
+fetch("map_main.json").then(res => res.json()).then(map => {
   core.loadData(map as SaveMapData)
 })
 

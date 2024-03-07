@@ -11,6 +11,7 @@ import { BSCShader } from '@/three/effect/BSCShader'
 import { EffectComposer, FXAAShader, RenderPass, ShaderPass } from 'three/examples/jsm/Addons.js';
 import * as TWEEN from '@tweenjs/tween.js'
 import findLine from '../utils/findLine';
+import { MapType } from "@/three/types/map"
 
 type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove'
 
@@ -18,15 +19,6 @@ function getMouseVector(event: MouseEvent) {
   const mouseVector = new THREE.Vector2((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
   return mouseVector
 }
-
-const InnerNode: NodeProps[] = [
-  {
-    nodeId: -1,
-    preset: "base",
-    x: -5,
-    y: 8.5
-  }
-]
 
 // todo!: 增加一个随鼠标点击移动的高亮小坐标
 class MapCore {
@@ -38,6 +30,7 @@ class MapCore {
     mousemove: new Set(),
   }
   DataHandle = new DataStructHandle()
+  type: MapType = "main"
   constructor() {
     this._init()
   }
@@ -121,10 +114,13 @@ class MapCore {
   /**
    * 从序列化数据加载整张地图
    * 
+   * **该方法不会根据地图数据切换背景图片！！**
+   * 
    * @param data 地图数据
    * @returns 错误信息，如果为空表示加载成功
    */
   loadData(data: SaveMapData) {
+    this.type = data.type
     try {
       const res = this.DataHandle.loadData(data)
       Object.values(res).forEach(data => {
@@ -143,6 +139,18 @@ class MapCore {
       console.error(e);
       return e
     }
+  }
+
+  /**
+   * 改变地图
+   * 
+   * @param data 地图数据
+   * @param type 地图类型 目前支持主地图与陌域
+   */
+  // 该方法不会处理外部变量引用，可能会出现内存泄漏
+  async changeMap(data: SaveMapData, type: MapType) {
+    await this.threeObject.background.changeBackground(type)
+    this.loadData(data)
   }
 
   addEdgeByNodeIds(sourceId: number, targetId: number) {
@@ -331,11 +339,6 @@ class MapCore {
 
     const composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
-
-    // 添加内置节点
-    InnerNode.forEach((node) => {
-      this.DataHandle.addNode(node)
-    })
 
     const effect = new ShaderPass(BSCShader);
     const FXAAPass = new ShaderPass(FXAAShader);

@@ -1,4 +1,5 @@
 import { NodeProps } from "./node";
+import { MapType } from './map'
 
 /**
  * 地图数据
@@ -6,6 +7,10 @@ import { NodeProps } from "./node";
  * @interface SaveMapData
  */
 export interface SaveMapData {
+  /**
+   * 地图类型
+   */
+  type: MapType
   /**
    * 节点数据
    */

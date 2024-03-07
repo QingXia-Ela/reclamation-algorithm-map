@@ -68,7 +68,7 @@ function choosePreset() {
   </div>
   {{ data?.length ? null : "暂无已选择的资源" }}
   <div v-for="(item, index) in data" :key="item.type" class="row_style">
-    <el-input v-model="TranslateData[item.type]" disabled style="--el-disabled-text-color: #333" />
+    <el-input v-model="TranslateData[item.type]" disabled style="--el-disabled-text-color: var(--el-color-white)" />
     <el-input-number v-model="item.count" style="width: 12rem;" :min="1" :max="1145" />
     <el-button type="danger" @click="deleteResouce(index)">删除</el-button>
   </div>

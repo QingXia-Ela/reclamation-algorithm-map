@@ -1,0 +1,21 @@
+{
+  "type": "dungeon_defend_base",
+  "nodes": [
+    {
+      "preset": "normal",
+      "x": 1.076100872861304,
+      "y": -43.668639171558176,
+      "name": "Node",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 1
+    }
+  ],
+  "adjancyList": {}
+}

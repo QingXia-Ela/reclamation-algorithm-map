@@ -79,6 +79,7 @@ class DataStrcutHandle {
     return oldObj
   }
 
+  // todo!: 改造成多个任务，减少CPU占用导致的页面卡顿
   private _setNodesFromData(nodes: NodeProps[]) {
     const len = nodes.length
     for (let i = 0; i < len; i++) {
@@ -89,6 +90,7 @@ class DataStrcutHandle {
   /**
    * Note: This method must call after the node data loaded.
    */
+  // todo!: 改造成多个任务，减少CPU占用导致的页面卡顿
   private _setEdgesFromAdjacencyList(
     adjancyList: Record<number, number[]>
   ) {

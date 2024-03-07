@@ -10,18 +10,18 @@ export const MapData: Array<{
     },
     {
       value: 'dungeon_boss_hunt',
-      label: '对决'
+      label: '陌域-对决'
     },
     {
       value: 'dungeon_defend_base',
-      label: '坚守阵地'
+      label: '陌域-坚守阵地'
     },
     {
       value: 'dungeon_miner_convoy',
-      label: "护卫前行"
+      label: "陌域-护卫前行"
     },
     {
       value: 'dungeon_theif_cap',
-      label: '歼灭战'
+      label: '陌域-歼灭战'
     }
   ]

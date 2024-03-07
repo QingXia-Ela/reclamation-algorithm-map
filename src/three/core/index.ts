@@ -119,6 +119,7 @@ class MapCore {
    * @param data 地图数据
    * @returns 错误信息，如果为空表示加载成功
    */
+  // todo!: 改造成多个微任务，减少CPU占用导致的页面卡顿
   loadData(data: SaveMapData) {
     this.type = data.type
     try {

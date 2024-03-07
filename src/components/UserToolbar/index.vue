@@ -4,6 +4,8 @@ import SvgIcon from '@/components/SvgIcon.vue';
 import CheckFoodFormula from './components/CheckFoodFormula.vue';
 import QueryShortestRoad from './components/QueryShortestRoad.vue';
 import FindNode from './components/FindNode.vue';
+import Knowledge from './components/Knowledge.vue';
+import Notification from './components/Notification.vue';
 import { ref, computed } from 'vue';
 
 const showUserToolbar = ref(false)
@@ -29,9 +31,11 @@ const className = computed(() => ({
 
 <template>
   <div :class="className" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
+    <CheckFoodFormula />
     <QueryShortestRoad />
     <FindNode />
-    <CheckFoodFormula />
+    <Knowledge />
+    <Notification />
   </div>
 </template>
 

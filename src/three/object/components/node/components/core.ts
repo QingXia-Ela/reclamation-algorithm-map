@@ -14,6 +14,7 @@ function getNodeIconMesh(texture: THREE.Texture) {
     new THREE.MeshBasicMaterial({
       map: texture,
       transparent: true,
+      // 图标颜色
       color: 0x000000
     })
   )
@@ -155,6 +156,11 @@ interface NodeCoreProps {
 }
 
 class NodeCore extends THREE.Group {
+  /**
+   * 图标 SVG 位于 children 第一位
+   * 
+   * 背景第二位，外边框第三位
+   */
   icon: THREE.Group | null
   constructor(options: NodeCoreProps) {
     super()
@@ -178,6 +184,29 @@ class NodeCore extends THREE.Group {
       material.color.set(color)
       material.opacity = opacity
     }
+
+    return this
+  }
+
+  /**
+   * 修改内部核心颜色
+   * 
+   * 建议高亮时图标为白，背景与地图呈现高对比度
+   * 
+   * @param bgColor 背景颜色
+   * @param iconColor 图标颜色
+   */
+  changeContentColor(bgColor = 0xefefef, iconColor = 0x000000) {
+    if (this.icon) {
+      // @ts-ignore: 直接修改材质颜色
+      const iconMaterial = this.icon.children[0].material as THREE.MeshBasicMaterial
+      // @ts-ignore: 直接修改材质颜色
+      const bgMaterial = this.icon.children[1].material as THREE.MeshBasicMaterial
+
+      bgMaterial.color.set(bgColor)
+      iconMaterial.color.set(iconColor)
+    }
+    return this
   }
 
   private async _init({

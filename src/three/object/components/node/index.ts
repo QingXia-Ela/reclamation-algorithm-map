@@ -187,6 +187,8 @@ class Node extends THREE.Group {
 
   /**
    * 播放点击动画
+   * 
+   * @deprecated - 未完成
    */
   playClickAnimation() { }
 
@@ -196,13 +198,14 @@ class Node extends THREE.Group {
    * @param selected 是否选中
    * @param color 高亮颜色
    */
-  setPointSelected(selected: boolean, color = 0xe53d12) {
+  setPointSelected(selected: boolean, color = 0xe53d12, iconColor = 0xffffff) {
     this.selected = selected;
-    const finalColor = selected && color ? color : 0xefefef;
+    const finalColor = selected ? color : 0xefefef;
+    const finalIconColor = selected ? iconColor : 0x000000;
     (this.components.core as NodeCore).changeBorderStyle(
       finalColor,
       selected ? 1 : 0.5
-    );
+    ).changeContentColor(finalColor, finalIconColor);
   }
 
   /**

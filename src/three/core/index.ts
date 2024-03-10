@@ -350,7 +350,7 @@ class MapCore {
     FXAAPass.uniforms.resolution.value.y = 1 / (window.innerHeight * pixelRatio);
 
     composer.addPass(effect);
-    composer.addPass(FXAAPass);
+    // composer.addPass(FXAAPass);
 
     this.threeObject = {
       scene,

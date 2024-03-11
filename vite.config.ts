@@ -1,18 +1,18 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-// import mdPlugin, { Mode } from 'vite-plugin-markdown'
+import Markdown from 'vite-plugin-md'
 import vitePluginSaveMap from './src/plugins/vite/vite-plugin-save-map'
 import vitePluginIconsReg from './src/plugins/vite/vite-plugin-icons-reg'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      include: [/\.vue$/, /\.md$/],
+    }),
     vitePluginSaveMap(),
     vitePluginIconsReg(),
-    // mdPlugin({
-    //   mode: [Mode.VUE]
-    // })
+    Markdown()
   ],
   base: '/reclamation-algorithm-map/',
   resolve: {

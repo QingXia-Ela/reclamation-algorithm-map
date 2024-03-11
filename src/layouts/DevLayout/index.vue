@@ -15,6 +15,7 @@ import ContextMenu from '@/components/ContextMenu/index.vue'
 import GlobalMask from '@/components/GlobalMask.vue';
 import UserLevelInfoSidebar from '@/components/UserLevelInfoSidebar/index.vue'
 import UserToolbar from '@/components/UserToolbar/index.vue'
+import UserAnnouncement from '@/components/UserAnnouncement/index.vue'
 
 import { onMounted } from 'vue';
 import { ElNotification } from 'element-plus';
@@ -45,5 +46,6 @@ onMounted(() => {
   <ContextMenu />
   <UserToolbar />
   <UserLevelInfoSidebar />
+  <UserAnnouncement />
   <slot />
 </template>

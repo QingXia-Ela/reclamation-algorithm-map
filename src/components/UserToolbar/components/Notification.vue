@@ -1,15 +1,26 @@
 <script setup>
 import OperateButton from '../OperateButton.vue';
 import SvgIcon from '@/components/SvgIcon.vue';
+import { useCurrentAnnouncement } from '@/store/users/currentAnnouncement';
 import { ElNotification } from 'element-plus';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import Announcement from '@/markdown/announcement.md';
+
+const announce = useCurrentAnnouncement()
 
 function notice() {
-  ElNotification({
-    type: "info",
-    message: "功能还在开发中，敬请期待"
-  })
+  announce.setCurrentAnnouncementComponent(Announcement)
+  announce.showDialog()
 }
+
+onMounted(() => {
+  if (process.env.NODE_ENV === 'production') {
+    if (sessionStorage.getItem('hasOpen') === 'true') {
+      return
+    }
+    sessionStorage.setItem('hasOpen', 'true')
+  }
+})
 </script>
 
 <template>

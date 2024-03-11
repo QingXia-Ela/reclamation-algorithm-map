@@ -19,6 +19,7 @@ onMounted(() => {
       return
     }
     sessionStorage.setItem('hasOpen', 'true')
+    notice()
   }
 })
 </script>

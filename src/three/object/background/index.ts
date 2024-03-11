@@ -7,15 +7,23 @@ const Loader = new THREE.TextureLoader()
 
 const textureMap: Partial<Record<MapType, any>> = {}
 
-async function getMapTextureFromType(type: MapType) {
+async function getMapTextureFromType(type: MapType): Promise<THREE.Texture> {
   if (textureMap[type]) return textureMap[type]
+  let finalTexture = null
+
   switch (type) {
     case 'main':
-      return textureMap[type] = await Loader.loadAsync(background_img)
+      finalTexture = textureMap[type] = await Loader.loadAsync(background_img)
+      break;
 
     default:
-      return textureMap[type] = await Loader.loadAsync(dungeon)
+      finalTexture = textureMap[type] = await Loader.loadAsync(dungeon)
+      break;
   }
+
+  finalTexture.colorSpace = THREE.SRGBColorSpace
+
+  return finalTexture
 }
 
 let mainBackground: THREE.Mesh | null = null

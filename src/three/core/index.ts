@@ -8,7 +8,6 @@ import Line from '../object/components/line';
 import { SaveMapData } from '../types/data';
 import DataStructHandle from '../core/DataStrcutHandle';
 import { BSCShader } from '@/three/effect/BSCShader'
-import { EffectComposer, FXAAShader, RenderPass, ShaderPass } from 'three/examples/jsm/Addons.js';
 import * as TWEEN from '@tweenjs/tween.js'
 import findLine from '../utils/findLine';
 import { MapType } from "@/three/types/map"
@@ -338,26 +337,11 @@ class MapCore {
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-    const composer = new EffectComposer(renderer);
-    composer.addPass(new RenderPass(scene, camera));
-
-    const effect = new ShaderPass(BSCShader);
-    const FXAAPass = new ShaderPass(FXAAShader);
-    // `.getPixelRatio()`获取`renderer.setPixelRatio()`设置的值
-    const pixelRatio = renderer.getPixelRatio();//获取设备像素比 
-    // width、height是canva画布的宽高度
-    FXAAPass.uniforms.resolution.value.x = 1 / (window.innerWidth * pixelRatio);
-    FXAAPass.uniforms.resolution.value.y = 1 / (window.innerHeight * pixelRatio);
-
-    composer.addPass(effect);
-    // composer.addPass(FXAAPass);
-
     this.threeObject = {
       scene,
       camera,
       renderer,
       background,
-      composer
     }
     // @ts-ignore: process is exist
     if (process.env.NODE_ENV === "production") this._addOrbitControls()
@@ -409,7 +393,7 @@ class MapCore {
   }
 
   private _startAnimate() {
-    const { controls, composer, renderer, scene, camera } = this.threeObject
+    const { controls, renderer, scene, camera } = this.threeObject
     const animate = () => {
       controls?.update();
       // composer.render();

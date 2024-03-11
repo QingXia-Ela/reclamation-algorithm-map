@@ -15,11 +15,14 @@ function notice() {
 
 onMounted(() => {
   if (process.env.NODE_ENV === 'production') {
-    if (sessionStorage.getItem('hasOpen') === 'true') {
-      return
-    }
-    sessionStorage.setItem('hasOpen', 'true')
-    notice()
+    // 延迟执行保证动画展示
+    setTimeout(() => {
+      if (sessionStorage.getItem('hasOpen') === 'true') {
+        return
+      }
+      sessionStorage.setItem('hasOpen', 'true')
+      notice()
+    })
   }
 })
 </script>

@@ -976,6 +976,10 @@
         {
           "type": "gold",
           "count": 1
+        },
+        {
+          "type": "goodsundry",
+          "count": 1
         }
       ],
       "regularResources": [
@@ -997,10 +1001,6 @@
         },
         {
           "type": "horn",
-          "count": 1
-        },
-        {
-          "type": "gold",
           "count": 1
         }
       ],

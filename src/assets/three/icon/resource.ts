@@ -77,7 +77,6 @@ const RESOURCE_ASSETS: Record<NodeResource, string> = {
   poultry: data.SANDBOX_1_POULTRY,
   crab: data.SANDBOX_1_CRAB,
   beef: data.SANDBOX_1_BEEF,
-  gold: data.SANDBOX_1_GOLD,
 }
 
 // log type

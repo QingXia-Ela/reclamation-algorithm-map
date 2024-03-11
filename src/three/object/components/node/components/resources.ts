@@ -2,12 +2,18 @@ import * as THREE from 'three'
 import type { NodeProps, NormalNodeProps } from '@/three/types/node'
 import RESOURCE_ASSETS from '@/assets/three/icon/resource'
 import { IconType } from '@/assets/icons'
+import { NodeResourceWithoutShow } from '@/three/types/node'
 
 interface NodeResourceProps {
   resources: IconType[]
 }
 
 const SQRT_3 = Math.sqrt(3)
+
+const IGNORE_RESOURCES: NodeResourceWithoutShow[] = [
+  'goodsundry',
+  'gold'
+]
 
 function parseMainResourceToFlatArray(resource: NormalNodeProps['mainResources'] = []) {
   return resource.map(({ type }) => type)
@@ -140,10 +146,16 @@ class NodeResource extends THREE.Group {
   private async _getResourceIconGroup(resources: NodeResourceProps['resources']) {
     const group = new THREE.Group()
 
-    for (const [i, index] of resources.map((i, index) => [i, index]) as [IconType, number][]) {
-      group.add(await this._getResourceIconMesh(
-        i, index, getResourceColorByType(i)
-      ))
+    for (const [i, index] of resources.map((i, index) => [i, index]) as [IconType & NodeResourceWithoutShow, number][]) {
+      if (IGNORE_RESOURCES.includes(i)) continue
+      try {
+        group.add(await this._getResourceIconMesh(
+          i, index, getResourceColorByType(i)
+        ))
+      } catch (e) {
+        /** some resource is not show on map but not collect, just ignore */
+        console.warn(`ignore ${i} resource`);
+      }
     }
 
     return group

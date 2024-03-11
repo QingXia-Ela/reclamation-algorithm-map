@@ -28,7 +28,7 @@ export type NodeWeather = "normal" |
   "acid_rain" |
   "drought"
 
-export type NodeResource = "water" | "wood" | "stone" | "iron" | "diamond" | "venison" | "poultry" | "crab" | "beef"
+export type NodeResource = "water" | "wood" | "stone" | "iron" | "diamond" | "venison" | "poultry" | "crab" | "beef" | "gold"
 
 /**
  * `base` - 基地节点，全局只有一个

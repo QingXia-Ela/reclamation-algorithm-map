@@ -9,6 +9,7 @@ import Announcement from '@/markdown/announcement.md';
 const announce = useCurrentAnnouncement()
 
 function notice() {
+  console.log('公告')
   announce.setCurrentAnnouncementComponent(Announcement)
   announce.showDialog()
 }
@@ -19,6 +20,7 @@ onMounted(() => {
       return
     }
     sessionStorage.setItem('hasOpen', 'true')
+    console.log(1);
     notice()
   }
 })

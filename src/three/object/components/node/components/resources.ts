@@ -1,6 +1,6 @@
 import * as THREE from 'three'
-import type { NodeProps } from '@/three/types/node'
-import RESOURCE_ASSETS from '../../../../../assets/three/icon/resource'
+import type { NodeProps, NormalNodeProps } from '@/three/types/node'
+import RESOURCE_ASSETS from '@/assets/three/icon/resource'
 import { IconType } from '@/assets/icons'
 
 interface NodeResourceProps {
@@ -9,7 +9,7 @@ interface NodeResourceProps {
 
 const SQRT_3 = Math.sqrt(3)
 
-function parseMainResourceToFlatArray(resource: NodeProps['mainResources'] = []) {
+function parseMainResourceToFlatArray(resource: NormalNodeProps['mainResources'] = []) {
   return resource.map(({ type }) => type)
 }
 

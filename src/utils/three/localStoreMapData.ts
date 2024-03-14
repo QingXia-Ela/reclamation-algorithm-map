@@ -11,7 +11,7 @@ const LOCAL_STORAGE_KEY = "reclamation-algorithm-map-node-data";
  * @param core 地图核心实例
  */
 export function saveDataToLocal(core: MapCore) {
-  if (process.env.NODE_ENV === "development" && !location.href.includes('edit')) {
+  if (process.env.NODE_ENV === "development" && !process.env.USER_EDIT_MODE) {
     return devSaveData(core)
   }
   const str = JSON.stringify(getJSONDataFromCore(core), null, 2)

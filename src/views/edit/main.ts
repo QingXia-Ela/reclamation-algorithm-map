@@ -11,6 +11,11 @@ import 'virtual:svg-icons-register'
 import { getDataFromLocal } from '@/utils/three/localStoreMapData'
 import { ElMessage } from 'element-plus'
 
+if (process.env.NODE_ENV === "development" && !import.meta.env.VITE_USER_EDIT_MODE) {
+  alert("请使用 pnpm userEdit 命令进入此页面")
+  throw new Error("请使用 pnpm userEdit 命令进入此页面")
+}
+
 // 保证地图能够渲染，不会因为引入后没有使用而被清除
 // @ts-ignore
 window.MapCore = core;

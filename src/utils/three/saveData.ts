@@ -5,7 +5,7 @@ import saveTextFile from "../file/saveTextFile"
 import devSaveData from "./devSaveData"
 
 export default function saveData(core: MapCore, devImmidiate = false) {
-  if (process.env.NODE_ENV === "development") {
+  if (process.env.NODE_ENV === "development" && !process.env.USER_EDIT_MODE) {
     return devSaveData(core, devImmidiate)
   }
   const data = getJSONDataFromCore(core)

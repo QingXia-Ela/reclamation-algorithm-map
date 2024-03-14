@@ -1,5 +1,9 @@
 {
-  "type": "dungeon_boss_hunt",
+  "metadata": {
+    "type": "dungeon_boss_hunt",
+    "backgroundSize": 160,
+    "backgroundType": "dungeon"
+  },
   "nodes": [
     {
       "preset": "normal",

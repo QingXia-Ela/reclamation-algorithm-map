@@ -1,5 +1,9 @@
 {
-  "type": "main",
+  "metadata": {
+    "type": "main",
+    "backgroundSize": 200,
+    "backgroundType": "main"
+  },
   "nodes": [
     {
       "x": -29.87967341878648,

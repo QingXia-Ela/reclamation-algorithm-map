@@ -1,5 +1,9 @@
 {
-  "type": "dungeon_theif_cap",
+  "metadata": {
+    "type": "dungeon_theif_cap",
+    "backgroundSize": 140,
+    "backgroundType": "dungeon"
+  },
   "nodes": [
     {
       "preset": "normal",

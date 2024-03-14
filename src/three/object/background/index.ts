@@ -113,9 +113,9 @@ class Background extends THREE.Group {
 
   }
 
-  _setMetadata(type: MapType) {
+  _setMetadata(type: MapType, mapType?: BackgroundType) {
     this.backgroundSize = this.backgroundObj!.geometry.parameters.width
-    this.mapType = translateType2BackgroundType(type)
+    this.mapType = mapType || translateType2BackgroundType(type)
   }
 
   /**
@@ -149,7 +149,7 @@ class Background extends THREE.Group {
     this.add(
       this.backgroundObj
     )
-    this._setMetadata(type)
+    this._setMetadata(type, bgType)
   }
 }
 

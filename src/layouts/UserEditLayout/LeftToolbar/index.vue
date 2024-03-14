@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useToolbar } from '@/store/dev/toolbar';
-import { computed, ref, watch } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import { ElDrawer, ElForm, ElButton, ElMessage } from 'element-plus';
 import { useMask } from '@/store/dev/mask';
 import { useGlobalState } from '@/store/dev/globalState';
@@ -35,6 +35,8 @@ watch(
 watch(
   () => show.value,
   (n) => {
+    // 保证每次开启都能获取到正确数据
+    formData.value = { ...core.getMetadata() }
     if (n !== toolbar.show) {
       toolbar.toggleToolbar(n)
       setGlobalState(n)

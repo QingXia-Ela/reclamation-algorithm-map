@@ -144,6 +144,7 @@ class MapCore {
   // todo!: 改造成多个微任务，减少CPU占用导致的页面卡顿
   async loadData(data: SaveMapData) {
     const { type, backgroundType, backgroundSize } = data.metadata
+    this.type = type
     await this.background.changeBackgroundByBgType(type, backgroundType, backgroundSize)
     try {
       const res = this.DataHandle.loadData(data)

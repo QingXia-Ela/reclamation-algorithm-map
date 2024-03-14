@@ -3,15 +3,17 @@ import { ElMessage } from "element-plus"
 import getJSONDataFromCore from "./getJSONDataFromCore"
 import MapCore from "@/three/core"
 import debounce from "lodash/debounce"
+import { saveDataToLocal } from "./localStoreMapData"
 
 function saveDataCore(core: MapCore) {
-  const data = getJSONDataFromCore(core)
-  const str = JSON.stringify(data, null, 2)
-  if (process.env.NODE_ENV === "development") {
+  if (process.env.NODE_ENV === "development" && !import.meta.env.VITE_USER_EDIT_MODE) {
+    const data = getJSONDataFromCore(core)
+    const str = JSON.stringify(data, null, 2)
     ElMessage.success(`数据已保存到本地`)
     clientSaveMap(str)
     return
   }
+  saveDataToLocal(core)
 }
 
 

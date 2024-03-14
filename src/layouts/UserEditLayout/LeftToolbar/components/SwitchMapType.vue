@@ -1,18 +1,9 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue';
 import { ElSelect, ElInput, ElCascader, ElFormItem } from 'element-plus';
-import { highlightPointByType } from '@/three/utils/user/highlightPoint'
-import core from '@/three';
 import { MapData } from '@/constants/map';
 
-const select = defineModel<string>()
-const selectArr = ref([])
-
 const FixedDungeon = MapData.filter(item => item.fixed_dungeon)
-
-watch(() => selectArr.value, (n) => {
-  select.value = selectArr.value?.length ? selectArr.value[selectArr.value.length - 1] : ""
-})
 
 const options = [
   MapData[0],
@@ -27,6 +18,14 @@ const options = [
     children: []
   }
 ]
+
+const select = defineModel<string>()
+
+const selectArr = ref([])
+
+watch(() => selectArr.value, (n) => {
+  select.value = selectArr.value?.length ? selectArr.value[selectArr.value.length - 1] : ""
+})
 </script>
 
 <template>

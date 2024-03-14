@@ -20,7 +20,6 @@ if (process.env.NODE_ENV === "development" && !import.meta.env.VITE_USER_EDIT_MO
 // @ts-ignore
 window.MapCore = core;
 
-
 const app = createApp(App)
 
 app.use(pinia)

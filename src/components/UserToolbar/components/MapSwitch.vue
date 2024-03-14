@@ -10,6 +10,19 @@ import { getMapJson } from '@/api/modules';
 const open = ref(false)
 const type = ref("main")
 
+const FixedDungeonData = MapData.filter(item => item.fixed_dungeon)
+
+const RadioData = [
+  {
+    "title": "主地图",
+    "value": [MapData[0]]
+  },
+  {
+    "title": "固定陌域",
+    "value": FixedDungeonData
+  }
+]
+
 /**
  * @param type {import('@/three/types/map').MapType}
  */
@@ -30,11 +43,15 @@ function changeMap(type) {
     <SvgIcon name="map" color="#eee" style="width: 1.2rem; height: 1.2rem" />
   </OperateButton>
   <ElDialog v-model="open" title="选择要更换的地图" :before-close="() => open = false" append-to-body>
-    <el-radio-group v-model="type">
-      <el-radio v-for="item in MapData" :label="item.value" :key="item.value" size="large">
-        {{ item.label }}
-      </el-radio>
-    </el-radio-group>
+    <template v-for="data in RadioData" :key="data.title">
+      <h3>{{ data.title }}</h3>
+      <el-radio-group v-model="type">
+        <el-radio v-for="item in data.value" :label="item.value" :key="item.value" size="large">
+          {{ item.label }}
+        </el-radio>
+      </el-radio-group>
+    </template>
+
     <template #footer>
       <el-button @click="open = false">取消</el-button>
       <el-button type="primary" @click="changeMap(type)">更换地图</el-button>

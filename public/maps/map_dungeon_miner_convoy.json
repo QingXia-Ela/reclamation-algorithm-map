@@ -1,5 +1,9 @@
 {
-  "type": "dungeon_miner_convoy",
+  "metadata": {
+    "type": "dungeon_miner_convoy",
+    "backgroundSize": 120,
+    "backgroundType": "dungeon"
+  },
   "nodes": [
     {
       "preset": "normal",

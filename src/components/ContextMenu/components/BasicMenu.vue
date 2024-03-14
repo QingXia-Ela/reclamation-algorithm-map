@@ -34,7 +34,7 @@ function createNode() {
 async function loadData() {
   try {
     const data = JSON.parse(await loadTextFile())
-    const error = core.loadData(data)
+    const error = await core.loadData(data)
 
     if (error) {
       ElMessage({

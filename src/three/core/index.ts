@@ -7,7 +7,6 @@ import { NodeProps } from '../types/node';
 import Line from '../object/components/line';
 import { SaveMapData } from '../types/data';
 import DataStructHandle from '../core/DataStrcutHandle';
-import { BSCShader } from '@/three/effect/BSCShader'
 import * as TWEEN from '@tweenjs/tween.js'
 import findLine from '../utils/findLine';
 import { MapType } from "@/three/types/map"
@@ -30,11 +29,30 @@ class MapCore {
   }
   DataHandle = new DataStructHandle()
   type: MapType = "main"
+  background!: Background;
   constructor() {
     this._init()
   }
 
-  async loadDefaultData(root = "map_main.json") {
+  async setMetadata({
+    backgroundType,
+    backgroundSize,
+    type
+  }: SaveMapData['metadata']) {
+    this.type = type
+    await this.background.changeBackgroundByBgType(type, backgroundType, backgroundSize)
+  }
+
+  getMetadata() {
+    const { mapType, backgroundSize } = this.background
+    return {
+      type: this.type,
+      backgroundSize,
+      backgroundType: mapType
+    }
+  }
+
+  async loadDefaultData(root = "maps/map_main.json") {
     const map = await (await fetch(root)).json()
     this.loadData(map as SaveMapData)
   }
@@ -124,8 +142,9 @@ class MapCore {
    * @returns 错误信息，如果为空表示加载成功
    */
   // todo!: 改造成多个微任务，减少CPU占用导致的页面卡顿
-  loadData(data: SaveMapData) {
-    this.type = data.type
+  async loadData(data: SaveMapData) {
+    const { type, backgroundType, backgroundSize } = data.metadata
+    await this.background.changeBackgroundByBgType(type, backgroundType, backgroundSize)
     try {
       const res = this.DataHandle.loadData(data)
       Object.values(res).forEach(data => {
@@ -156,7 +175,7 @@ class MapCore {
    */
   // 该方法不会处理外部变量引用，可能会出现内存泄漏
   async changeMap(data: SaveMapData, type: MapType) {
-    await this.threeObject.background.changeBackground(type)
+    await this.background.changeBackground(type)
     this.loadData(data)
   }
 
@@ -317,7 +336,7 @@ class MapCore {
       raycaster.setFromCamera(mouseVector, camera);
       // 仅监听背景
       this.eventMap.contextmenu.forEach((callback) => {
-        callback(event, raycaster.intersectObjects([this.threeObject.background], true))
+        callback(event, raycaster.intersectObjects([this.background], true))
       })
     }
 
@@ -335,6 +354,8 @@ class MapCore {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     const background = new Background()
+    this.background = background
+
     scene.add(background)
 
     camera.position.set(0, 0, 20);
@@ -348,7 +369,6 @@ class MapCore {
       scene,
       camera,
       renderer,
-      background,
     }
     // @ts-ignore: process is exist
     if (process.env.NODE_ENV === "production") this._addOrbitControls()

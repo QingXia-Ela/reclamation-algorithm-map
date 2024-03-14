@@ -35,7 +35,7 @@ function createNode() {
 async function loadData() {
   try {
     const data = JSON.parse(await loadTextFile())
-    const error = core.loadData(data)
+    const error = await core.loadData(data)
 
     if (error) {
       ElMessage({
@@ -61,15 +61,36 @@ async function reloadCurrentTypeMap() {
   const map = await getMapJson(core.type, "/reclaimation-algorithm-map/edit/")
   await core.changeMap(map, core.type)
 }
+
+async function cleanAllNode() {
+  confirm('确定要清空所有节点(不可恢复)？') && core.removeAllPoint()
+  ElMessage({
+    type: 'success',
+    message: '清除成功'
+  })
+}
 </script>
 
 <template>
-  <el-button type="primary" @click="createNode">在鼠标单击位置新建节点</el-button>
-  <el-button type="primary" @click="loadData">从 JSON 加载地图数据</el-button>
-  <el-button type="primary" @click="saveData(core, true)">保存地图数据为 JSON</el-button>
-  <el-button type="primary" @click="toolbar.showToolbar()">打开地图工具栏</el-button>
-  <el-button type="primary" @click="reloadCurrentTypeMap">重新加载当前地图默认数据</el-button>
-  <LigatureModeButton />
+  <div class="container">
+    <el-button type="primary" @click="createNode">在鼠标单击位置新建节点</el-button>
+    <el-button type="primary" @click="loadData">从 JSON 加载地图数据</el-button>
+    <el-button type="primary" @click="saveData(core, true)">保存地图数据为 JSON</el-button>
+    <el-button type="primary" @click="toolbar.showToolbar()">打开地图工具栏</el-button>
+    <el-button type="primary" @click="reloadCurrentTypeMap">重新加载当前地图默认数据</el-button>
+    <el-button type="primary" @click="cleanAllNode">清除所有节点(不可恢复)</el-button>
+    <LigatureModeButton />
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+
+  .el-button {
+    margin-left: 0;
+  }
+}
+</style>

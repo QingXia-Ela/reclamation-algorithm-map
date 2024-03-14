@@ -11,8 +11,9 @@ import { SaveMapData } from "@/three/types/data";
 export default function getJSONDataFromCore(core: MapCore): SaveMapData {
   const nodes = Object.values(core.DataHandle.nodeMap)
     .map(node => node.options)
+
   return {
-    type: core.type,
+    metadata: core.getMetadata(),
     nodes,
     adjancyList: core.DataHandle.adjancyList
   }

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
 import { ElSelect, ElInput, ElCascader, ElFormItem } from 'element-plus';
-import { highlightPointByType } from '@/three/utils/user/highlightPoint'
-import core from '@/three';
-import { MapData } from '@/constants/map';
 
-const size = ref<number>(90)
+const size = defineModel<number>({
+  set(v) {
+    return Number(v)
+  }
+})
 </script>
 
 <template>

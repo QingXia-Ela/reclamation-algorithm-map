@@ -1,5 +1,9 @@
 {
-  "type": "dungeon_defend_base",
+  "metadata": {
+    "type": "dungeon_defend_base",
+    "backgroundSize": 80,
+    "backgroundType": "dungeon"
+  },
   "nodes": [
     {
       "preset": "normal",

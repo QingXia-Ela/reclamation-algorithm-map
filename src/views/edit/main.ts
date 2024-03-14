@@ -24,4 +24,18 @@ app.mount('#app')
 
 const map = getDataFromLocal()
 
-map ? (ElMessage.success("已读取缓存内地图内容"), core.loadData(map)) : await core.loadDefaultData("/reclamation-algorithm-map/map_main.json")
+const mainUrl = '/reclamation-algorithm-map/maps/map_main.json'
+
+if (map) {
+  try {
+    await core.loadData(map)
+    ElMessage.success("已读取缓存内地图内容")
+  } catch (e) {
+    ElMessage.error("读取地图失败，请联系地图作者在浏览器取回之前的地图数据！")
+    localStorage.setItem("reclamation-algorithm-old-map", JSON.stringify(map))
+    await core.loadDefaultData(mainUrl)
+  }
+}
+else {
+  await core.loadDefaultData(mainUrl)
+}

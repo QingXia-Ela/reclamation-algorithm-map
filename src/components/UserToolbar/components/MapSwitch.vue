@@ -14,9 +14,9 @@ const type = ref("main")
  * @param type {import('@/three/types/map').MapType}
  */
 function changeMap(type) {
-  console.log(type);
   getMapJson(type)
     .then(async (map) => {
+      if (map.type === core.type) return
       await core.changeMap(map, type)
     })
     .finally(() => {

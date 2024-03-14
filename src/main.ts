@@ -25,3 +25,5 @@ const app = createApp(App)
 app.use(pinia)
 
 app.mount('#app')
+
+core.loadDefaultData()

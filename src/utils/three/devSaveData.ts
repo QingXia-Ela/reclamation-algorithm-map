@@ -17,8 +17,14 @@ function saveDataCore(core: MapCore) {
 
 const saveDataDebounce = debounce(function (core: MapCore) {
   saveDataCore(core)
-}, 4000)
+}, 3000)
 
+/**
+ * 开发环境下存储数据方法
+ * 
+ * @param core 地图核心
+ * @param immidiate 立即存储数据，取消节流
+ */
 function devSaveData(core: MapCore, immidiate = false) {
   if (immidiate) {
     saveDataCore(core)

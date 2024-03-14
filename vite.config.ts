@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import Markdown from 'vite-plugin-md'
 import vitePluginSaveMap from './src/plugins/vite/vite-plugin-save-map'
 import vitePluginIconsReg from './src/plugins/vite/vite-plugin-icons-reg'
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,6 +27,12 @@ export default defineConfig({
     'process.env.USE_DEVELOPER_LAYOUT': process.env.NODE_ENV === 'development'
   },
   build: {
-    target: ["chrome103"]
+    target: ["chrome103"],
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        edit: resolve(__dirname, './edit/index.html'),
+      }
+    },
   }
 })

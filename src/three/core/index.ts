@@ -34,6 +34,11 @@ class MapCore {
     this._init()
   }
 
+  async loadDefaultData(root = "map_main.json") {
+    const map = await (await fetch(root)).json()
+    this.loadData(map as SaveMapData)
+  }
+
   /**
    * Adds a point to the scene and the node map.
    *
@@ -143,6 +148,8 @@ class MapCore {
 
   /**
    * 改变地图
+   * 
+   * 该方法会强制重新刷新地图
    * 
    * @param data 地图数据
    * @param type 地图类型 目前支持主地图与陌域

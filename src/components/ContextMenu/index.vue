@@ -2,7 +2,7 @@
   <transition v-show="ctxStore.visible">
     <!-- todo!: 优化样式，让他变得更像右键菜单 -->
     <el-card @click="ctxStore.hide()" class="box-card" :style="{ top: domPos.y + 'px', left: domPos.x + 'px' }">
-      <BasicMenu />
+      <Menu />
     </el-card>
   </transition>
   <div class="mask" @click="ctxStore.hide()" :style="{ display: ctxStore.visible ? 'flex' : 'none' }"></div>
@@ -13,10 +13,13 @@ import { ElCard } from 'element-plus'
 import { useContextMenu } from '@/store/dev/contextMenu'
 import { computed } from 'vue';
 import BasicMenu from './components/BasicMenu.vue'
+import UserEditMenu from './components/UserEditMenu.vue'
 
 const ctxStore = useContextMenu()
 
 const domPos = computed(() => ctxStore.domPos)
+
+const Menu = process.env.USE_DEVELOPER_LAYOUT ? BasicMenu : UserEditMenu
 </script>
 
 <style lang="scss" scoped>

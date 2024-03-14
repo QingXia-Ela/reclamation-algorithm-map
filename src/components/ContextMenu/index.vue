@@ -19,7 +19,7 @@ const ctxStore = useContextMenu()
 
 const domPos = computed(() => ctxStore.domPos)
 
-const Menu = process.env.USE_DEVELOPER_LAYOUT ? BasicMenu : UserEditMenu
+const Menu = process.env.USER_EDIT_MODE ? BasicMenu : UserEditMenu
 </script>
 
 <style lang="scss" scoped>

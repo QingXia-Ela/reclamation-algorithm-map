@@ -57,7 +57,7 @@ async function loadData() {
 }
 
 async function reloadCurrentTypeMap() {
-  const map = await getMapJson(core.type)
+  const map = await getMapJson(core.type, "/reclaimation-algorithm-map/edit/")
   await core.changeMap(map, core.type)
 }
 </script>

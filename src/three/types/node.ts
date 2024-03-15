@@ -98,6 +98,14 @@ export interface BaseNodeProps {
   y: number
 }
 
-export type NodeProps = NormalNodeProps | BaseNodeProps
+export interface MarketNodeProps {
+  nodeId: number
+  preset: "market",
+  name?: string
+  x: number
+  y: number
+}
+
+export type NodeProps = NormalNodeProps | BaseNodeProps | MarketNodeProps
 
 export type NodePropsWithoutId = Omit<NodeProps, 'nodeId'>

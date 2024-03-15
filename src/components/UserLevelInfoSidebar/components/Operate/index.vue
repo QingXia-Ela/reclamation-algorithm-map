@@ -16,6 +16,7 @@ import { computed, onUpdated, ref } from 'vue';
 import { useCurrentNode } from '@/store/users/currentNode';
 import { LevelMapData } from '@/assets/images/level';
 import ResourceList from './ResourceList.vue';
+import { useGlobalState } from '@/store/dev/globalState';
 
 let $viewer = null
 
@@ -23,18 +24,26 @@ const inited = (viewer) => {
   $viewer = viewer
 }
 
+const globalState = useGlobalState()
+const open = computed(() => globalState.openMapSelect)
 const currentNode = useCurrentNode()
 
 const url = computed(() => {
   const name = currentNode.node?.options.name
   return LevelMapData.find(item => item.name === name)?.src
 })
+const type = computed(() => currentNode.node?.options.preset)
 const images = computed(() => url.value ? [url.value] : [])
 
 function showMapImage() {
   if (url.value) {
     $viewer.show()
   }
+}
+
+function switchMap() {
+  globalState.setOpenMapSelect(true)
+  currentNode.setNode(null)
 }
 </script>
 
@@ -46,7 +55,9 @@ function showMapImage() {
         {{ scope.options }}
       </template>
     </viewer>
-    <OperateButton @click="showMapImage" :disabled="!url">查看关卡地图</OperateButton>
+    <!-- 后舍特供 -->
+    <OperateButton v-show="type === 'market'" @click="switchMap">查看其他区域地图</OperateButton>
+    <OperateButton @click="showMapImage" :disabled="!url">查看当前关卡地图</OperateButton>
     <ResourceList title="主要产出资源" :ResourceList="currentNode.node?.options.mainResources" />
     <ResourceList title="常规产出资源" :ResourceList="currentNode.node?.options.regularResources" />
   </div>

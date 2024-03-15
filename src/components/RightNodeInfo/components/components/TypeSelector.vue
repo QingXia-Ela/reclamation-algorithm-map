@@ -7,6 +7,8 @@ import { ref } from "vue";
 
 // 外部 modal 双向绑定
 const value = defineModel();
+
+// todo!: 增加外部值变化监听修改节点类型
 </script>
 
 <template>

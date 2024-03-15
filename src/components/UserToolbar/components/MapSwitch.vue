@@ -4,10 +4,12 @@ import OperateButton from '../OperateButton.vue';
 import SvgIcon from '@/components/SvgIcon.vue';
 import core from '@/three';
 import { ElNotification, ElDialog, ElRadioGroup, ElRadio, ElButton } from 'element-plus';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { getMapJson } from '@/api/modules';
+import { useGlobalState } from '@/store/dev/globalState';
 
-const open = ref(false)
+const globalState = useGlobalState()
+const open = computed(() => globalState.openMapSelect)
 const type = ref("main")
 
 const FixedDungeonData = MapData.filter(item => item.fixed_dungeon)
@@ -37,16 +39,24 @@ function changeMap(type) {
       await core.changeMap(map, type)
     })
     .finally(() => {
-      open.value = false
+      closeMapSelect()
     })
+}
+
+function openMapSelect() {
+  globalState.setOpenMapSelect(true)
+}
+
+function closeMapSelect() {
+  globalState.setOpenMapSelect(false)
 }
 </script>
 
 <template>
-  <OperateButton popover="查看其他区域的地图" :popover-width="180" @click="open = true">
+  <OperateButton popover="查看其他区域的地图" :popover-width="180" @click="openMapSelect">
     <SvgIcon name="map" color="#eee" style="width: 1.2rem; height: 1.2rem" />
   </OperateButton>
-  <ElDialog v-model="open" title="选择要更换的地图" :before-close="() => open = false" append-to-body>
+  <ElDialog v-model="open" title="选择要更换的地图" :before-close="closeMapSelect" append-to-body>
     <template v-for="data in RadioData" :key="data.title">
       <h3>{{ data.title }}</h3>
       <el-radio-group v-model="type">
@@ -57,7 +67,7 @@ function changeMap(type) {
     </template>
 
     <template #footer>
-      <el-button @click="open = false">取消</el-button>
+      <el-button @click="closeMapSelect">取消</el-button>
       <el-button type="primary" @click="changeMap(type)">更换地图</el-button>
     </template>
   </ElDialog>

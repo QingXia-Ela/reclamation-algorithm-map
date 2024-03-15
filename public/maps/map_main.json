@@ -5026,6 +5026,20 @@
       "note": "最初的落脚点。或许不够豪华，但能够安心休息。只要守住这里，不管失败几次都能东山再起，重新再来。",
       "mainResources": [],
       "regularResources": []
+    },
+    {
+      "preset": "market",
+      "nodeId": -2,
+      "name": "众人会聚之地",
+      "x": 5.5,
+      "y": 15,
+      "type": "market",
+      "weather": "normal",
+      "size": "small",
+      "border": "round",
+      "note": "沙海、雨林和绿洲的交会点，失落的舒巴特-阿尔萨兰的心脏。",
+      "mainResources": [],
+      "regularResources": []
     }
   ],
   "adjancyList": {

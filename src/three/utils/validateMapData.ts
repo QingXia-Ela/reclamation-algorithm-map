@@ -1,9 +1,9 @@
 import { z } from 'zod'
 
 const presetNode = [
-  "base",
+  "base", // 驻扎地
   "camp",
-  "backroom",
+  "market", // 后舍
   "normal"
 ]
 

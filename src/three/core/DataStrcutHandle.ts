@@ -4,6 +4,7 @@
 import BaseNode from '../object/base';
 import Line from '../object/components/line';
 import Node from '../object/components/node';
+import MarketNode from '../object/market';
 import { SaveMapData } from '../types/data';
 import { NodePreset, NodeProps, NodePropsWithoutId, NormalNodeProps } from '../types/node';
 import validateMapData from '../utils/validateMapData';
@@ -33,6 +34,8 @@ function getPossibleEdgeIdFromNodes(node1: Node, node2: Node) {
 
 function getSpeicalNode(options: NodeProps) {
   switch (options.preset) {
+    case "market": // 后舍
+      return new MarketNode(options as any)
     default:
       return new BaseNode(options as any)
   }

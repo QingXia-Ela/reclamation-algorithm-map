@@ -162,6 +162,10 @@ class NodeCore extends THREE.Group {
    * 背景第二位，外边框第三位
    */
   icon: THREE.Group | null
+  /**
+   * 任务队列，保存在初始化完成后要执行的行为
+   */
+  taskQueue: Array<() => any> = []
   constructor(options: NodeCoreProps) {
     super()
     this.icon = null
@@ -204,7 +208,13 @@ class NodeCore extends THREE.Group {
       const bgMaterial = this.icon.children[1].material as THREE.MeshBasicMaterial
 
       bgMaterial.color.set(bgColor)
+      bgMaterial.needsUpdate = true
       iconMaterial.color.set(iconColor)
+      iconMaterial.needsUpdate = true
+    }
+    // 推入任务队列，等待初始化完成后全部执行
+    else {
+      this.taskQueue.push(() => this.changeContentColor(bgColor, iconColor))
     }
     return this
   }
@@ -219,6 +229,11 @@ class NodeCore extends THREE.Group {
     this.icon = icon
 
     this.add(icon)
+
+    // 执行延时任务
+    setTimeout(() => {
+      this.taskQueue.forEach(v => v())
+    });
   }
 }
 

@@ -64,6 +64,12 @@ class MarketNode extends Node {
     this.setPointSelected(false)
   }
 
+  updateNode(newOptions: NormalNodeProps): void {
+    super.updateNode(newOptions)
+    // 调整为特有颜色
+    this.setPointSelected(false)
+  }
+
   setPointSelected(selected: boolean, color?: number, iconColor?: number): void {
     // 调整为特有颜色
     if (!selected) {

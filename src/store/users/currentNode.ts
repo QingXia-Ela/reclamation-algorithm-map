@@ -25,8 +25,11 @@ export const useCurrentNode = defineStore("currentNode", {
 
 setTimeout(() => {
   // 仅用户布局启用
-  if (process.env.NODE_ENV === "production" && !process.env.VITE_USER_EDIT_MODE) {
+  // todo!: 优化事件添加
+  if (process.env.NODE_ENV === "production" && !location.pathname.includes('/edit/')) {
     const store = useCurrentNode()
+    console.log('add');
+
     core.addEventListener('nodeclick', (node: Node) => {
       if (store.node) return
       core.setCameraPosition({

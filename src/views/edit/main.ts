@@ -37,5 +37,9 @@ if (map) {
   } catch (e) {
     ElMessage.error("读取地图失败，请联系地图作者在浏览器取回之前的地图数据！")
     localStorage.setItem("reclamation-algorithm-old-map", JSON.stringify(map))
+    await core.loadEmptyData()
   }
+}
+else {
+  await core.loadEmptyData()
 }

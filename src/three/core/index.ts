@@ -52,9 +52,25 @@ class MapCore {
     }
   }
 
+  /**
+   * 加载一张空地图
+   */
+  async loadEmptyData() {
+    const data: SaveMapData = {
+      metadata: {
+        type: "main",
+        backgroundSize: 200,
+        backgroundType: "main"
+      },
+      nodes: [],
+      adjancyList: {}
+    }
+    await this.loadData(data)
+  }
+
   async loadDefaultData(root = "maps/map_main.json") {
     const map = await (await fetch(root)).json()
-    this.loadData(map as SaveMapData)
+    await this.loadData(map as SaveMapData)
   }
 
   /**

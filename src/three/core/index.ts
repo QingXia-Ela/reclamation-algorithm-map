@@ -10,6 +10,7 @@ import DataStructHandle from '../core/DataStrcutHandle';
 import * as TWEEN from '@tweenjs/tween.js'
 import findLine from '../utils/findLine';
 import { MapType } from "@/three/types/map"
+import MapAnchor from '../object/anchor';
 
 type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove'
 
@@ -30,8 +31,13 @@ class MapCore {
   DataHandle = new DataStructHandle()
   type: MapType = "main"
   background!: Background;
+  anchor: MapAnchor = new MapAnchor();
   constructor() {
     this._init()
+  }
+
+  toggleAnchorActive(active: boolean) {
+    this.anchor.visible = active
   }
 
   async setMetadata({
@@ -351,9 +357,14 @@ class MapCore {
       var mouseVector = getMouseVector(event);
       // raycaster 为共享，可能在未来会出现问题？
       raycaster.setFromCamera(mouseVector, camera);
+      // 设置锚点
+      const data = raycaster.intersectObjects([this.background], true)
+
+      const { point: { x, y } } = data[0]
+      this.anchor.position.set(x, y, 0.2);
       // 仅监听背景
       this.eventMap.contextmenu.forEach((callback) => {
-        callback(event, raycaster.intersectObjects([this.background], true))
+        callback(event, data)
       })
     }
 
@@ -375,6 +386,10 @@ class MapCore {
 
     scene.add(background)
 
+    // hide anchor
+    this.anchor.visible = false
+    scene.add(this.anchor)
+
     camera.position.set(0, 0, 20);
 
     const renderer = new THREE.WebGLRenderer({
@@ -387,6 +402,7 @@ class MapCore {
       camera,
       renderer,
     }
+
     // @ts-ignore: process is exist
     if (process.env.NODE_ENV === "production") this._addOrbitControls()
     else {

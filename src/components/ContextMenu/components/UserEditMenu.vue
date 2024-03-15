@@ -63,11 +63,16 @@ async function reloadCurrentTypeMap() {
 }
 
 async function cleanAllNode() {
-  confirm('确定要清空所有节点(不可恢复)？') && core.removeAllPoint()
-  ElMessage({
-    type: 'success',
-    message: '清除成功'
-  })
+  const clean = confirm('确定要清空所有节点(不可恢复)？')
+
+  if (clean) {
+    core.removeAllPoint()
+    currentNodeState.setNode(null)
+    ElMessage({
+      type: 'success',
+      message: '清除成功'
+    })
+  }
 }
 </script>
 

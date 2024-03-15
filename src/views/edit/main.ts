@@ -30,6 +30,9 @@ const map = getDataFromLocal()
 
 // const mainUrl = '/reclamation-algorithm-map/maps/map_main.json'
 
+// 激活锚点提示
+core.toggleAnchorActive(true)
+
 if (map) {
   try {
     await core.loadData(map)

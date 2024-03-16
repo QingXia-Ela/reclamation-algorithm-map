@@ -29,10 +29,12 @@
 
 百变陌域数据来源于 UP主 [GShock966](https://space.bilibili.com/26416283) 的粉丝群，在此表示感谢。
 
+## 地图制作与地图使用手册
+
+地图制作网页：http://shiinafan.gitee.io/reclamation-algorithm-map/edit
+
+地图制作文档：http://shiinafan.gitee.io/reclamation-algorithm-map/docs/edit
+
 ## 联系我们
 
 地图交流QQ群：716767834
-
-## 更新记录
-
-啥都没有捏（´_ゝ｀）

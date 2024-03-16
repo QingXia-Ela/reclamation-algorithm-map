@@ -1,0 +1,38 @@
+---
+title: 生息演算地图制作器使用手册
+template: splash
+hero:
+  tagline: The cake is a lie.
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: 查看制作指引
+      link: /reclamation-algorithm-map/docs/edit/guides/
+      icon: right-arrow
+      variant: primary
+    - text: 访问地图官网
+      link: http://shiinafan.gitee.io/reclamation-algorithm-map/
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## 快速制作指南
+
+<CardGrid stagger>
+	<Card title="访问网站" icon="seti:html">
+		访问 <br /> `http://shiinafan.gitee.io/reclamation-algorithm-map/edit` <br /> 来查看制作页面。
+	</Card>
+	<Card title="右键新建节点" icon="seti:julia">
+	使用鼠标右键并点击菜单中的第一个按钮来创建一个新节点
+	</Card>
+	<Card title="进行连线" icon="seti:sass">
+	使用鼠标右键并点击菜单中的 `进入连线模式` 按钮来连接节点
+	</Card>
+	<Card title="导出地图" icon="seti:json">
+	使用鼠标右键并点击菜单中的 `导出为JSON` 来导出地图，并将其分享给他人！
+	</Card>
+		<Card title="了解更多？" icon="star">
+	加入我们的QQ交流群吧：716767834
+	</Card>
+</CardGrid>

@@ -31,6 +31,6 @@ watch(() => selectArr.value, (n) => {
 <template>
   <el-form-item class="form_item" label="地图类型">
     <el-cascader v-model="selectArr" :options="options" />
-    <el-input placeholder="地图类型源值会展示在此处..." v-model="select" disabled style="width: 20rem; margin-left: 1rem;" />
+    <el-input placeholder="地图类型源值会展示在此处..." v-model="select" disabled style="width: 12rem; margin-left: 1rem;" />
   </el-form-item>
 </template>

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "userEdit": "vite --mode edit",
-    "build": "vite build",
+    "docs:edit": "cd docs/edit && astro dev",
+    "build": "vite build && cd docs/edit && pnpm build",
     "test": "vitest run",
     "preview": "vite preview"
   },

@@ -7,10 +7,12 @@ import { ElNotification, ElDialog, ElRadioGroup, ElRadio, ElButton } from 'eleme
 import { computed, ref } from 'vue';
 import { getMapJson } from '@/api/modules';
 import { useGlobalState } from '@/store/dev/globalState';
+import { useStore } from '@nanostores/vue';
+import { mapType } from './store';
 
 const globalState = useGlobalState()
 const open = computed(() => globalState.openMapSelect)
-const type = ref("main")
+const { map: type } = useStore(mapType)
 
 const FixedDungeonData = MapData.filter(item => item.fixed_dungeon)
 

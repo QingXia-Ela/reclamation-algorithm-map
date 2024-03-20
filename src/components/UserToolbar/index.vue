@@ -7,8 +7,9 @@ import FindNode from './components/FindNode.vue';
 import Knowledge from './components/Knowledge.vue';
 import Notification from './components/Notification.vue';
 import MapSwitch from './components/MapSwitch.vue'
-import { ref, computed } from 'vue';
 import ResetCamera from './components/ResetCamera.vue';
+import DownloadCurrentMap from './components/DownloadCurrentMap.vue';
+import { ref, computed } from 'vue';
 
 const showUserToolbar = ref(false)
 
@@ -38,6 +39,7 @@ const className = computed(() => ({
     <FindNode />
     <ResetCamera />
     <MapSwitch />
+    <DownloadCurrentMap />
     <Knowledge />
     <Notification />
   </div>

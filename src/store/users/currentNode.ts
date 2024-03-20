@@ -24,11 +24,10 @@ export const useCurrentNode = defineStore("currentNode", {
 })
 
 setTimeout(() => {
-  // 仅用户布局启用
+  // 仅用户布局，且当前页面不是编辑页面启用
   // todo!: 优化事件添加
   if (process.env.NODE_ENV === "production" && !location.pathname.includes('/edit/')) {
     const store = useCurrentNode()
-    console.log('add');
 
     core.addEventListener('nodeclick', (node: Node) => {
       if (store.node) return

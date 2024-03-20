@@ -4,6 +4,7 @@ import Markdown from 'vite-plugin-md'
 import vitePluginSaveMap from './src/plugins/vite/vite-plugin-save-map'
 import vitePluginIconsReg from './src/plugins/vite/vite-plugin-icons-reg'
 import { resolve } from 'path'
+import vitePluginRiftMapHandle from './src/plugins/vite/vite-plugin-rift-map-handle'
 
 // https://vitejs.dev/config/
 export default ({ command, mode }: any) => {
@@ -14,6 +15,7 @@ export default ({ command, mode }: any) => {
       }),
       vitePluginSaveMap(),
       vitePluginIconsReg(),
+      vitePluginRiftMapHandle(),
       Markdown()
     ],
     base: '/reclamation-algorithm-map/',

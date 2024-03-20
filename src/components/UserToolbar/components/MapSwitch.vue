@@ -26,8 +26,8 @@ const RadioData = [
     "value": FixedDungeonData
   },
   {
-    "title": "百变陌域(暂无具体地图名称)",
-    "value": []
+    "title": "百变陌域(名字仅供参考)",
+    "value": RIFT_MAPS_DATA.map(({ name, filename }) => ({ value: filename, label: name }))
   }
 ]
 
@@ -63,7 +63,7 @@ function closeMapSelect() {
       <h3>{{ data.title }}</h3>
       <el-radio-group v-model="type">
         <el-radio v-for="item in data.value" :label="item.value" :key="item.value" size="large">
-          {{ item.label }}
+          {{ item.label?.length ? item.label : item.value }}
         </el-radio>
       </el-radio-group>
     </template>

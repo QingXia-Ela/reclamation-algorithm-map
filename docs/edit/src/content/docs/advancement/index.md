@@ -14,4 +14,12 @@ title: 在开始阅读前
   
   你可以通过百度进行学习，或者参考 [JSON 标记语言](https://www.runoob.com/json/json-tutorial.html) 进行了解。
 
+- 一款文本编辑器
+  
+  可以使用这款在线的 JSON 解析器 [JSONCN](https://www.json.cn/) 来看看你的 json 地图是否有问题。
+
+  如果想要高级点可以下载 `vscode` 来看地图数据。
+
+  虽然记事本也可以用，但是就是很难受就对了。。。
+
 如果你准备好了，就可以继续往下看了。

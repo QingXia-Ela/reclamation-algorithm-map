@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { useToolbar } from '@/store/dev/toolbar';
-import { computed, onMounted, ref, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { ElDrawer, ElForm, ElButton, ElMessage } from 'element-plus';
 import { useMask } from '@/store/dev/mask';
 import { useGlobalState } from '@/store/dev/globalState';
 import SwitchMapType from './components/SwitchMapType.vue';
 import BackgroundSize from './components/BackgroundSize.vue';
 import BackgroundSelect from './components/BackgroundSelect.vue';
+import SetMapName from './components/SetMapName.vue';
 import { saveDataToLocal } from '@/utils/three/localStoreMapData';
 import core from '@/three';
 import { SaveMapData } from '@/three/types/data';
@@ -62,6 +63,7 @@ async function hideSidebar() {
 <template>
   <el-drawer v-model="show" title="开发模式功能栏" direction="ltr">
     <el-form :model="formData">
+      <set-map-name v-model="formData.name" />
       <switch-map-type v-model="formData.type" />
       <background-size v-model="formData.backgroundSize" />
       <background-select v-model="formData.backgroundType" />

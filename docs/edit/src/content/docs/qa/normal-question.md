@@ -10,4 +10,4 @@ title: 常见问题
 
 <!-- todo!: 补充详细解释 -->
 
-参考 [`节点类型`](../../advancement/map-data#单个节点的含义解释) 添加根节点。
+参考 [`节点类型`](../../advancement/map-data#单个节点的含义解释) 修改 `preset` 字段来设置特殊节点。

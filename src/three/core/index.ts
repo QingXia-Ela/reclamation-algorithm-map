@@ -29,6 +29,7 @@ class MapCore {
     mousemove: new Set(),
   }
   DataHandle = new DataStructHandle()
+  name: string = "主地图"
   type: MapType = "main"
   background!: Background;
   anchor: MapAnchor = new MapAnchor();
@@ -41,17 +42,20 @@ class MapCore {
   }
 
   async setMetadata({
+    name,
     backgroundType,
     backgroundSize,
     type
   }: SaveMapData['metadata']) {
     this.type = type
+    this.name = name || "未知地图"
     await this.background.changeBackgroundByBgType(type, backgroundType, backgroundSize)
   }
 
   getMetadata() {
     const { mapType, backgroundSize } = this.background
     return {
+      name: this.name,
       type: this.type,
       backgroundSize,
       backgroundType: mapType

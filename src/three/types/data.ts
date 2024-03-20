@@ -11,6 +11,7 @@ export interface SaveMapData {
    * 地图类型
    */
   metadata: {
+    name?: string
     type: MapType,
     backgroundSize: number
     backgroundType: BackgroundType

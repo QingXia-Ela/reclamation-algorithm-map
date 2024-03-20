@@ -3,72 +3,19 @@ import * as THREE from "three";
 import NodeCore from "./components/core";
 import NodeTitle from "./components/title";
 import NodeResource from "./components/resources";
+import { NodeTypeData } from "@/constants";
 
 // todo!: add rest type
 function getSubTitleFromType(type: NodeType) {
   const defaultColor = 0xaaaaaa;
   let subTitle = "null";
 
-  switch (type) {
-    case "hunt":
-      subTitle = "捕猎区";
-      break;
-
-    case "collect":
-      subTitle = "资源区";
-      break;
-
-    case "battle":
-      subTitle = "冲突区";
-      break;
-
-    case "encounter":
-      subTitle = "奇遇";
-      break;
-
-    case "cave":
-      subTitle = "无主地";
-      break;
-
-    case "expedition":
-      subTitle = "集结区";
-      break;
-
-    case "gate":
-      subTitle = "关隘";
-      break;
-
-    case "mine":
-      subTitle = "荒废城镇";
-      break;
-
-    case "market":
-      subTitle = "后舍";
-      break;
-
-    case "nest":
-      subTitle = "要塞";
-      break;
-
-    case "outpost":
-      subTitle = "哨站";
-      break;
-
-    case "shop":
-      subTitle = "商店";
-      break;
-
-    case "upgrade_battle":
-      subTitle = "营垒";
-      break;
-
-    case "upgrade_scout":
-      subTitle = "岗哨";
-      break;
-
-    default:
-      break;
-  }
+  NodeTypeData.forEach((item) => {
+    if (item.value === type) {
+      subTitle = item.label;
+      return
+    }
+  });
 
   return {
     subTitle,

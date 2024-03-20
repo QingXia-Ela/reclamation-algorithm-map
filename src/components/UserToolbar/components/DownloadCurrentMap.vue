@@ -16,7 +16,7 @@ function download(type) {
 </script>
 
 <template>
-  <OperateButton popover="下载地图" :popover-width="180" @click="download(mapState.map)">
+  <OperateButton popover="下载当前地图" :popover-width="180" @click="download(mapState.map)">
     <SvgIcon name="download" color="#eee" style="width: 1.2rem; height: 1.2rem" />
   </OperateButton>
 </template>

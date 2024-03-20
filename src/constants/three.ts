@@ -5,7 +5,7 @@ export const DEFAULT_NODE_CONFIG: Omit<NormalNodeProps, 'nodeId'> = {
   x: 0,
   y: 0,
   name: "Node",
-  type: "collect",
+  type: "unknown",
   weather: "normal",
   resources: [],
   size: "small",

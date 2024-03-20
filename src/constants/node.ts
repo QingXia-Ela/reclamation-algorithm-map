@@ -15,7 +15,8 @@ export const NodeTypeArray: Array<NodeType> = [
   "shop",
   "upgrade_battle",
   "upgrade_scout",
-  "base"
+  "base",
+  "unknown"
 ]
 
 export const NodeTypeData: Array<{ value: NodeType, label: string }> = [
@@ -78,6 +79,10 @@ export const NodeTypeData: Array<{ value: NodeType, label: string }> = [
   {
     value: "base",
     label: "驻扎地",
+  },
+  {
+    value: "unknown",
+    label: "未知/随机节点",
   }
 ];
 
@@ -269,4 +274,5 @@ export const NodeDescriptionData = {
   "苦难河床": "森严的守卫不过是临时的枷锁，干涸的河床只是遥远的历史，唯有真实的反抗，才能为人们带来切实的自由。",
   "寻觅道路": "这里人来人往，安定得就像什么事都没有发生一样。",
   "遭遇战": "王酋军在这里驻扎了许久，他们的所作所为将会被人们记住。",
+  "未知": "该节点仅用于标识位置，节点类型完全随机。"
 }

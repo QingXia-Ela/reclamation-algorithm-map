@@ -140,11 +140,9 @@ function saveData(options) {
     </template>
   </el-dialog>
   <el-drawer v-model="active" :before-close="hideSidebar">
-
     <template #header>
       <h2>新建/编辑节点数据</h2>
     </template>
-
     <template #default>
       <el-form :model="infoData" @before-close="saveData(infoData)" style="color: var(--el-color-white);">
         <el-form-item label="节点模型UUID">
@@ -166,7 +164,7 @@ function saveData(options) {
         <size-selector v-model="infoData.size" />
         <border-selector v-model="infoData.border" />
         <map-selector v-model="infoData.name" />
-        <type-selector v-model="infoData.type" />
+        <type-selector v-model="infoData.type" :name="infoData.name" />
         <weather-selector v-model="infoData.weather" />
         <!-- <resources-selector v-model="infoData.resources" /> -->
         <main-resource-selector v-model="infoData.mainResources" />

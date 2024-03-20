@@ -1,19 +1,29 @@
 <script setup>
 import { NodeTypeData } from "@/constants";
 import { ElFormItem, ElSelect, ElOption } from "element-plus";
-import { ref } from "vue";
+import { ref, watch } from "vue";
+import { NodeNameToTypeMap } from "../entity";
 
 /** @typedef {import('@/three/types/node').NodeProps} NodeProps */
 
 // 外部 modal 双向绑定
-const value = defineModel();
+const type = defineModel();
 
-// todo!: 增加外部值变化监听修改节点类型
+const props = defineProps({
+  name: String
+})
+
+watch(
+  () => props.name,
+  (n) => {
+    if (NodeNameToTypeMap[n]) type.value = NodeNameToTypeMap[n]
+  }
+)
 </script>
 
 <template>
   <el-form-item label="节点类型">
-    <el-select v-model="value">
+    <el-select v-model="type">
       <el-option v-for="item in NodeTypeData" :key="item.value" :label="item.label" :value="item.value" />
     </el-select>
   </el-form-item>

@@ -14,7 +14,9 @@ export type NodeType = "hunt" |
   "shop" |
   "upgrade_battle" |
   "upgrade_scout" |
-  "base"
+  "base" |
+  // 未知节点类型，用于不固定的节点
+  "unknown"
 
 
 export type NodeWeather = "normal" |

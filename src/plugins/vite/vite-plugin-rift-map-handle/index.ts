@@ -15,7 +15,7 @@ export default function vitePluginRiftMapHandle(): Plugin {
         } = JSON.parse(fs.readFileSync(`public/maps/rift/${file}`, 'utf-8'))
         return {
           name,
-          filename: file
+          filename: file.replace('.json', '')
         }
       })
 

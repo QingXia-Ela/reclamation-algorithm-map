@@ -8,11 +8,10 @@ import { computed, ref } from 'vue';
 import { getMapJson } from '@/api/modules';
 import { useGlobalState } from '@/store/dev/globalState';
 import { useStore } from '@nanostores/vue';
-import { mapType } from './store';
 
 const globalState = useGlobalState()
 const open = computed(() => globalState.openMapSelect)
-const { map: type } = useStore(mapType)
+const mapType = defineModel("mapType")
 
 const FixedDungeonData = MapData.filter(item => item.fixed_dungeon)
 
@@ -61,7 +60,7 @@ function closeMapSelect() {
   <ElDialog v-model="open" title="选择要更换的地图" :before-close="closeMapSelect" append-to-body>
     <template v-for="data in RadioData" :key="data.title">
       <h3>{{ data.title }}</h3>
-      <el-radio-group v-model="type">
+      <el-radio-group v-model="mapType">
         <el-radio v-for="item in data.value" :label="item.value" :key="item.value" size="large">
           {{ item.label?.length ? item.label : item.value }}
         </el-radio>
@@ -70,7 +69,7 @@ function closeMapSelect() {
 
     <template #footer>
       <el-button @click="closeMapSelect">取消</el-button>
-      <el-button type="primary" @click="changeMap(type)">更换地图</el-button>
+      <el-button type="primary" @click="changeMap(mapType)">更换地图</el-button>
     </template>
   </ElDialog>
 </template>

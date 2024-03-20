@@ -30,6 +30,9 @@ const className = computed(() => ({
   toolbar_wrapper: true,
   show: showUserToolbar.value
 }))
+
+/** @type {import('vue').Ref<import('@/three/types/map').MapType>} */
+const currentMapType = ref("main")
 </script>
 
 <template>
@@ -38,8 +41,8 @@ const className = computed(() => ({
     <QueryShortestRoad />
     <FindNode />
     <ResetCamera />
-    <MapSwitch />
-    <DownloadCurrentMap />
+    <MapSwitch v-model:mapType="currentMapType" />
+    <DownloadCurrentMap v-model:mapType="currentMapType" />
     <Knowledge />
     <Notification />
   </div>

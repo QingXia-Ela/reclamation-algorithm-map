@@ -28,7 +28,7 @@ const AnnouncementComponent = computed(() => {
 <style lang="scss" scoped>
 .dialog {
   padding: 1rem;
-  max-height: 30rem;
+  max-height: 20rem;
   overflow-y: auto;
 
   .markdown-body {

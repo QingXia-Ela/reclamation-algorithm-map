@@ -2,8 +2,8 @@ import { SaveMapData } from "@/three/types/data";
 import { MapType } from "@/three/types/map";
 
 const getHandleUrl = (type: string) => {
-  const nameArr = type.split("_")
-  if (nameArr.includes("rift")) {
+  const nameArr = type.split("-")
+  if (nameArr.includes("百变陌域模板")) {
     return `rift/${type}.json`
   }
   return `map_${type}.json`

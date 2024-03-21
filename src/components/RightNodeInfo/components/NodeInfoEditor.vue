@@ -127,6 +127,14 @@ function saveData(options) {
     type: "success",
   });
 }
+
+onMounted(() => {
+  window.addEventListener("keydown", (e) => {
+    if (currentNodeState.showSidebar && e.key === "Escape") {
+      saveData(infoData.value);
+    }
+  })
+})
 </script>
 
 <template>
@@ -179,7 +187,7 @@ function saveData(options) {
     <template #footer>
       <el-button @click="hideSidebar">取消</el-button>
       <el-button type="danger" @click="showDeleteDialog">删除节点</el-button>
-      <el-button type="primary" @click="saveData(infoData)">保存</el-button>
+      <el-button type="primary" @click="saveData(infoData)">保存(Enter)</el-button>
     </template>
   </el-drawer>
 </template>

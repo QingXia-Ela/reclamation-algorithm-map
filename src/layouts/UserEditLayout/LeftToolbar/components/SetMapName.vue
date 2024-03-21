@@ -6,10 +6,15 @@ import { ref } from "vue";
 
 // 外部 modal 双向绑定
 const value = defineModel();
+
+// 在模板中启用 v-focus
+const vFocus = {
+  mounted: (el) => el.focus()
+}
 </script>
 
 <template>
   <el-form-item label="地图名字">
-    <el-input v-model="value" />
+    <el-input v-model="value" v-focus />
   </el-form-item>
 </template>

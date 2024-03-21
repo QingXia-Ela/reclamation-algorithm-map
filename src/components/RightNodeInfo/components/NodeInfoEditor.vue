@@ -128,9 +128,14 @@ function saveData(options) {
   });
 }
 
+// 在模板中启用 v-focus
+const vFocus = {
+  mounted: (el) => el.focus()
+}
+
 onMounted(() => {
   window.addEventListener("keydown", (e) => {
-    if (currentNodeState.showSidebar && e.key === "Escape") {
+    if (currentNodeState.showSidebar && e.key === "Enter") {
       saveData(infoData.value);
     }
   })
@@ -167,7 +172,7 @@ onMounted(() => {
         </el-form-item>
         <!-- todo!: 名字实现自动补全 -->
         <el-form-item label="节点名字">
-          <el-input v-model="infoData.name" />
+          <el-input v-model="infoData.name" v-focus />
         </el-form-item>
         <size-selector v-model="infoData.size" />
         <border-selector v-model="infoData.border" />

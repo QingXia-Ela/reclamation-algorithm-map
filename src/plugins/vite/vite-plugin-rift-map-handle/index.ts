@@ -7,7 +7,7 @@ export default function vitePluginRiftMapHandle(): Plugin {
     enforce: 'pre',
     config: () => {
       // read public/maps/rift/*.json
-      const riftMaps = fs.readdirSync('public/maps/rift/').filter(file => file.endsWith('.json')).map(file => {
+      const riftMaps = fs.readdirSync('public/maps/rift/').filter(file => file.endsWith('.json') && file.startsWith('百变陌域模板')).map(file => {
         const {
           metadata: {
             name

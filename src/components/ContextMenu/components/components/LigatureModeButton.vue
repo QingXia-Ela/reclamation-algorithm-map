@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // todo!: 重构所有逻辑
+// todo!: 出现重复边时不报错而是将高亮点切换到选择的点
 import { ElButton, ElMessage, ElNotification } from 'element-plus'
 import { useGlobalState } from '@/store/dev/globalState';
 import { nextTick } from 'vue';

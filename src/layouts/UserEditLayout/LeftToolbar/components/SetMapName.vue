@@ -1,5 +1,5 @@
 <script setup>
-import { ElFormItem, ElSelect, ElOption } from "element-plus";
+import { ElFormItem, ElSelect, ElOption, ElInput } from "element-plus";
 import { ref } from "vue";
 
 /** @typedef {import('@/three/types/node').NodeProps} NodeProps */
@@ -9,7 +9,7 @@ const value = defineModel();
 
 // 在模板中启用 v-focus
 const vFocus = {
-  mounted: (el) => el.focus()
+  updated: (el) => el.focus()
 }
 </script>
 

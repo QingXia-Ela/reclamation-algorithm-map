@@ -178,6 +178,13 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
+"guides/improve-efficiency.md": {
+	id: "guides/improve-efficiency.md";
+  slug: "guides/improve-efficiency";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
 "guides/index.md": {
 	id: "guides/index.md";
   slug: "guides";

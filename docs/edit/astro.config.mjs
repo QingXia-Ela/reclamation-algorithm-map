@@ -8,6 +8,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: '生息演算地图制作器使用手册',
+			lastUpdated: true,
 			social: {
 				github: 'https://github.com/QingXia-Ela/reclamation-algorithm-map',
 			},

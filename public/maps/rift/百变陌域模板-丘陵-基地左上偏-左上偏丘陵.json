@@ -1,0 +1,339 @@
+{
+  "metadata": {
+    "name": "百变陌域模板-丘陵-基地左上偏-左上偏丘陵",
+    "type": "sandbox_1_rift_unknown",
+    "backgroundSize": 120,
+    "backgroundType": "dungeon"
+  },
+  "nodes": [
+    {
+      "preset": "normal",
+      "x": -2.4723425864986885,
+      "y": 18.20972696759786,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 1
+    },
+    {
+      "preset": "normal",
+      "x": 25.119618108623378,
+      "y": 22.284053874090624,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 2
+    },
+    {
+      "preset": "normal",
+      "x": 2.220869419871963,
+      "y": 27.854019771898223,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 3
+    },
+    {
+      "preset": "normal",
+      "x": 26.35738830973345,
+      "y": 35.59008351859344,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 4
+    },
+    {
+      "preset": "normal",
+      "x": -13.612274381840304,
+      "y": 33.888149494374666,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 5
+    },
+    {
+      "preset": "normal",
+      "x": 8.25499914234855,
+      "y": -9.794823795691395,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 7
+    },
+    {
+      "preset": "normal",
+      "x": -40.12118615408854,
+      "y": -6.287808230491258,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 8
+    },
+    {
+      "preset": "normal",
+      "x": -26.407875555639237,
+      "y": 8.488073525833505,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 9
+    },
+    {
+      "preset": "normal",
+      "x": -48.275148756509566,
+      "y": 29.73646163670398,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 10
+    },
+    {
+      "preset": "normal",
+      "x": -21.86938482420336,
+      "y": -21.837296361485354,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 11
+    },
+    {
+      "preset": "normal",
+      "x": -33.78292299422152,
+      "y": -33.90555580643862,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 12
+    },
+    {
+      "preset": "normal",
+      "x": -8.666502696391207,
+      "y": -31.481589165785387,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 13
+    },
+    {
+      "preset": "normal",
+      "x": 6.599329763891708,
+      "y": -23.848672935644093,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 14
+    },
+    {
+      "preset": "normal",
+      "x": 23.257653698592254,
+      "y": 0.33941971257443093,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 15
+    },
+    {
+      "preset": "normal",
+      "x": 38.42033864228468,
+      "y": -10.284774499409131,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 16
+    },
+    {
+      "preset": "normal",
+      "x": 23.92811255664514,
+      "y": -18.84601837940255,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 17
+    },
+    {
+      "preset": "base",
+      "nodeId": -1,
+      "name": "驻扎地",
+      "x": -20,
+      "y": 23,
+      "type": "base",
+      "weather": "normal",
+      "size": "small",
+      "border": "square",
+      "note": "最初的落脚点。或许不够豪华，但能够安心休息。只要守住这里，不管失败几次都能东山再起，重新再来。",
+      "mainResources": [],
+      "regularResources": [],
+      "resources": []
+    }
+  ],
+  "adjancyList": {
+    "1": [
+      5,
+      2,
+      3,
+      -1
+    ],
+    "2": [
+      1,
+      4
+    ],
+    "3": [
+      4,
+      1
+    ],
+    "4": [
+      2,
+      3
+    ],
+    "5": [
+      1
+    ],
+    "7": [
+      11,
+      16,
+      15,
+      17,
+      -1
+    ],
+    "8": [
+      9,
+      12
+    ],
+    "9": [
+      -1,
+      10,
+      8,
+      11
+    ],
+    "10": [
+      9
+    ],
+    "11": [
+      12,
+      9,
+      13,
+      14,
+      7
+    ],
+    "12": [
+      8,
+      11
+    ],
+    "13": [
+      11
+    ],
+    "14": [
+      11
+    ],
+    "15": [
+      7
+    ],
+    "16": [
+      7
+    ],
+    "17": [
+      7
+    ],
+    "-1": [
+      1,
+      9,
+      7
+    ]
+  }
+}

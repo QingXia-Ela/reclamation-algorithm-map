@@ -36,6 +36,8 @@ function getSpeicalNode(options: NodeProps) {
   switch (options.preset) {
     case "market": // 后舍
       return new MarketNode(options as any)
+    // case "camp":
+    //   return;
     default:
       return new BaseNode(options as any)
   }

@@ -1,6 +1,5 @@
-import { IconType } from "@/assets/icons"
-
 export type NodeType = "hunt" |
+  "camp" |
   "cave" |
   "encounter" |
   "battle" |
@@ -108,6 +107,14 @@ export interface MarketNodeProps {
   y: number
 }
 
-export type NodeProps = NormalNodeProps | BaseNodeProps | MarketNodeProps
+export interface CampNodeProps {
+  nodeId: number
+  preset: "camp",
+  name?: string
+  x: number
+  y: number
+}
+
+export type NodeProps = NormalNodeProps | BaseNodeProps | MarketNodeProps | CampNodeProps
 
 export type NodePropsWithoutId = Omit<NodeProps, 'nodeId'>

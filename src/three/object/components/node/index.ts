@@ -183,8 +183,9 @@ class Node extends THREE.Group {
   /**
    * 移除 Node 类自身下的所有 3D 对象
    * 
-   * **Note**: 请谨慎使用
+   * **Note**: 请谨慎使用，从外部增加的 3D 对象不会被移除
    */
+  // todo!: 调整名字防止歧义
   removeAllObjects() {
     Object.values(this.components).forEach((component) =>
       this.remove(component)

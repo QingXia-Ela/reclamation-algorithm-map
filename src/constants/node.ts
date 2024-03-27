@@ -16,6 +16,7 @@ export const NodeTypeArray: Array<NodeType> = [
   "upgrade_battle",
   "upgrade_scout",
   "base",
+  "camp",
   "unknown"
 ]
 
@@ -79,6 +80,10 @@ export const NodeTypeData: Array<{ value: NodeType, label: string }> = [
   {
     value: "base",
     label: "驻扎地",
+  },
+  {
+    value: "camp",
+    label: "旷野房车",
   },
   {
     value: "unknown",

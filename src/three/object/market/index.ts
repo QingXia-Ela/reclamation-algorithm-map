@@ -5,6 +5,7 @@ import { NodeDescriptionData } from "@/constants";
 import NODE_ASSETS from "@/assets/three/icon/node";
 import merge from "lodash/merge";
 import NodeCore from "../components/node/components/core";
+import { SpeicalNodeType } from "../constants";
 
 const base_texture = await new THREE.TextureLoader().loadAsync(NODE_ASSETS.NODE_BASE)
 
@@ -43,7 +44,7 @@ class MarketNode extends Node {
     super(
       merge({
         preset: "market",
-        nodeId: -2,
+        nodeId: SpeicalNodeType.MARKET_NODE,
         name: "众人会聚之地",
         x: 5.5,
         y: 15,

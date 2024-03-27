@@ -4,6 +4,7 @@ import Node from "../components/node";
 import { NodeDescriptionData } from "@/constants";
 import NODE_ASSETS from "@/assets/three/icon/node";
 import merge from "lodash/merge";
+import { SpeicalNodeType } from "../constants";
 
 const base_texture = await new THREE.TextureLoader().loadAsync(NODE_ASSETS.NODE_BASE)
 
@@ -42,7 +43,7 @@ class BaseNode extends Node {
     super(
       merge({
         preset: "normal",
-        nodeId: -1,
+        nodeId: SpeicalNodeType.BASE_NODE,
         name: "驻扎地",
         x: -5,
         y: 8.5,
@@ -70,8 +71,8 @@ class BaseNode extends Node {
   }
 
   private _baseNode_init() {
-    this.add(getInnerCore(), getOuterRound())
     this.removeAllObjects()
+    this.add(getInnerCore(), getOuterRound())
   }
 }
 

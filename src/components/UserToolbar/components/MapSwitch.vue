@@ -15,6 +15,26 @@ const mapType = defineModel("mapType")
 
 const FixedDungeonData = MapData.filter(item => item.fixed_dungeon)
 
+/**
+ * @param {typeof RIFT_MAPS_DATA} data 
+ */
+function handleRiftMaps(data) {
+  const map = {}
+  for (const item of data) {
+    const [flag, type, ...rest] = item.name.split("-")
+
+    const key = `${flag}-${type}`
+
+    if (!map[key]) map[key] = []
+    map[key].push({
+      value: item.filename,
+      label: rest.join("-")
+    })
+  }
+
+  return Object.entries(map).map(([title, value]) => ({ title, value }))
+}
+
 const RadioData = [
   {
     "title": "主地图",
@@ -24,10 +44,7 @@ const RadioData = [
     "title": "固定陌域",
     "value": FixedDungeonData
   },
-  {
-    "title": "百变陌域(名字仅供参考)",
-    "value": RIFT_MAPS_DATA.map(({ name, filename }) => ({ value: filename, label: name }))
-  }
+  ...handleRiftMaps(RIFT_MAPS_DATA)
 ]
 
 /**
@@ -59,17 +76,26 @@ function closeMapSelect() {
   </OperateButton>
   <ElDialog v-model="open" title="选择要更换的地图" :before-close="closeMapSelect" append-to-body>
     <template v-for="data in RadioData" :key="data.title">
-      <h3>{{ data.title }}</h3>
+      <h3 class="type_title">{{ data.title }}</h3>
       <el-radio-group v-model="mapType">
         <el-radio v-for="item in data.value" :label="item.value" :key="item.value" size="large">
           {{ item.label?.length ? item.label : item.value }}
         </el-radio>
       </el-radio-group>
     </template>
-
     <template #footer>
       <el-button @click="closeMapSelect">取消</el-button>
       <el-button type="primary" @click="changeMap(mapType)">更换地图</el-button>
     </template>
   </ElDialog>
 </template>
+
+<style lang="scss" scoped>
+.type_title {
+  margin-top: 1rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+</style>

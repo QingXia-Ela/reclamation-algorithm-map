@@ -16,7 +16,7 @@ export default function vitePluginSaveMap(): Plugin {
       server.hot.on(SAVE_MAP, (data) => {
         const mapType = JSON.parse(data).type || 'main'
         // save to src/assets/json
-        fs.writeFileSync(path.join(__dirname, `public/map_${mapType}.json`), data)
+        fs.writeFileSync(path.join(__dirname, `public/maps/map_${mapType}.json`), data)
       })
     }
   }

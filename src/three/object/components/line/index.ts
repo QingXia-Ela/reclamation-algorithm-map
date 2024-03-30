@@ -1,9 +1,7 @@
 import * as THREE from "three"
 import Node from "../node"
-import vertexShader from "./shader/vertex.glsl?raw"
-import fragmentShader from "./shader/fragment.glsl?raw"
-import { LineAnimateDirection } from "./types"
-import AnimateLine from "./animateLine"
+import AnimateLine from "../animateLine"
+import { LineAnimateDirection } from "../animateLine/types"
 
 export interface LineProps {
   node1: Node
@@ -14,11 +12,6 @@ export interface LineProps {
   y2: number
 }
 
-export interface LineAnimateOptions {
-  lineColor?: number
-  bgColor?: number
-  direction?: LineAnimateDirection
-}
 
 function calculateDistance(x1: number, y1: number, x2: number, y2: number) {
   return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
@@ -93,17 +86,27 @@ class Line extends THREE.Group {
     this.rotateZ(rotate)
     this.add(line);
 
-    if (__DEV__) {
-      this.add(new AnimateLine({
-        x,
-        y,
-        rotate,
-        nodes: [this.node1, this.node2],
-        lineColor: 0xff0000,
-        bgColor: 0xff0000,
-        direction: LineAnimateDirection.Node1_Node2
-      }));
-    }
+    // animate line
+    // if (__DEV__) {
+    //   setTimeout(() => {
+    //     const animateLine = new AnimateLine({
+    //       x,
+    //       y,
+    //       rotate,
+    //       nodes: [this.node1, this.node2],
+    //       lineColor: 0xffffff,
+    //       bgColor: 0xff0000,
+    //       direction: LineAnimateDirection.Node1_Node2
+    //     })
+    //     animateLine.startAnimate()
+    //     this.add(animateLine);
+    //     this.setLineColor(0xff0000)
+
+    //     // setTimeout(() => {
+    //     //   animateLine.stopAnimate()
+    //     // }, 4000);
+    //   }, 2000)
+    // }
 
     // this.setLineDirectionAnimate('test', true, {
     //   lineColor: 0xff0000,

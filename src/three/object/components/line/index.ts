@@ -1,6 +1,11 @@
 import * as THREE from "three"
 import Node from "../node"
 
+export enum LineAnimateDirection {
+  Node1_Node2 = 1,
+  Node2_Node1 = 2
+}
+
 export interface LineProps {
   node1: Node
   node2: Node
@@ -39,6 +44,7 @@ class Line extends THREE.Group {
   z = .01
 
   threeObject: Record<string, any> = {}
+  animateFnMap: Record<string, any> = {}
 
   constructor({
     x1,
@@ -83,6 +89,8 @@ class Line extends THREE.Group {
     this.add(line);
   }
 
+  _start_animate() { }
+
   setLineStyle(style: THREE.MeshBasicMaterialParameters) {
     const material = new THREE.MeshBasicMaterial(style)
     this.threeObject.material = material
@@ -92,6 +100,12 @@ class Line extends THREE.Group {
   setLineColor(color: number) {
     // line 引用相同的 material，修改一个即可
     this.threeObject.material.color.set(color)
+  }
+
+  setLineDirectionAnimate(animate: boolean, color = 0xff0000, LineAnimateDirection?: LineAnimateDirection) {
+    if (animate) {
+
+    } else { }
   }
 
   setPosition(x1: number, y1: number, x2: number, y2: number) {

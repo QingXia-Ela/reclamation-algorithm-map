@@ -21,6 +21,11 @@ function getStyleByType(type) {
 
   return ``
 }
+
+/** @type {import('@/three/types/node').NodeResource[]} */
+const showNumEntity = [
+  "crab"
+]
 </script>
 
 <template>
@@ -29,7 +34,7 @@ function getStyleByType(type) {
     <div class="item_container">
       <div class="item" v-for="(item, index) in props.ResourceList" :key="index">
         <img class="img" :style="getStyleByType(item.type)" :src="IconData[item.type]" :alt="item.type">
-        <div class="count" v-show="item.count > 1">
+        <div class="count" v-show="item.count > 1 || showNumEntity.includes(item.type)">
           <span style="color: #fff;">{{ item.count }}</span>
           <span style="color: #aaa;">/{{ item.count }}</span>
         </div>

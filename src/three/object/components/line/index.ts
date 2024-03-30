@@ -1,10 +1,10 @@
 import * as THREE from "three"
 import Node from "../node"
+import vertexShader from "./shader/vertex.glsl?raw"
+import fragmentShader from "./shader/fragment.glsl?raw"
+import { LineAnimateDirection } from "./types"
+import AnimateLine from "./animateLine"
 
-export enum LineAnimateDirection {
-  Node1_Node2 = 1,
-  Node2_Node1 = 2
-}
 
 export interface LineProps {
   node1: Node
@@ -13,6 +13,12 @@ export interface LineProps {
   y1: number
   x2: number
   y2: number
+}
+
+export interface LineAnimateOptions {
+  lineColor?: number
+  bgColor?: number
+  direction?: LineAnimateDirection
 }
 
 function calculateDistance(x1: number, y1: number, x2: number, y2: number) {
@@ -44,7 +50,7 @@ class Line extends THREE.Group {
   z = .01
 
   threeObject: Record<string, any> = {}
-  animateFnMap: Record<string, any> = {}
+  animateObjMap: Record<string, AnimateLine> = {}
 
   constructor({
     x1,
@@ -87,7 +93,14 @@ class Line extends THREE.Group {
     this.position.set(x, y, this.z)
     this.rotateZ(getLineRotateAngle(this.x1, this.y1, this.x2, this.y2))
     this.add(line);
+
+    this.setLineDirectionAnimate('test', true, {
+      lineColor: 0xff0000,
+      bgColor: 0xff0000
+    })
   }
+
+  _add_animate_effect() { }
 
   _start_animate() { }
 
@@ -102,10 +115,34 @@ class Line extends THREE.Group {
     this.threeObject.material.color.set(color)
   }
 
-  setLineDirectionAnimate(animate: boolean, color = 0xff0000, LineAnimateDirection?: LineAnimateDirection) {
+  setLineDirectionAnimate(
+    id: string,
+    animate: boolean,
+    {
+      lineColor = 0xffffff,
+      bgColor = 0xff0000,
+      direction = LineAnimateDirection.Node1_Node2
+    }: LineAnimateOptions = {}
+  ) {
     if (animate) {
-
-    } else { }
+      const animateLine = new AnimateLine({
+        start: this.node1,
+        end: this.node2,
+        len: calculateDistance(this.x1, this.y1, this.x2, this.y2),
+        centerPosition: this.position,
+        direction,
+        lineColor,
+        bgColor,
+        rotate: getLineRotateAngle(this.x1, this.y1, this.x2, this.y2)
+      })
+      this.animateObjMap[id] = animateLine
+      this.add(animateLine)
+    } else {
+      if (this.animateObjMap[id]) {
+        this.remove(this.animateObjMap[id])
+        delete this.animateObjMap[id]
+      }
+    }
   }
 
   setPosition(x1: number, y1: number, x2: number, y2: number) {

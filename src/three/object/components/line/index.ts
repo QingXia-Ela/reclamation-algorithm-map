@@ -5,7 +5,6 @@ import fragmentShader from "./shader/fragment.glsl?raw"
 import { LineAnimateDirection } from "./types"
 import AnimateLine from "./animateLine"
 
-
 export interface LineProps {
   node1: Node
   node2: Node
@@ -50,7 +49,6 @@ class Line extends THREE.Group {
   z = .01
 
   threeObject: Record<string, any> = {}
-  animateObjMap: Record<string, AnimateLine> = {}
 
   constructor({
     x1,
@@ -90,14 +88,27 @@ class Line extends THREE.Group {
     }
 
     const { x, y } = getLineMiddlePoint(this.x1, this.y1, this.x2, this.y2)
+    const rotate = getLineRotateAngle(this.x1, this.y1, this.x2, this.y2)
     this.position.set(x, y, this.z)
-    this.rotateZ(getLineRotateAngle(this.x1, this.y1, this.x2, this.y2))
+    this.rotateZ(rotate)
     this.add(line);
 
-    this.setLineDirectionAnimate('test', true, {
-      lineColor: 0xff0000,
-      bgColor: 0xff0000
-    })
+    if (__DEV__) {
+      this.add(new AnimateLine({
+        x,
+        y,
+        rotate,
+        nodes: [this.node1, this.node2],
+        lineColor: 0xff0000,
+        bgColor: 0xff0000,
+        direction: LineAnimateDirection.Node1_Node2
+      }));
+    }
+
+    // this.setLineDirectionAnimate('test', true, {
+    //   lineColor: 0xff0000,
+    //   bgColor: 0xff0000
+    // })
   }
 
   _add_animate_effect() { }
@@ -115,35 +126,32 @@ class Line extends THREE.Group {
     this.threeObject.material.color.set(color)
   }
 
-  setLineDirectionAnimate(
-    id: string,
-    animate: boolean,
-    {
-      lineColor = 0xffffff,
-      bgColor = 0xff0000,
-      direction = LineAnimateDirection.Node1_Node2
-    }: LineAnimateOptions = {}
-  ) {
-    if (animate) {
-      const animateLine = new AnimateLine({
-        start: this.node1,
-        end: this.node2,
-        len: calculateDistance(this.x1, this.y1, this.x2, this.y2),
-        centerPosition: this.position,
-        direction,
-        lineColor,
-        bgColor,
-        rotate: getLineRotateAngle(this.x1, this.y1, this.x2, this.y2)
-      })
-      this.animateObjMap[id] = animateLine
-      this.add(animateLine)
-    } else {
-      if (this.animateObjMap[id]) {
-        this.remove(this.animateObjMap[id])
-        delete this.animateObjMap[id]
-      }
-    }
-  }
+  // setLineDirectionAnimate(
+  //   id: string,
+  //   animate: boolean,
+  //   {
+  //     lineColor = 0xffffff,
+  //     bgColor = 0xff0000,
+  //     direction = LineAnimateDirection.Node1_Node2
+  //   }: LineAnimateOptions = {}
+  // ) {
+  //   if (animate) {
+  //     const animateLine = new AnimateLine({
+  //       centerPosition: this.position,
+  //       direction,
+  //       lineColor,
+  //       bgColor,
+  //       rotate: getLineRotateAngle(this.x1, this.y1, this.x2, this.y2)
+  //     })
+  //     this.animateObjMap[id] = animateLine
+  //     this.add(animateLine)
+  //   } else {
+  //     if (this.animateObjMap[id]) {
+  //       this.remove(this.animateObjMap[id])
+  //       delete this.animateObjMap[id]
+  //     }
+  //   }
+  // }
 
   setPosition(x1: number, y1: number, x2: number, y2: number) {
     this.x1 = x1

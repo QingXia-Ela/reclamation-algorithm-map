@@ -4,13 +4,13 @@ import vertexShader from "./shader/vertex.glsl?raw"
 import fragmentShader from "./shader/fragment.glsl?raw"
 import output_fragment from "./shader/output_fragment.glsl?raw"
 import { LineAnimateDirection } from "./types"
+import MapAnchor from "../../anchor"
 
 export interface AnimateLineOptions {
-  start: Node
-  end: Node
-  len: number
-  centerPosition: THREE.Vector3
-  rotate: number
+  x?: number
+  y?: number
+  rotate?: number
+  nodes: Node[]
   direction: LineAnimateDirection
   lineColor: number
   bgColor: number
@@ -49,138 +49,91 @@ function getAnimateMaterialUniform(
 }
 
 class AnimateLine extends THREE.Group {
-  start: Node
-  end: Node
-  len: number
-  centerPosition: THREE.Vector3
-  rotate: number
-  direction: LineAnimateDirection
+  destnationNodes: THREE.Vector3[] = []
   lineColor: THREE.Color
   bgColor: THREE.Color
   materialUniforms: Record<string, any> = {}
+  pointGeometryArray: THREE.Points[] = []
 
   constructor({
-    start,
-    end,
-    len,
-    centerPosition,
-    direction,
+    x = 0,
+    y = 0,
+    rotate = 0,
+    nodes,
     lineColor,
     bgColor,
-    rotate
   }: AnimateLineOptions) {
     super()
+    this.destnationNodes = nodes.map(node => {
+      const pos = node.position.clone()
+      return pos.set(pos.x - x, pos.y - y, 0.2)
+    })
 
-    this.start = start
-    this.end = end
-    this.len = len
-    this.centerPosition = centerPosition
-    this.rotate = rotate
-    this.direction = direction
     this.lineColor = new THREE.Color(lineColor)
     this.bgColor = new THREE.Color(bgColor)
+
+    this.rotateZ(-rotate)
 
     this._init()
   }
 
   _init() {
-    let index = 0
-    let num = 15
-    /** --- */
-    const curve = new THREE.CatmullRomCurve3([
-      this.start.position,
-      this.end.position
-    ])
-    const points = curve.getPoints(100);
-    let pointsSlice = points.slice(index, num);
-    const flyPointsCurve = new THREE.CatmullRomCurve3(pointsSlice).getSpacedPoints(100)
+    const PointCount = 15
+    const SingleLinePointCount = 50
+    const FullCurve = new THREE.CatmullRomCurve3(
+      this.destnationNodes,
+      false,
+      "centripetal",
+      0
+    )
 
-    /** --- */
-    const geometry = new THREE.BufferGeometry().setFromPoints(curve.getSpacedPoints(100));
-    const uniforms = getAnimateMaterialUniform(this.lineColor.getHex())
-    this.materialUniforms = uniforms
-    // const line = new THREE.Mesh(geometry, getAnimateLineMaterial({
-    //   uniforms
-    // }))
-
-    /** --- */
-    const prcentArr = []
-    for (let i = 0; i < 101; i++) {
-      prcentArr.push(i / 101)
-    }
-    const precentAttr = new THREE.BufferAttribute(new Float32Array(prcentArr), 1)
-    geometry.setAttribute('a_precentage', precentAttr)
-
-    /** --- */
-    const colorArr = [];
-    for (let i = 0; i < 101; i++) {
-      const res = this.bgColor.clone().lerp(this.lineColor, i / 101)
-      colorArr.push(
-        res.r,
-        res.g,
-        res.b
-      )
-    }
-    const colorAttr = new THREE.BufferAttribute(new Float32Array(colorArr), 1)
-    geometry.setAttribute('a_color', colorAttr)
-
-    /** --- */
-    const pointsMaterial = new THREE.PointsMaterial({
-      size: 0.1,
-      vertexColors: true,
-      transparent: true,
-      depthTest: false,
+    const routePoints = FullCurve.getPoints(SingleLinePointCount * (this.destnationNodes.length - 1))
+    const array = new Float32Array(routePoints.length * 3)
+    routePoints.forEach((point, index) => {
+      array[index * 3] = point.x
+      array[index * 3 + 1] = point.y
+      array[index * 3 + 2] = point.z
     })
-    const flyPoints = new THREE.Points(geometry, new THREE.PointsMaterial({
-      color: 0xffff00,
-      transparent: true,
-      opacity: 0.6
-    }))
-    pointsMaterial.onBeforeCompile = function (shader) {
-      // 顶点着色器中声明一个attribute变量:百分比
-      shader.vertexShader = shader.vertexShader.replace(
-        'void main() {',
-        [
-          'attribute float a_precentage;', //顶点大小百分比变量，控制点渲染大小
-          'void main() {',
-        ].join('\n') // .join()把数组元素合成字符串
-      );
-      // 调整点渲染大小计算方式
-      shader.vertexShader = shader.vertexShader.replace(
-        'gl_PointSize = size;',
-        [
-          'gl_PointSize = a_precentage * size;',
-        ].join('\n') // .join()把数组元素合成字符串
-      );
 
-      shader.fragmentShader = shader.fragmentShader.replace('#include <output_fragment>', output_fragment);
+    const colors = new Float32Array(routePoints.length * 3)
+    routePoints.forEach((_, index) => {
+      colors[index * 3] = this.lineColor.r
+      colors[index * 3 + 1] = this.lineColor.g
+      colors[index * 3 + 2] = this.lineColor.b
+    })
+    // const points = new THREE.Points(
+    //   new THREE.BufferGeometry().setFromPoints(routePoints),
+    //   new THREE.PointsMaterial({
+    //     color: this.lineColor,
+    //     size: 1,
+    //     sizeAttenuation: false
+    //   })
+    // )
+    // console.log(points);
+    const geometry = new THREE.BufferGeometry()
+    geometry.setAttribute('position', new THREE.BufferAttribute(array, 3))
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
+    geometry.setAttribute('size', new THREE.BufferAttribute(new Float32Array(routePoints.length).fill(1), 1))
+
+    const points = new THREE.Points(geometry)
+
+    function animate() {
+
     }
+    animate()
+    console.log(points);
+    this.add(points)
+  }
 
-    /** --- */
-    var indexMax = points.length - num; //飞线取点索引范围
-    function animation() {
-      if (index > indexMax) index = 0;
-      index += 1
-      pointsSlice = points.slice(index, index + num); //从曲线上获取一段
-      var curve = new THREE.CatmullRomCurve3(pointsSlice);
-      var newPoints2 = curve.getSpacedPoints(100); //获取更多的点数
-      geometry.setFromPoints(newPoints2);
+  drop() {
 
-      requestAnimationFrame(animation);
-    }
-
-    // animation()
-
-    /** --- */
-    // flyPoints.position.setX(this.centerPosition.x)
-    // flyPoints.position.setY(this.centerPosition.y)
-    this.add(flyPoints)
-    this.position.setZ(0.15)
-    // if (__DEV__) this.setPrecentage(0.5)
   }
 
   _line_init() { }
 
+  /**
+   * @param per 0~1 support float.
+   */
   setPrecentage(per: number) {
     this.materialUniforms.u_precentage.value = per
   }

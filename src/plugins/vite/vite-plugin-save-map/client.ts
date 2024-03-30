@@ -14,7 +14,7 @@ export function clientSaveMap(data: string) {
   if (import.meta.hot) {
     // 用户编辑界面，但是开发环境
     // 开发环境直接在主界面编辑即可
-    if (import.meta.env.VITE_USER_EDIT_MODE) {
+    if (!import.meta.env.VITE_USER_EDIT_MODE) {
       return
     }
     import.meta.hot.send(SAVE_MAP, data)

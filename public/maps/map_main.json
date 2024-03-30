@@ -109,20 +109,20 @@
       "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -61.07213474337377,
       "y": -11.800116994854793,
       "name": "原始奔腾",
       "type": "hunt",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 3,
+      "nodeId": 3,
       "note": "本地的生物们轰隆隆地冲过来，又轰隆隆地冲过去，这就是它们的生活。",
       "mainResources": [
         {
           "type": "venison",
-          "count": 7
+          "count": 1
         }
       ],
       "regularResources": [
@@ -151,8 +151,7 @@
           "count": 1
         }
       ],
-      "id": 3,
-      "nodeId": 3
+      "preset": "normal"
     },
     {
       "x": -81.83328103247015,
@@ -200,20 +199,20 @@
       "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -59.64302386636633,
       "y": -23.273149306415828,
       "name": "射程以内",
       "type": "collect",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 5,
+      "nodeId": 5,
       "note": "听说有些吝啬的领主宁愿用弩炮射毁树木，也不愿让部落民砍伐，为此，他们甚至放出了一些野 兽。",
       "mainResources": [
         {
           "type": "wood",
-          "count": 120
+          "count": 1
         },
         {
           "type": "crab",
@@ -250,8 +249,7 @@
           "count": 1
         }
       ],
-      "id": 5,
-      "nodeId": 5
+      "preset": "normal"
     },
     {
       "x": -74.2828854611658,
@@ -294,20 +292,20 @@
       "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -69.85953295624486,
       "y": -17.895784922693036,
       "name": "饮水为饵",
       "type": "hunt",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 7,
+      "nodeId": 7,
       "note": "水源在非雨林地貌的萨尔贡是一种稀缺资源，来这里休息饮水的有时不只是你们心仪的猎物，贸然试探有可能会......哎呀！",
       "mainResources": [
         {
           "type": "crab",
-          "count": 7
+          "count": 1
         },
         {
           "type": "water",
@@ -315,7 +313,7 @@
         },
         {
           "type": "venison",
-          "count": 6
+          "count": 1
         }
       ],
       "regularResources": [
@@ -344,26 +342,20 @@
           "count": 1
         }
       ],
-      "id": 7,
-      "nodeId": 7
+      "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -86.3536491968838,
       "y": -17.778805374887096,
       "name": "战士的视野",
       "type": "battle",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 8,
+      "nodeId": 8,
       "note": "萨尔贡的战士们都很清楚，每个人都拥有着同样的一双眼，用 它看到什么、看到多少，才是战场上获胜的关键。",
-      "mainResources": [
-        {
-          "type": "goodsundry",
-          "count": 1
-        }
-      ],
+      "mainResources": [],
       "regularResources": [
         {
           "type": "egg",
@@ -390,8 +382,7 @@
           "count": 1
         }
       ],
-      "id": 8,
-      "nodeId": 8
+      "preset": "normal"
     },
     {
       "x": -92.2318714741326,
@@ -434,20 +425,20 @@
       "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -64.44797421524694,
       "y": -2.397077816118559,
       "name": "参差林木",
       "type": "collect",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 10,
+      "nodeId": 10,
       "note": "当地人巡逻守卫着他们宝贵的木材资源。多盖一座可遮蔽风雨的小屋，少几个受寒染病的族人。",
       "mainResources": [
         {
           "type": "wood",
-          "count": 60
+          "count": 1
         }
       ],
       "regularResources": [
@@ -476,8 +467,7 @@
           "count": 1
         }
       ],
-      "id": 10,
-      "nodeId": 10
+      "preset": "normal"
     },
     {
       "x": -60.10631400447857,
@@ -1103,20 +1093,20 @@
       "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -79.73651621770783,
       "y": -41.026110978789355,
       "name": "伐木征税",
       "type": "collect",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 28,
+      "nodeId": 28,
       "note": "明明砍伐可用的树木是一件很正常的事，但是王酋大人定下了很不正常的税额 ，于是大家都想尽办法偷偷摸摸起来。",
       "mainResources": [
         {
           "type": "wood",
-          "count": 60
+          "count": 1
         }
       ],
       "regularResources": [
@@ -1145,24 +1135,23 @@
           "count": 1
         }
       ],
-      "id": 28,
-      "nodeId": 28
+      "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -91.6333779266272,
       "y": -50.268415268889974,
       "name": "乌胡米什",
       "type": "mine",
       "weather": "normal",
-      "resources": [],
       "size": "large",
       "border": "hexagon",
+      "id": 29,
+      "nodeId": 29,
       "note": "<@lv.description><号令点></>击破后可以在此处定期派出干员收集大量木材\\n“像一群峭壁”是人们对这里的最佳概括，它曾经是雨林地区颇为繁荣的林业小镇，而如今这里还有时刻取人性命的不明势力和沉默的树林。",
       "mainResources": [
         {
           "type": "wood",
-          "count": 120
+          "count": 1
         },
         {
           "type": "water",
@@ -1195,24 +1184,23 @@
           "count": 1
         }
       ],
-      "id": 29,
-      "nodeId": 29
+      "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -75.19875413257647,
       "y": -48.70486755063993,
       "name": "千仞关",
-      "type": "gate",
+      "type": "collect",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 30,
+      "nodeId": 30,
       "note": "<@lv.description><机关石门></>击破 后会解锁新的可探索区域。被击破前，每次进入关卡会完全恢复原状。\\n再向前走似乎是另外一个地域的入口，风沙逐渐狂暴，巨石填满道路，干渴和绝路是这一切的尽头。",
       "mainResources": [
         {
           "type": "stone",
-          "count": 45
+          "count": 1
         }
       ],
       "regularResources": [
@@ -1241,8 +1229,7 @@
           "count": 1
         }
       ],
-      "id": 30,
-      "nodeId": 30
+      "preset": "normal"
     },
     {
       "x": -46.151509957277334,
@@ -1503,20 +1490,20 @@
       "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -70.74032064488937,
       "y": -59.20260131294383,
       "name": "崎岖乱石岗",
       "type": "collect",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 37,
+      "nodeId": 37,
       "note": "曲折的小径通往不同的区域，每一处都是矿工们最熟悉的工作环境。乏味、沉闷、充满汗水的生活还有监工们的监视， 这些都是王酋的“恩赐”。",
       "mainResources": [
         {
-          "type": "stone",
-          "count": 55
+          "type": "venison",
+          "count": 1
         },
         {
           "type": "water",
@@ -1549,24 +1536,23 @@
           "count": 1
         }
       ],
-      "id": 37,
-      "nodeId": 37
+      "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -58.654325941587075,
       "y": -51.76506434568897,
       "name": "岩壳蟹群",
       "type": "hunt",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 38,
+      "nodeId": 38,
       "note": "被岩壳蟹夹一下很 痛，但是这种痛完全比不过品尝到它鲜美滋味时的快乐！",
       "mainResources": [
         {
           "type": "crab",
-          "count": 26
+          "count": 1
         },
         {
           "type": "water",
@@ -1599,28 +1585,27 @@
           "count": 1
         }
       ],
-      "id": 38,
-      "nodeId": 38
+      "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -60.876014211622625,
       "y": -70.74171943318947,
       "name": "方形竞技场",
       "type": "hunt",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 39,
+      "nodeId": 39,
       "note": "看似空旷的场地里塞满了各路萨卡 兹，凡是踏入此地的人都会经历一场拳拳到肉的格斗比赛，只有胜利者才能活着站到最后。",
       "mainResources": [
         {
           "type": "beef",
-          "count": 4
+          "count": 1
         },
         {
           "type": "crab",
-          "count": 2
+          "count": 1
         },
         {
           "type": "water",
@@ -1653,30 +1638,20 @@
           "count": 1
         }
       ],
-      "id": 39,
-      "nodeId": 39
+      "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -77.36437547431787,
       "y": -67.67920556125432,
       "name": "战争本能",
       "type": "nest",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 40,
+      "nodeId": 40,
       "note": "火山喷发，大地沸腾，栖居的生物不懂何为战争，只是顺从本能。",
-      "mainResources": [
-        {
-          "type": "goodsundry",
-          "count": 1
-        },
-        {
-          "type": "gold",
-          "count": 1
-        }
-      ],
+      "mainResources": [],
       "regularResources": [
         {
           "type": "egg",
@@ -1703,8 +1678,7 @@
           "count": 1
         }
       ],
-      "id": 40,
-      "nodeId": 40
+      "preset": "normal"
     },
     {
       "x": -70.79500757303457,
@@ -1747,20 +1721,20 @@
       "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -55.68751315082048,
       "y": -79.46442007358502,
       "name": "射程以内",
       "type": "collect",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 42,
+      "nodeId": 42,
       "note": "听说有些吝啬的领主宁愿用弩炮射毁树木，也不愿让部落民砍伐，为此，他们甚至放出了一些野 兽。",
       "mainResources": [
         {
           "type": "wood",
-          "count": 120
+          "count": 1
         },
         {
           "type": "crab",
@@ -1797,28 +1771,27 @@
           "count": 1
         }
       ],
-      "id": 42,
-      "nodeId": 42
+      "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -45.32241907672897,
       "y": -72.21643617493767,
       "name": "聚羽之地",
       "type": "hunt",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
-      "note": "有树木的地方就有羽兽，所 以把两样都带回家也是一种不错的选择。",
+      "id": 43,
+      "nodeId": 43,
+      "note": "有树木的地方就有羽兽，所以把两样都带回家也是一种不错的选择。",
       "mainResources": [
         {
           "type": "poultry",
-          "count": 7
+          "count": 1
         },
         {
           "type": "wood",
-          "count": 18
+          "count": 1
         }
       ],
       "regularResources": [
@@ -1847,8 +1820,7 @@
           "count": 1
         }
       ],
-      "id": 43,
-      "nodeId": 43
+      "preset": "normal"
     },
     {
       "x": -38.58882919680059,
@@ -1891,20 +1863,20 @@
       "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -22.50861687110714,
       "y": -78.71199498185692,
       "name": "试验场",
       "type": "collect",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 45,
+      "nodeId": 45,
       "note": "从丛林中蹿出的， 可以是猎物，可以是敌人，也可以是不明身份的机械设备。",
       "mainResources": [
         {
           "type": "stone",
-          "count": 65
+          "count": 1
         }
       ],
       "regularResources": [
@@ -1933,8 +1905,7 @@
           "count": 1
         }
       ],
-      "id": 45,
-      "nodeId": 45
+      "preset": "normal"
     },
     {
       "x": -15.018624526584558,
@@ -2031,20 +2002,20 @@
       "preset": "normal"
     },
     {
-      "preset": "normal",
       "x": -40.823073725940475,
       "y": -59.13282028217479,
       "name": "守卫自然",
       "type": "collect",
       "weather": "normal",
-      "resources": [],
       "size": "small",
       "border": "square",
+      "id": 48,
+      "nodeId": 48,
       "note": "在许多萨尔贡居民眼中，保护原本的自然环境比什么都重要，因此，他们抗拒接受原有生活经验改变的 手段也十分激进。",
       "mainResources": [
         {
           "type": "stone",
-          "count": 60
+          "count": 1
         },
         {
           "type": "crab",
@@ -2081,8 +2052,7 @@
           "count": 1
         }
       ],
-      "id": 48,
-      "nodeId": 48
+      "preset": "normal"
     },
     {
       "x": -30.976246662415058,

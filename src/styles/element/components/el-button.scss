@@ -2,7 +2,7 @@
 
 .el-button--primary {
   --el-button-text-color: var(--el-color-black);
-  --el-button-hover-text-color: var(--site-color);
+  --el-button-hover-text-color: rgb(var(--site-color));
 }
 
 .el-button:hover {

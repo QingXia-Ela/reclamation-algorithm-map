@@ -64,32 +64,7 @@ class AnimateLine extends THREE.Group {
 
     this.rotateZ(-rotate)
 
-    this._initMaterial()
     this._init()
-  }
-
-  _initMaterial() {
-    this.pointsMaterial.onBeforeCompile = (shader) => {
-      // 顶点着色器中声明一个attribute变量:百分比
-      // shader.vertexShader = shader.vertexShader.replace(
-      //   'void main() {',
-      //   [
-      //     'attribute float a_precentage;', //顶点大小百分比变量，控制点渲染大小
-      //     'void main() {',
-      //   ].join('\n') // .join()把数组元素合成字符串
-      // );
-      // // 调整点渲染大小计算方式
-      // shader.vertexShader = shader.vertexShader.replace(
-      //   'gl_PointSize = size;',
-      //   [
-      //     'gl_PointSize = a_precentage * size;',
-      //   ].join('\n') // .join()把数组元素合成字符串
-      // );
-      // shader.fragmentShader = shader.fragmentShader.replace(
-      //   "#include <output_fragment>",
-      //   output_fragment
-      // )
-    }
   }
 
   _init() {

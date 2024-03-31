@@ -7,10 +7,6 @@
 @use "element-plus/theme-chalk/src/index.scss" as *;
 @use './components/el-button.scss';
 
-:root {
-  --site-color: #e4e23a;
-}
-
 html.dark {
   color-scheme: dark;
   --el-color-success: #67c23a;

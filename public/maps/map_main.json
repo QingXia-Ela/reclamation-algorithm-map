@@ -1187,20 +1187,20 @@
       "preset": "normal"
     },
     {
+      "preset": "normal",
       "x": -75.19875413257647,
       "y": -48.70486755063993,
       "name": "千仞关",
-      "type": "collect",
+      "type": "gate",
       "weather": "normal",
+      "resources": [],
       "size": "small",
       "border": "square",
-      "id": 30,
-      "nodeId": 30,
       "note": "<@lv.description><机关石门></>击破 后会解锁新的可探索区域。被击破前，每次进入关卡会完全恢复原状。\\n再向前走似乎是另外一个地域的入口，风沙逐渐狂暴，巨石填满道路，干渴和绝路是这一切的尽头。",
       "mainResources": [
         {
           "type": "stone",
-          "count": 1
+          "count": 45
         }
       ],
       "regularResources": [
@@ -1229,7 +1229,8 @@
           "count": 1
         }
       ],
-      "preset": "normal"
+      "id": 30,
+      "nodeId": 30
     },
     {
       "x": -46.151509957277334,
@@ -1641,17 +1642,26 @@
       "preset": "normal"
     },
     {
+      "preset": "normal",
       "x": -77.36437547431787,
       "y": -67.67920556125432,
       "name": "战争本能",
       "type": "nest",
       "weather": "normal",
+      "resources": [],
       "size": "small",
       "border": "square",
-      "id": 40,
-      "nodeId": 40,
       "note": "火山喷发，大地沸腾，栖居的生物不懂何为战争，只是顺从本能。",
-      "mainResources": [],
+      "mainResources": [
+        {
+          "type": "goodsundry",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ],
       "regularResources": [
         {
           "type": "egg",
@@ -1678,7 +1688,8 @@
           "count": 1
         }
       ],
-      "preset": "normal"
+      "id": 40,
+      "nodeId": 40
     },
     {
       "x": -70.79500757303457,

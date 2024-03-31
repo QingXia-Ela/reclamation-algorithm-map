@@ -16,6 +16,7 @@ import GlobalMask from '@/components/GlobalMask.vue';
 import UserLevelInfoSidebar from '@/components/UserLevelInfoSidebar/index.vue'
 import UserToolbar from '@/components/UserToolbar/index.vue'
 import UserAnnouncement from '@/components/UserAnnouncement/index.vue'
+import UserLeftDrawer from '@/components/UserLeftDrawer/index.vue'
 
 import { onMounted } from 'vue';
 import { ElNotification } from 'element-plus';
@@ -47,5 +48,6 @@ onMounted(() => {
   <UserToolbar />
   <UserLevelInfoSidebar />
   <UserAnnouncement />
+  <UserLeftDrawer title="用户侧边栏" />
   <slot />
 </template>

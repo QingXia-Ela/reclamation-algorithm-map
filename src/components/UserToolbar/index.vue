@@ -3,7 +3,7 @@ import OperateButton from './OperateButton.vue';
 import SvgIcon from '@/components/SvgIcon.vue';
 import CheckFoodFormula from './components/CheckFoodFormula.vue';
 import QueryShortestRoad from './components/QueryShortestRoad.vue';
-import FindNode from './components/FindNode.vue';
+import FindNode from './components/FindNode/index.vue';
 import Knowledge from './components/Knowledge.vue';
 import Notification from './components/Notification.vue';
 import MapSwitch from './components/MapSwitch.vue'

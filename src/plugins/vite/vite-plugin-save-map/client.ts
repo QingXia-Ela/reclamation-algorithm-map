@@ -17,6 +17,7 @@ export function clientSaveMap(data: string) {
     if (import.meta.env.VITE_USER_EDIT_MODE) {
       return
     }
+
     import.meta.hot.send(SAVE_MAP, data)
   }
 }

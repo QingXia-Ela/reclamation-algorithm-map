@@ -31,6 +31,9 @@ const className = computed(() => ({
   show: showUserToolbar.value
 }))
 
+// template doesn't support use it directly
+const dev = __DEV__
+
 /** @type {import('vue').Ref<import('@/three/types/map').MapType>} */
 const currentMapType = ref("main")
 </script>
@@ -39,7 +42,7 @@ const currentMapType = ref("main")
   <div :class="className" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
     <CheckFoodFormula />
     <QueryShortestRoad />
-    <FindNode />
+    <FindNode v-if="dev" />
     <ResetCamera />
     <MapSwitch v-model:mapType="currentMapType" />
     <DownloadCurrentMap v-model:mapType="currentMapType" />

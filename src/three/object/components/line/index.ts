@@ -1,7 +1,5 @@
 import * as THREE from "three"
 import Node from "../node"
-import AnimateLine from "../animateLine"
-import { LineAnimateDirection } from "../animateLine/types"
 
 export interface LineProps {
   node1: Node

@@ -1138,20 +1138,20 @@
       "preset": "normal"
     },
     {
+      "preset": "normal",
       "x": -91.6333779266272,
       "y": -50.268415268889974,
       "name": "乌胡米什",
       "type": "mine",
       "weather": "normal",
+      "resources": [],
       "size": "large",
       "border": "hexagon",
-      "id": 29,
-      "nodeId": 29,
       "note": "<@lv.description><号令点></>击破后可以在此处定期派出干员收集大量木材\\n“像一群峭壁”是人们对这里的最佳概括，它曾经是雨林地区颇为繁荣的林业小镇，而如今这里还有时刻取人性命的不明势力和沉默的树林。",
       "mainResources": [
         {
           "type": "wood",
-          "count": 1
+          "count": 120
         },
         {
           "type": "water",
@@ -1184,7 +1184,8 @@
           "count": 1
         }
       ],
-      "preset": "normal"
+      "id": 29,
+      "nodeId": 29
     },
     {
       "preset": "normal",

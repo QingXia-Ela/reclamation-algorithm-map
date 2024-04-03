@@ -1,29 +1,23 @@
 import * as THREE from "three"
 import Node from "../node"
-import vertexShader from "./shader/vertex.glsl?raw"
-import fragmentShader from "./shader/fragment.glsl?raw"
-import output_fragment from "./shader/output_fragment.glsl?raw"
-import { LineAnimateDirection } from "./types"
 import * as TWEEN from "@tweenjs/tween.js"
 
 export interface AnimateLineOptions {
-  x?: number
-  y?: number
-  rotate?: number
   nodes: Node[]
-  direction: LineAnimateDirection
   lineColor: number
   bgColor: number
 }
 
 let currentCache = -1
 
+let ANIMATE_LINE_LEN = 40
+
 function changeColorArray(current: number, colorArray: Float32Array, primary: THREE.Color, bg: THREE.Color) {
   if (current === currentCache) return
   currentCache = current
-  for (let i = 0; i < 40; ++i) {
-    const color = primary.clone().lerp(bg, 1 - (i / 40))
-    const base = (i + current) * 3
+  for (let i = 0; i < ANIMATE_LINE_LEN; ++i) {
+    const color = primary.clone().lerp(bg, 1 - (i / ANIMATE_LINE_LEN))
+    const base = (i + current - ANIMATE_LINE_LEN) * 3
     colorArray[base] = color.r
     colorArray[base + 1] = color.g
     colorArray[base + 2] = color.b
@@ -46,9 +40,6 @@ class AnimateLine extends THREE.Group {
   timer: number = 0
 
   constructor({
-    x = 0,
-    y = 0,
-    rotate = 0,
     nodes,
     lineColor,
     bgColor,
@@ -56,13 +47,11 @@ class AnimateLine extends THREE.Group {
     super()
     this.destnationNodes = nodes.map(node => {
       const pos = node.position.clone()
-      return pos.set(pos.x - x, pos.y - y, 0.05)
+      return pos.set(pos.x, pos.y, 0.05)
     })
 
     this.lineColor = new THREE.Color(lineColor)
     this.bgColor = new THREE.Color(bgColor)
-
-    this.rotateZ(-rotate)
 
     this._init()
   }
@@ -126,7 +115,7 @@ class AnimateLine extends THREE.Group {
     const t = new TWEEN.Tween({
       value: 0
     }).to({
-      value: this.routePoints.length
+      value: this.routePoints.length + ANIMATE_LINE_LEN
     }, this.routePoints.length * 15).onComplete(() => {
       end = true
     }).onUpdate(({ value }) => {

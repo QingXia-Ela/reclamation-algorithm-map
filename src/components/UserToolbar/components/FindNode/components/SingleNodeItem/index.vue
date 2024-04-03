@@ -2,10 +2,32 @@
 import { IconData } from '@/assets/icons';
 import NODE_ASSETS from '@/assets/three/icon/node';
 import SvgIcon from '@/components/SvgIcon.vue';
+import { NodeTypeData } from '@/constants';
+import core from '@/three';
+import Node from '@/three/object/components/node';
+import { computed } from 'vue';
+
+const node = defineModel<Node['options']>("node");
+
+const name = computed(() => node.value?.name || "未知节点")
+const type = computed(() => {
+  const name = node.value?.type || "unknown"
+  // assert: unknown cover name
+  return NodeTypeData.find((item) => item.value === name)!.label
+})
+
+const icons = computed(() => {
+  const resources = node.value?.mainResources || []
+  return resources.map((item) => IconData[item.type])
+})
+
+function moveCamera(x = 0, y = 0) {
+  core.setCameraPosition({ x, y })
+}
 </script>
 
 <template>
-  <div class="single_node_item">
+  <div class="single_node_item" @click="moveCamera(node?.x, node?.y)">
     <div class="selected_icon ">
       <SvgIcon name="correct-c" color="#fff" />
     </div>
@@ -13,11 +35,11 @@ import SvgIcon from '@/components/SvgIcon.vue';
       <img class="node_img" :src="NODE_ASSETS['NODE_CAVE']" alt="">
     </div>
     <div class="node_info">
-      <div class="type">后舍</div>
-      <div class="title">众人会聚之地</div>
+      <div class="type">{{ type }}</div>
+      <div class="title">{{ name }}</div>
       <div class="icons">
-        <div class="icon">
-          <img class="icon_img" :src="IconData['beef']" alt="">
+        <div v-for="icon in icons" class="icon">
+          <img class="icon_img" :src="icon" alt="">
         </div>
       </div>
     </div>
@@ -86,7 +108,6 @@ import SvgIcon from '@/components/SvgIcon.vue';
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
   margin-left: 1rem;
 
@@ -103,7 +124,7 @@ import SvgIcon from '@/components/SvgIcon.vue';
     display: flex;
     align-items: center;
     gap: .5rem;
-    margin-top: 0.1rem;
+    margin-top: 0.2rem;
 
     .icon {
       width: 1.6rem;

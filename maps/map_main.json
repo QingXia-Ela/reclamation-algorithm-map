@@ -1138,20 +1138,20 @@
       "preset": "normal"
     },
     {
+      "preset": "normal",
       "x": -91.6333779266272,
       "y": -50.268415268889974,
       "name": "乌胡米什",
       "type": "mine",
       "weather": "normal",
+      "resources": [],
       "size": "large",
       "border": "hexagon",
-      "id": 29,
-      "nodeId": 29,
       "note": "<@lv.description><号令点></>击破后可以在此处定期派出干员收集大量木材\\n“像一群峭壁”是人们对这里的最佳概括，它曾经是雨林地区颇为繁荣的林业小镇，而如今这里还有时刻取人性命的不明势力和沉默的树林。",
       "mainResources": [
         {
           "type": "wood",
-          "count": 1
+          "count": 120
         },
         {
           "type": "water",
@@ -1184,23 +1184,24 @@
           "count": 1
         }
       ],
-      "preset": "normal"
+      "id": 29,
+      "nodeId": 29
     },
     {
+      "preset": "normal",
       "x": -75.19875413257647,
       "y": -48.70486755063993,
       "name": "千仞关",
-      "type": "collect",
+      "type": "gate",
       "weather": "normal",
+      "resources": [],
       "size": "small",
       "border": "square",
-      "id": 30,
-      "nodeId": 30,
       "note": "<@lv.description><机关石门></>击破 后会解锁新的可探索区域。被击破前，每次进入关卡会完全恢复原状。\\n再向前走似乎是另外一个地域的入口，风沙逐渐狂暴，巨石填满道路，干渴和绝路是这一切的尽头。",
       "mainResources": [
         {
           "type": "stone",
-          "count": 1
+          "count": 45
         }
       ],
       "regularResources": [
@@ -1229,7 +1230,8 @@
           "count": 1
         }
       ],
-      "preset": "normal"
+      "id": 30,
+      "nodeId": 30
     },
     {
       "x": -46.151509957277334,
@@ -1641,17 +1643,26 @@
       "preset": "normal"
     },
     {
+      "preset": "normal",
       "x": -77.36437547431787,
       "y": -67.67920556125432,
       "name": "战争本能",
       "type": "nest",
       "weather": "normal",
+      "resources": [],
       "size": "small",
       "border": "square",
-      "id": 40,
-      "nodeId": 40,
       "note": "火山喷发，大地沸腾，栖居的生物不懂何为战争，只是顺从本能。",
-      "mainResources": [],
+      "mainResources": [
+        {
+          "type": "goodsundry",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ],
       "regularResources": [
         {
           "type": "egg",
@@ -1678,7 +1689,8 @@
           "count": 1
         }
       ],
-      "preset": "normal"
+      "id": 40,
+      "nodeId": 40
     },
     {
       "x": -70.79500757303457,

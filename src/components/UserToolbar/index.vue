@@ -9,6 +9,7 @@ import Notification from './components/Notification.vue';
 import MapSwitch from './components/MapSwitch.vue'
 import ResetCamera from './components/ResetCamera.vue';
 import DownloadCurrentMap from './components/DownloadCurrentMap.vue';
+import BluePrint from './components/BluePrint.vue';
 import { ref, computed } from 'vue';
 
 const showUserToolbar = ref(false)
@@ -41,6 +42,7 @@ const currentMapType = ref("main")
 <template>
   <div :class="className" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
     <CheckFoodFormula />
+    <BluePrint />
     <QueryShortestRoad />
     <FindNode v-if="dev" />
     <ResetCamera />

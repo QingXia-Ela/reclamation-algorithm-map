@@ -290,14 +290,18 @@ class MapCore {
 
   /**
    * Run on init.
+   * 
+   * @deprecated
    */
   // todo!
   private _addMouseMoveEvent() { }
 
-  /**
-   * @deprecated - todo!
-   */
-  private _onWindowResise() { }
+  private _onWindowResise() {
+    this.threeObject.camera.aspect = window.innerWidth / window.innerHeight;
+    this.threeObject.camera.updateProjectionMatrix();
+    this.threeObject.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.threeObject.renderer.setPixelRatio(window.devicePixelRatio);
+  }
 
   /**
    * Run on init.
@@ -417,6 +421,7 @@ class MapCore {
     }
     this._startAnimate()
     this._addClickEvent()
+    window.addEventListener('resize', this._onWindowResise.bind(this), false);
 
     document.body.appendChild(renderer.domElement);
   }

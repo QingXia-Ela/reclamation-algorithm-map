@@ -4,7 +4,7 @@ import SvgIcon from '@/components/SvgIcon.vue';
 import UserLeftDrawer from '@/components/UserLeftDrawer/index.vue';
 import { ref, Teleport } from 'vue';
 // import QueryResultShow from './components/QueryResultShow.vue';
-import QueryRequestSelect from './components/QueryRequestSelect.vue';
+import QueryRequestSelect from './components/QueryRequestSelect/index.vue';
 
 function open() {
   show.value = !show.value

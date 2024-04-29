@@ -5,6 +5,7 @@ import UserLeftDrawer from '@/components/UserLeftDrawer/index.vue';
 import { ref, Teleport } from 'vue';
 // import QueryResultShow from './components/QueryResultShow.vue';
 import QueryRequestSelect from './components/QueryRequestSelect/index.vue';
+import { KeepAlive } from 'vue';
 
 function open() {
   show.value = !show.value
@@ -16,6 +17,9 @@ const show = ref(false)
 <template>
   <Teleport to="body">
     <UserLeftDrawer title="根据条件查询节点" v-model:show="show">
+      <!-- <KeepAlive>
+
+      </KeepAlive> -->
       <QueryRequestSelect />
       <!-- <QueryResultShow :nodes="[]" /> -->
     </UserLeftDrawer>

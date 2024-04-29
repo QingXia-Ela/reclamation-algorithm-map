@@ -13,8 +13,8 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import { ref, computed } from 'vue';
+<script lang="ts" setup name="Condition">
+import { ref, computed, watch, nextTick } from 'vue';
 import { ConditionComponentMap, ConditionTypeMap } from './constants';
 import { ElSelect, ElOption, ElButton } from 'element-plus';
 
@@ -24,8 +24,12 @@ const conditionComponentType = ref(ConditionTypeMap.EMPTY)
 
 const ConditionComponent = computed(() => ConditionComponentMap[conditionComponentType.value].component)
 
+function next(nodes) {
+  return componentRef.value?.next?.(nodes) || nodes
+}
+
 defineExpose({
-  next: componentRef.value?.next
+  next
 })
 </script>
 

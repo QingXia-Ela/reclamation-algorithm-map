@@ -9,7 +9,7 @@ const selectName = ref()
 
 function next(nodes) {
   if (!selectName.value) return nodes
-  return nodes.filter(node => selectName.value === node.type)
+  return nodes.filter(node => selectName.value === node.options.name)
 }
 
 defineExpose({

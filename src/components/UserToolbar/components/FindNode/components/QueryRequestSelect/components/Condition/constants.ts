@@ -5,6 +5,7 @@ import { defineComponent } from 'vue'
 
 // define a empty component for empty condition
 const EmptyCondition = defineComponent({
+  expose: ['next'],
   name: 'EmptyCondition',
   render() {
     return null

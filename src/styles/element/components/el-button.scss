@@ -12,3 +12,9 @@
 .el-button:focus {
   --el-button-hover-bg-color: transparent;
 }
+
+.el-button.is-disabled {
+  color: #fff;
+  background-color: unset;
+  opacity: .6;
+}

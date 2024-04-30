@@ -7,7 +7,6 @@ const showModel = defineModel("show", {
 })
 
 const props = defineProps<{
-  title: string,
   useMask?: boolean
 }>()
 
@@ -42,7 +41,9 @@ watch(
     opacity: animateShow ? 1 : 0,
     pointerEvents: animateShow ? 'auto' : 'none'
   }">
-    <div class="title">{{ props.title }}</div>
+    <div class="title">
+      <slot name="title" />
+    </div>
     <div class="sidebar_container">
       <slot />
     </div>

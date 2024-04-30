@@ -4,10 +4,10 @@ import { ref } from 'vue';
 import Condition from './components/Condition/index.vue';
 import core from '@/three';
 
-const conditions = ref < number[] > ([])
+const conditions = ref<number[]>([])
 
 // empty on init.
-const conditionsRef = ref < any[] > ([])
+const conditionsRef = ref<any[]>([])
 
 const count = ref(0)
 
@@ -53,7 +53,8 @@ defineExpose({
     </div>
     <div class="operate">
       <ElButton @click="conditions.push(+new Date())">+ 添加筛选条件</ElButton>
-      <ElButton type="primary" :disabled="!conditions.length || count === 0">查询满足条件的节点 (共{{ count }}个)</ElButton>
+      <ElButton type="primary" :disabled="!conditions.length || count === 0" @click="$emit('query')">查询满足条件的节点 (共{{
+        count }}个)</ElButton>
     </div>
   </div>
 </template>

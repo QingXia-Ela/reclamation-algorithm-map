@@ -44,7 +44,7 @@ const currentMapType = ref("main")
     <CheckFoodFormula />
     <BluePrint />
     <QueryShortestRoad />
-    <FindNode v-if="dev" />
+    <FindNode />
     <ResetCamera />
     <MapSwitch v-model:mapType="currentMapType" />
     <DownloadCurrentMap v-model:mapType="currentMapType" />

@@ -7,7 +7,11 @@ import core from '@/three';
 import Node from '@/three/object/components/node';
 import { computed } from 'vue';
 
-const node = defineModel<Node['options']>("node");
+const props = defineProps<{
+  node: Node['options']
+}>()
+
+const node = computed(() => props.node)
 
 const name = computed(() => node.value?.name || "未知节点")
 const type = computed(() => {

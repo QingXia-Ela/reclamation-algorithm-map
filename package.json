@@ -8,6 +8,7 @@
     "userEdit": "vite --mode edit",
     "docs:edit": "cd docs/edit && astro dev",
     "build": "vite build && cd docs/edit && pnpm build",
+    "build:gitee": "vite build --mode gitee && cd docs/edit && pnpm build",
     "test": "vitest run",
     "preview": "vite preview"
   },

@@ -11,3 +11,5 @@ declare module "*.glsl" {
 }
 
 declare const __DEV__: boolean
+
+declare const GITEE_MODE: boolean

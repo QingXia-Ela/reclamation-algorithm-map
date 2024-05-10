@@ -19,11 +19,10 @@ if (import.meta.hot) {
 // 保证地图能够渲染，不会因为引入后没有使用而被清除
 // @ts-ignore
 window.MapCore = core;
+core.loadDefaultData()
 
 const app = createApp(App)
 
 app.use(pinia)
 
 app.mount('#app')
-
-core.loadDefaultData()

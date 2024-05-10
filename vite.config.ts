@@ -27,6 +27,7 @@ export default ({ command, mode }: any) => {
     define: {
       'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`,
       'process.env.USE_DEVELOPER_LAYOUT': process.env.NODE_ENV === 'development',
+      GITEE_MODE: mode === 'gitee',
       '__DEV__': process.env.NODE_ENV === 'development'
     },
     build: {

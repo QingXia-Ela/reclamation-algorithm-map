@@ -29,9 +29,7 @@ jobs:
         run: pnpm build
 
       - name: Build Docs
-        run: cd docs/edit
-        run: pnpm install --no-frozen-lockfile
-        run: pnpm build
+        run: cd docs/edit && pnpm install --no-frozen-lockfile && pnpm build
 
       - name: Deploy to GitHub Pages
         id: deployment

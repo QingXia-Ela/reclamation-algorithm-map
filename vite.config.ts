@@ -5,6 +5,7 @@ import vitePluginSaveMap from './src/plugins/vite/vite-plugin-save-map'
 import vitePluginIconsReg from './src/plugins/vite/vite-plugin-icons-reg'
 import { resolve } from 'path'
 import vitePluginRiftMapHandle from './src/plugins/vite/vite-plugin-rift-map-handle'
+import vitePluginMapFontBundle from './src/plugins/vite/vite-plugin-map-font-bundle'
 
 // https://vitejs.dev/config/
 export default ({ command, mode }: any) => {
@@ -16,6 +17,7 @@ export default ({ command, mode }: any) => {
       vitePluginSaveMap(),
       vitePluginIconsReg(),
       vitePluginRiftMapHandle(),
+      vitePluginMapFontBundle(),
       Markdown()
     ],
     base: '/reclamation-algorithm-map/',
@@ -28,7 +30,8 @@ export default ({ command, mode }: any) => {
       'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`,
       'process.env.USE_DEVELOPER_LAYOUT': process.env.NODE_ENV === 'development',
       GITEE_MODE: mode === 'gitee',
-      '__DEV__': process.env.NODE_ENV === 'development'
+      '__DEV__': process.env.NODE_ENV === 'development',
+      URL_BASE: '"/reclamation-algorithm-map/"',
     },
     build: {
       target: ["chrome103"],

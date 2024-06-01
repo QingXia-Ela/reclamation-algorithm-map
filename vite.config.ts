@@ -6,6 +6,7 @@ import vitePluginIconsReg from './src/plugins/vite/vite-plugin-icons-reg'
 import { resolve } from 'path'
 import vitePluginRiftMapHandle from './src/plugins/vite/vite-plugin-rift-map-handle'
 import vitePluginMapFontBundle from './src/plugins/vite/vite-plugin-map-font-bundle'
+import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://vitejs.dev/config/
 export default ({ command, mode }: any) => {
@@ -39,7 +40,8 @@ export default ({ command, mode }: any) => {
         input: {
           main: resolve(__dirname, 'index.html'),
           edit: resolve(__dirname, './edit/index.html'),
-        }
+        },
+        plugins: [visualizer()]
       },
     }
   })

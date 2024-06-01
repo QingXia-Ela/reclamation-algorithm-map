@@ -36,9 +36,9 @@
 
 ## 地图制作与地图使用手册
 
-地图制作网页：http://shiinafan.gitee.io/reclamation-algorithm-map/edit
+地图制作网页：https://qingxia-ela.github.io/reclamation-algorithm-map/edit
 
-地图制作文档：http://shiinafan.gitee.io/reclamation-algorithm-map/docs/edit
+地图制作文档：https://qingxia-ela.github.io/reclamation-algorithm-map/docs/edit
 
 ## 联系我们
 

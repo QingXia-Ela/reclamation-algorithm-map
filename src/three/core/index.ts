@@ -422,6 +422,7 @@ class MapCore {
     this._startAnimate()
     this._addClickEvent()
     window.addEventListener('resize', this._onWindowResise.bind(this), false);
+    requestAnimationFrame(() => this._onWindowResise())
 
     document.body.appendChild(renderer.domElement);
   }

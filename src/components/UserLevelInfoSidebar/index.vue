@@ -84,5 +84,7 @@ function cleanNode() {
   width: 80%;
   height: 100%;
   gap: 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 </style>

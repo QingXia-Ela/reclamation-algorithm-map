@@ -53,7 +53,7 @@ defineExpose({
     </div>
     <div class="operate">
       <ElButton @click="conditions.push(+new Date())">+ 添加筛选条件</ElButton>
-      <ElButton type="primary" :disabled="!conditions.length || count === 0" @click="$emit('query')">查询满足条件的节点 (共{{
+      <ElButton type="primary" :disabled="!conditions.length || count === 0" @click="$emit('query')">查询节点(共{{
         count }}个)</ElButton>
     </div>
   </div>
@@ -78,5 +78,7 @@ defineExpose({
 .operate {
   display: flex;
   justify-content: end;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>

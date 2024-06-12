@@ -61,4 +61,10 @@ function onBack() {
   justify-content: space-between;
   align-items: center;
 }
+
+@media screen and (max-width: 992px) {
+  .title_container {
+    font-size: 16px;
+  }
+}
 </style>

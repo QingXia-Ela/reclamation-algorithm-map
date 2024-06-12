@@ -47,6 +47,7 @@ const showNumEntity = [
 .item_container {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .item {

@@ -1,0 +1,48 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "npm run build:desktop",
+    "beforeDevCommand": "npm run dev:tauri",
+    "devPath": "http://localhost:5173",
+    "distDir": "../dist-desktop"
+  },
+  "package": {
+    "productName": "生息演算网页地图桌面版",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false
+    },
+    "bundle": {
+      "active": true,
+      "targets": [
+        "app"
+      ],
+      "identifier": "com.arknight.ra.taleswithinthesand.map",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "resources": []
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 720,
+        "resizable": true,
+        "title": "生息演算网页地图离线版",
+        "width": 1280
+      }
+    ]
+  }
+}

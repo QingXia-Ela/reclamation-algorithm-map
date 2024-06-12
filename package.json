@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:tauri": "vite --config vite.desktop.config.ts",
     "userEdit": "vite --mode edit",
     "docs:edit": "cd docs/edit && astro dev",
     "build": "vite build",
     "build:gitee": "vite build --mode gitee",
+    "build:desktop": "vite build --mode desktop --config vite.desktop.config.ts",
     "test": "vitest run",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "smoke": "echo smoke"
   },
   "dependencies": {
     "@nanostores/vue": "^0.10.0",
@@ -26,6 +29,7 @@
     "vue": "^3.4.15"
   },
   "devDependencies": {
+    "@tauri-apps/cli": "^1.5.14",
     "@types/lodash": "^4.14.202",
     "@types/node": "^20.11.20",
     "@types/three": "^0.161.2",

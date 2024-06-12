@@ -6,8 +6,8 @@ import SHSCN from '../../../assets/three/fonts/思源黑体R_Regular.json'
 
 
 export default function vitePluginMapFontBundle(): Plugin {
-let font_dir = './dist/assets/font/map_font.json'
-return {
+  let font_dir = './dist/assets/font/map_font.json'
+  return {
     name: 'vite-plugin-map-font-bundle',
     enforce: 'pre',
     apply: 'build',
@@ -22,7 +22,7 @@ return {
       }
 
       SHSCN.glyphs = newFontGlyphs
-      
+
       await fs.mkdir(font_dir, { recursive: true })
       await fs.writeFile(`${font_dir}/map_font.json`, JSON.stringify(SHSCN, null))
     }

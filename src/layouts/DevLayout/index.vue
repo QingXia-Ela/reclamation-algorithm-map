@@ -22,20 +22,22 @@ import { onMounted } from 'vue';
 import { ElNotification } from 'element-plus';
 
 onMounted(() => {
-  process.env.NODE_ENV === "production" ? (
-    ElNotification({
-      title: "提示",
-      message: "当前为生产环境部署页面，背景加载速度较慢，请耐心等待，在地图上使用右键打开开发者选单",
-      type: "warning",
-      duration: 10000
-    })
-  ) : (
+  if (__DEV__) {
     ElNotification({
       title: "提示",
       message: "当前为开发者模式，在地图上使用右键打开开发者选单",
       type: "success",
     })
-  )
+  }
+  else if (__DESKTOP__) { /* empty */ }
+  else if (process.env.NODE_ENV === "production") {
+    ElNotification({
+      title: "提示",
+      message: "当前为在线网页，资源加载速度较慢，请耐心等待；你可以在地图底部打开操作菜单",
+      type: "warning",
+      duration: 10000
+    })
+  }
 })
 </script>
 

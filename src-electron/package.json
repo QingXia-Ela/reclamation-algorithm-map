@@ -1,0 +1,26 @@
+{
+  "name": "map-electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "dir": "electron-builder --dir",
+    "pack": "electron-builder",
+    "make": "electron"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^31.0.1",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {},
+  "build": {
+    "appId": "com.arknight.ra.taleswithinthesand.map",
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

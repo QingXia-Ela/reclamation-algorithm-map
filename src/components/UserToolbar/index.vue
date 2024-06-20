@@ -10,6 +10,7 @@ import MapSwitch from './components/MapSwitch.vue'
 import ResetCamera from './components/ResetCamera.vue';
 import DownloadCurrentMap from './components/DownloadCurrentMap.vue';
 import BluePrint from './components/BluePrint.vue';
+import ViewAnimateRoute from './components/ViewAnimateRoute.vue';
 import { ref, computed } from 'vue';
 
 const showUserToolbar = ref(false)
@@ -40,6 +41,7 @@ const currentMapType = ref("main")
 </script>
 
 <template>
+  <!-- todo!: 修复内部popover元素悬浮时工具栏仍然隐藏的问题 -->
   <div :class="className" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
     <CheckFoodFormula />
     <BluePrint />
@@ -48,6 +50,7 @@ const currentMapType = ref("main")
     <ResetCamera />
     <MapSwitch v-model:mapType="currentMapType" />
     <DownloadCurrentMap v-model:mapType="currentMapType" />
+    <ViewAnimateRoute />
     <Knowledge />
     <Notification />
   </div>

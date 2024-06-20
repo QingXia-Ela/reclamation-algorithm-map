@@ -72,8 +72,8 @@ export default function validateMapData(data: any) {
       id: z.string(),
       name: z.string(),
       nodes: z.array(z.number()),
-      lineColor: z.number(),
-      bgColor: z.number()
+      lineColor: z.custom<`0x${string}`>(() => true),
+      bgColor: z.custom<`0x${string}`>(() => true),
     })).default([])
   })
 

@@ -162,18 +162,34 @@ class MapCore {
     })
   }
 
+  // todo!: optimize highlight route, reuse the same object
+  // toggleHighlightRoute(id: string, active: boolean) {
   highlightRoute(id: string) {
     const res = this.DataHandle.getHighlightRouteObj(id)
     if (res) {
+      res.startAnimate()
       this.threeObject.scene.add(res)
+      return res
     }
   }
 
   stopHighlightRoute(id: string) {
     const res = this.DataHandle.removeHighlightRouteObj(id)
     if (res) {
+      res.stopAnimate()
       this.threeObject.scene.remove(res)
+      return res
     }
+  }
+  stopAllHighlightRoute() {
+    const res = this.DataHandle.removeAllHighlightRoutesObj()
+    if (res) {
+      Object.values(res).forEach((obj) => {
+        this.threeObject.scene.remove(obj)
+      })
+    }
+
+    return res
   }
 
   /**

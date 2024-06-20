@@ -3,32 +3,47 @@
   -->
 
 <template>
-  <OperateButton :popover-width="180">
-    <!-- 查看当前地图可用的高亮路线 -->
-    <template #reference>
-      <SvgIcon name="route" color="#eee" style="width: 1.2rem; height: 1.2rem" />
+  <OperateButton :popover-width="300" popover="查看当前地图可用的高亮路线">
+    <SvgIcon name="route" color="#eee" style="width: 1.2rem; height: 1.2rem" />
+    <template #popover>
+      查看当前地图可用的高亮路线
+      <el-checkbox-group v-if="selectItem.length" v-model="selectLine">
+        <el-checkbox v-for="item of selectItem" :key="item.id" :label="item.name" :value="item.id" />
+      </el-checkbox-group>
+      <div v-else>当前没有可用的高亮路线</div>
     </template>
-    <el-radio-group v-model="selectLine">
-      <el-radio :value="'无'"></el-radio>
-    </el-radio-group>
   </OperateButton>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import OperateButton from '../OperateButton.vue';
 import SvgIcon from '@/components/SvgIcon.vue';
 import {
-  ElRadioGroup,
-  ElRadio
+  ElCheckbox,
+  ElCheckboxGroup
 } from 'element-plus';
-import { ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import core from '@/three'
+import { SaveMapData } from '@/three/types/data';
 
-const selectLine = ref()
+const selectLine = ref([])
 
-core.addEventListener('mapchange', (data) => {
-  // data.
+const selectItem = ref<SaveMapData['highlightRoute']>([])
+
+onMounted(() => {
+  core.addEventListener('mapchange', (data) => {
+    // todo!: fix data lost problem
+    selectItem.value = data.highlightRoute || []
+  })
 })
+
+watch(
+  () => selectLine.value,
+  (n) => {
+    core.stopAllHighlightRoute()
+    n.forEach((i) => core.highlightRoute(i))
+  }
+)
 </script>
 
 <style lang="scss" scoped></style>

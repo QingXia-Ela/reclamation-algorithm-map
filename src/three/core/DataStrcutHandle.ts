@@ -48,6 +48,7 @@ class DataStrcutHandle {
   nodeMap: Record<string, Node> = {}
   adjancyList: Record<string, number[]> = {}
   highlightRoute: SaveMapData['highlightRoute'] = []
+  /** key is same with {@link SaveMapData.highlightRoute} id */
   highlightRouteRecord: Record<string, AnimateLine> = {}
   /**
    * 边存储
@@ -163,7 +164,8 @@ class DataStrcutHandle {
     delete this.nodeMap[node.nodeId]
     return {
       node,
-      edges: this.removeRelativeEdgeByNodeId(nodeId)
+      edges: this.removeRelativeEdgeByNodeId(nodeId),
+      highlightRoutes: this.removeRelativeHighlightRouteByNodeId(nodeId)
     }
   }
 
@@ -384,10 +386,14 @@ class DataStrcutHandle {
     if (this.highlightRouteRecord[id]) {
       return this.highlightRouteRecord[id]
     }
+    console.log(id);
+
     const res = this.highlightRoute.find((r) => r.id === id)
     if (res) {
       const animateLine = new AnimateLine({
         ...res,
+        lineColor: Number(res.lineColor),
+        bgColor: Number(res.bgColor),
         nodes: res.nodes.map((n) => this.getNodeByID(n))
       })
       this.highlightRouteRecord[id] = animateLine
@@ -407,6 +413,18 @@ class DataStrcutHandle {
     const res = this.highlightRouteRecord
     this.highlightRouteRecord = {}
     return res
+  }
+
+  removeRelativeHighlightRouteByNodeId(nodeId: number) {
+    // const res = this.highlightRouteRecord
+    // this.highlightRouteRecord = {}
+    // return res
+    const id = this.highlightRoute
+      .filter((r) => r.nodes.includes(nodeId))
+      .map((r) => this.removeHighlightRouteObj(r.id))
+      .filter(Boolean)
+
+    return id
   }
 
   /**

@@ -5,8 +5,8 @@ export interface HighlightRouteProps {
   id: string
   name: string
   nodes: number[]
-  lineColor: number
-  bgColor: number
+  lineColor: string
+  bgColor: string
 }
 
 /**

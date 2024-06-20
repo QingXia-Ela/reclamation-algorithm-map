@@ -37,7 +37,7 @@ class AnimateLine extends THREE.Group {
     transparent: true,
     vertexColors: true,
   });
-  timer: number = 0
+  timer: any = 0
 
   constructor({
     nodes,
@@ -67,8 +67,7 @@ class AnimateLine extends THREE.Group {
         n1, n2
       )
       routePoints.push(...curve.getPoints(
-        // 该距离为生产环境下最大放大时仍能保持较理想的视觉效果
-        n1.distanceTo(n2) * 10
+        n1.distanceTo(n2) * /* 该距离为生产环境下最大放大时仍能保持较理想的视觉效果 */ 10
       ))
     }
 
@@ -148,6 +147,7 @@ class AnimateLine extends THREE.Group {
 
   stopAnimate() {
     clearInterval(this.timer)
+    this.timer = null
   }
 
   drop() {

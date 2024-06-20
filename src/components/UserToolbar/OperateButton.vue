@@ -48,7 +48,8 @@ function onMouseLeave() {
       </div>
     </template>
     <div @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
-      <slot name="popover" />
+      <slot v-if="$slots.popover" name="popover" />
+      <div v-else>{{ props.popover }}</div>
     </div>
   </el-popover>
 </template>

@@ -46,6 +46,7 @@ function getSpeicalNode(options: NodeProps) {
 class DataStrcutHandle {
   nodeMap: Record<string, Node> = {}
   adjancyList: Record<string, number[]> = {}
+  highlightRoute: SaveMapData['highlightRoute'] = []
   /**
    * 边存储
    * 
@@ -79,6 +80,7 @@ class DataStrcutHandle {
     this.edges = {}
     this._setNodesFromData(data.nodes)
     this._setEdgesFromAdjacencyList(data.adjancyList)
+    this.highlightRoute = data.highlightRoute
 
     this.currentMaxNodeId = maxId
     return oldObj

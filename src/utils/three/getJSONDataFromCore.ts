@@ -15,6 +15,7 @@ export default function getJSONDataFromCore(core: MapCore): SaveMapData {
   return {
     metadata: core.getMetadata(),
     nodes,
-    adjancyList: core.DataHandle.adjancyList
+    adjancyList: core.DataHandle.adjancyList,
+    highlightRoute: core.DataHandle.highlightRoute
   }
 }

@@ -35,8 +35,8 @@ export function findNodeByNodeName(core: MapCore, name: string, includeMode = fa
  */
 export function findNodeByResources(core: MapCore, resources: string[], needMain = true, needRegular = false) {
   return Object.values(core.DataHandle.nodeMap).filter((node) => {
-    const mainResources = node.options.mainResources
-    const regularResources = node.options.regularResources
+    const mainResources = node.options.mainResources || []
+    const regularResources = node.options.regularResources || []
     // 当不需要某类型搜索时直接将其默认为 true 以绕过下面的 some 方法过滤
     let n1 = !needMain, n2 = !needRegular
 

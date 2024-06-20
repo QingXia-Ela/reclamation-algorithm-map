@@ -67,7 +67,14 @@ export default function validateMapData(data: any) {
         }
       })
     ),
-    adjancyList: z.record(z.array(z.number()))
+    adjancyList: z.record(z.array(z.number())),
+    highlightRoute: z.array(z.object({
+      id: z.string(),
+      name: z.string(),
+      nodes: z.array(z.number()),
+      lineColor: z.number(),
+      bgColor: z.number()
+    })).default([])
   })
 
   const result = schema.safeParse(data)

@@ -1,6 +1,14 @@
 import { NodeProps } from "./node";
 import { BackgroundType, MapType } from './map'
 
+export interface HighlightRouteProps {
+  id: string
+  name: string
+  nodes: number[]
+  lineColor: number
+  bgColor: number
+}
+
 /**
  * 地图数据
  * 
@@ -24,4 +32,8 @@ export interface SaveMapData {
    * 节点邻接表，用于建立边
    */
   adjancyList: Record<string, number[]>
+  /**
+   * 高亮路径
+   */
+  highlightRoute: HighlightRouteProps[]
 }

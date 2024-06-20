@@ -12,21 +12,22 @@ import findLine from '../utils/findLine';
 import { MapType } from "@/three/types/map"
 import MapAnchor from '../object/anchor';
 
-type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove'
+type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove' | 'mapchange'
+type ExtractSetType<T> = T extends Set<infer U> ? U : never
 
 function getMouseVector(event: MouseEvent) {
   const mouseVector = new THREE.Vector2((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
   return mouseVector
 }
 
-// todo!: 增加一个随鼠标点击移动的高亮小坐标
 class MapCore {
   threeObject: Record<string, any> = {}
   eventMap = {
     nodeclick: new Set<(node: Node) => void>(),
     lineclick: new Set<(line: Line) => void>(),
     contextmenu: new Set<(event: MouseEvent, intersects: THREE.Intersection<THREE.Object3D<THREE.Object3DEventMap>>[]) => void>(),
-    mousemove: new Set(),
+    mousemove: new Set<any>(),
+    mapchange: new Set<(data: SaveMapData) => void>(),
   }
   DataHandle = new DataStructHandle()
   name: string = "主地图"
@@ -73,7 +74,8 @@ class MapCore {
         backgroundType: "main"
       },
       nodes: [],
-      adjancyList: {}
+      adjancyList: {},
+      highlightRoute: []
     }
     await this.loadData(data)
   }
@@ -159,6 +161,10 @@ class MapCore {
     })
   }
 
+  highlightRoute(id: string) {
+
+  }
+
   /**
    * 从序列化数据加载整张地图
    * 
@@ -186,6 +192,9 @@ class MapCore {
       })
       Object.values(this.DataHandle.edges).forEach(edge => {
         this.threeObject.scene.add(edge)
+      })
+      this.eventMap.mapchange.forEach((callback: any) => {
+        callback(data)
       })
     } catch (e) {
       console.error(e);
@@ -233,7 +242,7 @@ class MapCore {
      * **注意**
      * - `nodeclick`, `lineclick` 事件会在原生 `mouseup` 事件触发后触发
      */
-  addEventListener(type: CoreEvent, callback: (...args: any[]) => void): MapCore {
+  addEventListener<T extends CoreEvent>(type: T, callback: ExtractSetType<typeof this.eventMap[typeof type]>): MapCore {
     this.eventMap[type].add(callback)
     return this
   }

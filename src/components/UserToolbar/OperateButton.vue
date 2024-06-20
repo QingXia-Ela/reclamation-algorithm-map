@@ -10,7 +10,8 @@ const props = defineProps({
   popoverWidth: {
     type: Number,
     default: 300
-  }
+  },
+  active: Boolean
 })
 
 const className = computed(() => ({
@@ -21,8 +22,10 @@ const className = computed(() => ({
 const showPopover = ref(false)
 
 let timerId = null
+let leaveTimerId = null
 
 function onMouseEnter() {
+  clearTimeout(leaveTimerId)
   timerId = setTimeout(() => {
     showPopover.value = true
   }, 300)
@@ -30,18 +33,23 @@ function onMouseEnter() {
 
 function onMouseLeave() {
   clearTimeout(timerId)
-  showPopover.value = false
+  leaveTimerId = setTimeout(() => {
+    showPopover.value = false
+  }, 500);
 }
 </script>
 
 <template>
-  <el-popover placement="top" :disabled="!props.popover" :content="props.popover" popper-style="text-align: center"
-    :visible="showPopover" :width="props.popoverWidth">
+  <el-popover placement="top" :disabled="!props.popover" :class="{ active: props.active }" :content="props.popover"
+    popper-style="text-align: center" :visible="showPopover" :width="props.popoverWidth">
     <template #reference>
       <div :class="className" @click="$emit('click')" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
         <slot />
       </div>
     </template>
+    <div @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
+      <slot name="popover" />
+    </div>
   </el-popover>
 </template>
 
@@ -59,6 +67,10 @@ function onMouseLeave() {
     opacity: 0.3;
     pointer-events: none;
     cursor: not-allowed;
+  }
+
+  &.active {
+    background-color: rgba(255, 255, 255, 0.5);
   }
 
   &:hover {

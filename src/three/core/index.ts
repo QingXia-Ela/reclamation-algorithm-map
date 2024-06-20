@@ -21,6 +21,7 @@ function getMouseVector(event: MouseEvent) {
 }
 
 class MapCore {
+  // todo!: 增加类型系统
   threeObject: Record<string, any> = {}
   eventMap = {
     nodeclick: new Set<(node: Node) => void>(),
@@ -162,7 +163,17 @@ class MapCore {
   }
 
   highlightRoute(id: string) {
+    const res = this.DataHandle.getHighlightRouteObj(id)
+    if (res) {
+      this.threeObject.scene.add(res)
+    }
+  }
 
+  stopHighlightRoute(id: string) {
+    const res = this.DataHandle.removeHighlightRouteObj(id)
+    if (res) {
+      this.threeObject.scene.remove(res)
+    }
   }
 
   /**

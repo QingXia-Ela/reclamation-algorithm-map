@@ -2,6 +2,7 @@
  * 用于处理地图点与边数据结构
  */
 import BaseNode from '../object/base';
+import AnimateLine from '../object/components/animateLine';
 import Line from '../object/components/line';
 import Node from '../object/components/node';
 import MarketNode from '../object/market';
@@ -47,6 +48,7 @@ class DataStrcutHandle {
   nodeMap: Record<string, Node> = {}
   adjancyList: Record<string, number[]> = {}
   highlightRoute: SaveMapData['highlightRoute'] = []
+  highlightRouteRecord: Record<string, AnimateLine> = {}
   /**
    * 边存储
    * 
@@ -374,15 +376,49 @@ class DataStrcutHandle {
 
   updateEdge() { }
 
+  getHighlightRoutes() {
+    return this.highlightRoute
+  }
+
+  getHighlightRouteObj(id: string) {
+    if (this.highlightRouteRecord[id]) {
+      return this.highlightRouteRecord[id]
+    }
+    const res = this.highlightRoute.find((r) => r.id === id)
+    if (res) {
+      const animateLine = new AnimateLine({
+        ...res,
+        nodes: res.nodes.map((n) => this.getNodeByID(n))
+      })
+      this.highlightRouteRecord[id] = animateLine
+      return animateLine
+    }
+  }
+
+  removeHighlightRouteObj(id: string) {
+    if (this.highlightRouteRecord[id]) {
+      // this.highlightRouteRecord[id].destroy()
+      const res = this.highlightRouteRecord[id]
+      return res
+    }
+  }
+
+  removeAllHighlightRoutesObj() {
+    const res = this.highlightRouteRecord
+    this.highlightRouteRecord = {}
+    return res
+  }
+
   /**
    * 移除所有的点与边
    * 
-   * @returns 所有的点与边，用于three场景移除
+   * @returns 所有的点与边与高亮线路，用于three场景移除
    */
   removeAllObjs() {
     return {
       nodes: this.removeAllNodes(),
-      edges: this.removeAllEdges()
+      edges: this.removeAllEdges(),
+      highlightRoutes: this.removeAllHighlightRoutesObj()
     }
   }
 }

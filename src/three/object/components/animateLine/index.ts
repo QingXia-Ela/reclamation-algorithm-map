@@ -108,7 +108,7 @@ class AnimateLine extends THREE.Group {
   }
 
   _run_animate() { }
-  // todo!: optimize this shit
+  // todo!: add tween stop when trigger stopAnimate function
   _trigger() {
     let end = false
     const t = new TWEEN.Tween({
@@ -116,6 +116,7 @@ class AnimateLine extends THREE.Group {
     }).to({
       value: this.routePoints.length + ANIMATE_LINE_LEN
     }, this.routePoints.length * 15).onComplete(() => {
+      console.log('end');
       end = true
     }).onUpdate(({ value }) => {
       changeColorArray(

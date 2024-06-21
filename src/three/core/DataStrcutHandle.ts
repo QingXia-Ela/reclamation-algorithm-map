@@ -405,6 +405,8 @@ class DataStrcutHandle {
     if (this.highlightRouteRecord[id]) {
       // this.highlightRouteRecord[id].destroy()
       const res = this.highlightRouteRecord[id]
+      res.stopAnimate()
+      delete this.highlightRouteRecord[id]
       return res
     }
   }
@@ -412,6 +414,9 @@ class DataStrcutHandle {
   removeAllHighlightRoutesObj() {
     const res = this.highlightRouteRecord
     this.highlightRouteRecord = {}
+    Object.values(res).forEach((obj) => {
+      obj.stopAnimate()
+    })
     return res
   }
 

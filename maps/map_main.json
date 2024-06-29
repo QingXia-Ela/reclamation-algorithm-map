@@ -5,22 +5,6 @@
     "backgroundSize": 200,
     "backgroundType": "main"
   },
-  "highlightRoute": [
-    {
-      "id": "114514",
-      "name": "主地图第25日固定敌袭线路",
-      "nodes": [
-        3,
-        10,
-        13,
-        14,
-        19,
-        -1
-      ],
-      "lineColor": "0xffffff",
-      "bgColor": "0xff0000"
-    }
-  ],
   "nodes": [
     {
       "x": -29.87967341878648,
@@ -5043,6 +5027,26 @@
       "preset": "normal"
     },
     {
+      "preset": "normal",
+      "x": -22.78016240690492,
+      "y": 30.478379642433374,
+      "name": "回廊关",
+      "type": "gate",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 116
+    },
+    {
       "preset": "base",
       "nodeId": -1,
       "name": "驻扎地",
@@ -5152,7 +5156,8 @@
     ],
     "19": [
       14,
-      -1
+      -1,
+      116
     ],
     "20": [
       16,
@@ -5563,10 +5568,29 @@
       103,
       108
     ],
+    "116": [
+      19
+    ],
     "-1": [
       15,
       18,
       19
     ]
-  }
+  },
+  "highlightRoute": [
+    {
+      "id": "114514",
+      "name": "主地图第25日固定敌袭线路",
+      "nodes": [
+        3,
+        10,
+        13,
+        14,
+        19,
+        -1
+      ],
+      "lineColor": "0xffffff",
+      "bgColor": "0xff0000"
+    }
+  ]
 }

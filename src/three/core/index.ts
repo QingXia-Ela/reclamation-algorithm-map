@@ -425,7 +425,7 @@ class MapCore {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000);
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
+    // if (__)
     const background = new Background()
     this.background = background
 

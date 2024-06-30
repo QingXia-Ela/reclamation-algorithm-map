@@ -26,7 +26,8 @@
     "three": "^0.161.0",
     "v-viewer": "^3.0.13",
     "viewerjs": "^1.11.6",
-    "vue": "^3.4.15"
+    "vue": "^3.4.15",
+    "vue-i18n": "^9.13.1"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.5.14",

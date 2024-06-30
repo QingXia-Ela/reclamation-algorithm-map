@@ -8,6 +8,8 @@ import pinia from './store'
 import './styles/element/theme.scss'
 // import 'element-plus/theme-chalk/dark/css-vars.css'
 import 'virtual:svg-icons-register'
+import i18n from './locals'
+
 
 // 涉及到 three 核心直接刷新页面
 if (import.meta.hot) {
@@ -23,6 +25,8 @@ core.loadDefaultData()
 
 const app = createApp(App)
 
-app.use(pinia)
+app
+  .use(pinia)
+  .use(i18n)
 
 app.mount('#app')

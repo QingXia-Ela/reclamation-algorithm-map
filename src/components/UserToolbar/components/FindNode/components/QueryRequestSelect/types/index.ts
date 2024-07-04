@@ -10,6 +10,11 @@ export interface NodeTypeConditionType {
   type: 'type'
 }
 
+export interface TextRegexConditionType {
+  type: 'text_regex'
+}
+
 export type ConditionType = EmptyConditionType |
   NodeNameConditionType |
-  NodeTypeConditionType
+  NodeTypeConditionType |
+  TextRegexConditionType

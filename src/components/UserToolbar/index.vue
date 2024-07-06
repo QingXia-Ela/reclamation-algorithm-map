@@ -12,18 +12,22 @@ import DownloadCurrentMap from './components/DownloadCurrentMap.vue';
 import BluePrint from './components/BluePrint.vue';
 import ViewAnimateRoute from './components/ViewAnimateRoute.vue';
 import Language from './components/Language.vue';
-import { ref, computed } from 'vue';
+import throttle from 'lodash/throttle';
+import { ref, computed, onMounted } from 'vue';
 
 const showUserToolbar = ref(false)
 
 let timerId = null
+let mobileMode = false
 
 function onMouseEnter() {
+  if (mobileMode) return
   clearTimeout(timerId)
   showUserToolbar.value = true
 }
 
 function onMouseLeave() {
+  if (mobileMode) return
   timerId = setTimeout(() => {
     showUserToolbar.value = false
   }, 3000);
@@ -34,11 +38,32 @@ const className = computed(() => ({
   show: showUserToolbar.value
 }))
 
+// todo!: refactor judge
+function judgeMobile() {
+  console.log(1);
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  const isMobileViewport = window.innerWidth < 768
+  if (isMobile || isMobileViewport) {
+    mobileMode = true
+    showUserToolbar.value = true
+  } else {
+    mobileMode = false
+    showUserToolbar.value = false
+  }
+}
+
 // template doesn't support use it directly
 const dev = __DEV__
 
 /** @type {import('vue').Ref<import('@/three/types/map').MapType>} */
 const currentMapType = ref("main")
+
+onMounted(() => {
+  judgeMobile()
+  document.addEventListener('resize', throttle(() => {
+    judgeMobile()
+  }, 1000))
+})
 </script>
 
 <template>

@@ -10,7 +10,6 @@ const input = ref()
 // todo!: 提升搜索体验，例如输入石头可以展示所有石头有关的节点
 // todo!: 可能存在性能问题，需要优化
 function next(nodes) {
-  console.log(nodes);
   // if (!selectName.value) return nodes
   // return nodes.filter(node => selectName.value === node.options.name)
   return nodes.filter(node => `${node.options.name} ${node.options.type} ${node.options.description}`.includes(input.value))

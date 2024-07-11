@@ -40,7 +40,6 @@ const className = computed(() => ({
 
 // todo!: refactor judge
 function judgeMobile() {
-  console.log(1);
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
   const isMobileViewport = window.innerWidth < 768
   if (isMobile || isMobileViewport) {

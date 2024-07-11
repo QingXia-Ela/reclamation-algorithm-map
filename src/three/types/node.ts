@@ -14,6 +14,8 @@ export type NodeType = "hunt" |
   "upgrade_battle" |
   "upgrade_scout" |
   "base" |
+  "selection" |
+  "racing" |
   // 未知节点类型，用于不固定的节点
   "unknown"
 

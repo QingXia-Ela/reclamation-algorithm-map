@@ -24,6 +24,8 @@ type ResourcesKeys = "NODE_BATTLE" |
   "NODE_UPGRADE_BATTLE" |
   "NODE_UPGRADE_SCOUT" |
   "NODE_BASE" |
+  "NODE_RACING" |
+  "NODE_SELECTION" |
   "NODE_UNKNOWN"
 
 const NODE_ASSETS: Record<ResourcesKeys, string> = parseBatchImportToAssets(obj)

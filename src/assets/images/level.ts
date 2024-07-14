@@ -509,6 +509,29 @@ export const other_level = [
   }
 ]
 
+export const bug_level = [
+  {
+    name: '回廊关',
+    index: 1,
+    src: 'https://i0.hdslb.com/bfs/article/fcabcfd312b6a7b2a0e9b88ea10fa6de251015631.png@1256w_1180h_!web-article-pic.avif'
+  },
+  {
+    name: '虫影密植',
+    index: 2,
+    src: "https://i0.hdslb.com/bfs/article/f4d5614673de12fd6c7ad58225276a31251015631.png@1256w_2236h_!web-article-pic.avif"
+  },
+  {
+    name: "幽邃巨洞",
+    index: 3,
+    src: 'https://i0.hdslb.com/bfs/article/c457de6624dafd8ef26ba973778b5f6d251015631.png@1256w_1352h_!web-article-pic.avif'
+  },
+  {
+    name: "熔金巢穴",
+    index: 4,
+    src: "https://i0.hdslb.com/bfs/article/cb66d9e28dee03134a9c33f3ec7cba66251015631.png@1256w_1296h_!web-article-pic.avif"
+  }
+]
+
 /**
  * 关卡地图图片数据
  */
@@ -517,5 +540,6 @@ export const LevelMapData = [
   ...iron_level,
   ...stone_level,
   ...wood_level,
+  ...bug_level,
   ...other_level
 ]

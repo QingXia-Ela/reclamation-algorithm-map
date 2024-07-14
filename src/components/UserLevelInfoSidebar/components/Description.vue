@@ -8,12 +8,14 @@ const nodeStore = useCurrentNode()
 const descriptionReg = /<@lv\.description>(.*?)<\/>/
 
 function complieNote2Html(note = "") {
-  let res = note.replace("\\n", "<br><br>")
+  let res = note.replaceAll("\\n", "<br><br>")
 
   // 捕获替换文字
-  const description = res.match(descriptionReg)
-  if (description) {
-    res = res.replace(descriptionReg, `<span class="note">${description[1]}</span>`)
+  while (res.includes("<@lv.description>")) {
+    const description = res.match(descriptionReg)
+    if (description) {
+      res = res.replace(descriptionReg, `<span class="note">${description[1]}</span>`)
+    }
   }
 
   return res
@@ -30,7 +32,7 @@ const description = computed(() => nodeStore.node?.options.note)
 <style lang="scss" scoped>
 .description {
   width: 80%;
-  height: 7rem;
+  min-height: 7rem;
   margin: 0 3.6rem;
   color: #fff;
 }

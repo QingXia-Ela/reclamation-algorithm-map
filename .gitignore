@@ -24,3 +24,5 @@ dist-*
 *.sln
 *.sw?
 stats.html
+
+playground

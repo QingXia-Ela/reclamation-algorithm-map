@@ -5047,6 +5047,171 @@
       "nodeId": 116
     },
     {
+      "preset": "normal",
+      "x": 4.756062944071113,
+      "y": 39.25808221509611,
+      "name": "阿格拉折返赛",
+      "type": "racing",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "<@lv.description><助跑哨></>使你的源石虫加速一段时间！\\n阿格拉折返赛的赛道以弯道繁多而闻名，它也是淘汰参赛选手最多的一条赛道。危险的转弯往往会引发一连串的追尾事故。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 117
+    },
+    {
+      "preset": "normal",
+      "x": -12.324933193399776,
+      "y": 60.76543723766993,
+      "name": "“庆典须知”",
+      "type": "racing",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "<@lv.description><助跑哨></>使你的源石虫加速一段时间！\\n<@lv.description><牵引器></>你的源石虫牵引一个目标，并且持续向该方向前进！\\n<@lv.description><吮液器></>你的源石虫持续偷取一个目标的体力！\\n这是关于参加修验环廊源石虫拉力赛的一些建议......",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 118
+    },
+    {
+      "preset": "normal",
+      "x": -30.824206739934347,
+      "y": 65.2859879381004,
+      "name": "虫影密植",
+      "type": "selection",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "<@lv.description><捕虫区></>部署干员可以捕捉范围内虚弱的源石虫。\\n修验环廊地区最为人熟知的源石虫聚集地之一。随风摇晃的草木间，残影不断闪过，只要稍微靠近，这些黑影便会瞬间消失，弥散在浓郁的绿色中。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 119
+    },
+    {
+      "preset": "normal",
+      "x": -22.231500631285765,
+      "y": 76.86301104076139,
+      "name": "幽邃巨洞",
+      "type": "selection",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "<@lv.description><捕虫区></>部署干员可以捕捉范围内虚弱的源石虫。\\n举起火把，注意脚下，小心源石虫以及一切会扑上来的奇怪东西！",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 120
+    },
+    {
+      "preset": "normal",
+      "x": -32.8454556414394,
+      "y": 82.38047088738176,
+      "name": "熔金巢穴",
+      "type": "selection",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "<@lv.description><捕虫区></>部署干员可以捕捉范围内虚弱的源石虫。\\n即便在修验环廊，偶尔也能看到禁坑一般的景象——但炽热的岩浆也无法阻止那些为了源石虫而来的冒险者。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 121
+    },
+    {
+      "preset": "normal",
+      "x": -6.917207369553421,
+      "y": 85.26157097633661,
+      "name": "加苏尔拟真赛",
+      "type": "racing",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "<@lv.description><助跑哨></>使你的源石虫加速一段时间！\\n<@lv.description><牵引器></>你的源石虫牵引一个目标，并且持续向该方向前进！\\n<@lv.description><吮液器></>你的源石虫持续偷取一个目标的体力！\\n加苏尔拟真赛的赛道是整个赛事中路况最为混乱的一部分。想象一下，赛道里塞满了过的行人、占道的摊铺，还有突然扔来果核的孩子——真是太棒了。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 122
+    },
+    {
+      "preset": "normal",
+      "x": 6.0256714808088585,
+      "y": 77.82692967015781,
+      "name": "杜安娜碰撞赛",
+      "type": "racing",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "<@lv.description><助跑哨></>使你的源石虫加速一段时间！\\n<@lv.description><牵引器></>你的源石虫牵引一个目标，并且持续向该方向前进！\\n<@lv.description><吮液器></>你的源石虫持续偷取一个目标的体力！\\n作为整个赛事下半段的开场，杜安娜碰撞赛的赛道会让所有人印象深刻，选手们互相碰撞，挤占仅有的安全位置与空间，稍有不慎便会与深渊对视，与障碍接吻。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 123
+    },
+    {
+      "preset": "normal",
+      "x": -19.8567987122044,
+      "y": 47.93347608489931,
+      "name": "埃什南纳耐力赛",
+      "type": "racing",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "<@lv.description><助跑哨></>使你的源石虫加速一段时间！\\n埃什南纳耐力赛拥有着极具特色的赛道。熔岩覆盖着路面，步伐稍微慢了一点都会闻到奇怪的焦糊味。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 124
+    },
+    {
+      "preset": "normal",
+      "x": 23.666267297171437,
+      "y": 74.66757263295418,
+      "name": "雷兰穿梭赛",
+      "type": "racing",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "<@lv.description><助跑哨></>使你的源石虫加速一段时间！\\n<@lv.description><牵引器></>你的源石虫牵引一个目标，并且持续向该方向前进！\\n<@lv.description><吮液器></>你的源石虫持续偷取一个目标的体力！\\n雷兰穿梭赛的赛道拥有着最复杂的路径。在这里选手们充分根据自身的实际情况，穿梭于不同的岔路，奔向同一个终点。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 125
+    },
+    {
+      "preset": "normal",
+      "x": 15.60587763584798,
+      "y": 62.52783942352209,
+      "name": "西帕尔爬坡赛",
+      "type": "racing",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "<@lv.description><助跑哨></>使你的源石虫加速一段时间！\\n<@lv.description><牵引器></>你的源石虫牵引一个目标，并且持续向该方向前进！\\n<@lv.description><吮液器></>你的源石虫持续偷取一个目标的体力！\\n最后的终点就在前方，而最艰难的赛段也如约而至，熔岩、蒸汽，还有陡破，都会成为专门为选手们准备的小小“奖励”。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 126
+    },
+    {
+      "preset": "normal",
+      "x": 31.874103110836074,
+      "y": 48.766198538335324,
+      "name": "乌尔凯什冲刺赛",
+      "type": "racing",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "<@lv.description><助跑哨></>使你的源石虫加速一段时间！\\n在乌尔凯什冲刺赛，选手们被要求像风一样前进，这里没有什么能阻止它们，如果有的话，那就是其他选手。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 127
+    },
+    {
       "preset": "base",
       "nodeId": -1,
       "name": "驻扎地",
@@ -5569,7 +5734,53 @@
       108
     ],
     "116": [
-      19
+      19,
+      119
+    ],
+    "117": [
+      124,
+      127
+    ],
+    "118": [
+      119,
+      122,
+      124
+    ],
+    "119": [
+      116,
+      120,
+      118
+    ],
+    "120": [
+      119,
+      121
+    ],
+    "121": [
+      120
+    ],
+    "122": [
+      118,
+      123
+    ],
+    "123": [
+      122,
+      125
+    ],
+    "124": [
+      118,
+      117
+    ],
+    "125": [
+      123,
+      126
+    ],
+    "126": [
+      125,
+      127
+    ],
+    "127": [
+      126,
+      117
     ],
     "-1": [
       15,

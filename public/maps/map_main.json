@@ -5036,7 +5036,7 @@
       "resources": [],
       "size": "small",
       "border": "square",
-      "note": "",
+      "note": "<@lv.description><机关石门></>击破后会解锁新的可探索区域。被击破前，每次进入关卡会完全恢复原状。\\n再向前走似乎是一个完全不同的地方，虫群环绕巨石，林木沉默挺立，平静与安逸是这一切的尽头。",
       "mainResources": [
         {
           "type": "wood",

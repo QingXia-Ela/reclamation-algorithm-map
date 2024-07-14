@@ -509,7 +509,10 @@ export const other_level = [
   }
 ]
 
-export const bug_level = [
+/**
+ * 捕虫区
+ */
+export const selection_level = [
   {
     name: '回廊关',
     index: 1,
@@ -533,6 +536,52 @@ export const bug_level = [
 ]
 
 /**
+ * 竞赛区
+ */
+export const racing_level = [
+  {
+    name: "埃什南纳耐力赛",
+    index: 1,
+    src: "https://i0.hdslb.com/bfs/article/39ce082dfa1269e2d42de9a2532a2830251015631.png@1256w_1280h_!web-article-pic.avif"
+  },
+  {
+    name: "阿格拉折返赛",
+    index: 2,
+    src: "https://i0.hdslb.com/bfs/article/85fe10c63ce7e6be606db200cbc56d5e251015631.png@1256w_1354h_!web-article-pic.avif"
+  },
+  {
+    name: "乌尔凯什冲刺赛",
+    index: 3,
+    src: "https://i0.hdslb.com/bfs/article/f11e37a891d00d131b65a06533f31ac5251015631.png@1256w_1074h_!web-article-pic.avif"
+  },
+  {
+    name: "杜安娜碰撞赛",
+    index: 4,
+    src: "https://i0.hdslb.com/bfs/article/29a9302bb5b79e49b65d0145d14cb975251015631.png@1256w_1294h_!web-article-pic.avif"
+  },
+  {
+    name: "加苏尔拟真赛",
+    index: 5,
+    src: "https://i0.hdslb.com/bfs/article/9bedcf459d60d8d4c0d413e25438e0c1251015631.png@1256w_1026h_!web-article-pic.avif"
+  },
+  {
+    name: "雷兰穿梭赛",
+    index: 6,
+    src: "https://i0.hdslb.com/bfs/article/5c072d8544ba02a032ce1bb30327ed41251015631.png@1256w_1976h_!web-article-pic.avif"
+  },
+  {
+    name: "西帕尔爬坡赛",
+    index: 7,
+    src: "https://i0.hdslb.com/bfs/article/252da5a1a1c64dc40db36304e40c2740251015631.png@1256w_1088h_!web-article-pic.avif"
+  },
+  {
+    name: "“庆典须知”",
+    index: 8,
+    src: "https://i0.hdslb.com/bfs/article/f8d4b005527c6079ded4a225eea351fe251015631.png@1256w_1182h_!web-article-pic.avif"
+  }
+]
+
+/**
  * 关卡地图图片数据
  */
 export const LevelMapData = [
@@ -540,6 +589,6 @@ export const LevelMapData = [
   ...iron_level,
   ...stone_level,
   ...wood_level,
-  ...bug_level,
+  ...selection_level,
   ...other_level
 ]

@@ -39,7 +39,7 @@ function handleRiftMaps(data) {
 
 const RadioData = [
   {
-    "title": "userToolbar.mapSwitch.radio.mainMap.title",
+    "title": "主地图",
     "value": [MapData[0]]
   },
   {

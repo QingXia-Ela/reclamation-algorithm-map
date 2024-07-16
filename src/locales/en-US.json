@@ -1,0 +1,27 @@
+{
+  "language": {
+    "name": "English"
+  },
+  "userToolbar": {
+    "checkFoodFormula": {
+      "popover": "View all recipes in the game (feature implemented by an external website and only support Chinese)"
+    },
+    "downloadCurrentMap": {
+      "popover": "Download current map"
+    },
+    "mapSwitch": {
+      "popover": "View maps of other areas",
+      "switch": {
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "title": "Select the map to be replaced"
+      }
+    },
+    "notification": "Update Notification",
+    "resetCamera": "Back to map center",
+    "viewAnimateRoute": {
+      "noRoute": "There are currently no available highlighted routes",
+      "popover": "View the available highlighted routes on the current map"
+    }
+  }
+}

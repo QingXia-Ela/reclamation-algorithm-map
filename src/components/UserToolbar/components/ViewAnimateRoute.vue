@@ -3,14 +3,14 @@
   -->
 
 <template>
-  <OperateButton :popover-width="300" popover="查看当前地图可用的高亮路线">
+  <OperateButton :popover-width="300" :popover="$t('userToolbar.viewAnimateRoute.popover')">
     <SvgIcon name="route" color="#eee" style="width: 1.2rem; height: 1.2rem" />
     <template #popover>
-      查看当前地图可用的高亮路线
+      {{ $t('userToolbar.viewAnimateRoute.popover') }}
       <el-checkbox-group v-if="selectItem.length" v-model="selectLine">
         <el-checkbox v-for="item of selectItem" :key="item.id" :label="item.name" :value="item.id" />
       </el-checkbox-group>
-      <div v-else>当前没有可用的高亮路线</div>
+      <div v-else>{{ $t('userToolbar.viewAnimateRoute.noRoute') }}</div>
     </template>
   </OperateButton>
 </template>

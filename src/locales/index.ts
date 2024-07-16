@@ -5,7 +5,8 @@
  */
 
 import { createI18n } from 'vue-i18n'
-
+import en_US from './en-US.json'
+import zh_CN from './zh-CN.json'
 const locale = localStorage.getItem('i18n_locale') || 'zh-CN'
 
 if (locale) {
@@ -17,24 +18,8 @@ const i18n = createI18n({
   locale,
   fallbackLocale: 'zh-CN',
   messages: {
-    'zh-CN': {
-      userToolbar: {
-        notification: '网站更新公告'
-      },
-      language: {
-        name: "简体中文"
-      }
-      // todo!: add global zh-CN messages
-    },
-    'en-US': {
-      userToolbar: {
-        notification: 'Update Notification'
-      },
-      language: {
-        name: "English"
-      }
-      // todo!: add global en-US messages
-    }
+    'zh-CN': zh_CN,
+    'en-US': en_US
   }
 })
 

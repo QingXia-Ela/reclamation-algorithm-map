@@ -1,0 +1,27 @@
+{
+  "language": {
+    "name": "简体中文"
+  },
+  "userToolbar": {
+    "checkFoodFormula": {
+      "popover": "查看游戏内所有食谱（该功能由外部网站实现）"
+    },
+    "downloadCurrentMap": {
+      "popover": "下载当前地图"
+    },
+    "mapSwitch": {
+      "popover": "查看其他区域的地图",
+      "switch": {
+        "cancel": "取消",
+        "confirm": "更换地图",
+        "title": "选择要更换的地图"
+      }
+    },
+    "notification": "网站更新公告",
+    "resetCamera": "回到地图中心",
+    "viewAnimateRoute": {
+      "noRoute": "当前没有可用的高亮路线",
+      "popover": "查看当前地图可用的高亮路线"
+    }
+  }
+}

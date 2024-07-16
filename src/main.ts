@@ -8,7 +8,7 @@ import pinia from './store'
 import './styles/element/theme.scss'
 // import 'element-plus/theme-chalk/dark/css-vars.css'
 import 'virtual:svg-icons-register'
-import i18n from './locals'
+import i18n from './locales'
 
 
 // 涉及到 three 核心直接刷新页面

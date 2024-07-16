@@ -11,6 +11,11 @@
     },
     "mapSwitch": {
       "popover": "View maps of other areas",
+      "radio": {
+        "mainMap": {
+          "title": "Main map"
+        }
+      },
       "switch": {
         "cancel": "Cancel",
         "confirm": "Confirm",

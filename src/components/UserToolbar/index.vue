@@ -68,7 +68,7 @@ onMounted(() => {
 <template>
   <!-- todo!: 修复内部popover元素悬浮时工具栏仍然隐藏的问题 -->
   <div :class="className" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
-    <Language v-if="dev" />
+    <Language />
     <CheckFoodFormula />
     <BluePrint />
     <QueryShortestRoad />

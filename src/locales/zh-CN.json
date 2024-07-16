@@ -11,6 +11,11 @@
     },
     "mapSwitch": {
       "popover": "查看其他区域的地图",
+      "radio": {
+        "mainMap": {
+          "title": "主地图"
+        }
+      },
       "switch": {
         "cancel": "取消",
         "confirm": "更换地图",

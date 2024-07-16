@@ -8,6 +8,7 @@ import { computed, ref } from 'vue';
 import { getMapJson } from '@/api/modules';
 import { useGlobalState } from '@/store/dev/globalState';
 import { useStore } from '@nanostores/vue';
+import i18n from '@/locales'
 
 const globalState = useGlobalState()
 const open = computed(() => globalState.openMapSelect)
@@ -35,9 +36,10 @@ function handleRiftMaps(data) {
   return Object.entries(map).map(([title, value]) => ({ title, value }))
 }
 
+
 const RadioData = [
   {
-    "title": "主地图",
+    "title": "userToolbar.mapSwitch.radio.mainMap.title",
     "value": [MapData[0]]
   },
   {
@@ -79,7 +81,7 @@ function closeMapSelect() {
     <template v-for="data in RadioData" :key="data.title">
       <h3 class="type_title">{{ data.title }}</h3>
       <el-radio-group v-model="mapType">
-        <el-radio v-for="item in data.value" :label="item.value" :key="item.value" size="large">
+        <el-radio v-for="item in data.value" :value="item.value" :key="item.value" size="large">
           {{ item.label?.length ? item.label : item.value }}
         </el-radio>
       </el-radio-group>
@@ -100,3 +102,5 @@ function closeMapSelect() {
   }
 }
 </style>
+
+<!-- todo!: add local i18n translate -->

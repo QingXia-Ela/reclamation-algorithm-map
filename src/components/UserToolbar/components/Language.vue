@@ -3,24 +3,10 @@ import OperateButton from '../OperateButton.vue';
 import SvgIcon from '@/components/SvgIcon.vue';
 import { ElDialog, ElRadioGroup, ElRadio, ElButton } from 'element-plus';
 import { onMounted, ref } from 'vue';
-import i18n from '@/locals'
+import i18n from '@/locales'
 
 const dialogVisible = ref(false);
 const currentLanguage = ref(i18n.global.locale);
-
-// import { useI18n } from 'vue-i18n';
-// const { t } = useI18n({
-//   messages: {
-//     'zh-CN': {
-
-//     },
-//     'en-US': {
-
-//     }
-//   }
-// })
-
-// console.log(attrs);
 
 function modifyLanguage() {
   i18n.global.locale = currentLanguage.value

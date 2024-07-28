@@ -130,7 +130,7 @@ function saveData(options) {
 
 // 在模板中启用 v-focus
 const vFocus = {
-  updated: (el) => el.focus()
+  updated: (el) => el.focus(),
 }
 
 onMounted(() => {

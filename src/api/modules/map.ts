@@ -1,5 +1,6 @@
 import { SaveMapData } from "@/three/types/data";
 import { MapType } from "@/three/types/map";
+import fetchLocal from "@/utils/fetchLocal";
 
 const getHandleUrl = (type: string) => {
   const nameArr = type.split("-")
@@ -12,5 +13,5 @@ const getHandleUrl = (type: string) => {
 export async function getMapJson(type: MapType, baseUrl = "") {
   const url = getHandleUrl(type)
 
-  return await (await fetch(`${baseUrl}maps/${url}`)).json() as SaveMapData
+  return await (await fetchLocal(`${baseUrl}maps/${url}`)).json() as SaveMapData
 }

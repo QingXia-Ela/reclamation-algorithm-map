@@ -11,6 +11,7 @@ import * as TWEEN from '@tweenjs/tween.js'
 import findLine from '../utils/findLine';
 import { MapType } from "@/three/types/map"
 import MapAnchor from '../object/anchor';
+import fetchLocal from '@/utils/fetchLocal';
 
 type CoreEvent = "nodeclick" | "lineclick" | 'contextmenu' | 'mousemove' | 'mapchange'
 type ExtractSetType<T> = T extends Set<infer U> ? U : never
@@ -82,7 +83,7 @@ class MapCore {
   }
 
   async loadDefaultData(root = "maps/map_main.json") {
-    const map = await (await fetch(root)).json()
+    const map = await (await fetchLocal(root)).json()
     await this.loadData(map as SaveMapData)
   }
 

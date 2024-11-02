@@ -4767,7 +4767,7 @@
       "x": -59.467190082618096,
       "y": 60.29762771114872,
       "name": "砾沙平原",
-      "type": "collect",
+      "type": "encounter",
       "weather": "normal",
       "size": "small",
       "border": "square",

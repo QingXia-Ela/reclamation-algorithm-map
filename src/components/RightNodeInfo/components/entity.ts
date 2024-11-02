@@ -21,7 +21,7 @@ export const NodeNameToTypeMap: Record<string, NodeType> = {
   "荒弃迎敌之处": "outpost",
   "树林之主": "collect",
   "翠梦遗址": "cave",
-  "砾沙平原": "collect",
+  "砾沙平原": "encounter",
   "伐木征税": "collect",
   "乌胡米什": "mine",
   "千仞关": "collect",

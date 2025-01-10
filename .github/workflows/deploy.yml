@@ -26,10 +26,10 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
 
       - name: Build
-        run: pnpm build
+        run: pnpm build && pnpm build:android
 
       - name: Build Docs
-        run: cd docs/edit && pnpm install --no-frozen-lockfile && pnpm build && pnpm build:android
+        run: cd docs/edit && pnpm install --no-frozen-lockfile && pnpm build
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -4,6 +4,7 @@ import fb from 'fast-glob'
 import { resolve } from 'node:path'
 import dayjs from 'dayjs'
 import archiver from 'archiver'
+import packageJson from '../../../../package.json' assert { type: 'json' }
 
 function getDirs(base: string) {
   return [
@@ -49,7 +50,11 @@ export default function vitePluginManifest(env: Record<string, any>): Plugin {
         getDirs(resolvedDir)
       )).map((item) => item.replace("dist/", ""))
 
-      fs.writeFileSync(`${outDir}/manifest.json`, JSON.stringify({ archive, files }))
+      fs.writeFileSync(`${outDir}/manifest.json`, JSON.stringify({
+        archive,
+        files,
+        version: packageJson.version
+      }))
     },
   }
 }

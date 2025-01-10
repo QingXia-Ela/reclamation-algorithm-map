@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "name": "陌域-对决",
+    "type": "dungeon_boss_hunt",
+    "backgroundSize": 160,
+    "backgroundType": "dungeon"
+  },
+  "nodes": [
+    {
+      "preset": "normal",
+      "x": 0.35624731881813254,
+      "y": 9.14368118299953,
+      "name": "藏宝湾",
+      "type": "collect",
+      "weather": "heat_wave",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "崎岖的礁石在风 平浪静的水面下布下了汹涌的暗流，露出水面的部分也十分狰狞，很显然，这是一座易守难攻的天然堡垒。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "diamond",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 1
+    },
+    {
+      "preset": "normal",
+      "x": -21.672867184221296,
+      "y": -1.7732295081162537,
+      "name": "“金库”",
+      "type": "collect",
+      "weather": "heat_wave",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "丰饶的矿脉往 往与危险共生。洞中的矿工们正在加紧工作，而想要保住他们的劳动成果，最好的办法就是拦住那些不请自来的入侵者。",
+      "mainResources": [
+        {
+          "type": "stone",
+          "count": 1
+        },
+        {
+          "type": "diamond",
+          "count": 1
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 2
+    },
+    {
+      "preset": "normal",
+      "x": -38.21929712320751,
+      "y": -8.74455284861519,
+      "name": "火圈狂舞",
+      "type": "cave",
+      "weather": "heat_wave",
+      "resources": [],
+      "size": "large",
+      "border": "square",
+      "note": "<@lv.description>每日刷新敌人，领袖敌人未被击倒则次日恢复全部生命值（非陌域中时）</>\\n曾经是观众的时候，会惊叹于杂耍艺人的表演水平。现在是 对手，该因为杂耍艺人的战斗水平而头痛了。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 3
+    },
+    {
+      "preset": "base",
+      "nodeId": -1,
+      "name": "驻扎地",
+      "x": 0.1583321416969653,
+      "y": -0.23749821254540304,
+      "type": "collect",
+      "weather": "normal",
+      "size": "small",
+      "border": "square",
+      "note": "最初的落脚点。或许不够豪华，但能够安心休息。只要守住这里，不管失败几次都能东山再起，重新再来。",
+      "mainResources": [],
+      "regularResources": [],
+      "resources": []
+    }
+  ],
+  "adjancyList": {
+    "1": [
+      -1,
+      2
+    ],
+    "2": [
+      1,
+      3
+    ],
+    "3": [
+      2
+    ],
+    "-1": [
+      1
+    ]
+  }
+}

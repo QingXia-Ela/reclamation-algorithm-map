@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "name": "陌域-护卫前行",
+    "type": "dungeon_miner_convoy",
+    "backgroundSize": 120,
+    "backgroundType": "dungeon"
+  },
+  "nodes": [
+    {
+      "preset": "normal",
+      "x": 2.018734806636247,
+      "y": 14.368641858999263,
+      "name": "崎岖窄路",
+      "type": "encounter",
+      "weather": "sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "老猎人讲述了第一个吃下岩壳蟹的人的故事。熬过天灾与劫掠，是毒虫 还是涩果他都不再考虑，鲜血淋漓地咬开硬壳后，他尝到了生的甜美。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 1
+    },
+    {
+      "preset": "normal",
+      "x": 6.570783880423911,
+      "y": 28.816449788846977,
+      "name": "献祭之所",
+      "type": "hunt",
+      "weather": "big_sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "部落民们正在进行一场古老的仪式。 在这诡异的仪式过程中，有黑影闪过，一场好戏即将上演。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 2
+    },
+    {
+      "preset": "normal",
+      "x": -8.359998982771447,
+      "y": 25.570759948138644,
+      "name": "战争本能",
+      "type": "nest",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "火山喷发，大地沸腾，栖居的生物不懂何为战争，只是顺从本能。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 3
+    },
+    {
+      "preset": "normal",
+      "x": -21.335553753864023,
+      "y": 0.20282140690155082,
+      "name": "失落的巨翼兽",
+      "type": "cave",
+      "weather": "normal",
+      "resources": [],
+      "size": "large",
+      "border": "square",
+      "note": "想要命令自然，就需要先服从于自然。异兽徘徊在它的领地，等待着下一个对它感到好奇的人。\n",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 4
+    },
+    {
+      "preset": "normal",
+      "x": -10.206707152440085,
+      "y": -15.980173869404844,
+      "name": "“金库”",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "丰饶的矿脉往 往与危险共生。洞中的矿工们正在加紧工作，而想要保住他们的劳动成果，最好的办法就是拦住那些不请自来的入侵者。",
+      "mainResources": [
+        {
+          "type": "stone",
+          "count": 1
+        },
+        {
+          "type": "diamond",
+          "count": 1
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 5
+    },
+    {
+      "preset": "normal",
+      "x": -31.43766991920777,
+      "y": -14.192373787293882,
+      "name": "见证所",
+      "type": "collect",
+      "weather": "drought",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "过去与未来之影，在此析出一滴泪水，向如今的大地宣告他曾经来过。",
+      "mainResources": [
+        {
+          "type": "iron",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 6
+    },
+    {
+      "preset": "normal",
+      "x": -26.918094661860962,
+      "y": 12.73068742313771,
+      "name": "迷失沼滩",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "王酋下属的军队也未必熟悉自己的领地，更何况是一些连 当地人都很少前往的地方。好消息是，在这种动物繁多的沼滩，至少不会有人因挨饿而丢掉性命。",
+      "mainResources": [
+        {
+          "type": "poultry",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "beef",
+          "count": 1
+        },
+        {
+          "type": "venison",
+          "count": 1
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 7
+    },
+    {
+      "preset": "base",
+      "nodeId": -1,
+      "name": "驻扎地",
+      "x": -0.9203621681207084,
+      "y": -0.35337582183064675,
+      "type": "collect",
+      "weather": "normal",
+      "size": "small",
+      "border": "square",
+      "note": "最初的落脚点。或许不够豪华，但能够安心休息。只要守住这里，不管失败几次都能东山再起，重新再来。",
+      "mainResources": [],
+      "regularResources": [],
+      "resources": []
+    }
+  ],
+  "adjancyList": {
+    "1": [
+      -1,
+      2
+    ],
+    "2": [
+      1,
+      3
+    ],
+    "3": [
+      2,
+      4
+    ],
+    "4": [
+      3,
+      7,
+      6,
+      5
+    ],
+    "5": [
+      4
+    ],
+    "6": [
+      4
+    ],
+    "7": [
+      4
+    ],
+    "-1": [
+      1
+    ]
+  }
+}

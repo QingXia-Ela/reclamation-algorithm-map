@@ -1,0 +1,448 @@
+{
+  "metadata": {
+    "name": "未知地图",
+    "type": "sandbox_1_rift_unknown",
+    "backgroundSize": 200,
+    "backgroundType": "dungeon"
+  },
+  "nodes": [
+    {
+      "preset": "normal",
+      "x": 14.647589045732218,
+      "y": 33.60411434173241,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [
+        {
+          "type": "crab",
+          "count": 4
+        },
+        {
+          "type": "wood",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 2
+    },
+    {
+      "preset": "base",
+      "nodeId": 5,
+      "name": "驻扎地",
+      "x": 0.0605848438617247,
+      "y": -4.836864472573833,
+      "type": "base",
+      "weather": "sandstorm",
+      "size": "large",
+      "border": "round",
+      "note": "最初的落脚点。或许不够豪华，但能够安心休息。只要守住这里，不管失败几次都能东山再起，重新再来。",
+      "mainResources": [],
+      "regularResources": [],
+      "resources": []
+    },
+    {
+      "preset": "normal",
+      "x": 29.749075117110266,
+      "y": -29.73785573994045,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 6
+    },
+    {
+      "preset": "normal",
+      "x": 36.65617457419863,
+      "y": -57.80546676827501,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [
+        {
+          "type": "venison",
+          "count": 1
+        },
+        {
+          "type": "crab",
+          "count": 5
+        },
+        {
+          "type": "water",
+          "count": 1
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 7
+    },
+    {
+      "preset": "normal",
+      "x": 73.7522651810937,
+      "y": -44.38386020507377,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 8
+    },
+    {
+      "preset": "normal",
+      "x": 60.962813760464044,
+      "y": -6.827288172395683,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "drought",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 9
+    },
+    {
+      "preset": "normal",
+      "x": -64.48010985506495,
+      "y": -1.203420880826652,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "drought",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 11
+    },
+    {
+      "preset": "normal",
+      "x": -57.22991562235441,
+      "y": 44.54582569676067,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "drought",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [
+        {
+          "type": "beef",
+          "count": 8
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 12
+    },
+    {
+      "preset": "normal",
+      "x": -17.887819799221237,
+      "y": 45.93216793142168,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "drought",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [
+        {
+          "type": "beef",
+          "count": 4
+        },
+        {
+          "type": "venison",
+          "count": 13
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 13
+    },
+    {
+      "preset": "normal",
+      "x": 56.7456176217386,
+      "y": 49.988146665369925,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 15
+    },
+    {
+      "preset": "normal",
+      "x": 28.868923433504385,
+      "y": 47.49394512955584,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [
+        {
+          "type": "crab",
+          "count": 5
+        },
+        {
+          "type": "wood",
+          "count": 108
+        },
+        {
+          "type": "water",
+          "count": 1
+        },
+        {
+          "type": "goodsundry",
+          "count": 1
+        }
+      ],
+      "regularResources": [
+        {
+          "type": "egg",
+          "count": 1
+        },
+        {
+          "type": "mushroom",
+          "count": 1
+        },
+        {
+          "type": "peper",
+          "count": 1
+        },
+        {
+          "type": "sugar",
+          "count": 1
+        },
+        {
+          "type": "horn",
+          "count": 1
+        },
+        {
+          "type": "goodsundry",
+          "count": 1
+        },
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ],
+      "nodeId": 16
+    },
+    {
+      "preset": "normal",
+      "x": 57.13903400593778,
+      "y": 28.87202377535855,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [
+        {
+          "type": "crab",
+          "count": 1
+        },
+        {
+          "type": "wood",
+          "count": 108
+        },
+        {
+          "type": "water",
+          "count": 1
+        },
+        {
+          "type": "goodsundry",
+          "count": 1
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 17
+    },
+    {
+      "preset": "normal",
+      "x": -11.053937804756195,
+      "y": -43.38629164806884,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 18
+    },
+    {
+      "preset": "normal",
+      "x": -62.142450233172724,
+      "y": -36.65813723154201,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "big_sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [
+        {
+          "type": "beef",
+          "count": 4
+        },
+        {
+          "type": "venison",
+          "count": 13
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 20
+    },
+    {
+      "preset": "normal",
+      "x": 18.504714409820227,
+      "y": -60.157415002789705,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 21
+    },
+    {
+      "preset": "normal",
+      "x": -37.96055340133024,
+      "y": -57.47839933155748,
+      "name": "未知",
+      "type": "unknown",
+      "weather": "drought",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "该节点仅用于标识位置，节点类型完全随机。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 22
+    }
+  ],
+  "adjancyList": {
+    "2": [
+      5,
+      16,
+      17,
+      13
+    ],
+    "5": [
+      2,
+      6,
+      11
+    ],
+    "6": [
+      5,
+      7,
+      8,
+      9,
+      18
+    ],
+    "7": [
+      6
+    ],
+    "8": [
+      6,
+      17
+    ],
+    "9": [
+      6
+    ],
+    "11": [
+      5,
+      13,
+      12,
+      20,
+      18
+    ],
+    "12": [
+      11
+    ],
+    "13": [
+      2,
+      11
+    ],
+    "15": [
+      16,
+      17
+    ],
+    "16": [
+      2,
+      15
+    ],
+    "17": [
+      2,
+      8,
+      15
+    ],
+    "18": [
+      6,
+      11,
+      21,
+      22
+    ],
+    "20": [
+      11
+    ],
+    "21": [
+      18
+    ],
+    "22": [
+      18
+    ]
+  },
+  "highlightRoute": []
+}

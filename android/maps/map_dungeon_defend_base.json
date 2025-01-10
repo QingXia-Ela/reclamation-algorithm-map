@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "name": "陌域-坚守阵地",
+    "type": "dungeon_defend_base",
+    "backgroundSize": 80,
+    "backgroundType": "dungeon"
+  },
+  "nodes": [
+    {
+      "preset": "normal",
+      "x": -0.1756980468759954,
+      "y": -10.890229104768396,
+      "name": "被限制的怒火",
+      "type": "battle",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "当王酋的征税终于压垮了一个贫穷的部落时，一些部落民 选择将武器对准同样处在压迫下，但尚有余力的你们。他们的愤怒被限制，止步于此。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 1
+    },
+    {
+      "preset": "normal",
+      "x": -23.077507719286377,
+      "y": 2.1207399498533492,
+      "name": "战士的视野",
+      "type": "battle",
+      "weather": "drought",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "萨尔贡的战士们都很清楚，每个人都拥有着同样的一双眼，用 它看到什么、看到多少，才是战场上获胜的关键。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 2
+    },
+    {
+      "preset": "normal",
+      "x": -10.255082389658357,
+      "y": -1.6909891035618552,
+      "name": "征税的选择",
+      "type": "nest",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "当部落民为王酋的征税而感 到万分苦恼时，一部分部落民则会选择成为王酋大人的征税部队。当然，怎么选择都是为了生活。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 3
+    },
+    {
+      "preset": "normal",
+      "x": -13.871935861239468,
+      "y": 8.207371210325197,
+      "name": "佣兵的所属",
+      "type": "battle",
+      "weather": "big_sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "萨卡兹佣兵在沁礁黑市中不算少见，哥伦比亚的通讯器，维多利亚制式的武器，他 们可以属于任何势力，唯独不属于他们自己。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 4
+    },
+    {
+      "preset": "normal",
+      "x": -0.10487280658825249,
+      "y": 4.066995600708546,
+      "name": "战争本能",
+      "type": "nest",
+      "weather": "big_sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "火山喷发，大地沸腾，栖居的生物不懂何为战争，只是顺从本能。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 5
+    },
+    {
+      "preset": "normal",
+      "x": 8.922503522575914,
+      "y": -2.1435678137164365,
+      "name": "崎岖窄路",
+      "type": "encounter",
+      "weather": "sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "老猎人讲述了第一个吃下岩壳蟹的人的故事。熬过天灾与劫掠，是毒虫 还是涩果他都不再考虑，鲜血淋漓地咬开硬壳后，他尝到了生的甜美。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 6
+    },
+    {
+      "preset": "normal",
+      "x": 12.48594154724588,
+      "y": 8.784308795271752,
+      "name": "征税的选择",
+      "type": "nest",
+      "weather": "big_sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "当部落民为王酋的征税而感 到万分苦恼时，一部分部落民则会选择成为王酋大人的征税部队。当然，怎么选择都是为了生活。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 8
+    },
+    {
+      "preset": "normal",
+      "x": -4.290749895274949,
+      "y": 16.182684884586788,
+      "name": "不速之客",
+      "type": "nest",
+      "weather": "drought",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "在萨尔贡总能遇到意料之外的来客，大多数时候，他们往往不是那么友善，甚至比王酋的手下们更不友善一些。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 9
+    },
+    {
+      "preset": "normal",
+      "x": 7.587376853625335,
+      "y": 21.78237320906829,
+      "name": "丢失的订单",
+      "type": "battle",
+      "weather": "sandstorm",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "丢失了黑市订单中的大批施术单元可不是件小事，不想被买家发现事情真相，这群莱塔 尼亚人决定先下手为强。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 10
+    },
+    {
+      "preset": "normal",
+      "x": 3.0058136790494725,
+      "y": 28.807436743417917,
+      "name": "丢失的订单",
+      "type": "battle",
+      "weather": "drought",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "丢失了黑市订单中的大批施术单元可不是件小事，不想被买家发现事情真相，这群莱塔 尼亚人决定先下手为强。",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": 11
+    },
+    {
+      "preset": "normal",
+      "x": 20.194587404150393,
+      "y": 2.9534983904995595,
+      "name": "伐木征税",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "明明砍伐可用的树木是一件很正常的事，但是王酋大人定下了很不正常的税额 ，于是大家都想尽办法偷偷摸摸起来。",
+      "mainResources": [
+        {
+          "type": "wood",
+          "count": 1
+        }
+      ],
+      "regularResources": [],
+      "nodeId": 12
+    },
+    {
+      "preset": "base",
+      "x": 0.005305792665457609,
+      "y": -22.300321006453395,
+      "name": "驻扎地",
+      "type": "collect",
+      "weather": "normal",
+      "resources": [],
+      "size": "small",
+      "border": "square",
+      "note": "",
+      "mainResources": [],
+      "regularResources": [],
+      "nodeId": -1
+    }
+  ],
+  "adjancyList": {
+    "-1": [
+      1
+    ],
+    "1": [
+      -1,
+      5,
+      3,
+      6
+    ],
+    "2": [
+      3
+    ],
+    "3": [
+      1,
+      2,
+      4
+    ],
+    "4": [
+      3
+    ],
+    "5": [
+      1,
+      9,
+      10
+    ],
+    "6": [
+      1,
+      8,
+      12
+    ],
+    "8": [
+      6
+    ],
+    "9": [
+      5,
+      11
+    ],
+    "10": [
+      5,
+      11
+    ],
+    "11": [
+      9,
+      10
+    ],
+    "12": [
+      6
+    ]
+  }
+}

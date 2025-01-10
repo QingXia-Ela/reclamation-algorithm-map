@@ -4,7 +4,8 @@ import { resolve } from 'path'
 
 export default (args: any) => {
   const DesktopBuildConfig: UserConfig = {
-    base: '/reclamation-algorithm-map/desktop/',
+    // provide for android locate path. DO NOT MODIFY
+    base: './',
     build: {
       outDir: "dist/desktop",
       rollupOptions: {

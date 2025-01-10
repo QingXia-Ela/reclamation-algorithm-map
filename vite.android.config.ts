@@ -7,7 +7,8 @@ export default (args: any) => {
   const env = loadEnv(args.mode, process.cwd())
 
   const DesktopBuildConfig: UserConfig = {
-    base: '/reclamation-algorithm-map/android/',
+    // provide for android locate path. DO NOT MODIFY
+    base: './',
     build: {
       outDir: "dist/android",
       rollupOptions: {

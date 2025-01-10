@@ -7,9 +7,11 @@ import { resolve } from 'path'
 import vitePluginRiftMapHandle from './src/plugins/vite/vite-plugin-rift-map-handle'
 import vitePluginMapFontBundle from './src/plugins/vite/vite-plugin-map-font-bundle'
 import { visualizer } from 'rollup-plugin-visualizer';
+import vitePluginArchiver from './src/plugins/vite/vite-plugin-archiver'
 
 // https://vitejs.dev/config/
 export default ({ command, mode }: any) => {
+
   return defineConfig({
     plugins: [
       vue({

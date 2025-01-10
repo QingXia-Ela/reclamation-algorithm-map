@@ -14,7 +14,8 @@
     "build:android": "vite build --mode android --config vite.android.config.ts",
     "test": "vitest run",
     "preview": "vite preview",
-    "smoke": "echo smoke"
+    "smoke": "echo smoke",
+    "release": "release-it"
   },
   "dependencies": {
     "@nanostores/vue": "^0.10.0",

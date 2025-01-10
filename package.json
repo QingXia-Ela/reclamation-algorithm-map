@@ -42,6 +42,7 @@
     "chinese-simplified-common-characters": "^1.0.1",
     "fast-glob": "^3.3.2",
     "github-markdown-css": "^5.5.1",
+    "release-it": "^18.1.1",
     "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.70.0",
     "typescript": "^5.2.2",
